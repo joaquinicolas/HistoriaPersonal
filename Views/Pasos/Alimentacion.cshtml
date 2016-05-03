@@ -1,0 +1,381 @@
+﻿@model HistoriaPersonalCormillot.ViewModels.Preferencias2AlimentacionViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/ResponsiveGrid.css" rel="stylesheet" />
+<link href="~/Content/CorreccionesBootstrap.css" rel="Stylesheet" />
+<script src="../../Scripts/FormulariosHelpers.js" type="text/javascript"></script>
+
+<style>
+    .table > thead:first-child > tr:first-child > th {
+        padding-bottom: 0;
+    }
+    .center-table
+    {
+        padding-left: 17% !important;
+    }
+    
+    .table>tbody>tr.separador-inferior>td
+    {
+        border-bottom: 2px solid black;
+    }
+    
+    .table>tbody>tr>td:first-child
+    {
+        text-align: left;
+    }
+    
+    .table>tbody>tr>td:first-child input
+    {
+        float: right;
+        min-width: 100px;
+        width: 60%;
+    }
+    
+    .subtitulo-control
+    {
+        padding-left: 10px;
+    }
+          .leyenda
+    {
+        border: 1px solid;
+        overflow: hidden;
+        display: block;
+        width: 36%;
+        margin: auto;
+        text-align: center;
+        padding: 1%;
+        border-radius: 30px;
+        /* margin: 3% auto; */
+        margin-top: 9%;
+        margin-bottom: 2%;
+        font-size: 12px;
+    }
+          .table>tbody>tr>td.normalmargen {
+        font-weight:normal;
+        padding-left:6px;
+
+    }
+            .table>tbody>tr>td.margen
+    {
+       padding-left:6px;
+    }
+    
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input[type=checkbox]').css("cursor", "pointer");
+    });
+    function subirDatos() {
+        postForm("SaveAlimentacion");
+    }
+
+    function guardarDatos() {
+        postFormGuardar("SaveAlimentacion");
+    }
+
+    $(document).ready(function () {
+        setInterval(subirDatos, 5000);
+    });
+</script>
+<article>
+    <h2 class="celeste titulo FontCormi" style="margin-top: 50px;">Sus preferencias</h2>
+</article>
+
+<form id="form">
+    <input type="hidden" name="LugarCasa" />
+    <input type="hidden" name="LugarColegio" />
+    <input type="hidden" name="LugarTrabajo" />
+    <input type="hidden" name="LugarTraslados" />
+    <input type="hidden" name="LugarRestaurante" />
+    <input type="hidden" name="LugarKiosko" />
+    <input type="hidden" name="LugarCalle" />
+    <input type="hidden" name="LugarViaje" />
+    <input type="hidden" name="LugarVacaciones" />
+    <input type="hidden" name="LugarClub" />
+    <input type="hidden" name="LugarEstudioB" />
+    <input type="hidden" name="LugarBarB" />
+
+    <section class="col_12 row-left" style="width:75%;margin-left:60px;margin-top:15px">
+        <article class=" col_12 titulo-control" style="border:2.5px solid;border-bottom:0px">En que lugares o situaciones como más</article>
+        <section class="col_12 " style="border:2.5px solid;border-bottom:0px">
+            <article class="col_4" style="border:1px solid;border-bottom:1px;border-top:1px">
+                <article class="col_9 titulo-radio normal" style="margin-left:15px">Casa</article>
+                <input name="preferencias.LugarCasa" type="checkbox" value=true @(Model.preferencias.LugarCasa == true ? "checked=checked" : "") />
+            </article>
+            <article class="col_4" style="border:1px solid;border-bottom:1px;border-top:1px">
+                <article class="col_9 titulo-radio normal" style="margin-left:15px">Traslados</article>
+                <input name="preferencias.LugarTraslados" type="checkbox" value=true @(Model.preferencias.LugarTraslados== true ? "checked=checked" : "") />
+            </article>
+            <article class="col_4" style="border:1px solid;border-bottom:1px;border-top:1px">
+                <article class="col_9 titulo-radio normal" style="margin-left:15px">Calle</article>
+                <input name="preferencias.LugarCalle" type="checkbox" value=true @(Model.preferencias.LugarCalle == true ? "checked=checked" : "") />
+            </article>
+        </section>
+        <section class="col_12" style="border:2.5px solid;border-bottom:0px;border-top:0px">
+            <article class="col_4" style="border:1px solid">
+                <article class="col_9 titulo-radio normal" style="margin-left:15px">Colegio/Universidad</article>
+                <input name="preferencias.LugarColegio" type="checkbox" value=true @(Model.preferencias.LugarColegio == true ? "checked=checked" : "") />
+            </article>
+            <article class="col_4" style="border:1px solid">
+                <article class="col_9 titulo-radio normal" style="margin-left:15px">Restaurante/bar</article>
+                <input name="preferencias.LugarRestaurante" type="checkbox" value=true @(Model.preferencias.LugarRestaurante == true ? "checked=checked" : "") />
+            </article>
+            <article class="col_4" style="border:1px solid">
+                <article class="col_9 titulo-radio normal" style="margin-left:15px">Viajes</article>
+                <input name="preferencias.LugarViaje" type="checkbox" value=true @(Model.preferencias.LugarViaje == true ? "checked=checked" : "") />
+            </article>
+        </section>
+        <section class="col_12 " style="border:2.5px solid;border-bottom:0px;border-top:0px">
+            <article class="col_4" style="border:1px solid;border-bottom:1px;border-top:1px">
+                <article class="col_9 titulo-radio normal" style="margin-left:15px">Estudio</article>
+                <input name="preferencias.LugarEstudioB" type="checkbox" value=true @(Model.preferencias.LugarEstudioB == true ? "checked=checked" : "") />
+            </article>
+            <article class="col_4" style="border:1px solid;border-bottom:1px;border-top:1px">
+                <article class="col_9 titulo-radio normal" style="margin-left:15px">Bar</article>
+                <input name="preferencias.LugarBarB" type="checkbox" value=true @(Model.preferencias.LugarBarB == true ? "checked=checked" : "") />
+            </article>
+            <article class="col_4" style="border:1px solid;border-bottom:1px;border-top:1px">
+                <article class="col_9 titulo-radio normal" style="margin-left:15px">Vacaciones</article>
+                <input name="preferencias.LugarVacaciones" type="checkbox" value=true @(Model.preferencias.LugarVacaciones == true ? "checked=checked" : "") />
+            </article>
+        </section>
+        <section class="col_12" style="border:2.5px solid;border-top:0px">
+
+            <article class="col_4" style="border:1px solid">
+                <article class="col_9 titulo-radio normal" style="margin-left:15px">Trabajo</article>
+                <input name="preferencias.LugarTrabajo" type="checkbox" value=true @(Model.preferencias.LugarTrabajo == true ? "checked=checked" : "") />
+            </article>
+            <article class="col_4" style="border:1px solid">
+                <article class="col_9 titulo-radio normal" style="margin-left:15px">Kiosko</article>
+                <input name="preferencias.LugarKiosko" type="checkbox" value=true @(Model.preferencias.LugarKiosko == true ? "checked=checked" : "") />
+            </article>
+            <article class="col_4" style="border:1px solid">
+                <article class="col_9 titulo-radio normal" style="margin-left:15px">Club</article>
+                <input name="preferencias.LugarClub" type="checkbox" value=true @(Model.preferencias.LugarClub == true ? "checked=checked" : "") />
+            </article>
+        </section>
+
+        </section>
+    <section class="col_12">
+        <article>
+            <h2 class="celeste titulo FontCormi" style="margin-top: 15px;">Alimentación</h2>
+        </article>
+    </section>
+    
+    <section class="col_12 row-left">
+        <section class="col_12">
+            <article class="col_4 titulo-control">
+                ¿Quién decide lo que comen en su casa?
+            </article>
+            <article class="col_8">
+                <input type="text" class="form-control" name="alimentacion.DecideComida" value="@Model.alimentacion.DecideComida" />
+            </article>
+        </section>
+        <section class="col_12">
+            <article class="col_3 titulo-control">
+                ¿Quién compra la comida?
+            </article>
+            <article class="col_9">
+                <input type="text" class="form-control" name="alimentacion.CompraComida" value="@Model.alimentacion.CompraComida" />
+            </article>
+        </section>
+        <section class="col_12">
+            <article class="col_2 titulo-control">
+                ¿Quién cocina?
+            </article>
+            <article class="col_4" style="width:29%">
+                <input type="text" class="form-control" name="alimentacion.CocinaComida" value="@Model.alimentacion.CocinaComida" />
+            </article>
+            <article class="col_2 titulo-control">
+                ¿Le gusta cocinar?
+            </article>
+            <article class="col_4">
+                <input type="text" class="form-control" name="alimentacion.GustaCocinar" value="@Model.alimentacion.GustaCocinar" />
+            </article>
+        </section>
+        <section class="col_12" style="margin-top:30px">
+            <article class="col_2">
+                Su comida es
+            </article>
+            <section class="col-10">
+                <section class="table-responsive ocultar-responsive" style="max-width: 600px;border:2px solid">
+                    <table class="table" style="text-align:left;margin-bottom:0px">
+                        <thead>
+                            <tr>
+                                <th style="width:19%"></th>
+                                <th>Muy engordante</th>
+                                <th>Engordante</th>
+                                <th style="width:15%">Normal</th>
+                                <th>Liviana</th>
+                                <th style="width:14%">Light</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Casa</td>
+                                <td>
+                                    <input type="radio" name="alimentacion.ComidaEnCasa" value="MuyEngordante" @(Model.alimentacion.ComidaEnCasa == "MuyEngordante" ? "checked=checked" : "") />
+                                </td>
+                                <td>
+                                    <input type="radio" name="alimentacion.ComidaEnCasa" value="Engordante" @(Model.alimentacion.ComidaEnCasa == "Engordante" ? "checked=checked" : "") />
+                                </td>
+                                <td>
+                                    <input type="radio" name="alimentacion.ComidaEnCasa" value="Normal" @(Model.alimentacion.ComidaEnCasa == "Normal" ? "checked=checked" : "") />
+                                </td>
+                                <td>
+                                    <input type="radio" name="alimentacion.ComidaEnCasa" value="Liviana" @(Model.alimentacion.ComidaEnCasa == "Liviana" ? "checked=checked" : "") />
+                                </td>
+                                <td>
+                                    <input type="radio" name="alimentacion.ComidaEnCasa" value="Light" @(Model.alimentacion.ComidaEnCasa == "Light" ? "checked=checked" : "") />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Trabajo</td>
+                                <td>
+                                    <input type="radio" name="alimentacion.ComidaEnTrabajo" value="MuyEngordante" @(Model.alimentacion.ComidaEnTrabajo == "MuyEngordante" ? "checked=checked" : "") />
+                                </td>
+                                <td>
+                                    <input type="radio" name="alimentacion.ComidaEnTrabajo" value="Engordante" @(Model.alimentacion.ComidaEnTrabajo == "Engordante" ? "checked=checked" : "") />
+                                </td>
+                                <td>
+                                    <input type="radio" name="alimentacion.ComidaEnTrabajo" value="Normal" @(Model.alimentacion.ComidaEnTrabajo == "Normal" ? "checked=checked" : "") />
+                                </td>
+                                <td>
+                                    <input type="radio" name="alimentacion.ComidaEnTrabajo" value="Liviana" @(Model.alimentacion.ComidaEnTrabajo == "Liviana" ? "checked=checked" : "") />
+                                </td>
+                                <td>
+                                    <input type="radio" name="alimentacion.ComidaEnTrabajo" value="Light" @(Model.alimentacion.ComidaEnTrabajo == "Light" ? "checked=checked" : "") />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Estudio</td>
+                                <td>
+                                    <input type="radio" name="alimentacion.ComidaEnEstudio" value="MuyEngordante" @(Model.alimentacion.ComidaEnEstudio == "MuyEngordante" ? "checked=checked" : "") />
+                                </td>
+                                <td>
+                                    <input type="radio" name="alimentacion.ComidaEnEstudio" value="Engordante" @(Model.alimentacion.ComidaEnEstudio == "Engordante" ? "checked=checked" : "") />
+                                </td>
+                                <td>
+                                    <input type="radio" name="alimentacion.ComidaEnEstudio" value="Normal" @(Model.alimentacion.ComidaEnEstudio == "Normal" ? "checked=checked" : "") />
+                                </td>
+                                <td>
+                                    <input type="radio" name="alimentacion.ComidaEnEstudio" value="Liviana" @(Model.alimentacion.ComidaEnEstudio == "Liviana" ? "checked=checked" : "") />
+                                </td>
+                                <td>
+                                    <input type="radio" name="alimentacion.ComidaEnEstudio" value="Light" @(Model.alimentacion.ComidaEnEstudio == "Light" ? "checked=checked" : "") />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Fin de semana</td>
+                                <td>
+                                    <input type="radio" name="alimentacion.ComidaEnFinde" value="MuyEngordante" @(Model.alimentacion.ComidaEnFinde == "MuyEngordante" ? "checked=checked" : "") />
+                                </td>
+                                <td>
+                                    <input type="radio" name="alimentacion.ComidaEnFinde" value="Engordante" @(Model.alimentacion.ComidaEnFinde == "Engordante" ? "checked=checked" : "") />
+                                </td>
+                                <td>
+                                    <input type="radio" name="alimentacion.ComidaEnFinde" value="Normal" @(Model.alimentacion.ComidaEnFinde == "Normal" ? "checked=checked" : "") />
+                                </td>
+                                <td>
+                                    <input type="radio" name="alimentacion.ComidaEnFinde" value="Liviana" @(Model.alimentacion.ComidaEnFinde == "Liviana" ? "checked=checked" : "") />
+                                </td>
+                                <td>
+                                    <input type="radio" name="alimentacion.ComidaEnFinde" value="Light" @(Model.alimentacion.ComidaEnFinde == "Light" ? "checked=checked" : "") />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
+        </section>
+
+        <section class="col_12" style="margin-top:15px">
+            <article class="col_4 titulo-control">
+                ¿Qué alimentos cree que lo engordan?
+            </article>
+            <article class="col_8">
+                <input type="text" class="form-control" name="alimentacion.AlimentosEngordan" value="@Model.alimentacion.AlimentosEngordan" />
+            </article>
+        </section>
+        <section class="col_12">
+            <article class="col_4 titulo-control">
+                ¿Qué come cuando come de más?
+            </article>
+            <article class="col_8">
+                <input type="text" class="form-control" name="alimentacion.ComeDeMas" value="@Model.alimentacion.ComeDeMas" />
+            </article>
+        </section>
+        <section class="col_12">
+            <article class="col_3 titulo-control">
+                Si come en el trabajo
+            </article>
+        </section>
+        <section class="row-left col_12">
+            <article class="col_2 subtitulo-control">
+                Puede comprar
+            </article>
+            <section class="col_2">
+                <input type="radio" name="alimentacion.TrabajoPuedeComprarSiNo" value="No" @(Model.alimentacion.TrabajoPuedeComprarSiNo == "No" ? "checked=checked" : "") />
+                No
+                <input type="radio" name="alimentacion.TrabajoPuedeComprarSiNo" value="Si" @(Model.alimentacion.TrabajoPuedeComprarSiNo == "Si" ? "checked=checked" : "") />
+                Sí
+            </section>
+            <article class="col_1">
+                ¿Qué?
+            </article>
+            <article class="col_6" style="width:57%">
+                <input type="text" class="form-control" name="alimentacion.TrabajoPuedeComprarQue" value="@Model.alimentacion.TrabajoPuedeComprarQue" />
+            </article>
+        </section>
+        <section class="row-left col_12">
+            <article class="col_2 subtitulo-control">
+                Puede llevar
+            </article>
+            <section class="col_2">
+                <input type="radio" name="alimentacion.TrabajoPuedeLlevarSiNo" value="No" @(Model.alimentacion.TrabajoPuedeLlevarSiNo == "No" ? "checked=checked" : "") />
+                No
+                <input type="radio" name="alimentacion.TrabajoPuedeLlevarSiNo" value="Si" @(Model.alimentacion.TrabajoPuedeLlevarSiNo == "Si" ? "checked=checked" : "") />
+                Sí
+            </section>
+            <article class="col_1">
+                ¿Qué?
+            </article>
+            <article class="col_6" style="width:57%">
+                <input type="text" class="form-control" name="alimentacion.TrabajoPuedeLlevarQue" value="@Model.alimentacion.TrabajoPuedeLlevarQue" />
+            </article>
+        </section>
+        <section class="row-left col_12" style="margin-bottom:15px">
+            <article class="col_2 subtitulo-control">
+                Puede preparar
+            </article>
+            <section class="col_2">
+                <input type="radio" name="alimentacion.TrabajoPuedePrepararSiNo" value="No" @(Model.alimentacion.TrabajoPuedePrepararSiNo == "No" ? "checked=checked" : "") />
+                No
+                <input type="radio" name="alimentacion.TrabajoPuedePrepararSiNo" value="Si" @(Model.alimentacion.TrabajoPuedePrepararSiNo == "Si" ? "checked=checked" : "") />
+                Sí
+            </section>
+            <article class="col_1">
+                ¿Qué?
+            </article>
+            <article class="col_6" style="width:57%">
+                <input type="text" class="form-control" name="alimentacion.TrabajoPuedePrepararQue" value="@Model.alimentacion.TrabajoPuedePrepararQue" />
+
+            </article>
+        </section>
+    </section>
+</form>
+<div class="leyenda" style="margin-top:15px">
+    Para solucionar cualquier problema primero hay
+    que reconocer que existe. Luego, se pueden usar
+    las heramientas apropiadas para enfrentarlo.
+</div>
+
+<div class="container-botones-inferiores" style="width:100%;float:left">
+    @Html.ActionLink("Anterior", "AnteriorPaso", "Pasos", new { id = ViewBag.Pagina }, new { @class = "btn btn-info", onclick="javascript:subirDatos();" })
+    <label style="font-family:monospace;font-size:smaller;font-weight:bolder">
+        Pagina 12 de 18
+    </label>
+    @Html.ActionLink("Siguiente", "ProximoPaso", "Pasos", new { id = ViewBag.Pagina }, new { @class = "btn btn-info", onclick = "javascript:subirDatos();" })
+</div>

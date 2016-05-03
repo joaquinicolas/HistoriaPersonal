@@ -1,0 +1,901 @@
+﻿@model HistoriaPersonalCormillot.RelacionTratamientoMotivacion2
+@{
+}
+<script src="../../Scripts/FormulariosHelpers.js" type="text/javascript"></script>
+<script src="../../Scripts/pagina3.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+    $.fn.checkbox = function (options) {
+        settings = $.extend({
+            contenedor: ' ',
+            text: [],
+            checkbox_for_row: 4
+        }, options);
+
+        if (Array.isArray(settings.text)) {
+            $(settings.text).each(function (index, value) {
+                if (index < settings.checkbox_for_row) {
+                    $('<div class="checkbox inline"  ><label><input type="checkbox" />' + value + '</label></div>').appendTo($(settings.contenedor));
+                    var i = settings.text.indexOf(value);
+                    if (i > -1) {
+                        settings.text.splice(i, 1);
+                    }
+                }
+            });
+        }
+    }
+
+    function subirDatos() {
+        setearCheckboxes();
+        postForm("SaveRelacionTratamientoMotivacion2");
+    }
+
+    function guardarDatos() {
+        setearCheckboxes();
+        postFormGuardar("SaveRelacionTratamientoMotivacion2");
+    }
+
+    $(document).ready(function () {
+        
+        setInterval(subirDatos, 5000);
+    });
+
+    $(function () {
+        $('label.pregunta').each(function (index) {
+            $(this).text(preguntas[index]);
+        });
+        /*$('div.row-1').each(function () {
+            $(this).checkbox({
+                contenedor: $(this),
+                text: checkbox.pregunta_diez
+            });
+        });
+        $('div.row-2').each(function () {
+            $(this).checkbox({
+                contenedor: $(this),
+                text: checkbox.pregunta_once
+            });
+        });
+        $('div.row-3').each(function () {
+            $(this).checkbox({
+                contenedor: $(this),
+                text: checkbox.pregunta_doce
+            });
+        });
+        $('div.row').each(function () {
+            $(this).checkbox({
+                contenedor: $(this),
+                text: checkbox.pregunta_nueve
+            });
+        })*/
+    });
+</script>
+
+<style>
+    .inline
+    {
+        width:167px;
+        margin-left:15px;
+    }
+    
+    .form-control
+    {
+        margin-top:0 !important;
+    }
+    
+    .margin-arriba-abajo
+    {
+        /*margin-top:10px;
+        margin-bottom:10px;*/
+    }
+    
+    #form{
+        max-width: 1000px;
+    }
+    
+    .form-horizontal{
+        padding-top: 0;
+    }
+    .overflow
+    {
+        overflow:hidden;
+    }
+    .leyenda
+    {
+        border: 1px solid;
+        overflow: hidden;
+        display: block;
+        width: 31%;
+        margin: auto;
+        text-align: center;
+        padding: 1%;
+        border-radius: 30px;
+        /* margin: 3% auto; */
+        margin-top: 9%;
+        margin-bottom: 2%;
+        font-size: 12px;
+    }
+</style>
+
+
+<h2 class="celeste titulo FontCormi" style="margin-top: 50px;">Su relación con el tratamiento y motivación</h2>
+
+<form id="form" action="/Pasos/SaveRelacionTratamientoMotivacion2/" method="post" class="form-inline">
+    <input type="hidden" name="IdUsuario" value="@Model.Usuario.Id" />
+    
+   @* <input type="hidden" name="TratamientoClinicaCormillot" /> 
+    <input type="hidden" name="TratamientoPsiquiatria" /> 
+    <input type="hidden" name="TratamientoDietaClub" /> 
+    <input type="hidden" name="TratamientoAlco" /> 
+    <input type="hidden" name="TratamientoPsicoterapia" />
+    <input type="hidden" name="TratamientoActividadFisica" /> 
+    <input type="hidden" name="TratamientoHomeopatia" /> 
+    <input type="hidden" name="TratamientoDietasPorSuCuenta" />
+    <input type="hidden" name="TratamientoMedicoODietista" />
+    <input type="hidden" name="TratamientoInternet" /> 
+    <input type="hidden" name="TratamientoCirugia" /> 
+    <input type="hidden" name="TratamientoMedicamentos" /> 
+    <input type="hidden" name="TratamientoOtros" /> *@
+
+    <input type="hidden" name="BarreraTratamientoHorarios" /> 
+    <input type="hidden" name="BarreraTratamientoDesorden" />
+    <input type="hidden" name="BarreraTratamientoEstres" /> 
+    <input type="hidden" name="BarreraTratamientoEstadoDeAnimo" /> 
+    <input type="hidden" name="BarreraTratamientoFamilia" /> 
+    <input type="hidden" name="BarreraTratamientoVidaSocial" />
+    <input type="hidden" name="BarreraTratamientoTrabajo" /> 
+    <input type="hidden" name="BarreraTratamientoMotivacion" />
+    <input type="hidden" name="BarreraTratamientoOtro" /> 
+
+    <input type="hidden" name="AbandonarTratamientoNoModificarPeso" /> 
+    <input type="hidden" name="AbandonarTratamientoProblemasPersonales" />
+    <input type="hidden" name="AbandonarTratamientoVidaSocial" /> 
+    <input type="hidden" name="AbandonarTratamientoModificarloPoco" /> 
+    <input type="hidden" name="AbandonarTratamientoProblemasEconomicos" /> 
+    <input type="hidden" name="AbandonarTratamientoSentirsePresionado" /> 
+    <input type="hidden" name="AbandonarTratamientoSalirUnaVezYAbandonar" />
+    <input type="hidden" name="AbandonarTratamientoLlevarseMalConElEquipo" />
+    <input type="hidden" name="AbandonarTratamientoAburrirseDeLaDieta" /> 
+    <input type="hidden" name="AbandonarTratamientoDistanciaALaQueVive" /> 
+    <input type="hidden" name="AbandonarTratamientoPocoApoyoFamiliar" /> 
+
+    <input type="hidden" name="PesoActualAlimentacion" /> 
+    <input type="hidden" name="PesoActualAnsiedad" /> 
+    <input type="hidden" name="PesoActualProblemasDeSalud" />
+    <input type="hidden" name="PesoActualEmbarazos" /> 
+    <input type="hidden" name="PesoActualAlcohol" /> 
+    <input type="hidden" name="PesoActualEstres" /> 
+    <input type="hidden" name="PesoActualMetabolismo" /> 
+    <input type="hidden" name="PesoActualHerencia" /> 
+    <input type="hidden" name="PesoActualSedentarismo" /> 
+    <input type="hidden" name="PesoActualMedicacion" /> 
+    <input type="hidden" name="PesoActualDejarDeFumar" /> 
+    <input type="hidden" name="PesoActualDepresion" /> 
+    <input type="hidden" name="PesoActualPerdidas" /> 
+    <input type="hidden" name="PesoActualMenopausia" /> 
+    <input type="hidden" name="PesoActualOtros" />
+
+    
+@*    <section class="form-group">
+        <div class="col-sm-2"></div>
+        <label class="col-sm-10">9. ¿Ha realizado algún tratamiento para modificar su peso anteriormente?</label>
+    </section>
+    <section class="form-group">
+        <label class="col-sm-2"></label>
+        <section class="col-sm-9 form-inline">
+            <section class="col-sm-12 form-group" >
+                <section class="col-sm-2 control-group">
+                    <input class="radio-inline" type="radio" name="HaRealizadoTratamiento" value="No" checked="@(Model.HaRealizadoTratamiento == "No")" />
+                    <label class="control-label">No</label>
+                    <input class="radio-inline" type="radio" name="HaRealizadoTratamiento" value="Si" checked="@(Model.HaRealizadoTratamiento == "Si")" />
+                    <label class="control-label">Sí</label>
+                </section>
+                <section class="col-sm-5 control-group">
+                    <label class="control-label">¿Cuántos?</label>
+                    <input class="form-control form-control-inline" type="text" name="CuantosTratamiento" value="@Model.CuantosTratamiento" />
+                </section>
+                <section class="col-sm-2 form-group">
+                    <label class="control-label">¿Dónde?</label>
+                </section>
+            </section>
+            <section class="col-sm-12 form-group">
+
+                <section class="col-sm-3 control-group">
+                    <input class="checkbox-inline" type="checkbox" id="TratamientoClinicaCormillot"
+                           @(Model.TratamientoClinicaCormillot.HasValue && Model.TratamientoClinicaCormillot.Value ? "checked=checked" : "") />
+                    <label class="control-label">Clínica Cormillot</label>
+                </section>
+                <section class="col-sm-3 control-group">
+                    <input class="checkbox-inline" type="checkbox" id="TratamientoPsiquiatria"
+                           @(Model.TratamientoPsiquiatria.HasValue && Model.TratamientoPsiquiatria.Value ? "checked=checked" : "") />
+                    <label class="control-label">Psiquitría</label>
+                </section>
+                <section class="col-sm-3 control-group">
+                    <input class="checkbox-inline" type="checkbox" id="TratamientoDietaClub"
+                           @(Model.TratamientoDietaClub.HasValue && Model.TratamientoDietaClub.Value ? "checked=checked" : "") />
+                    <label class="control-label">Dieta Club</label>
+                </section>
+                <section class="col-sm-3 control-group">
+                    <input class="checkbox-inline" type="checkbox" id="TratamientoAlco"
+                           checked="@(Model.TratamientoAlco.HasValue && Model.TratamientoAlco.Value)" />
+                    <label class="control-label"> Alco</label>
+                </section>
+                <section class="col-sm-3 control-group">
+                    <input class="checkbox-inline" type="checkbox" id="TratamientoPsicoterapia"
+                           checked="@(Model.TratamientoPsicoterapia.HasValue && Model.TratamientoPsicoterapia.Value)" />
+                    <label class="control-label"> Psicoterapia</label>
+                </section>
+
+                <section class="col-sm-3 control-group">
+                    <input class="checkbox-inline" type="checkbox" id="TratamientoActividadFisica"
+                           checked="@(Model.TratamientoActividadFisica.HasValue && Model.TratamientoActividadFisica.Value)" />
+                    <label class="control-label">Actividad Física</label>
+                </section>
+            @*</section>
+            <section class="col-sm-12 form-group">*@
+              @*  <section class="col-sm-3 control-group">
+                    <input class="checkbox-inline" type="checkbox" id="TratamientoHomeopatia"
+                           checked="@(Model.TratamientoHomeopatia.HasValue && Model.TratamientoHomeopatia.HasValue)" />
+                    <label class="control-label">Homeopatía</label>
+
+                </section>
+
+                <section class="col-sm-3 control-group">
+                    <input type="checkbox" id="TratamientoDietasPorSuCuenta"
+                           checked="@(Model.TratamientoDietasPorSuCuenta.HasValue && Model.TratamientoDietasPorSuCuenta.HasValue)" />
+                    <label class="control-label"> Dietas por su cuenta</label>
+                </section>
+
+                <section class="col-sm-3 control-group">
+                    <input class="checkbox-inline" type="checkbox" id="TratamientoMedicoODietista"
+                           checked="@(Model.TratamientoMedicoODietista.HasValue && Model.TratamientoMedicoODietista.Value)" />
+                    <label class="control-label">Médico o Dietista</label>
+                </section>
+
+                <section class="col-sm-3 control-group">
+                    <input class="checkbox-inline" type="checkbox" id="TratamientoInternet"
+                           checked="@(Model.TratamientoInternet.HasValue && Model.TratamientoInternet.Value)" />
+                    <label class="control-label">Internet (dietas.com)</label>
+                </section>
+
+                <section class="col-sm-3 control-group">
+                    <input class="checkbox-inline" type="checkbox" id="TratamientoCirugia"
+                           checked="@(Model.TratamientoCirugia.HasValue && Model.TratamientoCirugia.Value)" />
+                    <label class="control-label">Cirugía</label>
+                </section>
+
+                <section class="col-sm-3 control-group">
+                    <input class="checkbox-inline" type="checkbox" id="TratamientoMedicamentos"
+                           checked="@(Model.TratamientoMedicamentos.HasValue && Model.TratamientoMedicamentos.Value)" />
+                    <label class="control-label">Medicamentos</label>
+                </section>
+            </section>
+
+            <section class="control-group">
+                <input class="checkbox-inline" type="checkbox" id="TratamientoOtros"
+                       checked="@(Model.TratamientoOtros.HasValue && Model.TratamientoOtros.Value)" />
+                <label class="control-label">Otros, ¿cuáles?</label>
+            </section>
+        </section>
+                    @*<section class="control-group">
+                        <input type="text" name="TratamientoCuales" value="@Model.TratamientoCuales" />
+                    </section>*@
+     @*   </section>
+
+                    <section class="form-group">
+                        ¿Cuánto bajo en los tratamientos anteriores?
+                        <input type="text" name="CuantoBajoEnTratamientosAnteriores" value="@Model.CuantoBajoEnTratamientosAnteriores" />
+                    </section>
+                    <section>
+                        ¿Tuvo algún efecto negativo en alguno de sus tratamientos anteriores?
+                        <input type="radio" name="EfectoNegativoTratamientosAnteriores" value="No"
+                               checked="@(Model.EfectoNegativoTratamientosAnteriores == "No")" /> No
+                        <input type="radio" name="EfectoNegativoTratamientosAnteriores" value="Si"
+                               checked="@(Model.EfectoNegativoTratamientosAnteriores == "Si")" /> Sí
+                        ¿Cuál?
+                        <input type="text" name="CualEfectoNegativoTratamientosAnteriores" value="@Model.CualEfectoNegativoTratamientosAnteriores" />
+                    </section>
+                    <section>
+                        ¿Por qué considera que sus tratamientos anteriores fracasaron?
+                        <input type="text" name="MotivoTratamientosAnterioresFallaron" value="@Model.MotivoTratamientosAnterioresFallaron" />
+                    </section>
+</section>
+    <section>
+        10. ¿Qué barreras cree tener para el tratamiento?
+        <input  type="checkbox" id="BarreraTratamientoHorarios" 
+                checked="@(Model.BarreraTratamientoHorarios.HasValue && Model.BarreraTratamientoHorarios.Value)"/> Horarios
+        <input  type="checkbox" id="BarreraTratamientoDesorden" 
+                checked="@(Model.BarreraTratamientoDesorden.HasValue && Model.BarreraTratamientoDesorden.Value)" /> Desorden
+        <input  type="checkbox" id="BarreraTratamientoEstres"
+                checked="@(Model.BarreraTratamientoEstres.HasValue && Model.BarreraTratamientoEstres.Value)" /> Estrés
+        <input  type="checkbox" id="BarreraTratamientoEstadoDeAnimo"
+                checked="@(Model.BarreraTratamientoEstadoDeAnimo.HasValue && Model.BarreraTratamientoEstadoDeAnimo.Value)" /> Estado de Ánimo
+        <input  type="checkbox" id="BarreraTratamientoFamilia"
+                checked="@(Model.BarreraTratamientoFamilia.HasValue && Model.BarreraTratamientoFamilia.Value)" /> Familia
+        <input  type="checkbox" id="BarreraTratamientoVidaSocial"
+                checked="@(Model.BarreraTratamientoVidaSocial.HasValue && Model.BarreraTratamientoVidaSocial.Value)" /> Vida Social
+        <input  type="checkbox" id="BarreraTratamientoTrabajo"
+                checked="@(Model.BarreraTratamientoTrabajo.HasValue && Model.BarreraTratamientoTrabajo.Value)" /> Trabajo
+        <input  type="checkbox" id="BarreraTratamientoMotivacion"
+                checked="@(Model.BarreraTratamientoMotivacion.HasValue && Model.BarreraTratamientoMotivacion.Value)" /> Motivición
+        <input  type="checkbox" id="BarreraTratamientoOtro"
+                checked="@(Model.BarreraTratamientoOtro.HasValue && Model.BarreraTratamientoOtro.Value)" /> Otras, ¿Cuáles?
+        <input  type="text" name="BarreraTratamientoCual" />
+    </section>
+    <section>
+        11. ¿Qué cosas cree que lo podrían hacer abandonar este tratamiento?
+        <input  type="checkbox" id="AbandonarTratamientoNoModificarPeso" 
+                checked="@(Model.AbandonarTratamientoNoModificarPeso.HasValue && Model.AbandonarTratamientoNoModificarPeso.Value)"/> 
+                    No modificar el peso
+        <input  type="checkbox" id="AbandonarTratamientoProblemasPersonales" 
+                checked="@(Model.AbandonarTratamientoProblemasPersonales.HasValue && Model.AbandonarTratamientoProblemasPersonales.Value)"/> 
+                    Problemas personales
+        <input  type="checkbox" id="AbandonarTratamientoVidaSocial" 
+                checked="@(Model.AbandonarTratamientoVidaSocial.HasValue && Model.AbandonarTratamientoVidaSocial.Value)"/> 
+                    Vida Social
+        <input  type="checkbox" id="AbandonarTratamientoModificarloPoco" 
+                checked="@(Model.AbandonarTratamientoModificarloPoco.HasValue && Model.AbandonarTratamientoModificarloPoco.Value)"/> 
+                    Modificarlo poco
+        <input  type="checkbox" id="AbandonarTratamientoProblemasEconomicos" 
+                checked="@(Model.AbandonarTratamientoProblemasEconomicos.HasValue && Model.AbandonarTratamientoProblemasEconomicos.Value)"/> 
+                    Problemas económicos
+        <input  type="checkbox" id="AbandonarTratamientoSentirsePresionado" 
+                checked="@(Model.AbandonarTratamientoSentirsePresionado.HasValue && Model.AbandonarTratamientoSentirsePresionado.Value)"/> 
+                    Sentirse presionado
+        <input  type="checkbox" id="AbandonarTratamientoSalirUnaVezYAbandonar" 
+                checked="@(Model.AbandonarTratamientoSalirUnaVezYAbandonar.HasValue && Model.AbandonarTratamientoSalirUnaVezYAbandonar.Value)"/> 
+                    Salir una vez y abandonar
+        <input  type="checkbox" id="AbandonarTratamientoLlevarseMalConElEquipo" 
+                checked="@(Model.AbandonarTratamientoLlevarseMalConElEquipo.HasValue && Model.AbandonarTratamientoLlevarseMalConElEquipo.Value)"/> 
+                    Llevarse mal con el equipo
+        <input  type="checkbox" id="AbandonarTratamientoAburrirseDeLaDieta" 
+                checked="@(Model.AbandonarTratamientoAburrirseDeLaDieta.HasValue && Model.AbandonarTratamientoAburrirseDeLaDieta.Value)"/> 
+                    Aburrirse de la dieta
+        <input  type="checkbox" id="AbandonarTratamientoDistanciaALaQueVive" 
+                checked="@(Model.AbandonarTratamientoDistanciaALaQueVive.HasValue && Model.AbandonarTratamientoDistanciaALaQueVive.Value)"/> 
+                    Distancia a la que vive
+        <input  type="checkbox" id="AbandonarTratamientoPocoApoyoFamiliar" 
+                checked="@(Model.AbandonarTratamientoPocoApoyoFamiliar.HasValue && Model.AbandonarTratamientoPocoApoyoFamiliar.Value)"/> 
+                    Poco apoyo familiar
+        Otras, ¿cuáles? 
+        <input type="text" name="AbandonarTratamientoOtras" />
+    </section>
+    <section>
+        12. ¿A qué atribuye su peso actual?
+        <input  type="checkbox" id="PesoActualAlimentacion" 
+                checked="@(Model.PesoActualAlimentacion.HasValue && Model.PesoActualAlimentacion.Value)"/> Alimentación
+        <input  type="checkbox" id="PesoActualAnsiedad" 
+                checked="@(Model.PesoActualAnsiedad.HasValue && Model.PesoActualAnsiedad.Value)"/> Ansiedad
+        <input  type="checkbox" id="PesoActualProblemasDeSalud" 
+                checked="@(Model.PesoActualProblemasDeSalud.HasValue && Model.PesoActualProblemasDeSalud.Value)"/> Problemas de Salud
+        <input  type="checkbox" id="PesoActualEmbarazos" 
+                checked="@(Model.PesoActualEmbarazos.HasValue && Model.PesoActualEmbarazos.Value)"/> Embarazos
+        <input  type="checkbox" id="PesoActualAlcohol" 
+                checked="@(Model.PesoActualAlcohol.HasValue && Model.PesoActualAlcohol.Value)"/> Alcohol
+        <input  type="checkbox" id="PesoActualEstres" 
+                checked="@(Model.PesoActualEstres.HasValue && Model.PesoActualEstres.Value)"/> Estrés
+        <input  type="checkbox" id="PesoActualMetabolismo" 
+                checked="@(Model.PesoActualMetabolismo.HasValue && Model.PesoActualMetabolismo.Value)"/> Metabolismo
+        <input  type="checkbox" id="PesoActualHerencia" 
+                checked="@(Model.PesoActualHerencia.HasValue && Model.PesoActualHerencia.Value)"/> Herencia
+        <input  type="checkbox" id="PesoActualSedentarismo" 
+                checked="@(Model.PesoActualSedentarismo.HasValue && Model.PesoActualSedentarismo.Value)"/> Sedentarismo
+        <input  type="checkbox" id="PesoActualMedicacion" 
+                checked="@(Model.PesoActualMedicacion.HasValue && Model.PesoActualMedicacion.Value)"/> Medicación
+        <input  type="checkbox" id="PesoActualDejarDeFumar" 
+                checked="@(Model.PesoActualDejarDeFumar.HasValue && Model.PesoActualDejarDeFumar.Value)"/> Dejar de Fumar
+        <input  type="checkbox" id="PesoActualDepresion" 
+                checked="@(Model.PesoActualDepresion.HasValue && Model.PesoActualDepresion.Value)"/> Depresión
+        <input  type="checkbox" id="PesoActualPerdidas" 
+                checked="@(Model.PesoActualPerdidas.HasValue && Model.PesoActualPerdidas.Value)" />
+         
+          Pérdidas
+        <input  type="checkbox" id="PesoActualMenopausia" 
+                checked="@(Model.PesoActualMenopausia.HasValue && Model.PesoActualMenopausia.Value)" /> Menopausia
+        <input  type="checkbox" id="PesoActualOtros" 
+                checked="@(Model.PesoActualOtros.HasValue && Model.PesoActualOtros.Value)" /> Otros
+        <input  type="text" name="PesoActualOtrosTexto" />
+    </section>*@
+
+   
+    
+    @*<div class="margin-arriba-abajo">
+    <div class="col-sm-2"></div>
+    <label class="col-sm-10 pregunta"></label>
+    
+    <div class="col-sm-3"></div>
+    <div class="checkbox" style="margin-left:7px; margin-right: 10px;">
+            <label><input name="HaRealizadoTratamiento" value="No" type="radio" @(Model.HaRealizadoTratamiento == "No"? "checked=checked":"") />No</label>
+    </div>
+    <div class="checkbox" style=" margin-right: 10px;">
+            <label><input name="HaRealizadoTratamiento" value="Si" type="radio" @(Model.HaRealizadoTratamiento == "Si" ? "checked=checked" : "") />Si</label>
+    </div>
+    <div class="form-group" style="margin-right: 15px;">
+        <label>¿Cuantos?</label>
+        <input type="text" class="form-control" value="@Model.CuantosTratamiento" name="CuantosTratamiento" />
+    </div>
+    <div class="form-group" style="margin-right: 1px;">
+        <label>¿Donde?</label>
+        <input type="text" class="form-control" style="display: none;"/>
+    </div>
+    <div class="checkbox">
+        <label><input type="checkbox" id="TratamientoClinicaCormillot"
+                    @(Model.TratamientoClinicaCormillot.HasValue && Model.TratamientoClinicaCormillot.Value? "checked=checked":"") />
+            Clínica Cormillot</label>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="checkbox inline">
+            <label>
+                <input class="checkbox-inline" type="checkbox" id="TratamientoClinicaCormillot"
+                       @(Model.TratamientoClinicaCormillot.HasValue && Model.TratamientoClinicaCormillot.Value ? "checked=checked" : "") />Clínica Cormillot
+            </label>
+        </div>
+        <div class="checkbox inline">
+            <label>
+                <input class="checkbox-inline" type="checkbox" id="TratamientoPsiquiatria"
+                       @(Model.TratamientoPsiquiatria.HasValue && Model.TratamientoPsiquiatria.Value ? "checked=checked" : "") />Psiquitría
+            </label>
+        </div>
+        <div class="checkbox inline">
+            <label>
+                <input class="checkbox-inline" type="checkbox" id="TratamientoDietaClub"
+                       @(Model.TratamientoDietaClub.HasValue && Model.TratamientoDietaClub.Value ? "checked=checked" : "") />Dieta Club
+            </label>
+        </div>
+        <div class="checkbox inline">
+            <label>
+                <input class="checkbox-inline" type="checkbox" id="TratamientoAlco"
+                       @(Model.TratamientoAlco.HasValue && Model.TratamientoAlco.Value ? "checked=checked" : "") />Alco
+            </label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="checkbox inline">
+            <label>
+                <input class="checkbox-inline" type="checkbox" id="TratamientoPsicoterapia"
+                       @(Model.TratamientoPsicoterapia.HasValue && Model.TratamientoPsicoterapia.Value? "checked=checked":"") />Psicoterapia
+            </label>
+        </div>
+        <div class="checkbox inline">
+            <label>
+                <input class="checkbox-inline" type="checkbox" id="TratamientoActividadFisica"
+                       @(Model.TratamientoActividadFisica.HasValue && Model.TratamientoActividadFisica.Value ? "checked=checked" : "") />Actividad Física
+            </label>
+        </div>
+        <div class="checkbox inline">
+            <label>
+                <input class="checkbox-inline" type="checkbox" id="TratamientoHomeopatia"
+                       @(Model.TratamientoHomeopatia.HasValue && Model.TratamientoHomeopatia.Value ? "checked=checked" : "") />Homeopatía
+            </label>
+        </div>
+        <div class="checkbox inline">
+            <label>
+                <input type="checkbox" id="TratamientoDietasPorSuCuenta"
+                       @(Model.TratamientoDietasPorSuCuenta.HasValue && Model.TratamientoDietasPorSuCuenta.Value ? "checked=checked" : "") />Dietas por su cuenta
+            </label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="checkbox inline">
+            <label>
+                <input class="checkbox-inline" type="checkbox" id="TratamientoMedicoODietista"
+                       @(Model.TratamientoMedicoODietista.HasValue && Model.TratamientoMedicoODietista.Value ? "checked=checked" : "") />Médico o Dietista
+            </label>
+        </div>
+        <div class="checkbox inline">
+            <label>
+                <input class="checkbox-inline" type="checkbox" id="TratamientoInternet"
+                       @(Model.TratamientoInternet.HasValue && Model.TratamientoInternet.Value ? "checked=checked" : "") />Internet (dietas.com)
+            </label>
+        </div>
+        <div class="checkbox inline">
+            <label>
+                <input class="checkbox-inline" type="checkbox" id="TratamientoCirugia"
+                       @(Model.TratamientoCirugia.HasValue && Model.TratamientoCirugia.Value ? "checked=checked" : "") />Cirugía
+            </label>
+        </div>
+        <div class="checkbox inline">
+            <label>
+                <input class="checkbox-inline" type="checkbox" id="TratamientoMedicamentos"
+                       @(Model.TratamientoMedicamentos.HasValue && Model.TratamientoMedicamentos.Value ? "checked=checked" : "") />Medicamentos
+            </label>
+        </div>
+
+    </div>   
+     
+    <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="checkbox inline"  ><label>
+        <input type="checkbox" id="TratamientoOtros" @(Model.TratamientoOtros.HasValue && Model.TratamientoOtros.Value? "checked=checked" : "") 
+                                                                     />Otros, ¿Cuales?</label></div>
+    <input type="text" class="form-control" name="TratamientoCuales" value="@Model.TratamientoCuales" />
+    </div>*@
+
+    <div class="margin-arriba-abajo">
+       <div class="col-sm-2"></div>
+        <label style="text-indent:15px;">¿Cuanto bajo en tratamientos anteriores?</label>
+        <input type="text" class="form-control" style="width:48%" name="CuantoBajoEnTratamientosAnteriores" value="@Model.CuantoBajoEnTratamientosAnteriores" />
+    </div>
+
+    <div class="margin-arriba-abajo">
+        <div class="col-sm-2"></div>
+        <label class="col-sm-10">¿Tuvo algun efecto en los tratamientos anteriores?</label>
+        <div class="col-sm-4"></div>
+        <div class="checkbox inline" style="margin-left:-14%">
+            <label><input type="radio" name="EfectoNegativoTratamientosAnteriores" value="No" @(Model.EfectoNegativoTratamientosAnteriores == "No" ? "checked=checked" : "") />No</label>
+        </div>
+        <div class="checkbox inline" style="width:10%">
+            <label><input type="radio" name="EfectoNegativoTratamientosAnteriores" value="Si" @(Model.EfectoNegativoTratamientosAnteriores == "Si" ? "checked=checked" : "") />Si</label>
+        </div>
+        <div class="checkbox"  >
+            <label><input type="checkbox" style="display: none;" />¿Cuál?</label>
+        </div>
+        <input style="width: 42%;" type="text" class="form-control" name="CualEfectoNegativoTratamientosAnteriores" value="@Model.CualEfectoNegativoTratamientosAnteriores" />
+    </div>
+
+    <div class="margin-arriba-abajo form-horizontal">
+        <div class="col-sm-2"></div>
+        <label class="col-sm-10">¿Porqué considera que sus tratamientos anteriores fracasaron?</label>
+        <div class="col-sm-3"></div>
+        <div class="col-sm-9" style="margin-left: -8%; width: 80%;">
+            <input type="text" class="form-control" style="width:100%" name="MotivoTratamientosAnterioresFallaron" value="@Model.MotivoTratamientosAnterioresFallaron" />
+        </div>
+    </div>
+
+  
+        <div class="margin-arriba-abajo" style="width:100%;float:left">
+            <div class="col-sm-2"></div>
+            <label class="col-sm-10">10.¿Qué barreras cree tener para el tratamiento?</label>
+        </div>
+
+        <div style="overflow:hidden; display:block;">
+        </div>
+
+        <div class="row-1">
+            <div class="col-sm-3"></div>
+            <div class="checkbox inline">
+                <label>
+                    <input type="checkbox" id="BarreraTratamientoHorarios"
+                           @(Model.BarreraTratamientoHorarios.HasValue && Model.BarreraTratamientoHorarios.Value ? "checked=checked" : "") /> Horarios
+                </label>
+            </div>
+            <div class="checkbox inline">
+                <label>
+                    <input type="checkbox" id="BarreraTratamientoDesorden"
+                           @(Model.BarreraTratamientoDesorden.HasValue && Model.BarreraTratamientoDesorden.Value ? "checked=checked" : "") /> Desorden
+                </label>
+            </div>
+            <div class="checkbox inline">
+                <label>
+                    <input type="checkbox" id="BarreraTratamientoEstres"
+                           @(Model.BarreraTratamientoEstres.HasValue && Model.BarreraTratamientoEstres.Value ? "checked=checked" : "") /> Estrés
+                </label>
+            </div>
+            <div class="checkbox inline">
+                <label>
+                    <input type="checkbox" id="BarreraTratamientoEstadoDeAnimo"
+                           @(Model.BarreraTratamientoEstadoDeAnimo.HasValue && Model.BarreraTratamientoEstadoDeAnimo.Value ? "checked=checked" : "") /> Estado de Ánimo
+                </label>
+            </div>
+        </div>
+        <div class="row-1">
+            <div class="col-sm-3"></div>
+            <div class="checkbox inline">
+                <label>
+                    <input type="checkbox" id="BarreraTratamientoFamilia"
+                           @(Model.BarreraTratamientoFamilia.HasValue && Model.BarreraTratamientoFamilia.Value ? "checked=checked" : "") /> Familia
+                </label>
+            </div>
+            <div class="checkbox inline">
+                <label>
+                    <input type="checkbox" id="BarreraTratamientoVidaSocial"
+                           @(Model.BarreraTratamientoVidaSocial.HasValue && Model.BarreraTratamientoVidaSocial.Value ? "checked=checked" : "") /> Vida Social
+                </label>
+            </div>
+            <div class="checkbox inline">
+                <label>
+                    <input type="checkbox" id="BarreraTratamientoTrabajo"
+                           @(Model.BarreraTratamientoTrabajo.HasValue && Model.BarreraTratamientoTrabajo.Value ? "checked=checked" : "") /> Trabajo
+                </label>
+            </div>
+            <div class="checkbox inline">
+                <label>
+                    <input type="checkbox" id="BarreraTratamientoMotivacion"
+                           @(Model.BarreraTratamientoMotivacion.HasValue && Model.BarreraTratamientoMotivacion.Value ? "checked=checked" : "") /> Motivición
+                </label>
+            </div>
+        </div>
+
+
+        <div class="col-sm-3"></div>
+        <div class="form-group" style="margin-left:15px;width:70%">
+        <label><input type="checkbox" @(Model.BarreraTratamientoOtro.HasValue && Model.BarreraTratamientoOtro.Value? "checked=checked" : "")
+                     id="BarreraTratamientoOtro" />Otra </label>
+        <label style="margin-left:100px;width:79%;">¿Cuales? <input type="text" class="form-control" name="BarreraTratamientoCual" value="@Model.BarreraTratamientoCual" style="width:85%;"/>
+        </label>
+        </div>
+
+
+
+        <div class="margin-arriba-abajo" style="width:100%;float:left">
+            <div class="col-sm-2"></div>
+            <label class="col-sm-10">11.¿Que cosas cree que lo podrían hacer abandonar este tratamiento?</label>
+        </div>
+        <div style="overflow:hidden; display:block;">
+        </div>
+        <div class="row-2">
+            <div class="col-sm-3"></div>
+            <div class="checkbox inline">
+                <label>
+                    <input type="checkbox" id="AbandonarTratamientoNoModificarPeso"
+                           @(Model.AbandonarTratamientoNoModificarPeso.HasValue && Model.AbandonarTratamientoNoModificarPeso.Value ? "checked=checked" : "") />
+                    No modificar el peso
+                </label>
+            </div>
+            <div class="checkbox inline">
+                <label>
+                    <input type="checkbox" id="AbandonarTratamientoProblemasPersonales"
+                           @(Model.AbandonarTratamientoProblemasPersonales.HasValue && Model.AbandonarTratamientoProblemasPersonales.Value ? "checked=checked" : "") />                    
+                    Problemas personales
+                    
+                </label>
+            </div>
+            <div class="checkbox inline">
+                <label>
+                    <input type="checkbox" id="AbandonarTratamientoVidaSocial"
+                           @(Model.AbandonarTratamientoVidaSocial.HasValue && Model.AbandonarTratamientoVidaSocial.Value ? "checked=checked" : "") />
+                    Vida Social
+                
+                </label>
+            </div>
+            <div class="checkbox inline">
+                <label>
+                    <input type="checkbox" id="AbandonarTratamientoModificarloPoco"
+                           @(Model.AbandonarTratamientoModificarloPoco.HasValue && Model.AbandonarTratamientoModificarloPoco.Value ? "checked=checked" : "") />
+                    Modificarlo poco
+                </label>
+            </div>
+        </div>
+
+        <div class="row-2" style="width:112%">
+            <div class="col-sm-3"></div>
+            <div class="checkbox inline" style="right:30px">
+                <label>
+                    <input type="checkbox" id="AbandonarTratamientoProblemasEconomicos"
+                           @(Model.AbandonarTratamientoProblemasEconomicos.HasValue && Model.AbandonarTratamientoProblemasEconomicos.Value ? "checked=checked" : "") />                    
+                    Problemas económicos
+                </label>
+            </div>
+            <div class="checkbox inline" style="right:30px">
+                <label>
+                    <input type="checkbox" id="AbandonarTratamientoSentirsePresionado"
+                           @(Model.AbandonarTratamientoSentirsePresionado.HasValue && Model.AbandonarTratamientoSentirsePresionado.Value ? "checked=checked" : "") />
+                    Sentirse presionado
+                </label>
+            </div>
+            <div class="checkbox inline" style="right:30px;width:17%">
+                <label>
+                    <input type="checkbox" id="AbandonarTratamientoSalirUnaVezYAbandonar"
+                           @(Model.AbandonarTratamientoSalirUnaVezYAbandonar.HasValue && Model.AbandonarTratamientoSalirUnaVezYAbandonar.Value ? "checked=checked" : "") />
+                    Salir una vez y abandonar
+                </label>
+            </div>
+            <div class="checkbox inline" style="width:17%;right:54px">
+                <label>
+                    <input type="checkbox" id="AbandonarTratamientoLlevarseMalConElEquipo"
+                           @(Model.AbandonarTratamientoLlevarseMalConElEquipo.HasValue && Model.AbandonarTratamientoLlevarseMalConElEquipo.Value ? "checked=checked" : "") />
+                    Llevarse mal con el equipo
+                </label>
+            </div>
+        </div>
+        <div class="row-2">
+            <div class="col-sm-3"></div>
+            <div class="checkbox inline">
+                <label>
+                    <input type="checkbox" id="AbandonarTratamientoAburrirseDeLaDieta"
+                           @(Model.AbandonarTratamientoAburrirseDeLaDieta.HasValue && Model.AbandonarTratamientoAburrirseDeLaDieta.Value ? "checked=checked" : "") />
+                    Aburrirse de la dieta
+                </label>
+            </div>
+            <div class="checkbox inline">
+                <label>
+                    <input type="checkbox" id="AbandonarTratamientoDistanciaALaQueVive"
+                           @(Model.AbandonarTratamientoDistanciaALaQueVive.HasValue && Model.AbandonarTratamientoDistanciaALaQueVive.Value ? "checked=checked" : "") />
+                    Distancia a la que vive
+                </label>
+            </div>
+            <div class="checkbox inline">
+                <label>
+                    <input type="checkbox" id="AbandonarTratamientoPocoApoyoFamiliar"
+                           @(Model.AbandonarTratamientoPocoApoyoFamiliar.HasValue && Model.AbandonarTratamientoPocoApoyoFamiliar.Value ? "checked=checked" : "") />
+                    Poco apoyo familiar
+                </label>
+            </div>
+        </div>
+        <div class="row-2">
+            <div class="col-sm-3"></div>
+        </div>
+
+        <div class="form-group" style="width:71%">
+        <label style="margin-left:10px"  >Otra</label>
+            <label style ="margin-left:123px;width:76%">¿Cuales?
+                <input type="text" class="form-control" name="AbandonarTratamientoOtras" value="@Model.AbandonarTratamientoOtras" style="width:87%;"/>
+            </label>
+        </div>
+
+        
+        <div class="margin-arriba-abajo" style="width:100%;float:left">
+            <div class="col-sm-2"></div>
+            <label class="col-sm-10">12.¿A que atribuye su peso actual?</label>
+        </div>
+        <div style="overflow:hidden; display:block;width:100%;">
+        </div>
+        <div class="row-3">
+            <div class="col-sm-3"></div>
+            <div class="checkbox inline">
+                <label>
+                    <input type="checkbox" id="PesoActualAlimentacion"
+                           @(Model.PesoActualAlimentacion.HasValue && Model.PesoActualAlimentacion.Value ? "checked=checked" : "") /> Alimentación
+                </label>
+            </div>
+            <div class="checkbox inline">
+                <label>
+                    <input type="checkbox" id="PesoActualAnsiedad"
+                           @(Model.PesoActualAnsiedad.HasValue && Model.PesoActualAnsiedad.Value ? "checked=checked" : "") /> Ansiedad
+                </label>
+            </div>
+            <div class="checkbox inline">
+                <label>
+                    <input type="checkbox" id="PesoActualProblemasDeSalud"
+                           @(Model.PesoActualProblemasDeSalud.HasValue && Model.PesoActualProblemasDeSalud.Value ? "checked=checked" : "") /> Problemas de Salud
+                </label>
+            </div>
+            <div class="checkbox inline">
+                <label>
+                    <input type="checkbox" id="PesoActualEmbarazos"
+                           @(Model.PesoActualEmbarazos.HasValue && Model.PesoActualEmbarazos.Value ? "checked=checked" : "") /> Embarazos
+                </label>
+            </div>
+        </div>
+        <div class="row-3">
+            <div class="col-sm-3"></div>
+            <div class="checkbox inline">
+                <label>
+                    <input type="checkbox" id="PesoActualAlcohol"
+                           @(Model.PesoActualAlcohol.HasValue && Model.PesoActualAlcohol.Value? "checked=checked" : "") /> Alcohol
+                </label>
+            </div>
+            <div class="checkbox inline">
+                <label>
+                    <input type="checkbox" id="PesoActualEstres"
+                           @(Model.PesoActualEstres.HasValue && Model.PesoActualEstres.Value? "checked=checked" : "") /> Estrés
+                </label>
+            </div>
+            <div class="checkbox inline">
+                <label>
+                    <input type="checkbox" id="PesoActualMetabolismo"
+                           @(Model.PesoActualMetabolismo.HasValue && Model.PesoActualMetabolismo.Value ? "checked=checked" : "") /> Metabolismo
+                </label>
+            </div>
+            <div class="checkbox inline">
+                <label>
+                    <input type="checkbox" id="PesoActualHerencia"
+                           @(Model.PesoActualHerencia.HasValue && Model.PesoActualHerencia.Value ? "checked=checked" : "") /> Herencia
+                </label>
+            </div>
+        </div>
+        <div class="row-3">
+            <div class="col-sm-3"></div>
+            <div class="checkbox inline">
+                <label>
+                    <input type="checkbox" id="PesoActualPerdidas"
+                           @(Model.PesoActualPerdidas.HasValue && Model.PesoActualPerdidas.Value? "checked=checked" : "") /> Pérdidas
+                </label>
+            </div>
+            <div class="checkbox inline">
+                <label>
+                    <input type="checkbox" id="PesoActualMenopausia"
+                           @(Model.PesoActualMenopausia.HasValue && Model.PesoActualMenopausia.Value? "checked=checked" : "") /> Menopausia
+                </label>
+            </div>
+            <div class="form-group" style="margin-left:15px;width:35%">
+                <label>
+                    <input type="checkbox" @(Model.PesoActualOtros.HasValue && Model.PesoActualOtros.Value ? "checked=checked" : "")
+                           id="PesoActualOtros" />Otros
+                </label>
+                <input type="text" class="form-control" name="PesoActualOtrosTexto" value="@Model.PesoActualOtrosTexto" style="width:75%"/>
+            </div>
+        </div>
+
+        @*<div class="col-sm-3"></div>
+        <div class="form-group" style="margin-left:15px;">
+        <label><input type="checkbox" @(Model.PesoActualOtros.HasValue && Model.PesoActualOtros.Value ? "checked=checked" : "")
+                        id="PesoActualOtros" />Otros</label>
+            <input type="text" class="form-control" name="PesoActualOtrosTexto" value="@Model.PesoActualOtrosTexto" />
+        </div>*@
+<section class="col-sm-12" style="margin-left:12%; margin-top:10px">
+    <section class="col-sm-12">
+        <section class="col-sm-5 overflow">
+                <label class="col-sm-7 titulo-control overflow">13. ¿Su peso al nacer?</label>
+                <article class="col-sm-3 overflow" style="right:35px"><input type="text" name="PesoNacer" value="@Model.PesoNacer" style="width:125%"/></article>
+                <div class="col-sm-2 overflow" style="right:47px">kg.</div>
+            </section>
+            <section class="col-sm-5 overflow" style="right:77px">
+                <label class="col-sm-7 titulo-control overflow">14. El máximo de adulto</label>
+                <article class="col-sm-3 overflow" style="right:30px"><input  type="text" name="MaximoAdulto" value="@Model.MaximoAdulto" style="width:125%"/></article>
+                <div class="col-sm-1 overflow" style="right:40px">kg.</div>
+            </section>
+    </section>
+    <section class="col-sm-12"style="margin-top:5px;margin-bottom:5px">
+        <section class="col-sm-4 overflow" style="padding-right:0px;">
+            <label class="col-sm-7 overflow titulo-control">15. El mínimo</label>
+            <article class="col-sm-3 overflow" style="right:0px;width:31%;padding-right:0px"><input type="text" name="Minimo" value="@Model.Minimo" style="width:100%" /></article>
+            <div class="col-sm-2 overflow" style="padding-left:2px;width:9%;">kg.</div>
+        </section>
+        <section class="col-sm-4 overflow" style="padding-right:0px">
+            <div class="col-sm-7 overflow titulo-control">¿A qué edad?</div>
+            <article class="col-sm-3 overflow" style="padding-right:0px;width:31%;left:8px"><input type="text" name="Edad" value="@Model.Edad" style="width:100%"/></article>
+            <div class="col-sm-2 overflow" style="padding-right:0px;padding-left:9px;width:10%">kg.</div>
+        </section>
+        <section class="col-sm-4 overflow" style="padding-left:0px;">
+            <label class="col-sm-7 overflow titulo-control" style="padding-left:15px">16. ¿El deseado?</label>
+            <article class="col-sm-3 overflow" style="right:55px;padding-right:0px;"><input type="text" name="Deseado" value="@Model.Deseado" style="width:100%"/></article>
+            <div class="col-sm-2 overflow" style="right:64px;padding-left:10px;">kg.</div>
+        </section>
+    </section>
+    <section class="col-sm-12" style="margin-left:1.5%">
+        <section class="col-sm-2 overflow">
+            <label class="titulo-control titulo-radio">17. Su peso está</label>
+        </section>
+        <section class="col-sm-7 overflow">
+            <section class="col-sm-3 overflow">
+                <div>
+                    <input type="radio" name="PesoEsta" value="Estable"
+                           @(Model.PesoEsta == "Estable" ? "checked=checked" : "") />
+                    Estable
+                </div>
+            </section>
+            <section class="col-sm-3 overflow">
+                <div>
+                    <input type="radio" name="PesoEsta" value="Subiendo"
+                           @(Model.PesoEsta == "Subiendo" ? "checked=checked" : "") />
+                    Subiendo
+                </div>
+            </section>
+            <section class="col-sm-3 overflow">
+                <div>
+                    <input type="radio" name="PesoEsta" value="Bajando"
+                           @(Model.PesoEsta == "Bajando" ? "checked=checked" : "") />
+                    Bajando
+                </div>
+            </section>
+        </section>
+    </section>
+    <section class="col-sm-12" style="margin-left: 1.5%;">
+        <label class="col-sm-8 overflow" style="width:74%;margin-bottom:20px">
+            18. Hay algún peso que a su organismo le resulte cómodo y al cual tienda a volver con facilidad
+        </label>
+        <article class="col-sm-1 overflow" style="width:12.5%">
+            <input type="text" name="PesoComodo" value="@Model.PesoComodo" style="width:100%" />
+        </article>
+        <div class="col-sm-1 overflow" style="right:30px"> kg.</div>
+    </section>
+</section>
+</form>
+<div class="leyenda">
+    La sabiduría de la vida es cambiar lo que podemos
+</div>
+
+<div class="container-botones-inferiores" style="width:100%;float:left">
+    @Html.ActionLink("Anterior", "AnteriorPaso", "Pasos", new { id = ViewBag.Pagina }, new { @class = "btn btn-info", onclick = "javascript:subirDatos();" })
+    <label style="font-family:monospace;font-size:smaller; font-weight:bolder;">
+        Pagina 3 de 18
+    </label>
+    @Html.ActionLink("Siguiente", "ProximoPaso", "Pasos", new { id = ViewBag.Pagina }, new { @class = "btn btn-info", onclick = "javascript:subirDatos();" })
+</div>

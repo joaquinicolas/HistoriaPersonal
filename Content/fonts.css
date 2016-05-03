@@ -1,0 +1,32 @@
+﻿@font-face {
+    font-family: "cormi";
+    font-style: normal;
+    font-weight: normal;
+    src: url("fonts/cormi.eot?#iefix8r4gct") format("embedded-opentype"), url("fonts/cormi.woff?8r4gct") format("woff"), url("fonts/cormi.ttf?8r4gct") format("truetype"), url("fonts/cormi.svg?8r4gct#cormi") format("svg");
+}
+
+@font-face {
+    font-family: "cormillot";
+    font-style: normal;
+    font-weight: normal;
+    src: url("fonts/cormillot.eot?#iefix8r4gct") format("embedded-opentype"), url("fonts/cormillot.woff?8r4gct") format("woff"), url("fonts/cormillot.ttf?8r4gct") format("truetype"), url("fonts/cormillot.svg?8r4gct#cormi") format("svg");
+}
+
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: "cormi";
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-transform: none;
+    font-size: 30px;
+}
+
+.icon-logout::before {
+    content: "l";
+}
+
+.icon-save::before {
+    content: "g";
+}

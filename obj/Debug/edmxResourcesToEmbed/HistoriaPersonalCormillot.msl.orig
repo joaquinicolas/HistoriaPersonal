@@ -1,0 +1,610 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HistoriaPersonalCormillotModelStoreContainer" CdmEntityContainer="HistoriaPersonalCormillotEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="HistoriaPersonalCormillotModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DatosPersonales">
+      <EntityTypeMapping TypeName="HistoriaPersonalCormillotModel.DatosPersonales">
+        <MappingFragment StoreEntitySet="DatosPersonales">
+          <ScalarProperty Name="ConocioClinicaOtro" ColumnName="ConocioClinicaOtro" />
+          <ScalarProperty Name="ConocioClinicaInternet" ColumnName="ConocioClinicaInternet" />
+          <ScalarProperty Name="ConocioClinicaTV" ColumnName="ConocioClinicaTV" />
+          <ScalarProperty Name="ConocioClinicaRevistas" ColumnName="ConocioClinicaRevistas" />
+          <ScalarProperty Name="ConocioClinicaDiarios" ColumnName="ConocioClinicaDiarios" />
+          <ScalarProperty Name="ConocioClinicaOtroPaciente" ColumnName="ConocioClinicaOtroPaciente" />
+          <ScalarProperty Name="PacienteAño" ColumnName="PacienteAño" />
+          <ScalarProperty Name="PacienteSiNo" ColumnName="PacienteSiNo" />
+          <ScalarProperty Name="NecesidadTel" ColumnName="NecesidadTel" />
+          <ScalarProperty Name="NecesidadNombre" ColumnName="NecesidadNombre" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="TelBeeper" ColumnName="TelBeeper" />
+          <ScalarProperty Name="TelCelular" ColumnName="TelCelular" />
+          <ScalarProperty Name="HorarioMensajesHasta2" ColumnName="HorarioMensajesHasta2" />
+          <ScalarProperty Name="HorarioMensajesDesde2" ColumnName="HorarioMensajesDesde2" />
+          <ScalarProperty Name="TelMensajes2" ColumnName="TelMensajes2" />
+          <ScalarProperty Name="HorarioMensajesHasta1" ColumnName="HorarioMensajesHasta1" />
+          <ScalarProperty Name="HorarioMensajesDesde1" ColumnName="HorarioMensajesDesde1" />
+          <ScalarProperty Name="TelMensajes1" ColumnName="TelMensajes1" />
+          <ScalarProperty Name="DireccionCorrespondencia" ColumnName="DireccionCorrespondencia" />
+          <ScalarProperty Name="ActividadActual" ColumnName="ActividadActual" />
+          <ScalarProperty Name="EstudiosCursados" ColumnName="EstudiosCursados" />
+          <ScalarProperty Name="TelEmergenciaObraSocial" ColumnName="TelEmergenciaObraSocial" />
+          <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="usuario_Id" ColumnName="usuario_Id" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="NombreyApellido" ColumnName="NombreyApellido" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+          <ScalarProperty Name="ViveCon" ColumnName="ViveCon" />
+          <ScalarProperty Name="Hijos" ColumnName="Hijos" />
+          <ScalarProperty Name="EdadesySexo" ColumnName="EdadesySexo" />
+          <ScalarProperty Name="ObraSocialoPrepago" ColumnName="ObraSocialoPrepago" />
+          <ScalarProperty Name="NroAfiliado" ColumnName="NroAfiliado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="HistoriaPersonalCormillotModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rol">
+      <EntityTypeMapping TypeName="HistoriaPersonalCormillotModel.Rol">
+        <MappingFragment StoreEntitySet="Rol">
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paso">
+      <EntityTypeMapping TypeName="HistoriaPersonalCormillotModel.Paso">
+        <MappingFragment StoreEntitySet="Paso">
+          <ScalarProperty Name="Orden" ColumnName="Orden" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RelacionTratamientoMotivacion">
+      <EntityTypeMapping TypeName="HistoriaPersonalCormillotModel.RelacionTratamientoMotivacion">
+        <MappingFragment StoreEntitySet="RelacionTratamientoMotivacion">
+          <ScalarProperty Name="BajarPesoV" ColumnName="BajarPesoV" />
+          <ScalarProperty Name="SubirPesoV" ColumnName="SubirPesoV" />
+          <ScalarProperty Name="Hierbas" ColumnName="Hierbas" />
+          <ScalarProperty Name="CirugiaPlastica" ColumnName="CirugiaPlastica" />
+          <ScalarProperty Name="CirugiaBariatrica" ColumnName="CirugiaBariatrica" />
+          <ScalarProperty Name="Medicamentos" ColumnName="Medicamentos" />
+          <ScalarProperty Name="EsperaTratamiento" ColumnName="EsperaTratamiento" />
+          <ScalarProperty Name="ConfianzaCambiarPeso" ColumnName="ConfianzaCambiarPeso" />
+          <ScalarProperty Name="ExpectativaCambiarPeso" ColumnName="ExpectativaCambiarPeso" />
+          <ScalarProperty Name="TiempoHacerConPeso" ColumnName="TiempoHacerConPeso" />
+          <ScalarProperty Name="BajarPeso" ColumnName="BajarPeso" />
+          <ScalarProperty Name="SubirPeso" ColumnName="SubirPeso" />
+          <ScalarProperty Name="MantenerPeso" ColumnName="MantenerPeso" />
+          <ScalarProperty Name="Motivacion" ColumnName="Motivacion" />
+          <ScalarProperty Name="QueDeseaCambiar" ColumnName="QueDeseaCambiar" />
+          <ScalarProperty Name="Razon3" ColumnName="Razon3" />
+          <ScalarProperty Name="Razon2" ColumnName="Razon2" />
+          <ScalarProperty Name="Razon1" ColumnName="Razon1" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Consejo">
+      <EntityTypeMapping TypeName="HistoriaPersonalCormillotModel.Consejo">
+        <MappingFragment StoreEntitySet="Consejo">
+          <ScalarProperty Name="SrcImagen" ColumnName="SrcImagen" />
+          <ScalarProperty Name="IdPaso" ColumnName="IdPaso" />
+          <ScalarProperty Name="TextoDerecho" ColumnName="TextoDerecho" />
+          <ScalarProperty Name="TextoIzquierdo" ColumnName="TextoIzquierdo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RelacionTratamientoMotivacion2">
+      <EntityTypeMapping TypeName="HistoriaPersonalCormillotModel.RelacionTratamientoMotivacion2">
+        <MappingFragment StoreEntitySet="RelacionTratamientoMotivacion2">
+          <ScalarProperty Name="PesoActualOtrosTexto" ColumnName="PesoActualOtrosTexto" />
+          <ScalarProperty Name="PesoActualOtros" ColumnName="PesoActualOtros" />
+          <ScalarProperty Name="PesoActualMenopausia" ColumnName="PesoActualMenopausia" />
+          <ScalarProperty Name="PesoActualPerdidas" ColumnName="PesoActualPerdidas" />
+          <ScalarProperty Name="PesoActualDepresion" ColumnName="PesoActualDepresion" />
+          <ScalarProperty Name="PesoActualDejarDeFumar" ColumnName="PesoActualDejarDeFumar" />
+          <ScalarProperty Name="PesoActualMedicacion" ColumnName="PesoActualMedicacion" />
+          <ScalarProperty Name="PesoActualSedentarismo" ColumnName="PesoActualSedentarismo" />
+          <ScalarProperty Name="PesoActualHerencia" ColumnName="PesoActualHerencia" />
+          <ScalarProperty Name="PesoActualMetabolismo" ColumnName="PesoActualMetabolismo" />
+          <ScalarProperty Name="PesoActualEstres" ColumnName="PesoActualEstres" />
+          <ScalarProperty Name="PesoActualAlcohol" ColumnName="PesoActualAlcohol" />
+          <ScalarProperty Name="PesoActualEmbarazos" ColumnName="PesoActualEmbarazos" />
+          <ScalarProperty Name="PesoActualProblemasDeSalud" ColumnName="PesoActualProblemasDeSalud" />
+          <ScalarProperty Name="PesoActualAnsiedad" ColumnName="PesoActualAnsiedad" />
+          <ScalarProperty Name="PesoActualAlimentacion" ColumnName="PesoActualAlimentacion" />
+          <ScalarProperty Name="AbandonarTratamientoOtras" ColumnName="AbandonarTratamientoOtras" />
+          <ScalarProperty Name="AbandonarTratamientoPocoApoyoFamiliar" ColumnName="AbandonarTratamientoPocoApoyoFamiliar" />
+          <ScalarProperty Name="AbandonarTratamientoDistanciaALaQueVive" ColumnName="AbandonarTratamientoDistanciaALaQueVive" />
+          <ScalarProperty Name="AbandonarTratamientoAburrirseDeLaDieta" ColumnName="AbandonarTratamientoAburrirseDeLaDieta" />
+          <ScalarProperty Name="AbandonarTratamientoLlevarseMalConElEquipo" ColumnName="AbandonarTratamientoLlevarseMalConElEquipo" />
+          <ScalarProperty Name="AbandonarTratamientoSalirUnaVezYAbandonar" ColumnName="AbandonarTratamientoSalirUnaVezYAbandonar" />
+          <ScalarProperty Name="AbandonarTratamientoSentirsePresionado" ColumnName="AbandonarTratamientoSentirsePresionado" />
+          <ScalarProperty Name="AbandonarTratamientoProblemasEconomicos" ColumnName="AbandonarTratamientoProblemasEconomicos" />
+          <ScalarProperty Name="AbandonarTratamientoModificarloPoco" ColumnName="AbandonarTratamientoModificarloPoco" />
+          <ScalarProperty Name="AbandonarTratamientoVidaSocial" ColumnName="AbandonarTratamientoVidaSocial" />
+          <ScalarProperty Name="AbandonarTratamientoProblemasPersonales" ColumnName="AbandonarTratamientoProblemasPersonales" />
+          <ScalarProperty Name="AbandonarTratamientoNoModificarPeso" ColumnName="AbandonarTratamientoNoModificarPeso" />
+          <ScalarProperty Name="BarreraTratamientoCual" ColumnName="BarreraTratamientoCual" />
+          <ScalarProperty Name="BarreraTratamientoOtro" ColumnName="BarreraTratamientoOtro" />
+          <ScalarProperty Name="BarreraTratamientoMotivacion" ColumnName="BarreraTratamientoMotivacion" />
+          <ScalarProperty Name="BarreraTratamientoTrabajo" ColumnName="BarreraTratamientoTrabajo" />
+          <ScalarProperty Name="BarreraTratamientoVidaSocial" ColumnName="BarreraTratamientoVidaSocial" />
+          <ScalarProperty Name="BarreraTratamientoFamilia" ColumnName="BarreraTratamientoFamilia" />
+          <ScalarProperty Name="BarreraTratamientoEstadoDeAnimo" ColumnName="BarreraTratamientoEstadoDeAnimo" />
+          <ScalarProperty Name="BarreraTratamientoEstres" ColumnName="BarreraTratamientoEstres" />
+          <ScalarProperty Name="BarreraTratamientoDesorden" ColumnName="BarreraTratamientoDesorden" />
+          <ScalarProperty Name="BarreraTratamientoHorarios" ColumnName="BarreraTratamientoHorarios" />
+          <ScalarProperty Name="MotivoTratamientosAnterioresFallaron" ColumnName="MotivoTratamientosAnterioresFallaron" />
+          <ScalarProperty Name="CualEfectoNegativoTratamientosAnteriores" ColumnName="CualEfectoNegativoTratamientosAnteriores" />
+          <ScalarProperty Name="EfectoNegativoTratamientosAnteriores" ColumnName="EfectoNegativoTratamientosAnteriores" />
+          <ScalarProperty Name="CuantoBajoEnTratamientosAnteriores" ColumnName="CuantoBajoEnTratamientosAnteriores" />
+          <ScalarProperty Name="TratamientoCuales" ColumnName="TratamientoCuales" />
+          <ScalarProperty Name="TratamientoOtros" ColumnName="TratamientoOtros" />
+          <ScalarProperty Name="TratamientoMedicamentos" ColumnName="TratamientoMedicamentos" />
+          <ScalarProperty Name="TratamientoCirugia" ColumnName="TratamientoCirugia" />
+          <ScalarProperty Name="TratamientoInternet" ColumnName="TratamientoInternet" />
+          <ScalarProperty Name="TratamientoMedicoODietista" ColumnName="TratamientoMedicoODietista" />
+          <ScalarProperty Name="TratamientoDietasPorSuCuenta" ColumnName="TratamientoDietasPorSuCuenta" />
+          <ScalarProperty Name="TratamientoHomeopatia" ColumnName="TratamientoHomeopatia" />
+          <ScalarProperty Name="TratamientoActividadFisica" ColumnName="TratamientoActividadFisica" />
+          <ScalarProperty Name="TratamientoPsicoterapia" ColumnName="TratamientoPsicoterapia" />
+          <ScalarProperty Name="TratamientoAlco" ColumnName="TratamientoAlco" />
+          <ScalarProperty Name="TratamientoDietaClub" ColumnName="TratamientoDietaClub" />
+          <ScalarProperty Name="TratamientoPsiquiatria" ColumnName="TratamientoPsiquiatria" />
+          <ScalarProperty Name="TratamientoClinicaCormillot" ColumnName="TratamientoClinicaCormillot" />
+          <ScalarProperty Name="CuantosTratamiento" ColumnName="CuantosTratamiento" />
+          <ScalarProperty Name="HaRealizadoTratamiento" ColumnName="HaRealizadoTratamiento" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RelacionTratamientoMotivacion3">
+      <EntityTypeMapping TypeName="HistoriaPersonalCormillotModel.RelacionTratamientoMotivacion3">
+        <MappingFragment StoreEntitySet="RelacionTratamientoMotivacion3">
+          <ScalarProperty Name="Ahora" ColumnName="Ahora" />
+          <ScalarProperty Name="GustariaSer" ColumnName="GustariaSer" />
+          <ScalarProperty Name="Sillas" ColumnName="Sillas" />
+          <ScalarProperty Name="Pasillos" ColumnName="Pasillos" />
+          <ScalarProperty Name="Asiento" ColumnName="Asiento" />
+          <ScalarProperty Name="Ridiculo" ColumnName="Ridiculo" />
+          <ScalarProperty Name="Economia" ColumnName="Economia" />
+          <ScalarProperty Name="VidaLaboral" ColumnName="VidaLaboral" />
+          <ScalarProperty Name="VidaPareja" ColumnName="VidaPareja" />
+          <ScalarProperty Name="VidaSocial" ColumnName="VidaSocial" />
+          <ScalarProperty Name="RelacionFamiliar" ColumnName="RelacionFamiliar" />
+          <ScalarProperty Name="CalidadVida" ColumnName="CalidadVida" />
+          <ScalarProperty Name="PesoComodo" ColumnName="PesoComodo" />
+          <ScalarProperty Name="PesoEsta" ColumnName="PesoEsta" />
+          <ScalarProperty Name="Deseado" ColumnName="Deseado" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="Minimo" ColumnName="Minimo" />
+          <ScalarProperty Name="MaximoAdulto" ColumnName="MaximoAdulto" />
+          <ScalarProperty Name="PesoNacer" ColumnName="PesoNacer" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AntecedentesFamiliares">
+      <EntityTypeMapping TypeName="HistoriaPersonalCormillotModel.AntecedentesFamiliares">
+        <MappingFragment StoreEntitySet="AntecedentesFamiliares">
+          <ScalarProperty Name="ViveHijos" ColumnName="ViveHijos" />
+          <ScalarProperty Name="ViveHnos" ColumnName="ViveHnos" />
+          <ScalarProperty Name="ViveConyuge" ColumnName="ViveConyuge" />
+          <ScalarProperty Name="ViveAbuelos" ColumnName="ViveAbuelos" />
+          <ScalarProperty Name="ViveMadre" ColumnName="ViveMadre" />
+          <ScalarProperty Name="VivePadre" ColumnName="VivePadre" />
+          <ScalarProperty Name="CausaMenos60" ColumnName="CausaMenos60" />
+          <ScalarProperty Name="QuienMenos60" ColumnName="QuienMenos60" />
+          <ScalarProperty Name="FamiliaMenos60" ColumnName="FamiliaMenos60" />
+          <ScalarProperty Name="DrogasHijos" ColumnName="DrogasHijos" />
+          <ScalarProperty Name="DrogasHnos" ColumnName="DrogasHnos" />
+          <ScalarProperty Name="DrogasConyuge" ColumnName="DrogasConyuge" />
+          <ScalarProperty Name="DrogasAbuelos" ColumnName="DrogasAbuelos" />
+          <ScalarProperty Name="DrogasMadre" ColumnName="DrogasMadre" />
+          <ScalarProperty Name="DrogasPadre" ColumnName="DrogasPadre" />
+          <ScalarProperty Name="PsicologicosHijos" ColumnName="PsicologicosHijos" />
+          <ScalarProperty Name="PsicologicosHnos" ColumnName="PsicologicosHnos" />
+          <ScalarProperty Name="PsicologicosConyuge" ColumnName="PsicologicosConyuge" />
+          <ScalarProperty Name="PsicologicosAbuelos" ColumnName="PsicologicosAbuelos" />
+          <ScalarProperty Name="PsicologicosMadre" ColumnName="PsicologicosMadre" />
+          <ScalarProperty Name="PsicologicosPadre" ColumnName="PsicologicosPadre" />
+          <ScalarProperty Name="PreocupacionHijos" ColumnName="PreocupacionHijos" />
+          <ScalarProperty Name="PreocupacionHnos" ColumnName="PreocupacionHnos" />
+          <ScalarProperty Name="PreocupacionConyuge" ColumnName="PreocupacionConyuge" />
+          <ScalarProperty Name="PreocupacionAbuelos" ColumnName="PreocupacionAbuelos" />
+          <ScalarProperty Name="PreocupacionMadre" ColumnName="PreocupacionMadre" />
+          <ScalarProperty Name="PreocupacionPadre" ColumnName="PreocupacionPadre" />
+          <ScalarProperty Name="DepresionHijos" ColumnName="DepresionHijos" />
+          <ScalarProperty Name="DepresionHnos" ColumnName="DepresionHnos" />
+          <ScalarProperty Name="DepresionConyuge" ColumnName="DepresionConyuge" />
+          <ScalarProperty Name="DepresionAbuelos" ColumnName="DepresionAbuelos" />
+          <ScalarProperty Name="DepresionMadre" ColumnName="DepresionMadre" />
+          <ScalarProperty Name="DepresionPadre" ColumnName="DepresionPadre" />
+          <ScalarProperty Name="CancerHijos" ColumnName="CancerHijos" />
+          <ScalarProperty Name="CancerHnos" ColumnName="CancerHnos" />
+          <ScalarProperty Name="CancerConyuge" ColumnName="CancerConyuge" />
+          <ScalarProperty Name="CancerAbuelos" ColumnName="CancerAbuelos" />
+          <ScalarProperty Name="CancerMadre" ColumnName="CancerMadre" />
+          <ScalarProperty Name="CancerPadre" ColumnName="CancerPadre" />
+          <ScalarProperty Name="SubitaHijos" ColumnName="SubitaHijos" />
+          <ScalarProperty Name="SubitaHnos" ColumnName="SubitaHnos" />
+          <ScalarProperty Name="SubitaConyuge" ColumnName="SubitaConyuge" />
+          <ScalarProperty Name="SubitaAbuelos" ColumnName="SubitaAbuelos" />
+          <ScalarProperty Name="SubitaMadre" ColumnName="SubitaMadre" />
+          <ScalarProperty Name="SubitaPadre" ColumnName="SubitaPadre" />
+          <ScalarProperty Name="HipertensionHijos" ColumnName="HipertensionHijos" />
+          <ScalarProperty Name="HipertensionHnos" ColumnName="HipertensionHnos" />
+          <ScalarProperty Name="HipertensionConyuge" ColumnName="HipertensionConyuge" />
+          <ScalarProperty Name="HipertensionAbuelos" ColumnName="HipertensionAbuelos" />
+          <ScalarProperty Name="HipertensionMadre" ColumnName="HipertensionMadre" />
+          <ScalarProperty Name="HipertensionPadre" ColumnName="HipertensionPadre" />
+          <ScalarProperty Name="DerrameHijos" ColumnName="DerrameHijos" />
+          <ScalarProperty Name="DerrameHnos" ColumnName="DerrameHnos" />
+          <ScalarProperty Name="DerrameConyuge" ColumnName="DerrameConyuge" />
+          <ScalarProperty Name="DerrameAbuelos" ColumnName="DerrameAbuelos" />
+          <ScalarProperty Name="DerrameMadre" ColumnName="DerrameMadre" />
+          <ScalarProperty Name="DerramePadre" ColumnName="DerramePadre" />
+          <ScalarProperty Name="CardiacaHijos" ColumnName="CardiacaHijos" />
+          <ScalarProperty Name="CardiacaHnos" ColumnName="CardiacaHnos" />
+          <ScalarProperty Name="CardiacaConyuge" ColumnName="CardiacaConyuge" />
+          <ScalarProperty Name="CardiacaAbuelos" ColumnName="CardiacaAbuelos" />
+          <ScalarProperty Name="CardiacaMadre" ColumnName="CardiacaMadre" />
+          <ScalarProperty Name="CardiacaPadre" ColumnName="CardiacaPadre" />
+          <ScalarProperty Name="TrigliceridosHijos" ColumnName="TrigliceridosHijos" />
+          <ScalarProperty Name="TrigliceridosHnos" ColumnName="TrigliceridosHnos" />
+          <ScalarProperty Name="TrigliceridosConyuge" ColumnName="TrigliceridosConyuge" />
+          <ScalarProperty Name="TrigliceridosAbuelos" ColumnName="TrigliceridosAbuelos" />
+          <ScalarProperty Name="TrigliceridosMadre" ColumnName="TrigliceridosMadre" />
+          <ScalarProperty Name="TrigliceridosPadre" ColumnName="TrigliceridosPadre" />
+          <ScalarProperty Name="ColesterolHijos" ColumnName="ColesterolHijos" />
+          <ScalarProperty Name="ColesterolHnos" ColumnName="ColesterolHnos" />
+          <ScalarProperty Name="ColesterolConyuge" ColumnName="ColesterolConyuge" />
+          <ScalarProperty Name="ColesterolAbuelos" ColumnName="ColesterolAbuelos" />
+          <ScalarProperty Name="ColesterolMadre" ColumnName="ColesterolMadre" />
+          <ScalarProperty Name="ColesterolPadre" ColumnName="ColesterolPadre" />
+          <ScalarProperty Name="DiabetesHijos" ColumnName="DiabetesHijos" />
+          <ScalarProperty Name="DiabetesHnos" ColumnName="DiabetesHnos" />
+          <ScalarProperty Name="DiabetesConyuge" ColumnName="DiabetesConyuge" />
+          <ScalarProperty Name="DiabetesAbuelos" ColumnName="DiabetesAbuelos" />
+          <ScalarProperty Name="DiabetesMadre" ColumnName="DiabetesMadre" />
+          <ScalarProperty Name="DiabetesPadre" ColumnName="DiabetesPadre" />
+          <ScalarProperty Name="ObesidadHijos" ColumnName="ObesidadHijos" />
+          <ScalarProperty Name="ObesidadHnos" ColumnName="ObesidadHnos" />
+          <ScalarProperty Name="ObesidadConyuge" ColumnName="ObesidadConyuge" />
+          <ScalarProperty Name="ObesidadAbuelos" ColumnName="ObesidadAbuelos" />
+          <ScalarProperty Name="ObesidadMadre" ColumnName="ObesidadMadre" />
+          <ScalarProperty Name="ObesidadPadre" ColumnName="ObesidadPadre" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SuEstadoClinico">
+      <EntityTypeMapping TypeName="HistoriaPersonalCormillotModel.SuEstadoClinico">
+        <MappingFragment StoreEntitySet="SuEstadoClinico">
+          <ScalarProperty Name="ComentarEstudio" ColumnName="ComentarEstudio" />
+          <ScalarProperty Name="RadioColon" ColumnName="RadioColon" />
+          <ScalarProperty Name="Antigeno" ColumnName="Antigeno" />
+          <ScalarProperty Name="UltimoExamenPros" ColumnName="UltimoExamenPros" />
+          <ScalarProperty Name="FrecuenciaDep" ColumnName="FrecuenciaDep" />
+          <ScalarProperty Name="RadioVello" ColumnName="RadioVello" />
+          <ScalarProperty Name="FechaUltimaM" ColumnName="FechaUltimaM" />
+          <ScalarProperty Name="RadioDolores" ColumnName="RadioDolores" />
+          <ScalarProperty Name="RadioEstadoAnimico" ColumnName="RadioEstadoAnimico" />
+          <ScalarProperty Name="FechaUltimoP" ColumnName="FechaUltimoP" />
+          <ScalarProperty Name="MetodoUsado" ColumnName="MetodoUsado" />
+          <ScalarProperty Name="RadioAnticonceptivo" ColumnName="RadioAnticonceptivo" />
+          <ScalarProperty Name="TiempoEmbarazo" ColumnName="TiempoEmbarazo" />
+          <ScalarProperty Name="RadioEmbarazada" ColumnName="RadioEmbarazada" />
+          <ScalarProperty Name="UltimaM" ColumnName="UltimaM" />
+          <ScalarProperty Name="Ciclo" ColumnName="Ciclo" />
+          <ScalarProperty Name="PrimerM" ColumnName="PrimerM" />
+          <ScalarProperty Name="RadioTratamientoPs" ColumnName="RadioTratamientoPs" />
+          <ScalarProperty Name="RadioDejariaMedicacion" ColumnName="RadioDejariaMedicacion" />
+          <ScalarProperty Name="RadioMedicacionActual" ColumnName="RadioMedicacionActual" />
+          <ScalarProperty Name="DuracionTratamientoPs" ColumnName="DuracionTratamientoPs" />
+          <ScalarProperty Name="CausaTratamientoPs" ColumnName="CausaTratamientoPs" />
+          <ScalarProperty Name="TratamientoPsicologico" ColumnName="TratamientoPsicologico" />
+          <ScalarProperty Name="DejariaMedicacion" ColumnName="DejariaMedicacion" />
+          <ScalarProperty Name="MedicacionActual" ColumnName="MedicacionActual" />
+          <ScalarProperty Name="MedicacionTomada" ColumnName="MedicacionTomada" />
+          <ScalarProperty Name="TuvoIntervenciones" ColumnName="TuvoIntervenciones" />
+          <ScalarProperty Name="SaludPeriodo" ColumnName="SaludPeriodo" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sintomas">
+      <EntityTypeMapping TypeName="HistoriaPersonalCormillotModel.Sintomas">
+        <MappingFragment StoreEntitySet="Sintomas">
+          <ScalarProperty Name="CansancioInexplicable" ColumnName="CansancioInexplicable" />
+          <ScalarProperty Name="SensibilidadFrio" ColumnName="SensibilidadFrio" />
+          <ScalarProperty Name="CabelloSeco" ColumnName="CabelloSeco" />
+          <ScalarProperty Name="UniasFragiles" ColumnName="UniasFragiles" />
+          <ScalarProperty Name="PielSeca" ColumnName="PielSeca" />
+          <ScalarProperty Name="EnfermedadTiroidea" ColumnName="EnfermedadTiroidea" />
+          <ScalarProperty Name="ProblemasVista" ColumnName="ProblemasVista" />
+          <ScalarProperty Name="ProblemasOido" ColumnName="ProblemasOido" />
+          <ScalarProperty Name="Ganglios" ColumnName="Ganglios" />
+          <ScalarProperty Name="PicazonDonde" ColumnName="PicazonDonde" />
+          <ScalarProperty Name="Picazon" ColumnName="Picazon" />
+          <ScalarProperty Name="PerdidaSangre" ColumnName="PerdidaSangre" />
+          <ScalarProperty Name="ProblemasGenitales" ColumnName="ProblemasGenitales" />
+          <ScalarProperty Name="ArticulacionesRojas" ColumnName="ArticulacionesRojas" />
+          <ScalarProperty Name="Hormigueos" ColumnName="Hormigueos" />
+          <ScalarProperty Name="Calambres" ColumnName="Calambres" />
+          <ScalarProperty Name="PiesHinchados" ColumnName="PiesHinchados" />
+          <ScalarProperty Name="InfeccionesPiernas" ColumnName="InfeccionesPiernas" />
+          <ScalarProperty Name="Varices" ColumnName="Varices" />
+          <ScalarProperty Name="DolorPiernasCaminar" ColumnName="DolorPiernasCaminar" />
+          <ScalarProperty Name="IncontinenciaUrinaria" ColumnName="IncontinenciaUrinaria" />
+          <ScalarProperty Name="PerdidaFuerzaOrinar" ColumnName="PerdidaFuerzaOrinar" />
+          <ScalarProperty Name="InfeccionViasUrinarias" ColumnName="InfeccionViasUrinarias" />
+          <ScalarProperty Name="CalculosUrinarios" ColumnName="CalculosUrinarios" />
+          <ScalarProperty Name="PresionAlta" ColumnName="PresionAlta" />
+          <ScalarProperty Name="Palpitaciones" ColumnName="Palpitaciones" />
+          <ScalarProperty Name="DolorPecho" ColumnName="DolorPecho" />
+          <ScalarProperty Name="ProblemasCardiacos" ColumnName="ProblemasCardiacos" />
+          <ScalarProperty Name="DificultadRespirarEsfuerzo" ColumnName="DificultadRespirarEsfuerzo" />
+          <ScalarProperty Name="SuenioDia" ColumnName="SuenioDia" />
+          <ScalarProperty Name="RespirarDormir" ColumnName="RespirarDormir" />
+          <ScalarProperty Name="Despierta" ColumnName="Despierta" />
+          <ScalarProperty Name="Ronca" ColumnName="Ronca" />
+          <ScalarProperty Name="Ronquera" ColumnName="Ronquera" />
+          <ScalarProperty Name="EnfermedadRespiratoria" ColumnName="EnfermedadRespiratoria" />
+          <ScalarProperty Name="CreeProblemaSalud" ColumnName="CreeProblemaSalud" />
+          <ScalarProperty Name="SienteMal" ColumnName="SienteMal" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sintomas2">
+      <EntityTypeMapping TypeName="HistoriaPersonalCormillotModel.Sintomas2">
+        <MappingFragment StoreEntitySet="Sintomas2">
+          <ScalarProperty Name="SensacionVacio" ColumnName="SensacionVacio" />
+          <ScalarProperty Name="SoloMundo" ColumnName="SoloMundo" />
+          <ScalarProperty Name="Aburrimiento" ColumnName="Aburrimiento" />
+          <ScalarProperty Name="SentimientoCulpa" ColumnName="SentimientoCulpa" />
+          <ScalarProperty Name="Indecision" ColumnName="Indecision" />
+          <ScalarProperty Name="DificultadConcentrarse" ColumnName="DificultadConcentrarse" />
+          <ScalarProperty Name="Aislamiento" ColumnName="Aislamiento" />
+          <ScalarProperty Name="PocaInteraccion" ColumnName="PocaInteraccion" />
+          <ScalarProperty Name="PerdidaInteres" ColumnName="PerdidaInteres" />
+          <ScalarProperty Name="PocoPlacer" ColumnName="PocoPlacer" />
+          <ScalarProperty Name="LlantoFacil" ColumnName="LlantoFacil" />
+          <ScalarProperty Name="Triste" ColumnName="Triste" />
+          <ScalarProperty Name="Mareos" ColumnName="Mareos" />
+          <ScalarProperty Name="DoloresCabeza" ColumnName="DoloresCabeza" />
+          <ScalarProperty Name="ProblemaNeurologico" ColumnName="ProblemaNeurologico" />
+          <ScalarProperty Name="SangradoEncias" ColumnName="SangradoEncias" />
+          <ScalarProperty Name="Llagas" ColumnName="Llagas" />
+          <ScalarProperty Name="ProblemaDental" ColumnName="ProblemaDental" />
+          <ScalarProperty Name="CaidaCabello" ColumnName="CaidaCabello" />
+          <ScalarProperty Name="Acne" ColumnName="Acne" />
+          <ScalarProperty Name="Manchas" ColumnName="Manchas" />
+          <ScalarProperty Name="Verrugas" ColumnName="Verrugas" />
+          <ScalarProperty Name="ProblemasPiel" ColumnName="ProblemasPiel" />
+          <ScalarProperty Name="IntoleranciaAlimento" ColumnName="IntoleranciaAlimento" />
+          <ScalarProperty Name="Hemorroides" ColumnName="Hemorroides" />
+          <ScalarProperty Name="Diarrrea" ColumnName="Diarrrea" />
+          <ScalarProperty Name="Constipacion" ColumnName="Constipacion" />
+          <ScalarProperty Name="Meteorismo" ColumnName="Meteorismo" />
+          <ScalarProperty Name="Vomitos" ColumnName="Vomitos" />
+          <ScalarProperty Name="DolorEstomago" ColumnName="DolorEstomago" />
+          <ScalarProperty Name="DigestionLenta" ColumnName="DigestionLenta" />
+          <ScalarProperty Name="AlergiasQUe" ColumnName="AlergiasQUe" />
+          <ScalarProperty Name="Alergias" ColumnName="Alergias" />
+          <ScalarProperty Name="Diabetes" ColumnName="Diabetes" />
+          <ScalarProperty Name="Osteoporosis" ColumnName="Osteoporosis" />
+          <ScalarProperty Name="Gota" ColumnName="Gota" />
+          <ScalarProperty Name="TrigliceridosAumentados" ColumnName="TrigliceridosAumentados" />
+          <ScalarProperty Name="ColesterolAumentado" ColumnName="ColesterolAumentado" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sintomas3">
+      <EntityTypeMapping TypeName="HistoriaPersonalCormillotModel.Sintomas3">
+        <MappingFragment StoreEntitySet="Sintomas3">
+          <ScalarProperty Name="TraumaticoCuando" ColumnName="TraumaticoCuando" />
+          <ScalarProperty Name="TraumaticoQue" ColumnName="TraumaticoQue" />
+          <ScalarProperty Name="TraumaticoSiNo" ColumnName="TraumaticoSiNo" />
+          <ScalarProperty Name="CualesPerdidas" ColumnName="CualesPerdidas" />
+          <ScalarProperty Name="PerdidasSiNo" ColumnName="PerdidasSiNo" />
+          <ScalarProperty Name="Autoestima" ColumnName="Autoestima" />
+          <ScalarProperty Name="EvitarSexuales" ColumnName="EvitarSexuales" />
+          <ScalarProperty Name="DificultadesSexuales" ColumnName="DificultadesSexuales" />
+          <ScalarProperty Name="DeseoSexual" ColumnName="DeseoSexual" />
+          <ScalarProperty Name="NoPlacerSexual" ColumnName="NoPlacerSexual" />
+          <ScalarProperty Name="PensamientosIncomodos" ColumnName="PensamientosIncomodos" />
+          <ScalarProperty Name="Miedos" ColumnName="Miedos" />
+          <ScalarProperty Name="EstadoAnimo" ColumnName="EstadoAnimo" />
+          <ScalarProperty Name="TensionMuscular" ColumnName="TensionMuscular" />
+          <ScalarProperty Name="PreocupacionesExcesivas" ColumnName="PreocupacionesExcesivas" />
+          <ScalarProperty Name="Ansioso" ColumnName="Ansioso" />
+          <ScalarProperty Name="ActividadUsual" ColumnName="ActividadUsual" />
+          <ScalarProperty Name="Apuestas" ColumnName="Apuestas" />
+          <ScalarProperty Name="GastaDinero" ColumnName="GastaDinero" />
+          <ScalarProperty Name="AumentoSexual" ColumnName="AumentoSexual" />
+          <ScalarProperty Name="EstarCima" ColumnName="EstarCima" />
+          <ScalarProperty Name="DuermeMenos" ColumnName="DuermeMenos" />
+          <ScalarProperty Name="Habla" ColumnName="Habla" />
+          <ScalarProperty Name="Furia" ColumnName="Furia" />
+          <ScalarProperty Name="Agresion" ColumnName="Agresion" />
+          <ScalarProperty Name="Autolesiones" ColumnName="Autolesiones" />
+          <ScalarProperty Name="Enojo" ColumnName="Enojo" />
+          <ScalarProperty Name="Nervios" ColumnName="Nervios" />
+          <ScalarProperty Name="OscilacionesAnimo" ColumnName="OscilacionesAnimo" />
+          <ScalarProperty Name="IrritacionIncontrolable" ColumnName="IrritacionIncontrolable" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SusAllegadosSuRelacionConLaComida">
+      <EntityTypeMapping TypeName="HistoriaPersonalCormillotModel.SusAllegadosSuRelacionConLaComida">
+        <MappingFragment StoreEntitySet="SusAllegadosSuRelacionConLaComida">
+          <ScalarProperty Name="AlergiaAComida" ColumnName="AlergiaAComida" />
+          <ScalarProperty Name="RadioPorcentajeIngesta" ColumnName="RadioPorcentajeIngesta" />
+          <ScalarProperty Name="RadioActFisicaExagerada" ColumnName="RadioActFisicaExagerada" />
+          <ScalarProperty Name="RadioRestringeAlimento" ColumnName="RadioRestringeAlimento" />
+          <ScalarProperty Name="RadioInduceVomito" ColumnName="RadioInduceVomito" />
+          <ScalarProperty Name="RadioDiureticos" ColumnName="RadioDiureticos" />
+          <ScalarProperty Name="RadioLaxantes" ColumnName="RadioLaxantes" />
+          <ScalarProperty Name="RadioComeSinControl" ColumnName="RadioComeSinControl" />
+          <ScalarProperty Name="RadioComeParaDormir" ColumnName="RadioComeParaDormir" />
+          <ScalarProperty Name="RadioComeDeNoche" ColumnName="RadioComeDeNoche" />
+          <ScalarProperty Name="RadioUrgenciaDeComer" ColumnName="RadioUrgenciaDeComer" />
+          <ScalarProperty Name="TienenSobrepeso" ColumnName="TienenSobrepeso" />
+          <ScalarProperty Name="CantSobrepeso" ColumnName="CantSobrepeso" />
+          <ScalarProperty Name="TienenPesoNormal" ColumnName="TienenPesoNormal" />
+          <ScalarProperty Name="CantPesoNormal" ColumnName="CantPesoNormal" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Preferencias">
+      <EntityTypeMapping TypeName="HistoriaPersonalCormillotModel.Preferencias">
+        <MappingFragment StoreEntitySet="Preferencias">
+          <ScalarProperty Name="RadioEmbarazo" ColumnName="RadioEmbarazo" />
+          <ScalarProperty Name="RadioPreSentimental" ColumnName="RadioPreSentimental" />
+          <ScalarProperty Name="RadioCansancio" ColumnName="RadioCansancio" />
+          <ScalarProperty Name="RadioDescontrol" ColumnName="RadioDescontrol" />
+          <ScalarProperty Name="RadioAlegria" ColumnName="RadioAlegria" />
+          <ScalarProperty Name="RadioAburrimiento" ColumnName="RadioAburrimiento" />
+          <ScalarProperty Name="RadioEnojo" ColumnName="RadioEnojo" />
+          <ScalarProperty Name="RadioEstres" ColumnName="RadioEstres" />
+          <ScalarProperty Name="RadioAnsiedad" ColumnName="RadioAnsiedad" />
+          <ScalarProperty Name="RadioDepresion" ColumnName="RadioDepresion" />
+          <ScalarProperty Name="RadioHagoAyunos" ColumnName="RadioHagoAyunos" />
+          <ScalarProperty Name="RadioPicoteo" ColumnName="RadioPicoteo" />
+          <ScalarProperty Name="RadioSalteo" ColumnName="RadioSalteo" />
+          <ScalarProperty Name="RadioDesordenado" ColumnName="RadioDesordenado" />
+          <ScalarProperty Name="RadioTipoAlimentoPreferido" ColumnName="RadioTipoAlimentoPreferido" />
+          <ScalarProperty Name="AlimentoPreferido" ColumnName="AlimentoPreferido" />
+          <ScalarProperty Name="RadioAlimentoPreferido" ColumnName="RadioAlimentoPreferido" />
+          <ScalarProperty Name="SuDieta" ColumnName="SuDieta" />
+          <ScalarProperty Name="Idusuario" ColumnName="Idusuario" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Habitos">
+      <EntityTypeMapping TypeName="HistoriaPersonalCormillotModel.Habitos">
+        <MappingFragment StoreEntitySet="Habitos">
+          <ScalarProperty Name="ParaDormirToma" ColumnName="ParaDormirToma" />
+          <ScalarProperty Name="IntentoCambiarBebida" ColumnName="IntentoCambiarBebida" />
+          <ScalarProperty Name="HorasSueño" ColumnName="HorasSueño" />
+          <ScalarProperty Name="RelacionCompañerosTrabajo" ColumnName="RelacionCompañerosTrabajo" />
+          <ScalarProperty Name="RelacionFamilia" ColumnName="RelacionFamilia" />
+          <ScalarProperty Name="RelacionPareja" ColumnName="RelacionPareja" />
+          <ScalarProperty Name="RelacionAmigos" ColumnName="RelacionAmigos" />
+          <ScalarProperty Name="RelacionHijos" ColumnName="RelacionHijos" />
+          <ScalarProperty Name="ActitudCompañeros" ColumnName="ActitudCompañeros" />
+          <ScalarProperty Name="ActitudAmigos" ColumnName="ActitudAmigos" />
+          <ScalarProperty Name="ActitudHijos" ColumnName="ActitudHijos" />
+          <ScalarProperty Name="ActitudConyuge" ColumnName="ActitudConyuge" />
+          <ScalarProperty Name="ActitudHermanos" ColumnName="ActitudHermanos" />
+          <ScalarProperty Name="ActitudPadres" ColumnName="ActitudPadres" />
+          <ScalarProperty Name="TomaASolas" ColumnName="TomaASolas" />
+          <ScalarProperty Name="TomaCalmarse" ColumnName="TomaCalmarse" />
+          <ScalarProperty Name="LlamadoAtencion" ColumnName="LlamadoAtencion" />
+          <ScalarProperty Name="IntentoDejarBeber" ColumnName="IntentoDejarBeber" />
+          <ScalarProperty Name="SienteCulpa" ColumnName="SienteCulpa" />
+          <ScalarProperty Name="PreocupaManeraBeber" ColumnName="PreocupaManeraBeber" />
+          <ScalarProperty Name="OtrasMedidas" ColumnName="OtrasMedidas" />
+          <ScalarProperty Name="BlancasMedidas" ColumnName="BlancasMedidas" />
+          <ScalarProperty Name="CervezaLatas" ColumnName="CervezaLatas" />
+          <ScalarProperty Name="VasosVino" ColumnName="VasosVino" />
+          <ScalarProperty Name="DejeFumarHace" ColumnName="DejeFumarHace" />
+          <ScalarProperty Name="CuantosCigarrillosPorDia" ColumnName="CuantosCigarrillosPorDia" />
+          <ScalarProperty Name="Fuma" ColumnName="Fuma" />
+          <ScalarProperty Name="TomaPastillas" ColumnName="TomaPastillas" />
+          <ScalarProperty Name="DuermeDeDia" ColumnName="DuermeDeDia" />
+          <ScalarProperty Name="TienePesadillas" ColumnName="TienePesadillas" />
+          <ScalarProperty Name="SeDespiertaDuranteLaNoche" ColumnName="SeDespiertaDuranteLaNoche" />
+          <ScalarProperty Name="DificultadParaQuedarseDormido" ColumnName="DificultadParaQuedarseDormido" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Preferencias2">
+      <EntityTypeMapping TypeName="HistoriaPersonalCormillotModel.Preferencias2">
+        <MappingFragment StoreEntitySet="Preferencias2">
+          <ScalarProperty Name="LugarClub" ColumnName="LugarClub" />
+          <ScalarProperty Name="LugarVacaciones" ColumnName="LugarVacaciones" />
+          <ScalarProperty Name="LugarViaje" ColumnName="LugarViaje" />
+          <ScalarProperty Name="LugarCalle" ColumnName="LugarCalle" />
+          <ScalarProperty Name="LugarKiosko" ColumnName="LugarKiosko" />
+          <ScalarProperty Name="LugarRestaurante" ColumnName="LugarRestaurante" />
+          <ScalarProperty Name="LugarTraslados" ColumnName="LugarTraslados" />
+          <ScalarProperty Name="LugarTrabajo" ColumnName="LugarTrabajo" />
+          <ScalarProperty Name="LugarColegio" ColumnName="LugarColegio" />
+          <ScalarProperty Name="LugarCasa" ColumnName="LugarCasa" />
+          <ScalarProperty Name="MientrasTvOCompu" ColumnName="MientrasTvOCompu" />
+          <ScalarProperty Name="MientrasCocino" ColumnName="MientrasCocino" />
+          <ScalarProperty Name="ComoMasEnPareja" ColumnName="ComoMasEnPareja" />
+          <ScalarProperty Name="ComoMasEnFiestas" ColumnName="ComoMasEnFiestas" />
+          <ScalarProperty Name="ComoMasConAmigos" ColumnName="ComoMasConAmigos" />
+          <ScalarProperty Name="ComoMasEnFlia" ColumnName="ComoMasEnFlia" />
+          <ScalarProperty Name="ComoMasSolo" ColumnName="ComoMasSolo" />
+          <ScalarProperty Name="DomingoCena" ColumnName="DomingoCena" />
+          <ScalarProperty Name="DomingoMerienda" ColumnName="DomingoMerienda" />
+          <ScalarProperty Name="DomingoAlmuerzo" ColumnName="DomingoAlmuerzo" />
+          <ScalarProperty Name="DomingoDesayuno" ColumnName="DomingoDesayuno" />
+          <ScalarProperty Name="SabadoCena" ColumnName="SabadoCena" />
+          <ScalarProperty Name="SabadoMerienda" ColumnName="SabadoMerienda" />
+          <ScalarProperty Name="SabadoAlmuerzo" ColumnName="SabadoAlmuerzo" />
+          <ScalarProperty Name="SabadoDesayuno" ColumnName="SabadoDesayuno" />
+          <ScalarProperty Name="ViernesCena" ColumnName="ViernesCena" />
+          <ScalarProperty Name="ViernesMerienda" ColumnName="ViernesMerienda" />
+          <ScalarProperty Name="ViernesAlmuerzo" ColumnName="ViernesAlmuerzo" />
+          <ScalarProperty Name="ViernesDesayuno" ColumnName="ViernesDesayuno" />
+          <ScalarProperty Name="Horario0a6" ColumnName="Horario0a6" />
+          <ScalarProperty Name="Horario22a24" ColumnName="Horario22a24" />
+          <ScalarProperty Name="Horario20a22" ColumnName="Horario20a22" />
+          <ScalarProperty Name="Horario12a16" ColumnName="Horario12a16" />
+          <ScalarProperty Name="Horario6a12" ColumnName="Horario6a12" />
+          <ScalarProperty Name="RadioSaboreo" ColumnName="RadioSaboreo" />
+          <ScalarProperty Name="RadioMastico" ColumnName="RadioMastico" />
+          <ScalarProperty Name="RadioVelocidad" ColumnName="RadioVelocidad" />
+          <ScalarProperty Name="RadioMisBocados" ColumnName="RadioMisBocados" />
+          <ScalarProperty Name="RadioComo" ColumnName="RadioComo" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,425 @@
+﻿@*@using HistoriaPersonalCormillot
+@using HistoriaPersonalCormillot.Models*@
+@model HistoriaPersonalCormillot.ActividadFisica
+@*@using Newtonsoft.Json*@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Su relacion con la actividad fisica";
+}
+<script src="../../Scripts/FormulariosHelpers.js" type="text/javascript"></script>
+
+<style type="text/css">
+	
+
+	.xl
+	{
+		 min-width: 60px;
+    	width: 78% !important;
+	}
+	.mt
+	{
+		margin-top: 10px !important;
+	}
+
+	.ml
+	{
+		margin-left: 26px !important;
+	}
+            .leyenda
+    {
+        border: 1px solid;
+        overflow: hidden;
+        display: block;
+        width: 26%;
+        margin: auto;
+        text-align: left;
+        padding: 1%;
+        border-radius: 30px;
+        /* margin: 3% auto; */
+        margin-top: 9%;
+        margin-bottom: 2%;
+        font-size: 12px;
+    }
+	</style>
+
+  <script type="text/javascript">
+      $(document).ready(function () {
+          $('input[type=checkbox]').css("cursor", "pointer");
+      });
+      function subirDatos() {
+          postForm("saveActividadFisica");
+      }
+
+      function guardarDatos() {
+          postFormGuardar("saveActividadFisica");
+      }
+
+      $(document).ready(function () {
+          setInterval(subirDatos, 5000);
+      });
+ 
+      @*var model = @Html.Raw(JsonConvert.SerializeObject(this.Model));
+    $(document).ready(function(){
+        $(document).ready(function () {
+            $('input[type=checkbox]').css("cursor", "pointer");
+        });
+     
+        $('input[name="RadioEstiloDeVida"]').click(function () {
+            model.RadioEstiloDeVida = $(this).val();
+        });
+
+        $('input[name="estado_fisico"]').click(function () {
+            model.RadioSuEstadoFisico = $(this).val();
+        });
+       
+
+        $('input[name="motivacion"]').click(function () {
+            model.RadioMotivacionActivdad = $(this).val();
+        });
+
+        $('input[name="realiza-actividad"]').click(function () {
+            model.RadioRealizaActivdad = $(this).val();
+        });
+       
+    });
+   
+
+
+    function subirDatos() {
+        model.OtraDificultad = $('#dificultades').val();
+        model.ActivdadUno = $('input[name="ActivdadUno"]').val();
+        model.PorSemanaActivdadUno = $('input[name="PorSemanaActivdadUno"]').val();
+        model.TiempoActividadUno = $('input[name="TiempoActividadUno"]').val();
+        model.ActivdadDos = $('input[name="ActivdadDos"]').val();
+        model.PorSemanaActivdadDos = $('input[name="PorSemanaActivdadDos"]').val();
+        model.TiempoActividadDos = $('input[name="TiempoActividadDos"]').val();
+        model.ActividadTres = $('input[name="ActividadTres"]').val();
+        model.PorSemanaActividadTres = $('input[name="PorSemanaActividadTres"]').val();
+        model.TiempoActividadTres = $('input[name="TiempoActividadTres"]').val();
+        model.OtraActivdad = $('input[name="OtraActivdad"]').val();
+        model.CheckYoga=$('input[name="CheckYoga"]').val();
+        model.CheckCaminata = $('input[name="CheckCaminata"]').val();
+        model.MedioDeTransporte = $('input[name="MedioDeTransporte"]').val();
+        model.CheckBicicleta = $('#CheckBicicleta').val();
+        model.CheckGimAcuatica = $('#CheckGimAcuatica').val();
+        model.CheckBaile = $('#CheckBaile').val();
+        model.CheckNatacion = $('#CheckNatacion').val();
+        model.CheckTaiChi = $('#CheckTaiChi').val();
+        model.CheckActividadGrupal = $('#CheckActividadGrupal').val();
+        model.CheckActividadPersonalizada = $('#CheckActividadPersonalizada').val();
+        model.CheckActividadAcompañado = $('#CheckActividadAcompañado').val();
+        model.CheckActividadSolo = $('#CheckActividadSolo').val();
+        model.Usuario = null;
+        console.log(model);
+        $.ajax({
+            url: '/Pasos/saveActividadFisica/',
+            type: "postForm",
+            contentType: 'application/json',
+            data: JSON.stringify({ activdad: model }),
+
+            success: function (response) {
+                if (response == "OK") {
+                    alert("Datos subidos");
+                }
+                else {
+                    alert("Error al crear");
+                }
+            },
+            error: function (xhr) {
+                console.log(xhr);
+            }
+        });
+    }
+ 
+    function guardarDatos()
+    {
+        subirDatos();
+    }*@
+</script>
+
+<link href="../../Content/ResponsiveGrid.css" rel="stylesheet" type="text/css" />
+<h2 class="celeste titulo FontCormi" style="margin-top:40px">Su relacion con la actividad física</h2>
+
+<form action="/Pasos/saveActividadFisica/" method="post">
+    @*<input type="hidden" name="CheckCaminata" />
+    <input type="hidden" name="CheckYoga" />*@
+    @*<input type="hidden" name="LugarTrabajo" />
+        <input type="hidden" name="LugarTraslados" />
+        <input type="hidden" name="LugarRestaurante" />
+        <input type="hidden" name="LugarKiosko" />
+        <input type="hidden" name="LugarCalle" />
+        <input type="hidden" name="LugarViaje" />
+        <input type="hidden" name="LugarVacaciones" />
+        <input type="hidden" name="LugarClub" />
+        <input type="hidden" name="LugarEstudioB" />
+        <input type="hidden" name="LugarBarB" />*@
+
+
+    <div class="col_10" style="margin-left:10%">
+        <div class="group col_12">
+            <label class="pregunta">44.¿Como considera que es su estilo de vida?</label>
+            <div class="col_12" style="margin-left:25px">
+                <div class="col_3">
+                    <label><input type="radio" @(Model.RadioEstiloDeVida == "Muy Activo" ? "checked=checked" : "") name="RadioEstiloDeVida" value="Muy Activo" />Muy Activo</label>
+                </div>
+                <div class="col_3">
+                    <label><input type="radio" @(Model.RadioEstiloDeVida == "Activo" ? "checked=checked" : "") name="RadioEstiloDeVida" value="Activo" />Activo</label>
+                </div>
+                <div class="col_3">
+                    <label><input type="radio" @(Model.RadioEstiloDeVida == "Poco Activo" ? "checked=checked" : "") name="RadioEstiloDeVida" value="Poco Activo" />Poco Activo</label>
+                </div>
+                <div class="col_3">
+                    <label><input type="radio" @(Model.RadioEstiloDeVida == "Sedentario" ? "checked=checked" : "") name="RadioEstiloDeVida" value="Sedentario" />Sedentario</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="group col_12">
+            <label class="pregunta">45.En general, ¿como definiria usted su estado físico?</label>
+            <div class="col_12" style="margin-left:25px">
+                <div class="col_2">
+                    <label><input type="radio" @(Model.RadioSuEstadoFisico == "Muy Bueno" ? "checked=checked" : "") name="estado_fisico" value="Muy Bueno" />Muy bueno</label>
+                </div>
+                <div class="col_2">
+                    <label><input type="radio" @(Model.RadioSuEstadoFisico == "Bueno" ? "checked=checked" : "") name="estado_fisico" value="Bueno" />Bueno</label>
+                </div>
+                <div class="col_2">
+                    <label><input type="radio" @(Model.RadioSuEstadoFisico == "Regular" ? "checked=checked" : "") name="estado_fisico" value="Regular" />Regular</label>
+                </div>
+                <div class="col_2">
+                    <label><input type="radio" @(Model.RadioSuEstadoFisico == "Malo" ? "checked=checked" : "") name="estado_fisico" value="Malo" />Malo</label>
+                </div>
+                <div class="col_2">
+                    <label><input type="radio" @(Model.RadioSuEstadoFisico == "Muy Malo" ? "checked=checked" : "") name="estado_fisico" value="Muy Malo" />Muy Malo</label>
+                </div>
+            </div>
+        </div>
+
+        @*<div class="group col_12">
+               <label class="pregunta">Tiene dificultades al realizar movimientos para:</label>
+               <div class="col_12">
+                    <div class="col_3">
+                        <label><input type="checkbox" @(Model.CheckBañarse.HasValue && Model.CheckBañarse.Value ? "checked=checked" :"") name="dificultades" onclick="model.CheckBañarse = 'true'" value="Bañarse"/>Bañarse</label>
+                    </div>
+                    <div class="col_3">
+                        <label><input type="checkbox" @(Model.CheckVerstirse.HasValue && Model.CheckVerstirse.Value ? "checked=checked" :"") name="dificultades" onclick = "model.CheckVerstirse = 'true'" />Vestirse</label>
+                    </div>
+                    <div class="col_3">
+                        <label><input type="checkbox" @(Model.CheckArreglarCasa.HasValue && Model.CheckArreglarCasa.Value ? "checked=checked" :"") name="dificultades" onclick = "model.CheckArreglarCasa = 'true'" />Arreglar la casa</label>
+                    </div>
+                    <div class="col_3">
+                        <label><input type="checkbox" @(Model.CheckSubirEscaleras.HasValue && Model.CheckSubirEscaleras.Value ? "checked=checked" :"") name="dificultades" onclick = "model.CheckSubirEscaleras = 'true'" />Subir escaleras</label>
+                    </div>
+                    <div class="col_3">
+                        <label><input type="checkbox" @(Model.CheckCaminarPorCasa.HasValue && Model.CheckCaminarPorCasa.Value ? "checked=checked" :"") name="dificultades" onclick = "model.CheckCaminarPorCasa = 'true'" />Caminar por la casa</label>
+                    </div>
+                    <div class="col_3">
+                        <label><input type="checkbox" @(Model.CheckIrDeCompras.HasValue && Model.CheckIrDeCompras.Value ? "checked=checked" :"") name="dificultades" onclick = "model.CheckIrDeCompras = 'true'" />Ir de compras</label>
+                    </div>
+                    <div class="col_3">
+                        <label><input type="checkbox" @(Model.CheckCamiarFueraDeCasa.HasValue && Model.CheckCamiarFueraDeCasa.Value ? "checked=checked" :"") name="dificultades" onclick = "model.CheckCamiarFueraDeCasa = 'true'" />Caminar fuera de la casa</label>
+                    </div>
+                    <div class="col_3">
+
+                    </div>
+                    <div class="col_3">
+                        <label><input type="checkbox" @(Model.CheckIrAlTrabajo.HasValue && Model.CheckIrAlTrabajo.Value ? "checked=checked" :"") name="dificultades" onclick = "model.CheckIrAlTrabajo = 'true'" />Ir al trabajo</label>
+                    </div>
+                    <div class="col_3">
+                        <label><input type="checkbox" @(Model.CheckAtarseZapatos.HasValue && Model.CheckAtarseZapatos.Value ? "checked=checked" :"") name="dificultades" onclick = "model.CheckAtarseZapatos = 'true'" />Atarse los zapatos</label>
+                    </div>
+                    <div class="col_3">
+                        <label><input type="checkbox" @(Model.CheckLevantarseDeSilla.HasValue && Model.CheckLevantarseDeSilla.Value ? "checked=checked" :"") name="dificultades" onclick = "model.CheckLevantarseDeSilla = 'true'" />Levantarse de la silla</label>
+                    </div>
+                    <div class="col_3">
+                        <label><input type="checkbox" @(Model.CheckLevantarseDeCama.HasValue && Model.CheckLevantarseDeCama.Value ? "checked=checked" :"") name="dificultades" onclick = "model.CheckLevantarseDeCama = 'true'" />Levantarse de la cama</label>
+                    </div>
+                    <div class="col_12">
+                        <label class="col_2"><input type="checkbox" name="dificultades" />Otra dificultad ¿cual?</label>
+                        <div class="col_9">
+                            <input type="text" class="form-control" id="dificultades" value="@Model.OtraDificultad" />
+                        </div>
+                    </div>
+               </div>
+            </div>*@
+
+
+        <div class="group col_12">
+            <label class="pregunta col_4">46.¿Realiza alguna actividad física?</label>
+            <div class="col_2">
+                <div class="col_6">
+                    <label><input type="radio" name="realiza-actividad" @(Model.RadioRealizaActivdad == "No" ? "checked=checked" : "") value="No" />No</label>
+                </div>
+                <div class="col_6">
+                    <label><input type="radio" name="realiza-actividad" @(Model.RadioRealizaActivdad == "Si" ? "checked=checked" : "") value="Si" />Si</label>
+                </div>
+            </div>
+        </div>
+        <div class="col_9 row-left" style="border:2px solid;margin-left:170px">
+            <div class="col_12" style="border:1px solid">
+                <div class="col_4">
+                    <label class="col_3" style="margin-left:20px">¿Cuál?</label>
+                </div>
+                <div class="col_4">
+                    <label class="col_9" style="margin-left:50px">Veces por semana</label>
+                </div>
+                <div class="col_4">
+                    <label class="col_3" style="margin-left:80px">Tiempo</label>
+                </div>
+            </div>
+
+
+            <div class="col_12" style="border:1px solid">
+                <div class="col_4" style="border:1px solid;border-bottom:0px solid; border-top:0px solid">
+
+                    <input type="text" name="ActivdadUno" value="@Model.ActivdadUno" class="form-control col_8" style="width:90%;margin-left:10px;margin-bottom:5px" />
+                </div>
+                <div class="col_4" style="border:1px solid;border-bottom:0px solid; border-top:0px solid">
+
+                    <input type="text" name="PorSemanaActivdadUno" value="@Model.PorSemanaActivdadUno" class="form-control col_2" style="width:90%;margin-left:10px;margin-bottom:5px" />
+                </div>
+                <div class="col_4" style="border:1px solid;border-bottom:0px solid; border-top:0px solid">
+
+                    <input type="text" class="form-control col_8" name="TiempoActividadUno" value="@Model.TiempoActividadUno" style="width:90%;margin-left:10px;margin-bottom:5px" />
+                </div>
+            </div>
+
+            <div class="col_12" style="border:1px solid">
+                <div class="col_4" style="border:1px solid;border-bottom:0px solid; border-top:0px solid">
+
+                    <input type="text" class="form-control col_8" name="ActivdadDos" value="@Model.ActivdadDos" style="width:90%;margin-left:10px;margin-bottom:5px" />
+                </div>
+                <div class="col_4" style="border:1px solid;border-bottom:0px solid; border-top:0px solid">
+
+                    <input type="text" class="form-control col_2" name="PorSemanaActivdadDos" value="@Model.PorSemanaActivdadDos" style="width:90%;margin-left:10px;margin-bottom:5px" />
+                </div>
+                <div class="col_4" style="border:1px solid;border-bottom:0px solid; border-top:0px solid">
+
+                    <input type="text" class="form-control col_8" name="TiempoActividadDos" value="@Model.TiempoActividadDos" style="width:90%;margin-left:10px;margin-bottom:5px" />
+                </div>
+            </div>
+
+            <div class="col_12" style="border:1px solid">
+                <div class="col_4" style="border:1px solid;border-bottom:0px solid; border-top:0px solid">
+
+                    <input type="text" class="form-control col_8" name="ActividadTres" value="@Model.ActividadTres" style="width:90%;margin-left:10px;margin-bottom:5px" />
+                </div>
+                <div class="col_4" style="border:1px solid;border-bottom:0px solid; border-top:0px solid">
+
+                    <input type="text" class="form-control col_2" name="PorSemanaActividadTres" value="@Model.PorSemanaActividadTres" style="width:90%;margin-left:10px;margin-bottom:5px" />
+                </div>
+                <div class="col_4" style="border:1px solid;border-bottom:0px solid; border-top:0px solid">
+
+                    <input type="text" class="form-control col_8" name="TiempoActividadTres" value="@Model.TiempoActividadTres" style="width:90%;margin-left:10px;margin-bottom:5px" />
+                </div>
+            </div>
+
+        </div>
+        <div class="group col_12 mt">
+            <label class="pregunta">47.¿Como definiría su motivación para realizar actividad física?</label>
+            <div class="col_12" style="margin-left:25px">
+                <div class="col_3">
+                    <label><input type="radio" name="motivacion" @(Model.RadioMotivacionActivdad == "Alta" ? "checked=checked" : "") value="Alta" />Alta</label>
+                </div>
+                <div class="col_3">
+                    <label><input type="radio" name="motivacion" @(Model.RadioMotivacionActivdad == "Normal" ? "checked=checked" : "") value="Normal" />Normal</label>
+                </div>
+                <div class="col_3">
+                    <label><input type="radio" name="motivacion" @(Model.RadioMotivacionActivdad == "Baja" ? "checked=checked" : "") value="Baja" />Baja</label>
+                </div>
+                <div class="col_3">
+                    <label><input type="radio" name="motivacion" @(Model.RadioMotivacionActivdad == "Minima" ? "checked=checked" : "") value="Minima" />Minima</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="group col_12 mt">
+            <label class="col_7">48.Sí no hace actividad física, ¿que le gustaria hacer?</label>
+            <div class="col_12" style="margin-left:25px">
+                <label class="col_2" style="width:20%">
+                    <input type="checkbox" value=true name="CheckCaminata" @(Model.CheckCaminata == true ? "checked=checked" : "") />
+                    @*@Html.CheckBox("CheckCaminata", Model.CheckCaminata)*@
+                    Caminata
+                </label>
+                <label class="col_2" style="width:20%">
+                    <input type="checkbox" @(Model.CheckYoga.HasValue && Model.CheckYoga.Value ? "checked=checked" : "") onclick="model.CheckYoga = 'true'" />
+                    @*@Html.CheckBox("CheckYoga", Model.CheckYoga)*@
+                    Yoga
+                </label>
+                <label class="col_2" style="width:20%">
+                    @*<input type="checkbox" @(Model.CheckBicicleta.HasValue && Model.CheckBicicleta.Value ? "checked=checked" : "") onclick="model.CheckBicicleta = 'true'" />*@
+                    @Html.CheckBox("CheckBicicleta", Model.CheckBicicleta)
+                    Bicicleta
+                </label>
+                <label class="col_2" style="width:20%">
+                    @*<input type="checkbox" @(Model.CheckGimAcuatica.HasValue && Model.CheckGimAcuatica.Value ? "checked=checked" : "") onclick="model.CheckGimAcuatica = 'true'" />*@
+                    @Html.CheckBox("CheckGimAcuatica", Model.CheckGimAcuatica)
+                    Gim acuatica
+                </label>
+                <label class="col_2" style="width:20%">
+                    @*<input type="checkbox" @(Model.CheckBaile.HasValue && Model.CheckBaile.Value ? "checked=checked" : "" ) onclick="model.CheckBaile = 'true'" />*@
+                    @Html.CheckBox("CheckBaile", Model.CheckBaile)
+                    Baile
+                </label>
+                <label class="col_2" style="width:20%">
+                    @*<input type="checkbox" @(Model.CheckNatacion.HasValue && Model.CheckNatacion.Value ? "checked=checked" : "") />*@
+                    @Html.CheckBox("CheckNatacion", Model.CheckNatacion)
+                    Natación
+                </label>
+                <label class="col_2" style="width:20%">
+                    @*<input type="checkbox" @(Model.CheckTaiChi.HasValue && Model.CheckTaiChi.Value ? "checked=checked" :"") onclick="model.CheckTaiChi = true" />*@
+                    @Html.CheckBox("CheckTaiChi", Model.CheckTaiChi)
+                    Tai Chi
+                </label>
+
+            </div>
+            <div class="col_12" style="margin-left:25px">
+                <label class="col_2"><input type="checkbox" onclick="model.CheckOtra = 'true'" />Otra, ¿Cual?</label>
+                <input class="form-control col_9" type="text" value="@Model.OtraActivdad" name="OtraActivdad" />
+            </div>
+        </div>
+
+        <div class="group col_12 mt" style="margin-left:25px">
+            <label class="col_3">Medios de transporte que utiliza</label>
+            <input type="text" class="form-control col_7" value="@Model.MedioDeTransporte" name="MedioDeTransporte" style="width:66.5%" />
+
+        </div>
+        <div class="group col_12 mt" style="margin-bottom:20px">
+            <label class="col_7">49.Le gustaria hacer una actividad: </label>
+            <div class="col_12" style="margin-left:60px">
+                <label class="col_2" style="width:20%">@*<input type="checkbox" @((Model.CheckActividadGrupal.HasValue && Model.CheckActividadGrupal.Value) ? "checked=checked" : "") onclick="model.CheckActividadGrupal = 'true'" />*@
+                @Html.CheckBox("CheckActividadGrupal",Model.CheckActividadGrupal)
+                Grupal</label>
+                <label class="col_2" style="width:20%">@*<input type="checkbox" @((Model.CheckActividadPersonalizada.HasValue && Model.CheckActividadPersonalizada.Value) ? "checked=checked" : "") onclick="model.CheckActividadPersonalizada = 'true'" />*@
+                @Html.CheckBox("CheckActividadPersonalizada",Model.CheckActividadPersonalizada)
+                Personalizada</label>
+                <label class="col_2" style="width:20%">@*<input type="checkbox" @((Model.CheckActividadAcompañado.HasValue && Model.CheckActividadAcompañado.Value) ? "checked=checked" : "") onclick="model.CheckActividadAcompañado = 'true'" />*@
+                @Html.CheckBox("CheckActividadAcompañado",Model.CheckActividadAcompañado)
+                Acompañado</label>
+                <label class="col_2" style="width:20%">@*<input type="checkbox" @((Model.CheckActividadSolo.HasValue && Model.CheckActividadSolo.Value) ? "checked=checked" : "") onclick="model.CheckActividadSolo = 'true'" />*@
+                @Html.CheckBox("CheckActividadSolo",Model.CheckActividadSolo)
+                Solo</label>
+               
+            </div>
+        </div>
+    </div>
+
+    <div class="leyenda">
+        <p style="font-size:12px;margin-left:27px;font-weight:700"> Existen tres tipos de personas... </p>
+        <p style="font-size:12px;margin-left:20px;font-weight:700">
+            1)Los que hacen las cosas que pasan  <br />
+            2)Los que observan las cosas que pasan<br />
+            3)Los que preguntan..."¿qué cosa pasa?"
+        </p>
+    </div>
+    <div id="btn-inf" class="container-botones-inferiores mt" style="width:100%;float:left;">
+        @Html.ActionLink("Anterior", "AnteriorPaso", "Pasos", new { id = ViewBag.Pagina }, new { @class = "btn btn-info", onclick = "javascript:subirDatos();" })
+        <label style="font-family:Courier New, Courier, monospace;font-size:smaller">
+            Pagina 16 de 17
+        </label>
+        @Html.ActionLink("Siguiente", "ProximoPaso", "Pasos", new { id = ViewBag.Pagina }, new { @class = "btn btn-info", onclick = "javascript:subirDatos();" })
+
+    </div>
+    <button type="submit" name="guardar">GUARDAR</button>
+    
+</form>

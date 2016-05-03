@@ -1,0 +1,550 @@
+﻿@model HistoriaPersonalCormillot.ClasificacionAlimentacion2
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/ResponsiveGrid.css" rel="stylesheet" />
+<link href="~/Content/CorreccionesBootstrap.css" rel="Stylesheet" />
+<script src="../../Scripts/FormulariosHelpers.js" type="text/javascript"></script>
+
+<style>
+    .table > thead:first-child > tr:first-child > th {
+        padding-bottom: 0;
+    }
+    .center-table
+    {
+        padding-left: 17% !important;
+    }
+    
+    .table>tbody>tr.separador-inferior>td
+    {
+        border-bottom: 2px solid black;
+    }
+    
+    .table>tbody>tr>td:first-child
+    {
+        text-align: left;
+    }
+    
+    .table>tbody>tr>td:first-child input
+    {
+        float: right;
+        min-width: 100px;
+        width: 60%;
+    }
+    
+    .subtitulo-control
+    {
+        padding-left: 10px;
+    }
+    
+</style>
+
+<script type="text/javascript">
+    function subirDatos() {
+        postForm("SaveClasificacionAlimentacion2");
+    }
+
+    function guardarDatos() {
+        postFormGuardar("SaveClasificacionAlimentacion2");
+    }
+
+    $(document).ready(function () {
+        setInterval(subirDatos, 5000);
+    });
+</script>
+
+<article>
+    <h2 class="celeste titulo" style="margin-top: 50px;">Clasifique los siguientes alimentos</h2>
+</article>
+
+<form id="form">
+    <section class="col_12">
+        <section class="col_6">
+            <section class="table-responsive ocultar-responsive" style="max-width: 500px;">
+                <table class="table" style="text-align:left">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>NO me gustan</th>
+                            <th>Los podría comer</th>
+                            <th>MÁS me gustan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="titulo-dentro-tabla">Pescados</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>De mar frescos</td>
+                            <td>
+                                <input type="radio" name="MarFrescos" value="No" @(Model.MarFrescos == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="MarFrescos" value="Podria" @(Model.MarFrescos == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="MarFrescos" value="Si" @(Model.MarFrescos == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>De río frescos</td>
+                            <td>
+                                <input type="radio" name="RioFrescos" value="No" @(Model.RioFrescos == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="RioFrescos" value="Podria" @(Model.RioFrescos == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="RioFrescos" value="Si" @(Model.RioFrescos == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Envasados (ej: atún, sardinas, anchoas)</td>
+                            <td>
+                                <input type="radio" name="Envasados" value="No" @(Model.Envasados == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Envasados" value="Podria" @(Model.Envasados == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Envasados" value="Si" @(Model.Envasados == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Kani-kama</td>
+                            <td>
+                                <input type="radio" name="Kanikama" value="No" @(Model.Kanikama == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Kanikama" value="Podria" @(Model.Kanikama == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Kanikama" value="Si" @(Model.Kanikama == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Mariscos</td>
+                            <td>
+                                <input type="radio" name="Mariscos" value="No" @(Model.Mariscos == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Mariscos" value="Podria" @(Model.Mariscos == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Mariscos" value="Si" @(Model.Mariscos == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr class="separador-inferior">
+                            <td>Sushi</td>
+                            <td>
+                                <input type="radio" name="Sushi" value="No" @(Model.Sushi == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Sushi" value="Podria" @(Model.Sushi == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Sushi" value="Si" @(Model.Sushi == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="titulo-dentro-tabla">Aves</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Pavita</td>
+                            <td>
+                                <input type="radio" name="Pavita" value="No" @(Model.Pavita == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Pavita" value="Podria" @(Model.Pavita == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Pavita" value="Si" @(Model.Pavita == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        
+                        <tr class="separador-inferior">
+                            <td>Pollo</td>
+                            <td>
+                                <input type="radio" name="Pollo" value="No" @(Model.Pollo == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Pollo" value="Podria" @(Model.Pollo == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Pollo" value="Si" @(Model.Pollo == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="titulo-dentro-tabla">Huevos</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Duros - pochés</td>
+                            <td>
+                                <input type="radio" name="HuevosDuros" value="No" @(Model.HuevosDuros == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="HuevosDuros" value="Podria" @(Model.HuevosDuros == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="HuevosDuros" value="Si" @(Model.HuevosDuros == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        
+                        <tr class="separador-inferior">
+                            <td>Fritos - revueltos</td>
+                            <td>
+                                <input type="radio" name="HuevosFritos" value="No" @(Model.HuevosFritos == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="HuevosFritos" value="Podria" @(Model.HuevosFritos == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="HuevosFritos" value="Si" @(Model.HuevosFritos == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="titulo-dentro-tabla">Hortalizas</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Acelga</td>
+                            <td>
+                                <input type="radio" name="Acelga" value="No" @(Model.Acelga == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Acelga" value="Podria" @(Model.Acelga == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Acelga" value="Si" @(Model.Acelga == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Ajo</td>
+                            <td>
+                                <input type="radio" name="Ajo" value="No" @(Model.Ajo == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Ajo" value="Podria" @(Model.Ajo == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Ajo" value="Si" @(Model.Ajo == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Alcaucil</td>
+                            <td>
+                                <input type="radio" name="Alcaucil" value="No" @(Model.Alcaucil == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Alcaucil" value="Podria" @(Model.Alcaucil == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Alcaucil" value="Si" @(Model.Alcaucil == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Apio</td>
+                            <td>
+                                <input type="radio" name="Apio" value="No" @(Model.Apio == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Apio" value="Podria" @(Model.Apio == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Apio" value="Si" @(Model.Apio == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Batata</td>
+                            <td>
+                                <input type="radio" name="Batata" value="No" @(Model.Batata == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Batata" value="Podria" @(Model.Batata == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Batata" value="Si" @(Model.Batata == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+        <section class="col_6">
+            <section class="table-responsive ocultar-responsive" style="max-width: 500px;">
+                <table class="table" style="text-align:left">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>NO me gustan</th>
+                            <th>Los podría comer</th>
+                            <th>MÁS me gustan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Berenjena</td>
+                            <td>
+                                <input type="radio" name="Berenjena" value="No" @(Model.Berenjena == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Berenjena" value="Podria" @(Model.Berenjena == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Berenjena" value="Si" @(Model.Berenjena == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Berro</td>
+                            <td>
+                                <input type="radio" name="Berro" value="No" @(Model.Berro == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Berro" value="Podria" @(Model.Berro == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Berro" value="Si" @(Model.Berro == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Brócoli</td>
+                            <td>
+                                <input type="radio" name="Brocoli" value="No" @(Model.Brocoli == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Brocoli" value="Podria" @(Model.Brocoli == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Brocoli" value="Si" @(Model.Brocoli == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Calabaza</td>
+                            <td>
+                                <input type="radio" name="Calabaza" value="No" @(Model.Calabaza == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Calabaza" value="Podria" @(Model.Calabaza == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Calabaza" value="Si" @(Model.Calabaza == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cebolla</td>
+                            <td>
+                                <input type="radio" name="Cebolla" value="No" @(Model.Cebolla == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Cebolla" value="Podria" @(Model.Cebolla == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Cebolla" value="Si" @(Model.Cebolla == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Champiñones</td>
+                            <td>
+                                <input type="radio" name="Champiñones" value="No" @(Model.Champiñones == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Champiñones" value="Podria" @(Model.Champiñones == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Champiñones" value="Si" @(Model.Champiñones == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Choclo</td>
+                            <td>
+                                <input type="radio" name="Choclo" value="No" @(Model.Choclo == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Choclo" value="Podria" @(Model.Choclo == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Choclo" value="Si" @(Model.Choclo == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Coliflor</td>
+                            <td>
+                                <input type="radio" name="Coliflor" value="No" @(Model.Coliflor == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Coliflor" value="Podria" @(Model.Coliflor == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Coliflor" value="Si" @(Model.Coliflor == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>   
+                        <tr>
+                            <td>Espárragos</td>
+                            <td>
+                                <input type="radio" name="Esparragos" value="No" @(Model.Esparragos == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Esparragos" value="Podria" @(Model.Esparragos == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Esparragos" value="Si" @(Model.Esparragos == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Espinaca</td>
+                            <td>
+                                <input type="radio" name="Espinaca" value="No" @(Model.Espinaca == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Espinaca" value="Podria" @(Model.Espinaca == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Espinaca" value="Si" @(Model.Espinaca == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Lechuga</td>
+                            <td>
+                                <input type="radio" name="Lechuga" value="No" @(Model.Lechuga == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Lechuga" value="Podria" @(Model.Lechuga == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Lechuga" value="Si" @(Model.Lechuga == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>   
+                        <tr>
+                            <td>Palmitos</td>
+                            <td>
+                                <input type="radio" name="Palmitos" value="No" @(Model.Palmitos == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Palmitos" value="Podria" @(Model.Palmitos == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Palmitos" value="Si" @(Model.Palmitos == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Palta</td>
+                            <td>
+                                <input type="radio" name="Plata" value="No" @(Model.Plata == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Plata" value="Podria" @(Model.Plata == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Plata" value="Si" @(Model.Plata == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Papa</td>
+                            <td>
+                                <input type="radio" name="Papa" value="No" @(Model.Papa == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Papa" value="Podria" @(Model.Papa == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Papa" value="Si" @(Model.Papa == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Pepino</td>
+                            <td>
+                                <input type="radio" name="Pepino" value="No" @(Model.Pepino == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Pepino" value="Podria" @(Model.Pepino == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Pepino" value="Si" @(Model.Pepino == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Pimiento</td>
+                            <td>
+                                <input type="radio" name="Pimiento" value="No" @(Model.Pimiento == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Pimiento" value="Podria" @(Model.Pimiento == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Pimiento" value="Si" @(Model.Pimiento == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Radicheta</td>
+                            <td>
+                                <input type="radio" name="Radicheta" value="No" @(Model.Radicheta == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Radicheta" value="Podria" @(Model.Radicheta == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Radicheta" value="Si" @(Model.Radicheta == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Remolacha</td>
+                            <td>
+                                <input type="radio" name="Remolacha" value="No" @(Model.Remolacha == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Remolacha" value="Podria" @(Model.Remolacha == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Remolacha" value="Si" @(Model.Remolacha == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Repollitos de Bruselas</td>
+                            <td>
+                                <input type="radio" name="Repollitos" value="No" @(Model.Repollitos == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Repollitos" value="Podria" @(Model.Repollitos == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Repollitos" value="Si" @(Model.Repollitos == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Repollo</td>
+                            <td>
+                                <input type="radio" name="Repollo" value="No" @(Model.Repollo == "No" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Repollo" value="Podria" @(Model.Repollo == "Podria" ? "checked=checked" : "") />
+                            </td>
+                            <td>
+                                <input type="radio" name="Repollo" value="Si" @(Model.Repollo == "Si" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+    </section>
+</form>
+
+<div class="container-botones-inferiores" style="width:100%;float:left">
+    @Html.ActionLink("Anterior", "AnteriorPaso", "Pasos", new { id = ViewBag.Pagina }, new { @class = "btn btn-info", onclick="javascript:subirDatos();" })
+    @Html.ActionLink("Siguiente", "ProximoPaso", "Pasos", new { id = ViewBag.Pagina }, new { @class = "btn btn-info", onclick = "javascript:subirDatos();" })
+</div>

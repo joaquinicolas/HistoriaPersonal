@@ -1,0 +1,6468 @@
+﻿@{
+    Layout = null;
+}
+@{ //strings a comparar en los switchs
+    string sientemal = Model.sintoma1.SienteMal;
+    string creeproblemasalud = Model.sintoma1.CreeProblemaSalud;
+    string enfermedadrespiratoria = Model.sintoma1.EnfermedadRespiratoria;
+    string ronquera = Model.sintoma1.Ronquera;
+    string ronca = Model.sintoma1.Ronca;
+    string despierta = Model.sintoma1.Despierta;
+    string respirardormir = Model.sintoma1.RespirarDormir;
+    string sueniodia = Model.sintoma1.SuenioDia;
+    string dificultadrespirar = Model.sintoma1.DificultadRespirarEsfuerzo;
+    string problemascardiacos = Model.sintoma1.ProblemasCardiacos;
+    string dolorpecho = Model.sintoma1.DolorPecho;
+    string palpitaciones = Model.sintoma1.Palpitaciones;
+    string presionalta = Model.sintoma1.PresionAlta;
+    string calculosurinarios = Model.sintoma1.CalculosUrinarios;
+    string infeccionviasurinarias = Model.sintoma1.InfeccionViasUrinarias;
+    string perdidafuerzaorinar = Model.sintoma1.PerdidaFuerzaOrinar;
+    string incontinenciaurinaria = Model.sintoma1.IncontinenciaUrinaria;
+    string dolorpiernascaminar = Model.sintoma1.DolorPiernasCaminar;
+    string varices = Model.sintoma1.Varices;
+    string infeccionespiernas = Model.sintoma1.InfeccionesPiernas;
+    string pieshinchados = Model.sintoma1.PiesHinchados;
+    string calambres = Model.sintoma1.Calambres;
+    string hormigueos = Model.sintoma1.Hormigueos;
+    string articulacionesrojas = Model.sintoma1.ArticulacionesRojas;
+    string problemasgenitales = Model.sintoma1.ProblemasGenitales;
+    string perdidasangre = Model.sintoma1.PerdidaSangre;
+    string picazon = Model.sintoma1.Picazon;
+    string ganglios = Model.sintoma1.Ganglios;
+    string problemasoido = Model.sintoma1.ProblemasOido;
+    string problemasvista = Model.sintoma1.ProblemasVista;
+    string enfermedadtiroidea = Model.sintoma1.EnfermedadTiroidea;
+    string pielseca = Model.sintoma1.PielSeca;
+    string uniasfragiles = Model.sintoma1.UniasFragiles;
+    string cabelloseco = Model.sintoma1.CabelloSeco;
+    string sensibilidadfrio = Model.sintoma1.SensibilidadFrio;
+    string cansancioinexplicable = Model.sintoma1.CansancioInexplicable;
+
+    string colesterolaumentado = Model.sintoma2.ColesterolAumentado;
+    string trigliceridosaumentados = Model.sintoma2.TrigliceridosAumentados;
+    string gota = Model.sintoma2.Gota;
+    string osteoporosis = Model.sintoma2.Osteoporosis;
+    string diabetes = Model.sintoma2.Diabetes;
+    string alergias = Model.sintoma2.Alergias;
+    string digestionlenta = Model.sintoma2.DigestionLenta;
+    string dolorestomago = Model.sintoma2.DolorEstomago;
+    string vomitos = Model.sintoma2.Vomitos;
+    string meteorismo = Model.sintoma2.Meteorismo;
+    string constipacion = Model.sintoma2.Constipacion;
+    string diarrea = Model.sintoma2.Diarrrea;
+    string hemorroides = Model.sintoma2.Hemorroides;
+    string intoleranciaalimento = Model.sintoma2.IntoleranciaAlimento;
+    string problemaspiel = Model.sintoma2.ProblemasPiel;
+    string verrugas = Model.sintoma2.Verrugas;
+    string Manchas = Model.sintoma2.Manchas;
+    string acne = Model.sintoma2.Acne;
+    string caidacabello = Model.sintoma2.CaidaCabello;
+    string problemadental = Model.sintoma2.ProblemaDental;
+    string llagas = Model.sintoma2.Llagas;
+    string sangradoencias = Model.sintoma2.SangradoEncias;
+    string problemaNeurologico = Model.sintoma2.ProblemaNeurologico;
+    string dolorescabezas = Model.sintoma2.DoloresCabeza;
+    string mareos = Model.sintoma2.Mareos;
+    string triste = Model.sintoma2.Triste;
+    string llantofacil = Model.sintoma2.LlantoFacil;
+    string pocoplacer = Model.sintoma2.PocoPlacer;
+    string perdidainteres = Model.sintoma2.PerdidaInteres;
+    string pocainteraccion = Model.sintoma2.PocaInteraccion;
+    string aislamiento = Model.sintoma2.Aislamiento;
+
+    string dificultadconcentrarse = Model.sintoma3.DificultadConcentrarse;
+    string indecision = Model.sintoma3.Indecisión;
+    string sentimientoculpa = Model.sintoma3.SentimientoCulpa;
+    string aburrimiento = Model.sintoma3.Aburrimiento;
+    string solomundo = Model.sintoma3.SoloEnElMundo;
+    string sensacionvacio = Model.sintoma3.SensacionVacio;
+    string irritacionincontrolable = Model.sintoma3.IrritacionIncontrolable;
+    string oscilacionesanimo = Model.sintoma3.OscilacionesAnimo;
+    string nervios = Model.sintoma3.Nervios;
+    string enojo = Model.sintoma3.Enojo;
+    string autolesiones = Model.sintoma3.Autolesiones;
+    string agresion = Model.sintoma3.Agresion;
+    string furia = Model.sintoma3.Furia;
+    string habla = Model.sintoma3.Habla;
+    string duermemenos = Model.sintoma3.DuermeMenos;
+    string estarcima = Model.sintoma3.EstarCima;
+    string aumentosexual = Model.sintoma3.AumentoSexual;
+    string gastadinero = Model.sintoma3.GastaDinero;
+    string apuestas = Model.sintoma3.Apuestas;
+    string actividadusual = Model.sintoma3.ActividadUsual;
+    string ansioso = Model.sintoma3.Ansioso;
+    string preocupacionesexcesivas = Model.sintoma3.PreocupacionesExcesivas;
+    string tensionmuscular = Model.sintoma3.TensionMuscular;
+    string estadoanimo = Model.sintoma3.EstadoAnimo;
+    string miedos = Model.sintoma3.Miedos;
+    string pensamientosincomodos = Model.sintoma3.PensamientosIncomodos;
+    string noplacersexual = Model.sintoma3.NoPlacerSexual;
+    string deseosexual = Model.sintoma3.DeseoSexual;
+    string dificultadessexuales = Model.sintoma3.DificultadesSexuales;
+    string evitarsexuales = Model.sintoma3.EvitarSexuales;
+    string dificultadesquedarsedor = Model.sintoma3.DificultadQuedarseDormido;
+    string sedespiertanoche = Model.sintoma3.SeDespiertaNoche;
+    string pesadillas = Model.sintoma3.Pesadillas;
+    string duermedianonoche = Model.sintoma3.DuermeDiaNoNoche;
+    string tomapastillasdormir = Model.sintoma3.TomaPastillasDormir;
+
+
+
+
+
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>4</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- Save for Web Styles (4.jpg - Slices: tomatomopastis3) -->
+    <style type="text/css">
+        <!--
+
+        #Table_01 {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 1011px;
+            height: 721px;
+            background-image: url(../../Content/Imagenes/Mapeo/4.jpg);
+        }
+
+        #sesiente0 {
+            position: absolute;
+            left: 203px;
+            top: 83px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sesiente1 {
+            position: absolute;
+            left: 217px;
+            top: 83px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sesiente2 {
+            position: absolute;
+            left: 231px;
+            top: 83px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sesiente3 {
+            position: absolute;
+            left: 245px;
+            top: 83px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #calculosarenilla0 {
+            position: absolute;
+            left: 420px;
+            top: 88px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #calculosarenilla1 {
+            position: absolute;
+            left: 434px;
+            top: 88px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #calculosarenilla2 {
+            position: absolute;
+            left: 448px;
+            top: 88px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #calculosarenilla3 {
+            position: absolute;
+            left: 462px;
+            top: 88px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #difiparaconcentrar0 {
+            position: absolute;
+            left: 671px;
+            top: 91px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #difiparaconcentrar1 {
+            position: absolute;
+            left: 685px;
+            top: 91px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #difiparaconcentrar2 {
+            position: absolute;
+            left: 699px;
+            top: 91px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #difiparaconcentrar3 {
+            position: absolute;
+            left: 713px;
+            top: 91px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #cuantashsduerme {
+            position: absolute;
+            left: 877px;
+            top: 95px;
+            width: 99px;
+            height: 14px;
+        }
+
+        #creeteneralgun0 {
+            position: absolute;
+            left: 203px;
+            top: 103px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #creeteneralgun1 {
+            position: absolute;
+            left: 217px;
+            top: 103px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #creeteneralgun2 {
+            position: absolute;
+            left: 231px;
+            top: 103px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #creeteneralgun3 {
+            position: absolute;
+            left: 245px;
+            top: 103px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #infectviasuri0 {
+            position: absolute;
+            left: 419px;
+            top: 107px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #infectviasuri1 {
+            position: absolute;
+            left: 433px;
+            top: 107px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #infectviasuri2 {
+            position: absolute;
+            left: 447px;
+            top: 107px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #infectviasuri3 {
+            position: absolute;
+            left: 461px;
+            top: 107px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #indeciso0 {
+            position: absolute;
+            left: 671px;
+            top: 108px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #indeciso1 {
+            position: absolute;
+            left: 685px;
+            top: 108px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #indeciso2 {
+            position: absolute;
+            left: 699px;
+            top: 108px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #indeciso3 {
+            position: absolute;
+            left: 713px;
+            top: 108px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #senticulpa0 {
+            position: absolute;
+            left: 671px;
+            top: 124px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #senticulpa1 {
+            position: absolute;
+            left: 685px;
+            top: 124px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #senticulpa2 {
+            position: absolute;
+            left: 699px;
+            top: 124px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #senticulpa3 {
+            position: absolute;
+            left: 713px;
+            top: 124px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #perdidaorinar0 {
+            position: absolute;
+            left: 419px;
+            top: 125px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #perdidaorinar1 {
+            position: absolute;
+            left: 433px;
+            top: 125px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #perdidaorinar2 {
+            position: absolute;
+            left: 447px;
+            top: 125px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #perdidaorinar3 {
+            position: absolute;
+            left: 461px;
+            top: 125px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #cuatosxdia {
+            position: absolute;
+            left: 951px;
+            top: 129px;
+            width: 25px;
+            height: 14px;
+        }
+
+        #fumano {
+            position: absolute;
+            left: 798px;
+            top: 133px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #fumasi {
+            position: absolute;
+            left: 832px;
+            top: 133px;
+            width: 14px;
+            height: 13px;
+        }
+
+        #problempiel0 {
+            position: absolute;
+            left: 203px;
+            top: 139px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #problempie1 {
+            position: absolute;
+            left: 217px;
+            top: 139px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #problempie2 {
+            position: absolute;
+            left: 231px;
+            top: 139px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #problempie3 {
+            position: absolute;
+            left: 245px;
+            top: 139px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #incontinenciauri0 {
+            position: absolute;
+            left: 419px;
+            top: 141px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #incontinenciauri1 {
+            position: absolute;
+            left: 433px;
+            top: 141px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #incontinenciauri2 {
+            position: absolute;
+            left: 447px;
+            top: 141px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #incontinenciauri3 {
+            position: absolute;
+            left: 461px;
+            top: 141px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #aburrimieeentooo0 {
+            position: absolute;
+            left: 671px;
+            top: 141px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #aburrimieeentooo1 {
+            position: absolute;
+            left: 685px;
+            top: 141px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #aburrimieeentooo2 {
+            position: absolute;
+            left: 699px;
+            top: 141px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #aburrimieeentooo3 {
+            position: absolute;
+            left: 713px;
+            top: 141px;
+            width: 13px;
+            height: 14px;
+        }
+
+
+
+        #dejedefumar {
+            position: absolute;
+            left: 835px;
+            top: 146px;
+            width: 141px;
+            height: 14px;
+        }
+
+        #manchasu0 {
+            position: absolute;
+            left: 203px;
+            top: 155px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #manchasu1 {
+            position: absolute;
+            left: 217px;
+            top: 155px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #manchasu2 {
+            position: absolute;
+            left: 231px;
+            top: 155px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #manchasu3 {
+            position: absolute;
+            left: 245px;
+            top: 155px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #solitoenelmundo0 {
+            position: absolute;
+            left: 671px;
+            top: 158px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #solitoenelmundo1 {
+            position: absolute;
+            left: 685px;
+            top: 158px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #solitoenelmundo2 {
+            position: absolute;
+            left: 699px;
+            top: 158px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #solitoenelmundo3 {
+            position: absolute;
+            left: 713px;
+            top: 158px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #digestlenta0 {
+            position: absolute;
+            left: 419px;
+            top: 159px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #digestlenta1 {
+            position: absolute;
+            left: 433px;
+            top: 159px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #digestlenta2 {
+            position: absolute;
+            left: 447px;
+            top: 159px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #digestlenta3 {
+            position: absolute;
+            left: 461px;
+            top: 159px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #apariciono0 {
+            position: absolute;
+            left: 203px;
+            top: 172px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #apariciono1 {
+            position: absolute;
+            left: 217px;
+            top: 172px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #apariciono2 {
+            position: absolute;
+            left: 231px;
+            top: 172px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #apariciono3 {
+            position: absolute;
+            left: 245px;
+            top: 172px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #doloracidez0 {
+            position: absolute;
+            left: 419px;
+            top: 175px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #doloracidez1 {
+            position: absolute;
+            left: 433px;
+            top: 175px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #doloracidez2 {
+            position: absolute;
+            left: 447px;
+            top: 175px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #doloracidez3 {
+            position: absolute;
+            left: 461px;
+            top: 175px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sensivacio0 {
+            position: absolute;
+            left: 671px;
+            top: 175px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sensivacio1 {
+            position: absolute;
+            left: 685px;
+            top: 175px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sensivacio2 {
+            position: absolute;
+            left: 699px;
+            top: 175px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sensivacio3 {
+            position: absolute;
+            left: 713px;
+            top: 175px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #vomitoss0 {
+            position: absolute;
+            left: 419px;
+            top: 192px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #vomitoss1 {
+            position: absolute;
+            left: 433px;
+            top: 192px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #vomitoss2 {
+            position: absolute;
+            left: 447px;
+            top: 192px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #vomitoss3 {
+            position: absolute;
+            left: 461px;
+            top: 192px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #iriitaincontrolable0 {
+            position: absolute;
+            left: 672px;
+            top: 192px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #iriitaincontrolable1 {
+            position: absolute;
+            left: 686px;
+            top: 192px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #iriitaincontrolable2 {
+            position: absolute;
+            left: 700px;
+            top: 192px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #iriitaincontrolable3 {
+            position: absolute;
+            left: 714px;
+            top: 192px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #acme0 {
+            position: absolute;
+            left: 203px;
+            top: 206px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #acme1 {
+            position: absolute;
+            left: 217px;
+            top: 206px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #acme2 {
+            position: absolute;
+            left: 231px;
+            top: 206px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #acme3 {
+            position: absolute;
+            left: 245px;
+            top: 206px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #oscilaanimo0 {
+            position: absolute;
+            left: 672px;
+            top: 208px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #oscilaanimo1 {
+            position: absolute;
+            left: 686px;
+            top: 208px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #oscilaanimo2 {
+            position: absolute;
+            left: 700px;
+            top: 208px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #oscilaanimo3 {
+            position: absolute;
+            left: 714px;
+            top: 208px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #meteoro0 {
+            position: absolute;
+            left: 419px;
+            top: 209px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #meteoro1 {
+            position: absolute;
+            left: 433px;
+            top: 209px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #meteoro2 {
+            position: absolute;
+            left: 447px;
+            top: 209px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #meteoro3 {
+            position: absolute;
+            left: 461px;
+            top: 209px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #caidacabe0 {
+            position: absolute;
+            left: 203px;
+            top: 222px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #caidacabe1 {
+            position: absolute;
+            left: 217px;
+            top: 222px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #caidacabe2 {
+            position: absolute;
+            left: 231px;
+            top: 222px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #caidacabe3 {
+            position: absolute;
+            left: 245px;
+            top: 222px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #constantinopla0 {
+            position: absolute;
+            left: 419px;
+            top: 225px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #constantinopla1 {
+            position: absolute;
+            left: 433px;
+            top: 225px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #constantinopla2 {
+            position: absolute;
+            left: 447px;
+            top: 225px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #constantinopla3 {
+            position: absolute;
+            left: 461px;
+            top: 225px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #nervioestres0 {
+            position: absolute;
+            left: 671px;
+            top: 225px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #nervioestres1 {
+            position: absolute;
+            left: 685px;
+            top: 225px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #nervioestres2 {
+            position: absolute;
+            left: 699px;
+            top: 225px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #nervioestres3 {
+            position: absolute;
+            left: 713px;
+            top: 225px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #promvino {
+            position: absolute;
+            left: 760px;
+            top: 226px;
+            width: 27px;
+            height: 14px;
+        }
+
+        #promcervez {
+            position: absolute;
+            left: 870px;
+            top: 226px;
+            width: 36px;
+            height: 14px;
+        }
+
+        #algunproneurolog0 {
+            position: absolute;
+            left: 203px;
+            top: 240px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #algunproneurolog1 {
+            position: absolute;
+            left: 217px;
+            top: 240px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #algunproneurolog2 {
+            position: absolute;
+            left: 231px;
+            top: 240px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #algunproneurolog3 {
+            position: absolute;
+            left: 245px;
+            top: 240px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #enojoconuste0 {
+            position: absolute;
+            left: 671px;
+            top: 241px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #enojoconuste1 {
+            position: absolute;
+            left: 685px;
+            top: 241px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #enojoconuste2 {
+            position: absolute;
+            left: 699px;
+            top: 241px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #enojoconuste3 {
+            position: absolute;
+            left: 713px;
+            top: 241px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #diarreita0 {
+            position: absolute;
+            left: 419px;
+            top: 242px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #diarreita1 {
+            position: absolute;
+            left: 433px;
+            top: 242px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #diarreita2 {
+            position: absolute;
+            left: 447px;
+            top: 242px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #diarreita3 {
+            position: absolute;
+            left: 461px;
+            top: 242px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #prombebblancas {
+            position: absolute;
+            left: 820px;
+            top: 253px;
+            width: 23px;
+            height: 14px;
+        }
+
+        #promotras {
+            position: absolute;
+            left: 927px;
+            top: 253px;
+            width: 49px;
+            height: 14px;
+        }
+
+        #doloresdecabe0 {
+            position: absolute;
+            left: 203px;
+            top: 256px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #doloresdecabe1 {
+            position: absolute;
+            left: 217px;
+            top: 256px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #doloresdecabe2 {
+            position: absolute;
+            left: 231px;
+            top: 256px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #doloresdecabe3 {
+            position: absolute;
+            left: 245px;
+            top: 256px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #autolesionescge0 {
+            position: absolute;
+            left: 671px;
+            top: 257px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #autolesionescge1 {
+            position: absolute;
+            left: 685px;
+            top: 257px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #autolesionescge2 {
+            position: absolute;
+            left: 699px;
+            top: 257px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #autolesionescge3 {
+            position: absolute;
+            left: 713px;
+            top: 257px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #homorroides0 {
+            position: absolute;
+            left: 419px;
+            top: 258px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #homorroides1 {
+            position: absolute;
+            left: 433px;
+            top: 258px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #homorroides2 {
+            position: absolute;
+            left: 447px;
+            top: 258px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #homorroides3 {
+            position: absolute;
+            left: 461px;
+            top: 258px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #mareosdesmayosver0 {
+            position: absolute;
+            left: 203px;
+            top: 273px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #mareosdesmayosver1 {
+            position: absolute;
+            left: 217px;
+            top: 273px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #mareosdesmayosver2 {
+            position: absolute;
+            left: 231px;
+            top: 273px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #mareosdesmayosver3 {
+            position: absolute;
+            left: 245px;
+            top: 273px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #agresionaotr0 {
+            position: absolute;
+            left: 671px;
+            top: 274px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #agresionaotr1 {
+            position: absolute;
+            left: 685px;
+            top: 274px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #agresionaotr2 {
+            position: absolute;
+            left: 699px;
+            top: 274px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #agresionaotr3 {
+            position: absolute;
+            left: 713px;
+            top: 274px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #intoleranciaalimento0 {
+            position: absolute;
+            left: 419px;
+            top: 276px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #intoleranciaalimento1 {
+            position: absolute;
+            left: 433px;
+            top: 276px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #intoleranciaalimento2 {
+            position: absolute;
+            left: 447px;
+            top: 276px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #intoleranciaalimento3 {
+            position: absolute;
+            left: 461px;
+            top: 276px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #furiaalegriaexces0 {
+            position: absolute;
+            left: 671px;
+            top: 290px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #furiaalegriaexces1 {
+            position: absolute;
+            left: 685px;
+            top: 290px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #furiaalegriaexces2 {
+            position: absolute;
+            left: 699px;
+            top: 290px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #furiaalegriaexces3 {
+            position: absolute;
+            left: 713px;
+            top: 290px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #probloido0 {
+            position: absolute;
+            left: 203px;
+            top: 291px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #probloido1 {
+            position: absolute;
+            left: 217px;
+            top: 291px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #probloido2 {
+            position: absolute;
+            left: 231px;
+            top: 291px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #probloido3 {
+            position: absolute;
+            left: 245px;
+            top: 291px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #problengenitales0 {
+            position: absolute;
+            left: 419px;
+            top: 294px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #problengenitales1 {
+            position: absolute;
+            left: 433px;
+            top: 294px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #problengenitales2 {
+            position: absolute;
+            left: 447px;
+            top: 294px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #problengenitales3 {
+            position: absolute;
+            left: 461px;
+            top: 294px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #lepreocupano {
+            position: absolute;
+            left: 917px;
+            top: 299px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #lepreocupasi {
+            position: absolute;
+            left: 950px;
+            top: 299px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #hablamasque0 {
+            position: absolute;
+            left: 671px;
+            top: 306px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #hablamasque1 {
+            position: absolute;
+            left: 685px;
+            top: 306px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #hablamasque2 {
+            position: absolute;
+            left: 699px;
+            top: 306px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #hablamasque3 {
+            position: absolute;
+            left: 713px;
+            top: 306px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #probvista0 {
+            position: absolute;
+            left: 203px;
+            top: 307px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #probvista1 {
+            position: absolute;
+            left: 217px;
+            top: 307px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #probvista2 {
+            position: absolute;
+            left: 231px;
+            top: 307px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #probvista3 {
+            position: absolute;
+            left: 245px;
+            top: 307px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #perdidassangre0 {
+            position: absolute;
+            left: 419px;
+            top: 309px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #perdidassangre1 {
+            position: absolute;
+            left: 433px;
+            top: 309px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #perdidassangre2 {
+            position: absolute;
+            left: 447px;
+            top: 309px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #perdidassangre3 {
+            position: absolute;
+            left: 461px;
+            top: 309px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #algunavezculpano {
+            position: absolute;
+            left: 917px;
+            top: 313px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #algunavezculpasi {
+            position: absolute;
+            left: 950px;
+            top: 313px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #duermemenosy0 {
+            position: absolute;
+            left: 671px;
+            top: 323px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #duermemenosy1 {
+            position: absolute;
+            left: 685px;
+            top: 323px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #duermemenosy2 {
+            position: absolute;
+            left: 699px;
+            top: 323px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #duermemenosy3 {
+            position: absolute;
+            left: 713px;
+            top: 323px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #algunprobdenta0 {
+            position: absolute;
+            left: 203px;
+            top: 324px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #algunprobdenta1 {
+            position: absolute;
+            left: 217px;
+            top: 324px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #algunprobdenta2 {
+            position: absolute;
+            left: 231px;
+            top: 324px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #algunprobdenta3 {
+            position: absolute;
+            left: 245px;
+            top: 324px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #picazondond0 {
+            position: absolute;
+            left: 419px;
+            top: 326px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #picazondond1 {
+            position: absolute;
+            left: 433px;
+            top: 326px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #picazondond2 {
+            position: absolute;
+            left: 447px;
+            top: 326px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #picazondond3 {
+            position: absolute;
+            left: 461px;
+            top: 326px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #intentodejarno {
+            position: absolute;
+            left: 917px;
+            top: 328px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #intentodejarsi {
+            position: absolute;
+            left: 950px;
+            top: 328px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #llagasobul0 {
+            position: absolute;
+            left: 203px;
+            top: 339px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #llagasobul1 {
+            position: absolute;
+            left: 217px;
+            top: 339px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #llagasobul2 {
+            position: absolute;
+            left: 231px;
+            top: 339px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #llagasobul3 {
+            position: absolute;
+            left: 245px;
+            top: 339px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #estarenlacima0 {
+            position: absolute;
+            left: 671px;
+            top: 340px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #estarenlacima1 {
+            position: absolute;
+            left: 685px;
+            top: 340px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #estarenlacima2 {
+            position: absolute;
+            left: 699px;
+            top: 340px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #estarenlacima3 {
+            position: absolute;
+            left: 713px;
+            top: 340px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #gangliosobult0 {
+            position: absolute;
+            left: 419px;
+            top: 342px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #gangliosobult1 {
+            position: absolute;
+            left: 433px;
+            top: 342px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #gangliosobult2 {
+            position: absolute;
+            left: 447px;
+            top: 342px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #gangliosobult3 {
+            position: absolute;
+            left: 461px;
+            top: 342px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #intentocambiarno {
+            position: absolute;
+            left: 917px;
+            top: 342px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #intentocambiarsi {
+            position: absolute;
+            left: 950px;
+            top: 342px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sangrantesencias0 {
+            position: absolute;
+            left: 203px;
+            top: 356px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sangrantesencias1 {
+            position: absolute;
+            left: 217px;
+            top: 356px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sangrantesencias2 {
+            position: absolute;
+            left: 231px;
+            top: 356px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sangrantesencias3 {
+            position: absolute;
+            left: 245px;
+            top: 356px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #aumentodelaactisex0 {
+            position: absolute;
+            left: 671px;
+            top: 356px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #aumentodelaactisex1 {
+            position: absolute;
+            left: 685px;
+            top: 356px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #aumentodelaactisex2 {
+            position: absolute;
+            left: 699px;
+            top: 356px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #aumentodelaactisex3 {
+            position: absolute;
+            left: 713px;
+            top: 356px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #algunavezlellamaronno {
+            position: absolute;
+            left: 917px;
+            top: 356px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #algunavezlellamaronsi {
+            position: absolute;
+            left: 950px;
+            top: 357px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #dolorenlaspiern0 {
+            position: absolute;
+            left: 419px;
+            top: 359px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #dolorenlaspiern1 {
+            position: absolute;
+            left: 433px;
+            top: 359px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #dolorenlaspiern2 {
+            position: absolute;
+            left: 447px;
+            top: 359px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #dolorenlaspiern3 {
+            position: absolute;
+            left: 461px;
+            top: 359px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #gastamasdeloq0 {
+            position: absolute;
+            left: 672px;
+            top: 372px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #gastamasdeloq1 {
+            position: absolute;
+            left: 686px;
+            top: 372px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #gastamasdeloq2 {
+            position: absolute;
+            left: 700px;
+            top: 372px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #gastamasdeloq3 {
+            position: absolute;
+            left: 714px;
+            top: 372px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #algunatiroidea0 {
+            position: absolute;
+            left: 203px;
+            top: 374px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #algunatiroidea1 {
+            position: absolute;
+            left: 218px;
+            top: 374px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #algunatiroidea2 {
+            position: absolute;
+            left: 232px;
+            top: 374px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #algunatiroidea3 {
+            position: absolute;
+            left: 245px;
+            top: 374px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #articurojasodolo0 {
+            position: absolute;
+            left: 419px;
+            top: 376px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #articurojasodolo1 {
+            position: absolute;
+            left: 433px;
+            top: 376px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #articurojasodolo2 {
+            position: absolute;
+            left: 447px;
+            top: 376px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #articurojasodolo3 {
+            position: absolute;
+            left: 461px;
+            top: 376px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #tomapcalmarse {
+            position: absolute;
+            left: 923px;
+            top: 385px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #pielsecaaa0 {
+            position: absolute;
+            left: 203px;
+            top: 389px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #pielsecaaa1 {
+            position: absolute;
+            left: 217px;
+            top: 389px;
+            width: 15px;
+            height: 14px;
+        }
+
+        #pielsecaaa2 {
+            position: absolute;
+            left: 232px;
+            top: 389px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #pielsecaaa3 {
+            position: absolute;
+            left: 245px;
+            top: 389px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #hizohaceapuest0 {
+            position: absolute;
+            left: 671px;
+            top: 390px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #hizohaceapuest1 {
+            position: absolute;
+            left: 685px;
+            top: 390px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #hizohaceapuest2 {
+            position: absolute;
+            left: 699px;
+            top: 390px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #hizohaceapuest3 {
+            position: absolute;
+            left: 713px;
+            top: 390px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #infecculceras0 {
+            position: absolute;
+            left: 419px;
+            top: 392px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #infecculceras1 {
+            position: absolute;
+            left: 433px;
+            top: 392px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #infecculceras2 {
+            position: absolute;
+            left: 447px;
+            top: 392px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #infecculceras3 {
+            position: absolute;
+            left: 461px;
+            top: 392px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #tomasolas {
+            position: absolute;
+            left: 806px;
+            top: 400px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #tomapdormir {
+            position: absolute;
+            left: 923px;
+            top: 400px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #hacemascosasusual0 {
+            position: absolute;
+            left: 671px;
+            top: 404px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #hacemascosasusual1 {
+            position: absolute;
+            left: 685px;
+            top: 404px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #hacemascosasusual2 {
+            position: absolute;
+            left: 699px;
+            top: 404px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #hacemascosasusual3 {
+            position: absolute;
+            left: 713px;
+            top: 404px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #unasfragiloescamadas0 {
+            position: absolute;
+            left: 203px;
+            top: 405px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #unasfragiloescamadas1 {
+            position: absolute;
+            left: 217px;
+            top: 405px;
+            width: 15px;
+            height: 14px;
+        }
+
+        #unasfragiloescamadas2 {
+            position: absolute;
+            left: 232px;
+            top: 405px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #unasfragiloescamadas3 {
+            position: absolute;
+            left: 245px;
+            top: 405px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #varicees0 {
+            position: absolute;
+            left: 419px;
+            top: 407px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #varicees1 {
+            position: absolute;
+            left: 433px;
+            top: 407px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #varicees2 {
+            position: absolute;
+            left: 447px;
+            top: 407px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #varicees3 {
+            position: absolute;
+            left: 461px;
+            top: 407px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #ansiotenso0 {
+            position: absolute;
+            left: 671px;
+            top: 422px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #ansiotenso1 {
+            position: absolute;
+            left: 685px;
+            top: 422px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #ansiotenso2 {
+            position: absolute;
+            left: 699px;
+            top: 422px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #ansiotenso3 {
+            position: absolute;
+            left: 713px;
+            top: 422px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #cabeseco0 {
+            position: absolute;
+            left: 203px;
+            top: 423px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #cabeseco1 {
+            position: absolute;
+            left: 217px;
+            top: 423px;
+            width: 15px;
+            height: 14px;
+        }
+
+        #cabeseco2 {
+            position: absolute;
+            left: 234px;
+            top: 423px;
+            width: 11px;
+            height: 14px;
+        }
+
+        #cabeseco3 {
+            position: absolute;
+            left: 245px;
+            top: 423px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #piehinchaos0 {
+            position: absolute;
+            left: 419px;
+            top: 425px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #piehinchaos1 {
+            position: absolute;
+            left: 433px;
+            top: 425px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #piehinchaos2 {
+            position: absolute;
+            left: 447px;
+            top: 425px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #piehinchaos3 {
+            position: absolute;
+            left: 461px;
+            top: 425px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sufrioperdidasno {
+            position: absolute;
+            left: 929px;
+            top: 432px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sufrioperdidassi {
+            position: absolute;
+            left: 956px;
+            top: 432px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #preocupaexcesiv0 {
+            position: absolute;
+            left: 671px;
+            top: 438px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #preocupaexcesiv1 {
+            position: absolute;
+            left: 685px;
+            top: 438px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #preocupaexcesiv2 {
+            position: absolute;
+            left: 699px;
+            top: 438px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #preocupaexcesiv3 {
+            position: absolute;
+            left: 713px;
+            top: 438px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #sensialfrio0 {
+            position: absolute;
+            left: 205px;
+            top: 440px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #sensialfrio1 {
+            position: absolute;
+            left: 218px;
+            top: 440px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sensialfrio2 {
+            position: absolute;
+            left: 234px;
+            top: 440px;
+            width: 11px;
+            height: 14px;
+        }
+
+        #sensialfrio3 {
+            position: absolute;
+            left: 245px;
+            top: 440px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #calambre0 {
+            position: absolute;
+            left: 419px;
+            top: 442px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #calambre1 {
+            position: absolute;
+            left: 433px;
+            top: 442px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #calambre2 {
+            position: absolute;
+            left: 447px;
+            top: 442px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #calambre3 {
+            position: absolute;
+            left: 461px;
+            top: 442px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #perdidascuales1 {
+            position: absolute;
+            left: 781px;
+            top: 451px;
+            width: 195px;
+            height: 14px;
+        }
+
+        #tensionmuscu0 {
+            position: absolute;
+            left: 671px;
+            top: 455px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #tensionmuscu1 {
+            position: absolute;
+            left: 685px;
+            top: 455px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #tensionmuscu2 {
+            position: absolute;
+            left: 699px;
+            top: 455px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #tensionmuscu3 {
+            position: absolute;
+            left: 713px;
+            top: 455px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #cansancioinex0 {
+            position: absolute;
+            left: 204px;
+            top: 457px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #cansancioinex1 {
+            position: absolute;
+            left: 218px;
+            top: 457px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #cansancioinex2 {
+            position: absolute;
+            left: 234px;
+            top: 457px;
+            width: 11px;
+            height: 14px;
+        }
+
+        #cansancioinex3 {
+            position: absolute;
+            left: 246px;
+            top: 457px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #hormigueo0 {
+            position: absolute;
+            left: 419px;
+            top: 458px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #hormigueo1 {
+            position: absolute;
+            left: 433px;
+            top: 458px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #hormigueo2 {
+            position: absolute;
+            left: 447px;
+            top: 458px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #hormigueo3 {
+            position: absolute;
+            left: 461px;
+            top: 458px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #suanimointerfiere0 {
+            position: absolute;
+            left: 671px;
+            top: 471px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #suanimointerfiere1 {
+            position: absolute;
+            left: 685px;
+            top: 471px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #suanimointerfiere2 {
+            position: absolute;
+            left: 699px;
+            top: 471px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #suanimointerfiere3 {
+            position: absolute;
+            left: 713px;
+            top: 471px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #perdidascuales2 {
+            position: absolute;
+            left: 738px;
+            top: 472px;
+            width: 238px;
+            height: 14px;
+        }
+
+        #enfermerespi0 {
+            position: absolute;
+            left: 204px;
+            top: 475px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #enfermerespi1 {
+            position: absolute;
+            left: 218px;
+            top: 475px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #enfermerespi2 {
+            position: absolute;
+            left: 232px;
+            top: 475px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #enfermerespi3 {
+            position: absolute;
+            left: 246px;
+            top: 475px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #colesteaumentao0 {
+            position: absolute;
+            left: 419px;
+            top: 476px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #colesteaumentao1 {
+            position: absolute;
+            left: 433px;
+            top: 476px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #colesteaumentao2 {
+            position: absolute;
+            left: 447px;
+            top: 476px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #colesteaumentao3 {
+            position: absolute;
+            left: 461px;
+            top: 476px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #miedostemoresinex0 {
+            position: absolute;
+            left: 672px;
+            top: 488px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #miedostemoresinex1 {
+            position: absolute;
+            left: 686px;
+            top: 488px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #miedostemoresinex2 {
+            position: absolute;
+            left: 700px;
+            top: 488px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #miedostemoresinex3 {
+            position: absolute;
+            left: 714px;
+            top: 488px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #ronquepersis0 {
+            position: absolute;
+            left: 204px;
+            top: 491px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #ronquepersis1 {
+            position: absolute;
+            left: 218px;
+            top: 491px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #ronquepersis2 {
+            position: absolute;
+            left: 232px;
+            top: 491px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #ronquepersis3 {
+            position: absolute;
+            left: 246px;
+            top: 491px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #trigliceridosaumen0 {
+            position: absolute;
+            left: 419px;
+            top: 492px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #trigliceridosaumen1 {
+            position: absolute;
+            left: 433px;
+            top: 492px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #trigliceridosaumen2 {
+            position: absolute;
+            left: 447px;
+            top: 492px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #trigliceridosaumen3 {
+            position: absolute;
+            left: 461px;
+            top: 492px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #algotraumatino {
+            position: absolute;
+            left: 862px;
+            top: 494px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #algotraumatisi {
+            position: absolute;
+            left: 908px;
+            top: 494px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #roncaalmorir0 {
+            position: absolute;
+            left: 204px;
+            top: 508px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #roncaalmorir1 {
+            position: absolute;
+            left: 219px;
+            top: 508px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #roncaalmorir2 {
+            position: absolute;
+            left: 233px;
+            top: 508px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #roncaalmorir3 {
+            position: absolute;
+            left: 247px;
+            top: 508px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #gotaacuric0 {
+            position: absolute;
+            left: 419px;
+            top: 510px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #gotaacuric1 {
+            position: absolute;
+            left: 433px;
+            top: 510px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #gotaacuric2 {
+            position: absolute;
+            left: 447px;
+            top: 510px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #gotaacuric3 {
+            position: absolute;
+            left: 461px;
+            top: 510px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #algotraumatique1 {
+            position: absolute;
+            left: 769px;
+            top: 511px;
+            width: 209px;
+            height: 14px;
+        }
+
+        #pensamientosacciones0 {
+            position: absolute;
+            left: 672px;
+            top: 512px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #pensamientosacciones1 {
+            position: absolute;
+            left: 686px;
+            top: 512px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #pensamientosacciones2 {
+            position: absolute;
+            left: 700px;
+            top: 512px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #pensamientosacciones3 {
+            position: absolute;
+            left: 714px;
+            top: 512px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #osteosteo0 {
+            position: absolute;
+            left: 419px;
+            top: 527px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #osteosteo1 {
+            position: absolute;
+            left: 433px;
+            top: 527px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #osteosteo2 {
+            position: absolute;
+            left: 447px;
+            top: 527px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #osteosteo3 {
+            position: absolute;
+            left: 461px;
+            top: 527px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #algotraumatique2 {
+            position: absolute;
+            left: 737px;
+            top: 532px;
+            width: 241px;
+            height: 14px;
+        }
+
+        #despiertasobre0 {
+            position: absolute;
+            left: 204px;
+            top: 533px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #despiertasobre1 {
+            position: absolute;
+            left: 219px;
+            top: 533px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #despiertasobre2 {
+            position: absolute;
+            left: 233px;
+            top: 533px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #despiertasobre3 {
+            position: absolute;
+            left: 247px;
+            top: 533px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #elsexonoda0 {
+            position: absolute;
+            left: 672px;
+            top: 538px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #elsexonoda1 {
+            position: absolute;
+            left: 686px;
+            top: 538px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #elsexonoda2 {
+            position: absolute;
+            left: 700px;
+            top: 538px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #elsexonoda3 {
+            position: absolute;
+            left: 714px;
+            top: 538px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #diabetis0 {
+            position: absolute;
+            left: 420px;
+            top: 544px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #diabetis1 {
+            position: absolute;
+            left: 434px;
+            top: 544px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #diabetis2 {
+            position: absolute;
+            left: 448px;
+            top: 544px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #diabetis3 {
+            position: absolute;
+            left: 462px;
+            top: 544px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #algotraumaticuando1 {
+            position: absolute;
+            left: 787px;
+            top: 551px;
+            width: 191px;
+            height: 14px;
+        }
+
+        #poconingundeseo0 {
+            position: absolute;
+            left: 672px;
+            top: 555px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #poconingundeseo1 {
+            position: absolute;
+            left: 686px;
+            top: 555px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #poconingundeseo2 {
+            position: absolute;
+            left: 700px;
+            top: 555px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #poconingundeseo3 {
+            position: absolute;
+            left: 714px;
+            top: 555px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #sequedasinr0 {
+            position: absolute;
+            left: 204px;
+            top: 559px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sequedasinr1 {
+            position: absolute;
+            left: 219px;
+            top: 559px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sequedasinr2 {
+            position: absolute;
+            left: 233px;
+            top: 559px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #sequedasinr3 {
+            position: absolute;
+            left: 246px;
+            top: 559px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #alergiasque0 {
+            position: absolute;
+            left: 420px;
+            top: 560px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #alergiasque1 {
+            position: absolute;
+            left: 434px;
+            top: 560px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #alergiasque2 {
+            position: absolute;
+            left: 448px;
+            top: 560px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #alergiasque3 {
+            position: absolute;
+            left: 462px;
+            top: 560px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #difisexual0 {
+            position: absolute;
+            left: 672px;
+            top: 572px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #difisexual1 {
+            position: absolute;
+            left: 686px;
+            top: 572px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #difisexual2 {
+            position: absolute;
+            left: 700px;
+            top: 572px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #difisexual3 {
+            position: absolute;
+            left: 714px;
+            top: 572px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #algotraumaticuando2 {
+            position: absolute;
+            left: 737px;
+            top: 572px;
+            width: 241px;
+            height: 12px;
+        }
+
+        #muchsueno0 {
+            position: absolute;
+            left: 204px;
+            top: 576px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #muchsueno1 {
+            position: absolute;
+            left: 219px;
+            top: 576px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #muchsueno2 {
+            position: absolute;
+            left: 233px;
+            top: 576px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #muchsueno3 {
+            position: absolute;
+            left: 246px;
+            top: 576px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #sesientetristeagust0 {
+            position: absolute;
+            left: 420px;
+            top: 587px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sesientetristeagust1 {
+            position: absolute;
+            left: 434px;
+            top: 587px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sesientetristeagust2 {
+            position: absolute;
+            left: 448px;
+            top: 587px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sesientetristeagust3 {
+            position: absolute;
+            left: 462px;
+            top: 587px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #evitatnersexo0 {
+            position: absolute;
+            left: 672px;
+            top: 588px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #evitatnersexo1 {
+            position: absolute;
+            left: 686px;
+            top: 588px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #evitatnersexo2 {
+            position: absolute;
+            left: 700px;
+            top: 588px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #evitatnersexo3 {
+            position: absolute;
+            left: 714px;
+            top: 588px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #dificultadaprarespi0 {
+            position: absolute;
+            left: 205px;
+            top: 601px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #dificultadaprarespi1 {
+            position: absolute;
+            left: 219px;
+            top: 601px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #dificultadaprarespi2 {
+            position: absolute;
+            left: 233px;
+            top: 601px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #dificultadaprarespi3 {
+            position: absolute;
+            left: 247px;
+            top: 601px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #difiquedarsedormido0 {
+            position: absolute;
+            left: 672px;
+            top: 605px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #difiquedarsedormido1 {
+            position: absolute;
+            left: 686px;
+            top: 605px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #difiquedarsedormido2 {
+            position: absolute;
+            left: 700px;
+            top: 605px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #difiquedarsedormido3 {
+            position: absolute;
+            left: 714px;
+            top: 605px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #valoresuatoestim {
+            position: absolute;
+            left: 912px;
+            top: 609px;
+            width: 44px;
+            height: 14px;
+        }
+
+        #llantofaci0 {
+            position: absolute;
+            left: 420px;
+            top: 611px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #llantofaci1 {
+            position: absolute;
+            left: 434px;
+            top: 611px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #llantofaci2 {
+            position: absolute;
+            left: 448px;
+            top: 611px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #llantofaci3 {
+            position: absolute;
+            left: 462px;
+            top: 611px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sedespiertadurante0 {
+            position: absolute;
+            left: 672px;
+            top: 621px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sedespiertadurante1 {
+            position: absolute;
+            left: 686px;
+            top: 621px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sedespiertadurante2 {
+            position: absolute;
+            left: 700px;
+            top: 621px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sedespiertadurante3 {
+            position: absolute;
+            left: 714px;
+            top: 621px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #probcardio0 {
+            position: absolute;
+            left: 205px;
+            top: 627px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #probcardio1 {
+            position: absolute;
+            left: 219px;
+            top: 627px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #probcardio2 {
+            position: absolute;
+            left: 233px;
+            top: 627px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #probcardio3 {
+            position: absolute;
+            left: 247px;
+            top: 627px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #pocoplaceren0 {
+            position: absolute;
+            left: 420px;
+            top: 628px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #pocoplaceren1 {
+            position: absolute;
+            left: 434px;
+            top: 628px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #pocoplaceren2 {
+            position: absolute;
+            left: 448px;
+            top: 628px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #pocoplaceren3 {
+            position: absolute;
+            left: 462px;
+            top: 628px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #tienepesadill0 {
+            position: absolute;
+            left: 672px;
+            top: 638px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #tienepesadill1 {
+            position: absolute;
+            left: 686px;
+            top: 638px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #tienepesadill2 {
+            position: absolute;
+            left: 700px;
+            top: 638px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #tienepesadill3 {
+            position: absolute;
+            left: 714px;
+            top: 638px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #doloruopre0 {
+            position: absolute;
+            left: 206px;
+            top: 642px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #doloruopre1 {
+            position: absolute;
+            left: 220px;
+            top: 642px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #doloruopre2 {
+            position: absolute;
+            left: 234px;
+            top: 642px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #doloruopre3 {
+            position: absolute;
+            left: 248px;
+            top: 642px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #perdidadeintere0 {
+            position: absolute;
+            left: 420px;
+            top: 644px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #perdidadeintere1 {
+            position: absolute;
+            left: 434px;
+            top: 644px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #perdidadeintere2 {
+            position: absolute;
+            left: 448px;
+            top: 644px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #perdidadeintere3 {
+            position: absolute;
+            left: 462px;
+            top: 644px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #duermdediayno0 {
+            position: absolute;
+            left: 672px;
+            top: 654px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #duermdediayno1 {
+            position: absolute;
+            left: 686px;
+            top: 654px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #duermdediayno2 {
+            position: absolute;
+            left: 700px;
+            top: 654px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #duermdediayno3 {
+            position: absolute;
+            left: 714px;
+            top: 654px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #palpitopapi0 {
+            position: absolute;
+            left: 205px;
+            top: 659px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #palpitopapi1 {
+            position: absolute;
+            left: 219px;
+            top: 659px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #palpitopapi2 {
+            position: absolute;
+            left: 233px;
+            top: 659px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #palpitopapi3 {
+            position: absolute;
+            left: 247px;
+            top: 659px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #pocainteracion0 {
+            position: absolute;
+            left: 420px;
+            top: 661px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #pocainteracion1 {
+            position: absolute;
+            left: 434px;
+            top: 661px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #pocainteracion2 {
+            position: absolute;
+            left: 448px;
+            top: 661px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #pocainteracion3 {
+            position: absolute;
+            left: 462px;
+            top: 661px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #tomatomopastis0 {
+            position: absolute;
+            left: 672px;
+            top: 670px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #tomatomopastis1 {
+            position: absolute;
+            left: 686px;
+            top: 670px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #tomatomopastis2 {
+            position: absolute;
+            left: 700px;
+            top: 670px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #tomatomopastis3 {
+            position: absolute;
+            left: 714px;
+            top: 670px;
+            width: 13px;
+            height: 14px;
+        }
+
+        #presionaaltaa0 {
+            position: absolute;
+            left: 205px;
+            top: 675px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #presionaaltaa1 {
+            position: absolute;
+            left: 219px;
+            top: 675px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #presionaaltaa2 {
+            position: absolute;
+            left: 233px;
+            top: 675px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #presionaaltaa3 {
+            position: absolute;
+            left: 247px;
+            top: 675px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #aislamientoo0 {
+            position: absolute;
+            left: 421px;
+            top: 677px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #aislamientoo1 {
+            position: absolute;
+            left: 435px;
+            top: 677px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #aislamientoo2 {
+            position: absolute;
+            left: 449px;
+            top: 677px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #aislamientoo3 {
+            position: absolute;
+            left: 463px;
+            top: 677px;
+            width: 14px;
+            height: 14px;
+        }
+
+        p {
+            display: inline;
+            font-family: arial;
+            font-size: 14px;
+        }
+        -->
+    </style>
+    <!-- End Save for Web Styles -->
+</head>
+<body style="background-color:#FFFFFF; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;">
+    <!-- Save for Web Slices (4.jpg - Slices: tomatomopastis3) -->
+    <div id="Table_01">
+        @{
+            switch (sientemal)
+            {
+                case "Nunca":
+                    <div id="sesiente0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="sesiente1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="sesiente2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="sesiente3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (calculosurinarios)
+            {
+                case "Nunca":
+                    <div id="calculosarenilla0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="calculosarenilla1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="calculosarenilla2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="calculosarenilla3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        
+        @{
+            switch (dificultadconcentrarse)
+            {
+                case "Nunca":
+                    <div id="difiparaconcentrar0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="difiparaconcentrar1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="difiparaconcentrar2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="difiparaconcentrar3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+
+        <div id="cuantashsduerme">
+            @Model.habitos.HorasSueño
+        </div>
+            @{
+                switch (creeproblemasalud)
+                {
+                    case "Nunca":
+                        <div id="creeteneralgun0">
+                            X
+                        </div>
+                        break;
+                    case "Leve":
+                        <div id="creeteneralgun1">
+                            X
+                        </div>
+                        break;
+                    case "Frecuente":
+                        <div id="creeteneralgun2">
+                            X
+                        </div>
+                        break;
+                    case "MuyFrecuente":
+                        <div id="creeteneralgun3">
+                            X
+                        </div>
+                        break;
+                }
+            }
+        @{
+            switch (infeccionviasurinarias)
+            {
+                case "Nunca":
+                    <div id="infectviasuri0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="infectviasuri1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="infectviasuri2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="infectviasuri3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (indecision)
+            {
+                case "Nunca":
+                    <div id="indeciso0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="indeciso1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="indeciso2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="indeciso3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (sentimientoculpa)
+            {
+                case "Nunca":
+                    <div id="senticulpa0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="senticulpa1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="senticulpa2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="senticulpa3">
+                        X
+                    </div>
+                    break;
+            }
+        } 
+   
+        @{
+            switch (perdidafuerzaorinar)
+            {
+                case "Nunca":
+                    <div id="perdidaorinar0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="perdidaorinar1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="perdidaorinar2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="perdidaorinar3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+ 
+        <div id="cuatosxdia">
+            @Model.habitos.CuantosCigarrillosPorDia
+        </div>
+        <div id="fumano">
+            @if (Model.habitos.FumaS == "No")
+            {
+                <div>X</div>
+            }
+        </div>
+        <div id="fumasi">
+            @if (Model.habitos.FumaS == "Si")
+            {
+                <div>X</div>
+            }
+        </div>
+        @{
+            switch (problemaspiel)
+            {
+                case "Nunca":
+                    <div id="problempiel0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="problempiel1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="problempiel2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="problempiel3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+     
+        @{
+            switch (incontinenciaurinaria)
+            {
+                case "Nunca":
+                    <div id="incontinenciauri0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="incontinenciauri1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="incontinenciauri2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="incontinenciauri3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (aburrimiento)
+            {
+                case "Nunca":
+                    <div id="aburrimieeentooo0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="aburrimieeentooo1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="aburrimieeentooo2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="aburrimieeentooo3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+     
+        <div id="dejedefumar">
+            @Model.habitos.DejeFumarHace
+        </div>
+        @{
+            switch (Manchas)
+            {
+                case "Nunca":
+                    <div id="manchasu0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="manchasu1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="manchasu2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="manchasu3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (solomundo)
+            {
+                case "Nunca":
+                    <div id="solitoenelmundo0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="solitoenelmundo1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="solitoenelmundo2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="solitoenelmundo3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (digestionlenta)
+            {
+                case "Nunca":
+                    <div id="digestlenta0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="digestlenta1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="digestlenta2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="digestlenta3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (verrugas)
+            {
+                case "Nunca":
+                    <div id="apariciono0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="apariciono1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="apariciono2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="apariciono3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (dolorestomago)
+            {
+                case "Nunca":
+                    <div id="doloracidez0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="doloracidez1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="doloracidez2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="doloracidez3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (sensacionvacio)
+            {
+                case "Nunca":
+                    <div id="sensivacio0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="sensivacio1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="sensivacio2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="sensivacio3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (vomitos)
+            {
+                case "Nunca":
+                    <div id="vomitoss0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="vomitoss1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="vomitoss2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="vomitoss3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (irritacionincontrolable)
+            {
+                case "Nunca":
+                    <div id="iriitaincontrolable0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="iriitaincontrolable1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="iriitaincontrolable2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="iriitaincontrolable3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (acne)
+            {
+                case "Nunca":
+                    <div id="acme0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="acme1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="acme2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="acme3">
+                        X
+                    </div>
+                    break;
+            }
+            }
+        @{
+            switch (oscilacionesanimo)
+            {
+                case "Nunca":
+                    <div id="oscilaanimo0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="oscilaanimo1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="oscilaanimo2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="oscilaanimo3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (meteorismo)
+            {
+                case "Nunca":
+                    <div id="meteoro0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="meteoro1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="meteoro2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="meteoro3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (caidacabello)
+            {
+                case "Nunca":
+                    <div id="caidacabe0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="caidacabe1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="caidacabe2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="caidacabe3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (constipacion)
+            {
+                case "Nunca":
+                    <div id="constantinopla0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="constantinopla1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="constantinopla2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="constantinopla3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (nervios)
+            {
+                case "Nunca":
+                    <div id="nervioestres0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="nervioestres1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="nervioestres2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="nervioestres3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+ 
+
+        <div id="promvino">
+            @Model.habitos.VasosVino
+        </div>
+        <div id="promcervez">
+            @Model.habitos.CervezaLatas
+        </div>
+        @{
+            switch (problemaNeurologico)
+            {
+                case "Nunca":
+                    <div id="algunproneurolog0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="algunproneurolog1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="algunproneurolog2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="algunproneurolog3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (enojo)
+            {
+                case "Nunca":
+                    <div id="enojoconuste0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="enojoconuste1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="enojoconuste2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="enojoconuste3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (diarrea)
+            {
+                case "Nunca":
+                    <div id="diarreita0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="diarreita1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="diarreita2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="diarreita3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+     
+        <div id="prombebblancas">
+            @Model.habitos.BlancasMedidas
+        </div>
+        <div id="promotras">
+            @Model.habitos.OtrasMedidas
+        </div>
+        @{
+            switch (dolorescabezas)
+            {
+                case "Nunca":
+                    <div id="doloresdecabe0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="doloresdecabe1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="doloresdecabe2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="doloresdecabe3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (autolesiones)
+            {
+                case "Nunca":
+                    <div id="autolesionescge0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="autolesionescge1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="autolesionescge2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="autolesionescge3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (hemorroides)
+            {
+                case "Nunca":
+                    <div id="homorroides0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="homorroides1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="homorroides2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="homorroides3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (mareos)
+            {
+                case "Nunca":
+                    <div id="mareosdesmayosver0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="mareosdesmayosver0">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="mareosdesmayosver0">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="mareosdesmayosver0">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (agresion)
+            {
+                case "Nunca":
+                    <div id="agresionaotr0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="agresionaotr1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="agresionaotr2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="agresionaotr3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (intoleranciaalimento)
+            {
+                case "Nunca":
+                    <div id="intoleranciaalimento0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="intoleranciaalimento1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="intoleranciaalimento2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="intoleranciaalimento3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (furia)
+            {
+                case "Nunca":
+                    <div id="furiaalegriaexces0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="furiaalegriaexces1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="furiaalegriaexces2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="furiaalegriaexces3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (problemasoido)
+            {
+                case "Nunca":
+                    <div id="probloido0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="probloido1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="probloido2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="probloido3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (problemasgenitales)
+            {
+                case "Nunca":
+                    <div id="problengenitales0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="problengenitales1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="problengenitales2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="problengenitales3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+    
+        <div id="lepreocupano">
+            @if (Model.habitos.PreocupaManeraBeberS == "No")
+            {
+                <div>X</div>
+            }
+        </div>
+        <div id="lepreocupasi">
+            @if (Model.habitos.PreocupaManeraBeberS == "Si")
+            {
+                <div>X</div>
+            }
+        </div>
+        @{
+            switch (habla)
+            {
+                case "Nunca":
+                    <div id="hablamasque0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="hablamasque1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="hablamasque2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="hablamasque3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (problemasvista)
+            {
+                case "Nunca":
+                    <div id="probvista0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="probvista1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="probvista2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="probvista3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (perdidasangre)
+            {
+                case "Nunca":
+                    <div id="perdidassangre0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="perdidassangre1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="perdidassangre2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="perdidassangre3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+   
+        <div id="algunavezculpano">
+            @if (Model.habitos.SienteCulpaS == "No")
+            {
+                <div>X</div>
+            }
+        </div>
+        <div id="algunavezculpasi">
+            @if (Model.habitos.SienteCulpaS == "Si")
+            {
+                <div>X</div>
+            }
+        </div>
+        @{
+            switch (duermemenos)
+            {
+                case "Nunca":
+                    <div id="duermemenosy0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="duermemenosy1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="duermemenosy2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="duermemenosy3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (problemadental)
+            {
+                case "Nunca":
+                    <div id="algunprobdenta0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="algunprobdenta1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="algunprobdenta2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="algunprobdenta3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (picazon)
+            {
+                case "Nunca":
+                    <div id="picazondond0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="picazondond1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="picazondond2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="picazondond3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+      
+        <div id="intentodejarno">
+            @if (Model.habitos.IntentoDejarBeberS == "No")
+            {
+                <div>X</div>
+            }
+        </div>
+        <div id="intentodejarsi">
+            @if (Model.habitos.IntentoDejarBeberS == "Si")
+            {
+                <div>X</div>
+            }
+        </div>
+        @{
+            switch (llagas)
+            {
+                case "Nunca":
+                    <div id="llagasobul0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="llagasobul1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="llagasobul2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="llagasobul3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (estarcima)
+            {
+                case "Nunca":
+                    <div id="estarenlacima0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="estarenlacima1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="estarenlacima2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="estarenlacima3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (ganglios)
+            {
+                case "Nunca":
+                    <div id="gangliosobult0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="gangliosobult1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="gangliosobult2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="gangliosobult3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+  
+        <div id="intentocambiarno">
+            @if (Model.habitos.IntentoCambiarBebidaS == "No")
+            {
+                <div>X</div>
+            }
+
+        </div>
+        <div id="intentocambiarsi">
+            @if (Model.habitos.IntentoCambiarBebidaS == "Si")
+            {
+                <div>X</div>
+            }
+        </div>
+        @{
+            switch (sangradoencias)
+            {
+                case "Nunca":
+                    <div id="sangrantesencias0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="sangrantesencias1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="sangrantesencias2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="sangrantesencias3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (aumentosexual)
+            {
+                case "Nunca":
+                    <div id="aumentodelaactisex0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="aumentodelaactisex1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="aumentodelaactisex2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="aumentodelaactisex3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+
+      
+        <div id="algunavezlellamaronno">
+           @if (Model.habitos.LlamadoAtencionS == "No")
+           {
+               <div>X</div>
+           }
+        </div>
+        <div id="algunavezlellamaronsi">
+            @if (Model.habitos.LlamadoAtencionS == "Si")
+            {
+                <div>X</div>
+            }
+        </div>
+        @{
+            switch (dolorpiernascaminar)
+            {
+                case "Nunca":
+                    <div id="dolorenlaspiern0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="dolorenlaspiern1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="dolorenlaspiern2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="dolorenlaspiern3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (gastadinero)
+            {
+                case "Nunca":
+                    <div id="gastamasdeloq0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="gastamasdeloq1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="gastamasdeloq2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="gastamasdeloq3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (enfermedadtiroidea)
+            {
+                case "Nunca":
+                    <div id="algunatiroidea0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="algunatiroidea1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="algunatiroidea2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="algunatiroidea3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (articulacionesrojas)
+            {
+                case "Nunca":
+                    <div id="articurojasodolo0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="articurojasodolo1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="articurojasodolo2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="articurojasodolo3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+     
+        <div id="tomapcalmarse">
+            @if (Model.habitos.TomaCalmarse == true)
+            {
+                <div>X</div>
+            }
+        </div>
+        @{
+            switch (pielseca)
+            {
+                case "Nunca":
+                    <div id="pielsecaaa0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="pielsecaaa1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="pielsecaaa2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="pielsecaaa3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (apuestas)
+            {
+                case "Nunca":
+                    <div id="hizohaceapuest0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="hizohaceapuest1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="hizohaceapuest2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="hizohaceapuest3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (infeccionespiernas)
+            {
+                case "Nunca":
+                    <div id="infecculceras0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="infecculceras1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="infecculceras2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="infecculceras3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+      
+        <div id="tomasolas">
+            @if (Model.habitos.TomaASolas == true)
+            {
+                <div>X</div>
+            }
+
+        </div>
+        <div id="tomapdormir">
+            @if (Model.habitos.ParaDormirToma == true)
+            {
+                <div>X</div>
+            }
+        </div>
+        @{
+            switch (actividadusual)
+            {
+                case "Nunca":
+                    <div id="hacemascosasusual0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="hacemascosasusual1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="hacemascosasusual2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="hacemascosasusual3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (uniasfragiles)
+            {
+                case "Nunca":
+                    <div id="unasfragiloescamadas0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="unasfragiloescamadas1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="unasfragiloescamadas2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="unasfragiloescamadas3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (varices)
+            {
+                case "Nunca":
+                    <div id="varicees0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="varicees1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="varicees2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="varicees3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (ansioso)
+            {
+                case "Nunca":
+                    <div id="ansiotenso0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="ansiotenso1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="ansiotenso2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="ansiotenso3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (cabelloseco)
+            {
+                case "Nunca":
+                    <div id="cabeseco0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="cabeseco1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="cabeseco2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="cabeseco3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (pieshinchados)
+            {
+                case "Nunca":
+                    <div id="piehinchaos0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="piehinchaos1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="piehinchaos2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="piehinchaos3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+      
+        <div id="sufrioperdidasno">
+            @if (Model.sintoma3.PerdidasSiNo == "No")
+            {
+                <div>X</div>
+            }
+        </div>
+        <div id="sufrioperdidassi">
+            @if (Model.sintoma3.PerdidasSiNo == "Si")
+            {
+                <div>X</div>
+            }
+
+        </div>
+        @{
+            switch (preocupacionesexcesivas)
+            {
+                case "Nunca":
+                    <div id="preocupaexcesiv0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="preocupaexcesiv1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="preocupaexcesiv2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="preocupaexcesiv3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (sensibilidadfrio)
+            {
+                case "Nunca":
+                    <div id="sensialfrio0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="sensialfrio1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="sensialfrio2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="sensialfrio3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (calambres)
+            {
+                case "Nunca":
+                    <div id="calambre0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="calambre1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="calambre2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="calambre3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+     
+        <div id="perdidascuales1">
+            @Model.sintoma3.CualesPerdidas
+        </div>
+        @{
+            switch (tensionmuscular)
+            {
+                case "Nunca":
+                    <div id="tensionmuscu0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="tensionmuscu1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="tensionmuscu2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="tensionmuscu3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (cansancioinexplicable)
+            {
+                case "Nunca":
+                    <div id="cansancioinex0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="cansancioinex1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="cansancioinex2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="cansancioinex3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (hormigueos)
+            {
+                case "Nunca":
+                    <div id="hormigueo0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="hormigueo1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="hormigueo2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="hormigueo3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (estadoanimo)
+            {
+                case "Nunca":
+                    <div id="suanimointerfiere0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="suanimointerfiere1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="suanimointerfiere2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="suanimointerfiere3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+ 
+        <div id="perdidascuales2">
+        </div>
+        @{
+            switch (enfermedadrespiratoria)
+            {
+                case "Nunca":
+                    <div id="enfermerespi0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="enfermerespi1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="enfermerespi2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="enfermerespi3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (colesterolaumentado)
+            {
+                case "Nunca":
+                    <div id="colesteaumentao0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="colesteaumentao1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="colesteaumentao2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="colesteaumentao3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (miedos)
+            {
+                case "Nunca":
+                    <div id="miedostemoresinex0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="miedostemoresinex1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="miedostemoresinex2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="miedostemoresinex3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (ronquera)
+            {
+                case "Nunca":
+                    <div id="ronquepersis0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="ronquepersis1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="ronquepersis2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="ronquepersis3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (trigliceridosaumentados)
+            {
+                case "Nunca":
+                    <div id="trigliceridosaumen0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="trigliceridosaumen1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="trigliceridosaumen2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="trigliceridosaumen3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+       
+        <div id="algotraumatino">
+            @if (Model.sintoma3.TraumaticoSiNo == "No")
+            {
+                <div>X</div>
+            }
+        </div>
+        <div id="algotraumatisi">
+            @if (Model.sintoma3.TraumaticoSiNo == "Si")
+            {
+                <div>X</div>
+            }
+        </div>
+        @{
+            switch (ronca)
+            {
+                case "Nunca":
+                    <div id="roncaalmorir0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="roncaalmorir1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="roncaalmorir2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="roncaalmorir3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (gota)
+            {
+                case "Nunca":
+                    <div id="gotaacuric0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="gotaacuric1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="gotaacuric2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="gotaacuric3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+   
+        <div id="algotraumatique1">
+            @Model.sintoma3.TraumaticoQue
+        </div>
+        @{
+            switch (pensamientosincomodos)
+            {
+                case "Nunca":
+                    <div id="pensamientosacciones0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="pensamientosacciones1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="pensamientosacciones2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="pensamientosacciones3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (osteoporosis)
+            {
+                case "Nunca":
+                    <div id="osteosteo0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="osteosteo1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="osteosteo2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="osteosteo3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+      
+        <div id="algotraumatique2">
+        </div>
+        @{
+            switch (despierta)
+            {
+                case "Nunca":
+                    <div id="despiertasobre0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="despiertasobre1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="despiertasobre2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="despiertasobre03">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (noplacersexual)
+            {
+                case "Nunca":
+                    <div id="elsexonoda0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="elsexonoda1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="elsexonoda2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="elsexonoda3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (diabetes)
+            {
+                case "Nunca":
+                    <div id="diabetis0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="diabetis1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="diabetis2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="diabetis3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+    
+        <div id="algotraumaticuando1">
+            @Model.sintoma3.TraumaticoCuando
+        </div>
+        @{
+            switch (deseosexual)
+            {
+                case "Nunca":
+                    <div id="poconingundeseo0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="poconingundeseo1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="poconingundeseo2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="poconingundeseo3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (respirardormir)
+            {
+                case "Nunca":
+                    <div id="sequedasinr0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="sequedasinr1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="sequedasinr2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="sequedasinr3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (respirardormir)
+            {
+                case "Nunca":
+                    <div id="sequedasinr0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="sequedasinr1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="sequedasinr2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="sequedasinr3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (alergias)
+            {
+                case "Nunca":
+                    <div id="alergiasque0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="alergiasque1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="alergiasque2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="alergiasque3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (dificultadessexuales)
+            {
+                case "Nunca":
+                    <div id="difisexual0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="difisexual1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="difisexual2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="difisexual3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+     
+        <div id="algotraumaticuando2">
+        </div>
+       @{
+           switch (dificultadessexuales)
+           {
+               case "Nunca":
+                <div id="difisexual0">
+                    X
+                </div>
+                   break;
+               case "Leve":
+                <div id="difisexual1">
+                    X
+                </div>
+                   break;
+               case "Frecuente":
+                <div id="difisexual2">
+                    X
+                </div>
+                   break;
+               case "MuyFrecuente":
+                <div id="difisexual3">
+                    X
+                </div>
+                   break;
+
+           }
+
+           }
+        @{
+            switch (sueniodia)
+            {
+                case "Nunca":
+                    <div id="muchsueno0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="muchsueno1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="muchsueno2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="muchsueno3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+            @{
+                switch (sientemal)
+                {
+                    case "Nunca":
+                        <div id="sesientetristeagust0">
+                            X
+                        </div>
+                        break;
+                    case "Leve":
+                        <div id="sesientetristeagust1">
+                            X
+                        </div>
+                        break;
+                    case "Frecuente":
+                        <div id="sesientetristeagust2">
+                            X
+                        </div>
+                        break;
+                    case "MuyFrecuente":
+                        <div id="sesientetristeagust3">
+                            X
+                        </div>
+                        break;
+                }
+            }
+                @{
+                    switch (evitarsexuales)
+                    {
+                        case "Nunca":
+                            <div id="evitatnersexo0">
+                                X
+                            </div>
+                            break;
+                        case "Leve":
+                            <div id="evitatnersexo1">
+                                X
+                            </div>
+                            break;
+                        case "Frecuente":
+                            <div id="evitatnersexo2">
+                                X
+                            </div>
+                            break;
+                        case "MuyFrecuente":
+                            <div id="evitatnersexo3">
+                                X
+                            </div>
+                            break;
+                    }
+                }
+                    @{
+                        switch (dificultadrespirar)
+                        {
+                            case "Nunca":
+                                <div id="dificultadaprarespi0">
+                                    X
+                                </div>
+                                break;
+                            case "Leve":
+                                <div id="dificultadaprarespi1">
+                                    X
+                                </div>
+                                break;
+                            case "Frecuente":
+                                <div id="dificultadaprarespi2">
+                                    X
+                                </div>
+                                break;
+                            case "MuyFrecuente":
+                                <div id="dificultadaprarespi3">
+                                    X
+                                </div>
+                                break;
+                        }
+                    }
+  
+        @{
+            switch (dificultadesquedarsedor)
+            {
+                case "Nunca":
+                    <div id="difiquedarsedormido0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="difiquedarsedormido1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="difiquedarsedormido2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="difiquedarsedormido3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+ 
+        <div id="valoresuatoestim">
+            @Model.sintoma3.Autoestima
+        </div>
+        @{
+            switch (llantofacil)
+            {
+                case "Nunca":
+                    <div id="llantofaci0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="llantofaci1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="llantofaci2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="llantofaci3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (sedespiertanoche)
+            {
+                case "Nunca":
+                    <div id="sedespiertadurante0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="sedespiertadurante1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="sedespiertadurante2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="sedespiertadurante3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (problemascardiacos)
+            {
+                case "Nunca":
+                    <div id="probcardio0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="probcardio1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="probcardio2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="probcardio3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (pocoplacer)
+            {
+                case "Nunca":
+                    <div id="pocoplaceren0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="pocoplaceren1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="pocoplaceren2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="pocoplaceren3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (pesadillas)
+            {
+                case "Nunca":
+                    <div id="tienepesadill0">
+                        X
+                    </div>
+                    break;
+                case "Leve":
+                    <div id="tienepesadill1">
+                        X
+                    </div>
+                    break;
+                case "Frecuente":
+                    <div id="tienepesadill2">
+                        X
+                    </div>
+                    break;
+                case "MuyFrecuente":
+                    <div id="tienepesadill3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+          @{
+              switch (dolorpecho)
+              {
+                  case "Nunca":
+                    <div id="doloruopre0">
+                        X
+                    </div>
+                      break;
+                  case "Leve":
+                    <div id="doloruopre1">
+                        X
+                    </div>
+                      break;
+                  case "Frecuente":
+                    <div id="doloruopre2">
+                        X
+                    </div>
+                      break;
+                  case "MuyFrecuente":
+                    <div id="doloruopre3">
+                        X
+                    </div>
+                          break;
+                  }
+              }
+       @{
+           switch (perdidainteres)
+           {
+               case "Nunca":
+                    <div id="perdidadeintere0">
+                        X
+                    </div>
+                   break;
+               case "Leve":
+                    <div id="perdidadeintere1">
+                        X
+                    </div>
+                   break;
+               case "Frecuente":
+                    <div id="perdidadeintere2">
+                        X
+                    </div>
+                   break;
+               case "MuyFrecuente":
+                    <div id="perdidadeintere3">
+                        X
+                    </div>
+                   break;
+           }
+           }
+
+     @{
+         switch (duermedianonoche)
+         {
+             case "Nunca":
+                    <div id="duermdediayno0">
+                        X
+                    </div>
+                 break;
+             case "Leve":
+                    <div id="duermdediayno1">
+                        X
+                    </div>
+                 break;
+             case "Frecuente":
+                    <div id="duermdediayno2">
+                        X
+                    </div>
+                 break;
+             case "MuyFrecuente":
+                    <div id="duermdediayno3">
+                        X
+                    </div>
+                 break;
+         }
+         }
+          @{
+              switch (palpitaciones)
+              {
+                  case "Nunca":
+                    <div id="palpitopapi0">
+                        X
+                    </div>
+                      break;
+                  case "Leve":
+                    <div id="palpitopapi1">
+                        X
+                    </div>
+                      break;
+                  case "Frecuente":
+                    <div id="palpitopapi2">
+                        X
+                    </div>
+                      break;
+                  case "MuyFrecuente":
+                    <div id="palpitopapi3">
+                        X
+                    </div>
+                          break;
+                  }
+              }
+            @{
+                switch (pocainteraccion)
+                {
+                    case "Nunca":
+                        <div id="pocainteracion0">
+                            X
+                        </div>
+                        break;
+                    case "Leve":
+                        <div id="pocainteracion1">
+                            X
+                        </div>
+                        break;
+                    case "Frecuente":
+                        <div id="pocainteracion2">
+                            X
+                        </div>
+                        break;
+                    case "MuyFrecuente":
+                        <div id="pocainteracion3">
+                            X
+                        </div>
+                        break;
+                }
+            }
+                @{
+                    switch (tomapastillasdormir)
+                    {
+                        case "Nunca":
+                            <div id="tomatomopastis0">
+                                X
+                            </div>
+                            break;
+                        case "Leve":
+                            <div id="tomatomopastis1">
+                                X
+                            </div>
+                            break;
+                        case "Frecuente":
+                            <div id="tomatomopastis2">
+                                X
+                            </div>
+                            break;
+                        case "MuyFrecuente":
+                            <div id="tomatomopastis3">
+                                X
+                            </div>
+                            break;
+                    }
+                }
+
+                    @{
+                        switch (presionalta)
+                        {
+                            case "Nunca":
+                                <div id="presionaaltaa0">
+                                    X
+                                </div>
+                                break;
+                            case "Leve":
+                                <div id="presionaaltaa1">
+                                    X
+                                </div>
+                                break;
+                            case "Frecuente":
+                                <div id="presionaaltaa2">
+                                    X
+                                </div>
+                                break;
+                            case "MuyFrecuente":
+                                <div id="presionaaltaa3">
+                                    X
+                                </div>
+                                break;
+                        }
+                    }
+                        @{
+                            switch (aislamiento)
+                            {
+                                case "Nunca":
+                                    <div id="aislamientoo0">
+                                        X
+                                    </div>
+                                    break;
+                                case "Leve":
+                                    <div id="aislamientoo1">
+                                        X
+                                    </div>
+                                    break;
+                                case "Frecuente":
+                                    <div id="aislamientoo2">
+                                        X
+                                    </div>
+                                    break;
+                                case "MuyFrecuente":
+                                    <div id="aislamientoo3">
+                                        X
+                                    </div>
+                                    break;
+                            }
+                        }
+      
+    </div>
+
+</body>
+<

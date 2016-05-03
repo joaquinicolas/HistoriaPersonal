@@ -1,0 +1,510 @@
+﻿@using HistoriaPersonalCormillot
+@using HistoriaPersonalCormillot.Models
+@model HistoriaPersonalCormillot.Habitos
+@using Newtonsoft.Json
+@{
+    ViewBag.Title = "Habitos";
+}
+
+
+	<style type="text/css">
+	input.form-control
+	{
+		width: 50px;
+	}
+
+	.xl
+	{
+		 min-width: 60px;
+    	width: 78% !important;
+	}
+	.mt
+	{
+		margin-top: 10px !important;
+	}
+
+	.ml
+	{
+		margin-left: 26px !important;
+	}
+	</style>
+       
+
+    <script>
+     var model = @Html.Raw(JsonConvert.SerializeObject(this.Model));
+        function DificultadQuedarseDormido(value)
+        { 
+           model.DificultadParaQuedarseDormido = value;
+        }
+
+        function SeDespiertaDuranteLaNoche(value)
+        {
+            model.SeDespiertaDuranteLaNoche = value;
+        }
+
+        function TienePesadillas(value)
+        {
+            model.TienePesadillas = value;
+        }
+
+        function DuermeDeDia(value)
+        {
+            model.DuermeDeDia = value;
+        }
+
+        function TomaPastillas(value)
+        {
+            model.TomaPastillas = value;
+        }
+
+        function Fuma(value)
+        {
+            model.Fuma = value;
+        }
+
+        function PreocupaManeraBeber(value)
+        {
+            model.PreocupaManeraBeber = value;
+        }
+
+        function SienteCulpa(value)
+        {
+            model.SienteCulpa = value;
+        }
+
+        function IntentoDejarBeber(value)
+        {
+            model.IntentoDejarBeber = value;
+        }
+
+        function IntentoCambiarBebida(value)
+        {
+            model.IntentoCambiarBebida = value;
+        }
+
+        function LlamadoAtencion(value)
+        {
+           model.LlamadoAtencion = value;
+        }
+
+        function TomaCalmarse(value)
+        {
+            model.TomaCalmarse = value;
+        }
+
+        function TomaASolas(value)
+        {
+            model.TomaASolas = value;
+        }
+
+        function ParaDormirToma(value)
+        {
+            model.ParaDormirToma = value;
+        }
+
+        function guardar(mostrar)
+        {
+        
+            model.OtrasMedidas = $('#OtrasMedidas').val();
+            model.BlancasMedidas = $('#BlancasMedidas').val();
+            model.CervezaLatas = $('#CervezaLatas').val();
+            model.VasosVino =  $('#VasosVino').val();
+            model.DejeFumarHace = $('#DejeFumarHace').val();
+            model.CuantosCigarrillosPorDia = $('#CuantosCigarrillosPorDia').val();
+            model.HorasSueño = $('#HorasSueño').val();
+            model.Usuario = null;
+            $.ajax({
+                url: '/Pasos/CreateHabitos/',
+                type: "POST",
+                contentType: 'application/json',
+                data: JSON.stringify({h: model}),
+                
+                success: function(response) {
+                    if(response == "OK")
+                    {
+                        if(mostrar == 'yes')
+                        {
+                            $('#contenidoPopup').text("Cambios guardados correctamente");
+                            $('#popup').modal();
+                        }
+                        else
+                        {
+                            $('#pag').hide();
+                            $('#pag2').show();
+                         }
+                    }
+                    else
+                    {
+                        alert("Error al crear");
+                    }
+                },
+                error: function(xhr)
+                {
+                    console.log(xhr);
+                }
+       });
+        }
+
+        function subirDatos()
+        {
+          
+            model.Usuario = null;
+            $.ajax({
+                url: '/Pasos/CreateHabitos/',
+                type: "POST",
+                contentType: 'application/json',
+                data: JSON.stringify({h: model}),
+                
+                success: function(response) {
+                    if(response == "OK")
+                    {
+                      
+                    }
+                    else
+                    {
+                        alert("Error al crear");
+                    }
+                },
+                error: function(xhr)
+                {
+                    console.log(xhr);
+                }
+       });
+        }
+
+
+        function padres(value)
+        {
+            model.ActitudPadres = value; 
+        }
+
+        function hermanos(value)
+        {
+            model.ActitudHermanos = value;
+        }
+
+        function conyuge(value)
+        {
+            model.ActitudConyuge = value;
+        }
+        function hijos(value)
+        {
+            model.ActitudHijos = value;
+        }
+        function amigos(value)
+        {
+            model.ActitudAmigos = value;
+        }
+
+        function compañeros(value)
+        {
+            model.ActitudCompañeros = value;
+        }
+
+        function atras()
+        {
+             $('#pag2').hide();
+             $('#pag').show();
+        }
+
+        function guardarDatos()
+        {
+            guardar('yes')
+            subirDatos();
+        }
+    </script>
+<link href="../../Content/ResponsiveGrid.css" rel="stylesheet" type="text/css" />
+<h2 class="celeste titulo" style="margin-top:40px">Sus habitos</h2>
+<form action= "/Pasos/CreateHabitos/" method="post" id="pag">
+    <div class="col_10" style="margin-left:15%">
+       <label class="col_12">33. Sueño</label>
+			<div class="ml col_12">
+				<label class="col_6">a) Dificultad para quedarse dormido</label>
+				<div class="col_6">
+					<label><input type="radio" name="dif"  @(Model.DificultadParaQuedarseDormido.HasValue && !Model.DificultadParaQuedarseDormido.Value? "checked = checked": "")  onclick="DificultadQuedarseDormido(false);">No</label>
+					<label><input type="radio" name="dif"  @(Model.DificultadParaQuedarseDormido.HasValue && Model.DificultadParaQuedarseDormido.Value? "checked = checked": "")  onclick="DificultadQuedarseDormido(true);">Si</label>
+				</div>
+			</div>
+			<div class="ml col_12">
+				<label class="col_6">b) Se despierta durante la noche</label>
+				<div class="col_6">
+					<label><input type="radio" @(Model.SeDespiertaDuranteLaNoche.HasValue && !Model.SeDespiertaDuranteLaNoche.Value ? "checked = checked":"")  onclick= "SeDespiertaDuranteLaNoche(false)">No</label>
+					<label><input type="radio" @(Model.SeDespiertaDuranteLaNoche.HasValue && Model.SeDespiertaDuranteLaNoche.Value ? "checked = checked":"")  onclick="SeDespiertaDuranteLaNoche(true)">Si</label>
+				</div>
+			</div>
+			<div class="ml col_12">
+				<label class="col_6">c) Tiene pesadillas</label>
+				<div class="col_6">
+					<label><input type="radio" @(Model.TienePesadillas.HasValue &&  !Model.TienePesadillas.Value ? "checked = checked":"")   onclick="TienePesadillas(false)">No</label>
+					<label><input type="radio" @(Model.TienePesadillas.HasValue && Model.TienePesadillas.Value? "checked = checked":"")  onclick="TienePesadillas(true)">Si</label>
+				</div>
+			</div>
+			<div class="ml col_12">
+				<label class="col_6">d) Duerme de dia y no de noche</label>
+				<div class="col_6">
+					<label><input type="radio" @(Model.DuermeDeDia.HasValue && !Model.DuermeDeDia.Value? "checked = checked":"")  onclick="DuermeDeDia(false)">No</label>
+					<label><input type="radio" @(Model.DuermeDeDia.HasValue && Model.DuermeDeDia.Value? "checked = checked":"") onclick="DuermeDeDia(true)">Si</label>
+				</div>
+			</div>
+
+
+            <div class="ml col_12">
+				<label class="col_6">e) Toma o tomó pastillas para dormir?</label>
+				<div class="col_6">
+					<label><input type="radio" @(Model.TomaPastillas.HasValue && !Model.TomaPastillas.Value? "checked = checked":"")  onclick="TomaPastillas(false);">No</label>
+					<label><input type="radio" @(Model.TomaPastillas.HasValue && Model.TomaPastillas.Value? "checked = checked":"") onclick="TomaPastillas(true);">Si</label>
+				</div>
+			</div>
+
+            <div class="ml col_12">
+				<label class="col_12">¿Cuantas horas duerme?</label>
+				<div class="col_12">
+					<input type="text" class="form-control xl" value="@Model.HorasSueño"   id="HorasSueño" />
+				</div>
+			</div>
+
+            <div class="col_12">
+				<label class="col_6">34. ¿Fuma?</label>
+				<div class="col_6">
+					<label><input type="radio" @(Model.Fuma.HasValue && !Model.Fuma.Value? "checked = checked":"")  onclick="Fuma(false)">No</label>
+					<label><input type="radio" @(Model.Fuma.HasValue && Model.Fuma.Value? "checked = checked":"")  onclick="Fuma(true)">Si</label>
+				</div>
+			</div>
+
+            <div class="ml col_12" style="margin-top:-10px;">
+                <label class="col_12">¿Cuantos por dia?</label>
+                <div class="col_12">
+                    <input type="text" value="@Model.CuantosCigarrillosPorDia" class="form-control xl"  id="CuantosCigarrillosPorDia" />
+                </div>
+            </div>
+
+            <div class="ml col_12" style="margin-top:2px;">
+                <label class="col_12">Dejé de fumar hace</label>
+                <div class="col_12">
+                    <input type="text" class="form-control xl" value="@Model.DejeFumarHace"  id="DejeFumarHace" />
+                </div>
+            </div>
+
+            <div class="col_12">
+                <label class="col_12">35. De las siguientes bebidas alcohólicas marque la cantidad promedio que toma en un dia o fin de semana</label>
+                <div class="col_12 ml" style="margin-top:5px">
+                    <label class="col_2">Vino vasos</label><input type="text"  value="@Model.VasosVino" class="form-control col_3"  id="VasosVino" />
+                    <label class="col_2 ml">Cervezas latas</label><input type="text" value="@Model.CervezaLatas"  class="form-control col_3" id="CervezaLatas" />
+                </div>
+                <div class="col_12 ml" style="margin-top:5px">
+                    <label class="col_2">Bebidas blancas medidas</label><input type="text"  class="form-control col_3" id="BlancasMedidas" value="@Model.BlancasMedidas" />
+                    <label class="col_2 ml">Otras</label><input type="text" class="form-control col_3" id="OtrasMedidas" value="@Model.OtrasMedidas"  />
+                </div>
+            </div>
+
+            <div class="ml col_12 mt">
+                <label class="col_6">¿Le preocupa su manera de beber?</label>
+                <div class="col_6">
+                    <label class="col_1"><input type="radio" @(Model.PreocupaManeraBeber.HasValue && !Model.PreocupaManeraBeber.Value? "checked = checked":"")  onclick = "PreocupaManeraBeber(false)" />No</label>
+                    <label class="col_1"><input type="radio" @(Model.PreocupaManeraBeber.HasValue && Model.PreocupaManeraBeber.Value? "checked = checked":"") onclick = "PreocupaManeraBeber(true)" />Si</label>
+                </div>
+            </div>
+
+            <div class="ml col_12">
+                <label class="col_6">¿Alguna vez siente culpa?</label>
+                <div class="col_6">
+                    <label class="col_1"><input type="radio" @(Model.SienteCulpa.HasValue && !Model.SienteCulpa.Value? "checked = checked":"")  onclick = "SienteCulpa(false)" />No</label>
+                    <label class="col_1"><input type="radio" @(Model.SienteCulpa.HasValue && Model.SienteCulpa.Value? "checked = checked":"")  onclick = "SienteCulpa(true)" />Si</label>
+                </div>
+            </div>
+
+            <div class="ml col_12">
+                <label class="col_6">¿Intento alguna vez dejar de beber?</label>
+                <div class="col_6">
+                    <label class="col_1"><input type="radio" @(Model.IntentoDejarBeber.HasValue && !Model.IntentoDejarBeber.Value? "checked = checked":"")  onclick = "IntentoDejarBeber(false)" />No</label>
+                    <label class="col_1"><input type="radio" @(Model.IntentoDejarBeber.HasValue && Model.IntentoDejarBeber.Value? "checked = checked":"")  onclick = "IntentoDejarBeber(true)" />Si</label>
+                </div>
+            </div>
+
+            <div class="ml col_12">
+                <label class="col_6">¿Intento cambiar de bebida?</label>
+                <div class="col_6">
+                    <label class="col_1"><input type="radio" @(Model.IntentoCambiarBebida.HasValue && !Model.IntentoCambiarBebida.Value? "checked = checked":"") onclick="IntentoCambiarBebida(false)" />No</label>
+                    <label class="col_1"><input type="radio" @(Model.IntentoCambiarBebida.HasValue && Model.IntentoCambiarBebida.Value? "checked = checked":"")  onclick="IntentoCambiarBebida(true)" />Si</label>
+                </div>
+            </div>
+
+            <div class="ml col_12">
+                <label class="col_6">¿Alguna vez le llamaron la atencion?</label>
+                <div class="col_6">
+                    <label class="col_1"><input type="radio" @(Model.LlamadoAtencion.HasValue && !Model.LlamadoAtencion.Value? "checked = checked":"")  onclick="LlamadoAtencion(false)" />No</label>
+                    <label class="col_1"><input type="radio" @(Model.LlamadoAtencion.HasValue && Model.LlamadoAtencion.Value? "checked = checked":"")  onclick="LlamadoAtencion(true)" />Si</label>
+                </div>
+            </div>
+            
+            <div class="ml col_12">
+                <label class="col_12">A veces:</label>
+            </div>
+
+            <div class="ml col_12">
+                <label class="ml col_2">toma para calmarse</label>
+                <div class="col_5">
+                    <label class="col_6"><input type="radio" @(Model.TomaCalmarse.HasValue && Model.TomaCalmarse.Value? "checked = checked":"") onclick="TomaCalmarse(true)" /></label>
+                </div>
+            </div>
+
+            <div class="ml col_12">
+                <label class=" ml col_2">toma a solas</label>
+                <div class="col_5">
+                    <label class="col_6"><input type="radio" @(Model.TomaASolas.HasValue && Model.TomaASolas.Value? "checked = checked":"") onclick="TomaASolas(true)" /></label>
+                </div>
+            </div>
+
+            <div class="ml col_12">
+                <label class="ml col_2">toma para dormir</label>
+                <div class="col_5">
+                    <label class="col_6"><input type="radio" @(Model.ParaDormirToma.HasValue && Model.ParaDormirToma.Value? "checked = checked":"") onclick="ParaDormirToma(true)" /></label>
+                </div>
+            </div>
+
+
+    </div>
+
+    
+    <div class="container-botones-inferiores" style="width:100%;float:left">
+    @Html.ActionLink("Anterior", "AnteriorPaso", "Pasos", new { id = ViewBag.Pagina }, new { @class = "btn btn-info", onclick="javascript:subirDatos();" })
+    <button type="button" class="btn btn-info" onclick="guardar()" >Siguiente</button>
+</div>
+</form>
+
+
+
+<div id="pag2" style="display:none">
+    <label>36.La actitud de quienes lo redean hacia su tratamiento es positiva(+) o negativa(-)</label>
+
+<div class="table-responsive">
+    <table class="table" style="text-transform:capitalize !important;">
+        <thead>
+            <tr>
+                <th></th>
+                <th>padres</th>
+                <th>hermanos</th>
+                <th>cónyuge</th>
+                <th>hijos</th>
+                <th>amigos</th>
+                <th>compañeros</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>apoyo</td>
+                <td><input class="ml" @(Model.ActitudPadres == "apoyo"? "checked = checked":"") onclick="padres('apoyo')" name="padres" type="radio" /> </td>
+                <td><input class="ml" @(Model.ActitudHermanos == "apoyo"? "checked = checked":"") onclick="hermanos('apoyo')" name="hermanos" type="radio" /></td>
+                <td><input class="ml" @(Model.ActitudConyuge == "apoyo"? "checked = checked":"") onclick="conyuge('apoyo')" name="conyuge" type="radio" /></td>
+                <td><input class="ml" @(Model.ActitudHijos == "apoyo"? "checked = checked":"") onclick="hijos('apoyo')" name="hijos" type="radio" /></td>
+                <td><input class="ml" @(Model.ActitudAmigos == "apoyo"? "checked = checked":"") onclick="amigos('apoyo')" name="amigos" type="radio" /></td>
+                <td><input class="ml" @(Model.ActitudCompañeros == "apoyo"? "checked = checked":"") onclick="compañeros('apoyo')" name="compañeros" type="radio" /></td>
+            </tr>
+
+            <tr>
+                <td>se opone</td>
+                <td><input class="ml" @(Model.ActitudPadres == "se opone" ? "checked = checked" : "") onclick="padres('se opone')" name="padres" type="radio" /> </td>
+                <td><input class="ml" @(Model.ActitudHermanos == "se opone" ? "checked = checked" : "") onclick="hermanos('se opone')" name="hermanos" type="radio" /></td>
+                <td><input class="ml" @(Model.ActitudConyuge == "se opone" ? "checked = checked" : "") onclick="conyuge('se opone')" name="conyuge" type="radio" /></td>
+                <td><input class="ml" @(Model.ActitudHijos == "se opone" ? "checked = checked" : "") onclick="hijos('se opone')" name="hijos" type="radio" /></td>
+                <td><input class="ml" @(Model.ActitudAmigos == "se opone" ? "checked = checked" : "") onclick="amigos('se opone')" name="amigos" type="radio" /></td>
+                <td><input class="ml" @(Model.ActitudCompañeros == "se opone" ? "checked = checked" : "") onclick="compañeros('se opone')" name="compañeros" type="radio" /></td>
+            </tr>
+
+            <tr>
+                <td>indiferente</td>
+                <td><input class="ml" @(Model.ActitudPadres == "indiferente" ? "checked = checked" : "") onclick="padres('indiferente')" name="padres" type="radio" /> </td>
+                <td><input class="ml" @(Model.ActitudHermanos == "indiferente" ? "checked = checked" : "") onclick="hermanos('indiferente')" name="hermanos" type="radio" /></td>
+                <td><input class="ml" @(Model.ActitudConyuge == "indiferente" ? "checked = checked" : "") onclick="conyuge('indiferente')" name="conyuge" type="radio" /></td>
+                <td><input class="ml" @(Model.ActitudHijos == "indiferente" ? "checked = checked" : "") onclick="hijos('indiferente')" name="hijos" type="radio" /></td>
+                <td><input class="ml" @(Model.ActitudAmigos == "indiferente" ? "checked = checked" : "") onclick="amigos('indiferente')" name="amigos" type="radio" /></td>
+                <td><input class="ml" @(Model.ActitudCompañeros == "indiferente" ? "checked = checked" : "") onclick="compañeros('indiferente')" name="compañeros" type="radio" /></td>
+            </tr>
+
+            <tr>
+                <td>variable</td>
+                <td><input class="ml" @(Model.ActitudPadres == "variable" ? "checked = checked" : "") onclick="padres('variable')" name="padres" type="radio" /> </td>
+                <td><input class="ml" @(Model.ActitudHermanos == "variable" ? "checked = checked" : "")  onclick="hermanos('variable')" name="hermanos" type="radio" /></td>
+                <td><input class="ml" @(Model.ActitudConyuge == "variable" ? "checked = checked" : "")  onclick="conyuge('variable')" name="conyuge" type="radio" /></td>
+                <td><input class="ml" @(Model.ActitudHijos == "variable" ? "checked = checked" : "")  onclick="hijos('variable')" name="hijos" type="radio" /></td>
+                <td><input class="ml" @(Model.ActitudAmigos == "variable" ? "checked = checked" : "")  onclick="amigos('variable')" name="amigos" type="radio" /></td>
+                <td><input class="ml" @(Model.ActitudCompañeros == "variable" ? "checked = checked" : "")  onclick="compañeros('variable')" name="compañeros" type="radio" /></td>
+            </tr>
+            <tr>
+                <td>mucha presion</td>
+                <td><input class="ml" @(Model.ActitudPadres == "mucha presion" ? "checked = checked" : "")  onclick="padres('mucha presion')" name="padres" type="radio" /> </td>
+                <td><input class="ml" @(Model.ActitudHermanos == "mucha presion" ? "checked = checked" : "") onclick="hermanos('mucha presion')" name="hermanos" type="radio" /></td>
+                <td><input class="ml" @(Model.ActitudConyuge == "mucha presion" ? "checked = checked" : "") onclick="conyuge('mucha presion')" name="conyuge" type="radio" /></td>
+                <td><input class="ml" @(Model.ActitudHijos == "mucha presion" ? "checked = checked" : "") onclick="hijos('mucha presion')" name="hijos" type="radio" /></td>
+                <td><input class="ml" @(Model.ActitudAmigos == "mucha presion" ? "checked = checked" : "") onclick="amigos('mucha presion')" name="amigos" type="radio" /></td>
+                <td><input class="ml" @(Model.ActitudCompañeros == "mucha presion" ? "checked = checked" : "") onclick="compañeros('mucha presion')" name="compañeros" type="radio" /></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<label>37.Cómo se lleva con</label>
+<div class="table-responsive" >
+    <table class="table" style="text-transform:capitalize !important;">
+        <thead>
+            <tr>
+                <th></th>
+                <th>muy bien</th>
+                <th>bien</th>
+                <th>más o menos</th>
+                <th>mal</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>hijos</td>
+                <td><input class="ml" @(Model.RelacionHijos == "muy bien" ? "checked = checked" : "") onclick="model.RelacionHijos = 'muy bien'" name="hijos-rel" type="radio" /> </td>
+                <td><input class="ml" @(Model.RelacionHijos == "bien" ? "checked = checked" : "") onclick="model.RelacionHijos = 'bien'" name="hijos-rel" type="radio" /></td>
+                <td><input class="ml" @(Model.RelacionHijos == "mas o menos" ? "checked = checked" : "") onclick="model.RelacionHijos = 'mas o menos'" name="hijos-rel" type="radio" /></td>
+                <td><input class="ml" @(Model.RelacionHijos == "mal" ? "checked = checked" : "") onclick="model.RelacionHijos = 'mal'" name="hijos-rel" type="radio" /></td>
+            </tr>
+
+            <tr>
+                <td>amigos</td>
+                <td><input class="ml" @(Model.RelacionAmigos == "muy bien" ? "checked = checked" : "") onclick="model.RelacionAmigos='muy bien'" name="RelacionAmigos" type="radio" /> </td>
+                <td><input class="ml" @(Model.RelacionAmigos == "bien" ? "checked = checked" : "") onclick="model.RelacionAmigos='bien'" name="RelacionAmigos" type="radio" /></td>
+                <td><input class="ml" @(Model.RelacionAmigos == "mas o menos" ? "checked = checked" : "") onclick="model.RelacionAmigos='mas o menos'" name="RelacionAmigos" type="radio" /></td>
+                <td><input class="ml" @(Model.RelacionAmigos == "mal" ? "checked = checked" : "") onclick="model.RelacionAmigos='mal'" name="RelacionAmigos" type="radio" /></td>
+            </tr>
+
+            <tr>
+                <td>pareja</td>
+                <td><input class="ml" @(Model.RelacionPareja == "muy bien" ? "checked = checked" : "") onclick="model.RelacionPareja = 'muy bien'" name="pareja" type="radio" /> </td>
+                <td><input class="ml" @(Model.RelacionPareja == "bien" ? "checked = checked" : "") onclick="model.RelacionPareja = 'bien'" name="pareja" type="radio" /></td>
+                <td><input class="ml" @(Model.RelacionPareja == "mas o menos" ? "checked = checked" : "") onclick="model.RelacionPareja = 'mas o menos'" name="pareja" type="radio" /></td>
+                <td><input class="ml" @(Model.RelacionPareja == "mal" ? "checked = checked" : "") onclick="model.RelacionPareja = 'mal'" name="pareja" type="radio" /></td>
+            </tr>
+
+            <tr>
+                <td>familia</td>
+                <td><input class="ml" @(Model.RelacionFamilia == "muy bien" ? "checked = checked" : "") onclick="model.RelacionFamilia = 'muy bien'" name="familia" type="radio" /> </td>
+                <td><input class="ml" @(Model.RelacionFamilia == "bien" ? "checked = checked" : "") onclick="model.RelacionFamilia = 'bien'" name="familia" type="radio" /></td>
+                <td><input class="ml" @(Model.RelacionFamilia == "mas o menos" ? "checked = checked" : "") onclick="model.RelacionFamilia = 'mas o menos'" name="familia" type="radio" /></td>
+                <td><input class="ml" @(Model.RelacionFamilia == "mal" ? "checked = checked" : "") onclick="model.RelacionFamilia = 'mal'" name="familia" type="radio" /></td>
+            </tr>
+            <tr>
+                <td>compañeros de trabajo</td>
+                <td><input class="ml" @(Model.RelacionCompañerosTrabajo == "muy bien" ? "checked = checked" : "") onclick="model.RelacionCompañerosTrabajo = 'muy bien'" name="RelacionCompañerosTrabajo" type="radio" /> </td>
+                <td><input class="ml" @(Model.RelacionCompañerosTrabajo == "bien" ? "checked = checked" : "") onclick="model.RelacionCompañerosTrabajo = 'bien'" name="RelacionCompañerosTrabajo" type="radio" /></td>
+                <td><input class="ml" @(Model.RelacionCompañerosTrabajo == "mas o menos" ? "checked = checked" : "") onclick="model.RelacionCompañerosTrabajo = 'mas o menos'" name="RelacionCompañerosTrabajo" type="radio" /></td>
+                <td><input class="ml" @(Model.RelacionCompañerosTrabajo == "mal" ? "checked = checked" : "") onclick="model.RelacionCompañerosTrabajo = 'mal'" name="RelacionCompañerosTrabajo" type="radio" /></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div id="btn-inf" class="container-botones-inferiores" style="width:100%;float:left;">
+    <button type="button" class="btn btn-info" onclick="atras()" >Anterior</button>
+    @Html.ActionLink("Siguiente", "ProximoPaso", "Pasos", new { id = ViewBag.Pagina }, new { @class = "btn btn-info", onclick = "javascript:subirDatos();" })
+</div>
+
+
+
+</div>

@@ -1,0 +1,16 @@
+﻿.container-consejo
+{
+    margin-top: 40px;
+}
+
+.img-consejo
+{
+    min-width: 250px;
+    margin: auto;
+}
+
+.container-botones-inferiores
+{
+    text-align: center;
+    margin-top: 10px;
+}

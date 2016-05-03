@@ -1,0 +1,2714 @@
+﻿@model HistoriaPersonalCormillot.ViewModels.Impresion.Page5
+@{
+    Layout = null;
+}
+@{ 
+    string porcentajeingestadiaria = Model.sus_allegados.RadioPorcentajeIngesta;
+    string actitudpadres = Model.sushabitos2.ActitudPadres;
+    string actitudhermanos = Model.sushabitos2.ActitudHermanos;
+    string actitudconyuge = Model.sushabitos2.ActitudConyuge;
+    string actitudhijos = Model.sushabitos2.ActitudHijos;
+    string actitudamigos = Model.sushabitos2.ActitudAmigos;
+    string actitudcompañeros = Model.sushabitos2.ActitudCompañeros;
+    string relacionhijos = Model.sushabitos2.RelacionHijos;
+    string relacionamigos = Model.sushabitos2.RelacionAmigos;
+    string relacionpareja = Model.sushabitos2.RelacionPareja;
+    string relacionfamilia = Model.sushabitos2.RelacionFamilia;
+    string relacioncompañerostrabajo = Model.sushabitos2.RelacionCompañerosTrabajo;
+
+    string urgenciacomer = Model.sus_allegados.RadioUrgenciaDeComer;
+    string comedenoche = Model.sus_allegados.RadioComeDeNoche;
+    string comeparadormir = Model.sus_allegados.RadioComeParaDormir;
+    string comesincontrol = Model.sus_allegados.RadioComeSinControl;
+    string laxantes = Model.sus_allegados.RadioLaxantes;
+    string diureticos = Model.sus_allegados.RadioDiureticos;
+    string vomitos = Model.sus_allegados.RadioInduceVomito;
+    string restringealimentos = Model.sus_allegados.RadioRestringeAlimento;
+    string actfisicaexagerada = Model.sus_allegados.RadioActFisicaExagerada;
+
+
+    string tipodieta = Model.preferencias.preferencias.SuDieta;
+    string desordenado = Model.preferencias.preferencias.RadioDesordenado;
+    string salteo = Model.preferencias.preferencias.RadioSalteo;
+    string picoteo = Model.preferencias.preferencias.RadioPicoteo;
+    string hagoayunos = Model.preferencias.preferencias.RadioHagoAyunos;
+    string depresion = Model.preferencias.preferencias.RadioDepresion;
+    string ansiedad = Model.preferencias.preferencias.RadioAnsiedad;
+    string estres = Model.preferencias.preferencias.RadioEstres;
+    string enojo = Model.preferencias.preferencias.RadioEnojo;
+    string aburrimiento = Model.preferencias.preferencias.RadioAburrimiento;
+    string alegria = Model.preferencias.preferencias.RadioAlegria;
+    string descontrol = Model.preferencias.preferencias.RadioDescontrol;
+    string cansancio = Model.preferencias.preferencias.RadioCansancio;
+    string presentimental = Model.preferencias.preferencias.RadioPreSentimental;
+    string embarazo = Model.preferencias.preferencias.RadioEmbarazo;
+
+}
+
+<html>
+<head>
+    <title>5</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- Save for Web Styles (5.jpg - Slices: embaraz_4) -->
+    <style type="text/css">
+        <!--
+
+        #Table_01 {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 1023px;
+            height: 717px;
+            background-image: url(../../Content/Imagenes/Mapeo/5.jpg);
+        }
+
+        #id0nada {
+            position: absolute;
+            left: 555px;
+            top: 48px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #id1al25 {
+            position: absolute;
+            left: 632px;
+            top: 48px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #id25al50 {
+            position: absolute;
+            left: 704px;
+            top: 48px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #id51al75 {
+            position: absolute;
+            left: 781px;
+            top: 48px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #id76al100 {
+            position: absolute;
+            left: 858px;
+            top: 48px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #algunacomidamolestia1 {
+            position: absolute;
+            left: 862px;
+            top: 72px;
+            width: 119px;
+            height: 14px;
+        }
+
+        #algunacomidamolestia2 {
+            position: absolute;
+            left: 555px;
+            top: 99px;
+            width: 426px;
+            height: 14px;
+        }
+
+        #apoyo0 {
+            position: absolute;
+            left: 117px;
+            top: 114px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #apoyo1 {
+            position: absolute;
+            left: 150px;
+            top: 114px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #apoyo2 {
+            position: absolute;
+            left: 192px;
+            top: 114px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #apoyo3 {
+            position: absolute;
+            left: 224px;
+            top: 114px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #apoyo4 {
+            position: absolute;
+            left: 255px;
+            top: 114px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #apoyo5 {
+            position: absolute;
+            left: 296px;
+            top: 114px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #hijos0 {
+            position: absolute;
+            left: 395px;
+            top: 117px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #hijos1 {
+            position: absolute;
+            left: 423px;
+            top: 117px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #hijos2 {
+            position: absolute;
+            left: 450px;
+            top: 117px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #hijos3 {
+            position: absolute;
+            left: 477px;
+            top: 117px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #seopone0 {
+            position: absolute;
+            left: 117px;
+            top: 149px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #seopone1 {
+            position: absolute;
+            left: 153px;
+            top: 149px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #seopone2 {
+            position: absolute;
+            left: 193px;
+            top: 149px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #seopone3 {
+            position: absolute;
+            left: 225px;
+            top: 149px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #seopone4 {
+            position: absolute;
+            left: 256px;
+            top: 149px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #seopone5 {
+            position: absolute;
+            left: 296px;
+            top: 149px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #amigos0 {
+            position: absolute;
+            left: 395px;
+            top: 150px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #amigos1 {
+            position: absolute;
+            left: 423px;
+            top: 150px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #amigos2 {
+            position: absolute;
+            left: 450px;
+            top: 150px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #amigos3 {
+            position: absolute;
+            left: 477px;
+            top: 150px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #gralconvariant {
+            position: absolute;
+            left: 677px;
+            top: 176px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #flexibl {
+            position: absolute;
+            left: 930px;
+            top: 176px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #unadiaxdia {
+            position: absolute;
+            left: 556px;
+            top: 177px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #estrict {
+            position: absolute;
+            left: 848px;
+            top: 177px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #esneutra0 {
+            position: absolute;
+            left: 117px;
+            top: 181px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #esneutra1 {
+            position: absolute;
+            left: 153px;
+            top: 181px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #esneutra2 {
+            position: absolute;
+            left: 193px;
+            top: 181px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #esneutra3 {
+            position: absolute;
+            left: 225px;
+            top: 181px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #esneutra4 {
+            position: absolute;
+            left: 257px;
+            top: 181px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #esneutra5 {
+            position: absolute;
+            left: 296px;
+            top: 181px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #pareja0 {
+            position: absolute;
+            left: 395px;
+            top: 185px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #pareja1 {
+            position: absolute;
+            left: 424px;
+            top: 185px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #pareja2 {
+            position: absolute;
+            left: 451px;
+            top: 185px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #pareja3 {
+            position: absolute;
+            left: 477px;
+            top: 185px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #variable0 {
+            position: absolute;
+            left: 117px;
+            top: 218px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #variable1 {
+            position: absolute;
+            left: 153px;
+            top: 218px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #variable2 {
+            position: absolute;
+            left: 193px;
+            top: 218px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #variable3 {
+            position: absolute;
+            left: 225px;
+            top: 218px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #variable4 {
+            position: absolute;
+            left: 257px;
+            top: 218px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #variable5 {
+            position: absolute;
+            left: 296px;
+            top: 218px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #familia0 {
+            position: absolute;
+            left: 395px;
+            top: 218px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #familia1 {
+            position: absolute;
+            left: 424px;
+            top: 218px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #familia2 {
+            position: absolute;
+            left: 452px;
+            top: 218px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #familia3 {
+            position: absolute;
+            left: 477px;
+            top: 218px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #legustariano {
+            position: absolute;
+            left: 557px;
+            top: 232px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #legustariasi {
+            position: absolute;
+            left: 600px;
+            top: 232px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #legustariadulce {
+            position: absolute;
+            left: 687px;
+            top: 232px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #legustariasalado {
+            position: absolute;
+            left: 773px;
+            top: 232px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #legustariamixto {
+            position: absolute;
+            left: 859px;
+            top: 232px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #muchapresion0 {
+            position: absolute;
+            left: 117px;
+            top: 249px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #muchapresion1 {
+            position: absolute;
+            left: 153px;
+            top: 249px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #muchapresion2 {
+            position: absolute;
+            left: 192px;
+            top: 249px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #muchapresion3 {
+            position: absolute;
+            left: 225px;
+            top: 249px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #muchapresion4 {
+            position: absolute;
+            left: 257px;
+            top: 249px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #muchapresion5 {
+            position: absolute;
+            left: 296px;
+            top: 249px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #compastraba0 {
+            position: absolute;
+            left: 395px;
+            top: 250px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #compastraba1 {
+            position: absolute;
+            left: 423px;
+            top: 250px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #compastraba2 {
+            position: absolute;
+            left: 451px;
+            top: 250px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #compastraba3 {
+            position: absolute;
+            left: 477px;
+            top: 250px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #legustariacual1 {
+            position: absolute;
+            left: 590px;
+            top: 251px;
+            width: 415px;
+            height: 14px;
+        }
+
+        #legustariacual2 {
+            position: absolute;
+            left: 555px;
+            top: 277px;
+            width: 450px;
+            height: 14px;
+        }
+
+        #pesnormal {
+            position: absolute;
+            left: 141px;
+            top: 300px;
+            width: 20px;
+            height: 14px;
+        }
+
+        #pesonormquienes {
+            position: absolute;
+            left: 239px;
+            top: 300px;
+            width: 253px;
+            height: 14px;
+        }
+
+        #sobrep {
+            position: absolute;
+            left: 141px;
+            top: 317px;
+            width: 20px;
+            height: 14px;
+        }
+
+        #sobrepquienes {
+            position: absolute;
+            left: 239px;
+            top: 317px;
+            width: 252px;
+            height: 14px;
+        }
+
+        #desordenad-0 {
+            position: absolute;
+            left: 667px;
+            top: 361px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #desordenad-1 {
+            position: absolute;
+            left: 709px;
+            top: 361px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #desordenad-2 {
+            position: absolute;
+            left: 749px;
+            top: 361px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #desordenad-3 {
+            position: absolute;
+            left: 792px;
+            top: 361px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #desordenad-4 {
+            position: absolute;
+            left: 834px;
+            top: 361px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #salteeo-0 {
+            position: absolute;
+            left: 667px;
+            top: 382px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #salteeo-1 {
+            position: absolute;
+            left: 709px;
+            top: 382px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #salteeo-2 {
+            position: absolute;
+            left: 750px;
+            top: 382px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #salteeo-3 {
+            position: absolute;
+            left: 792px;
+            top: 382px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #salteeo-4 {
+            position: absolute;
+            left: 834px;
+            top: 382px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #tienemuchoapet-0 {
+            position: absolute;
+            left: 328px;
+            top: 393px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #tienemuchoapet-1 {
+            position: absolute;
+            left: 366px;
+            top: 393px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #tienemuchoapet-2 {
+            position: absolute;
+            left: 414px;
+            top: 393px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #tienemuchoapet-3 {
+            position: absolute;
+            left: 467px;
+            top: 393px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #picot-0 {
+            position: absolute;
+            left: 667px;
+            top: 402px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #picot-1 {
+            position: absolute;
+            left: 709px;
+            top: 402px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #picot-2 {
+            position: absolute;
+            left: 750px;
+            top: 402px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #picot-3 {
+            position: absolute;
+            left: 793px;
+            top: 402px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #picot-4 {
+            position: absolute;
+            left: 834px;
+            top: 402px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #comecuandolevanta-0 {
+            position: absolute;
+            left: 328px;
+            top: 418px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #comecuandolevanta-1 {
+            position: absolute;
+            left: 366px;
+            top: 418px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #comecuandolevanta-2 {
+            position: absolute;
+            left: 415px;
+            top: 418px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #comecuandolevanta-3 {
+            position: absolute;
+            left: 468px;
+            top: 418px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #hagoayuns-0 {
+            position: absolute;
+            left: 668px;
+            top: 422px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #hagoayuns-1 {
+            position: absolute;
+            left: 709px;
+            top: 422px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #hagoayuns-2 {
+            position: absolute;
+            left: 750px;
+            top: 422px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #hagoayuns-3 {
+            position: absolute;
+            left: 793px;
+            top: 422px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #hagoayuns-4 {
+            position: absolute;
+            left: 834px;
+            top: 422px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #necesitacomerdormir-0 {
+            position: absolute;
+            left: 328px;
+            top: 445px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #necesitacomerdormir-1 {
+            position: absolute;
+            left: 366px;
+            top: 445px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #necesitacomerdormir-2 {
+            position: absolute;
+            left: 415px;
+            top: 445px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #necesitacomerdormir-3 {
+            position: absolute;
+            left: 468px;
+            top: 445px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #depress-0 {
+            position: absolute;
+            left: 668px;
+            top: 461px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #depress-1 {
+            position: absolute;
+            left: 709px;
+            top: 461px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #depress-2 {
+            position: absolute;
+            left: 751px;
+            top: 461px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #depress-3 {
+            position: absolute;
+            left: 794px;
+            top: 461px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #depress-4 {
+            position: absolute;
+            left: 835px;
+            top: 461px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sicomenoche-0 {
+            position: absolute;
+            left: 328px;
+            top: 469px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sicomenoche-1 {
+            position: absolute;
+            left: 367px;
+            top: 469px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sicomenoche-2 {
+            position: absolute;
+            left: 415px;
+            top: 469px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sicomenoche-3 {
+            position: absolute;
+            left: 468px;
+            top: 469px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #ansieda-0 {
+            position: absolute;
+            left: 669px;
+            top: 481px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #ansieda-1 {
+            position: absolute;
+            left: 709px;
+            top: 481px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #ansieda-2 {
+            position: absolute;
+            left: 751px;
+            top: 481px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #ansieda-3 {
+            position: absolute;
+            left: 794px;
+            top: 481px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #ansieda-4 {
+            position: absolute;
+            left: 835px;
+            top: 481px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #durantediaatracones-0 {
+            position: absolute;
+            left: 328px;
+            top: 495px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #durantediaatracones-1 {
+            position: absolute;
+            left: 368px;
+            top: 495px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #durantediaatracones-2 {
+            position: absolute;
+            left: 415px;
+            top: 495px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #durantediaatracones-3 {
+            position: absolute;
+            left: 468px;
+            top: 495px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #estress-0 {
+            position: absolute;
+            left: 669px;
+            top: 501px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #estress-1 {
+            position: absolute;
+            left: 709px;
+            top: 501px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #estress-2 {
+            position: absolute;
+            left: 752px;
+            top: 501px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #estress-3 {
+            position: absolute;
+            left: 794px;
+            top: 501px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #estress-4 {
+            position: absolute;
+            left: 835px;
+            top: 501px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #enoj-0 {
+            position: absolute;
+            left: 669px;
+            top: 520px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #enoj-1 {
+            position: absolute;
+            left: 709px;
+            top: 520px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #enoj-2 {
+            position: absolute;
+            left: 752px;
+            top: 520px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #enoj-3 {
+            position: absolute;
+            left: 794px;
+            top: 520px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #enoj-4 {
+            position: absolute;
+            left: 835px;
+            top: 520px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #utilizalax-0 {
+            position: absolute;
+            left: 328px;
+            top: 539px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #utilizalax-1 {
+            position: absolute;
+            left: 368px;
+            top: 539px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #utilizalax-2 {
+            position: absolute;
+            left: 414px;
+            top: 539px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #utilizalax-3 {
+            position: absolute;
+            left: 469px;
+            top: 539px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #aburrimient-0 {
+            position: absolute;
+            left: 669px;
+            top: 539px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #aburrimient-1 {
+            position: absolute;
+            left: 710px;
+            top: 539px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #aburrimient-2 {
+            position: absolute;
+            left: 752px;
+            top: 539px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #aburrimient-3 {
+            position: absolute;
+            left: 794px;
+            top: 539px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #aburrimient-4 {
+            position: absolute;
+            left: 835px;
+            top: 539px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #alegri-0 {
+            position: absolute;
+            left: 670px;
+            top: 559px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #alegri-1 {
+            position: absolute;
+            left: 711px;
+            top: 559px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #alegri-2 {
+            position: absolute;
+            left: 752px;
+            top: 559px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #alegri-3 {
+            position: absolute;
+            left: 795px;
+            top: 559px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #alegri-4 {
+            position: absolute;
+            left: 836px;
+            top: 559px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #utilizdiuret-0 {
+            position: absolute;
+            left: 328px;
+            top: 565px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #utilizdiuret-1 {
+            position: absolute;
+            left: 367px;
+            top: 565px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #utilizdiuret-2 {
+            position: absolute;
+            left: 414px;
+            top: 565px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #utilizdiuret-3 {
+            position: absolute;
+            left: 469px;
+            top: 565px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #descontro-0 {
+            position: absolute;
+            left: 670px;
+            top: 580px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #descontro-1 {
+            position: absolute;
+            left: 711px;
+            top: 580px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #descontro-2 {
+            position: absolute;
+            left: 752px;
+            top: 580px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #descontro-3 {
+            position: absolute;
+            left: 795px;
+            top: 580px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #descontro-4 {
+            position: absolute;
+            left: 836px;
+            top: 580px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #seinducevomit-0 {
+            position: absolute;
+            left: 328px;
+            top: 591px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #seinducevomit-1 {
+            position: absolute;
+            left: 367px;
+            top: 591px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #seinducevomit-2 {
+            position: absolute;
+            left: 414px;
+            top: 591px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #seinducevomit-3 {
+            position: absolute;
+            left: 469px;
+            top: 591px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #cansanci-0 {
+            position: absolute;
+            left: 670px;
+            top: 600px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #cansanci-1 {
+            position: absolute;
+            left: 711px;
+            top: 600px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #cansanci-2 {
+            position: absolute;
+            left: 752px;
+            top: 600px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #cansanci-3 {
+            position: absolute;
+            left: 795px;
+            top: 600px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #cansanci-4 {
+            position: absolute;
+            left: 837px;
+            top: 600px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #restringesualiment-0 {
+            position: absolute;
+            left: 328px;
+            top: 616px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #restringesualiment-1 {
+            position: absolute;
+            left: 367px;
+            top: 616px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #restringesualiment-2 {
+            position: absolute;
+            left: 414px;
+            top: 616px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #restringesualiment-3 {
+            position: absolute;
+            left: 469px;
+            top: 616px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #realizaactivifisisexagerada-0 {
+            position: absolute;
+            left: 328px;
+            top: 640px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #realizaactivifisisexagerada-1 {
+            position: absolute;
+            left: 367px;
+            top: 640px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #realizaactivifisisexagerada-2 {
+            position: absolute;
+            left: 414px;
+            top: 640px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #realizaactivifisisexagerada-3 {
+            position: absolute;
+            left: 469px;
+            top: 640px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #premenstrul-1 {
+            position: absolute;
+            left: 670px;
+            top: 640px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #premenstrul-2 {
+            position: absolute;
+            left: 712px;
+            top: 640px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #premenstrul-2 {
+            position: absolute;
+            left: 752px;
+            top: 640px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #premenstrul-3 {
+            position: absolute;
+            left: 796px;
+            top: 640px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #premenstrul-4 {
+            position: absolute;
+            left: 837px;
+            top: 640px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #embaraz-0 {
+            position: absolute;
+            left: 670px;
+            top: 661px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #embaraz-1 {
+            position: absolute;
+            left: 712px;
+            top: 661px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #embaraz-2 {
+            position: absolute;
+            left: 753px;
+            top: 661px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #embaraz-3 {
+            position: absolute;
+            left: 796px;
+            top: 661px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #embaraz-4 {
+            position: absolute;
+            left: 837px;
+            top: 661px;
+            width: 14px;
+            height: 14px;
+        }
+
+        p {
+            display: inline;
+            font-family: arial;
+            font-size: 14px;
+        }
+
+        -->
+    </style>
+    <!-- End Save for Web Styles -->
+</head>
+<body style="background-color:#FFFFFF; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;">
+    <!-- Save for Web Slices (5.jpg - Slices: embaraz_4) -->
+    <div id="Table_01">
+        @{
+            switch (porcentajeingestadiaria)
+            {
+                case "0% (nada)":
+                <div id="id0nada">
+                    X
+                </div>
+                    break;
+                case "1 al 25%":
+                    <div id="id1al25">
+                        X
+                    </div>
+                    break;
+                case "26 al 50%":
+                    <div id="id25al50">
+                        X
+                    </div>
+                    break;
+                case "51 al 75%":
+                    <div id="id51al75">
+                        X
+                    </div>
+                    break;
+                case "76 al 100%":
+                    <div id="id76al100">
+                        X
+                    </div>
+                    break;
+
+
+            }
+
+        } 
+   
+        <div id="algunacomidamolestia1">
+            @if (Model.sus_allegados != null)
+            {
+                @Model.sus_allegados.AlergiaAComida
+            }
+        </div>
+        <div id="algunacomidamolestia2">
+        </div>
+        @{
+            switch (actitudpadres)
+            {
+                case "apoyo":
+                    <div id="apoyo0">
+                        X
+                    </div>
+                    break;
+                case "se opone":
+                    <div id="seopone0">
+                        X
+                    </div>
+                    break;
+                case "indiferente":
+                    <div id="esneutra0">
+                        X
+                    </div>
+                    break;
+                case "variable":
+                    <div id="variable0">
+                        X
+                    </div>
+                    break;
+                case "mucha presion":
+                    <div id="muchapresion0">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (actitudhermanos)
+            {
+                case "apoyo":
+                    <div id="apoyo1">
+                        X
+                    </div>
+                    break;
+                case "se opone":
+                    <div id="seopone1">
+                        X
+                    </div>
+                    break;
+                case "indiferente":
+                    <div id="esneutra1">
+                        X
+                    </div>
+                    break;
+                case "variable":
+                    <div id="variable1">
+                        X
+                    </div>
+                    break;
+                case "mucha presion":
+                    <div id="muchapresion1">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (actitudconyuge)
+            {
+                case "apoyo":
+                    <div id="apoyo2">
+                        X
+                    </div>
+                    break;
+                case "se opone":
+                    <div id="seopone2">
+                        X
+                    </div>
+                    break;
+                case "indiferente":
+                    <div id="esneutra2">
+                        X
+                    </div>
+                    break;
+                case "variable":
+                    <div id="variable2">
+                        X
+                    </div>
+                    break;
+                case "mucha presion":
+                    <div id="muchapresion2">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (actitudhijos)
+            {
+                case "apoyo":
+                    <div id="apoyo3">
+                        X
+                    </div>
+                    break;
+                case "se opone":
+                    <div id="seopone3">
+                        X
+                    </div>
+                    break;
+                case "indiferente":
+                    <div id="esneutra3">
+                        X
+                    </div>
+                    break;
+                case "variable":
+                    <div id="variable3">
+                        X
+                    </div>
+                    break;
+                case "mucha presion":
+                    <div id="muchapresion3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (actitudamigos)
+            {
+                case "apoyo":
+                    <div id="apoyo4">
+                        X
+                    </div>
+                    break;
+                case "se opone":
+                    <div id="seopone4">
+                        X
+                    </div>
+                    break;
+                case "indiferente":
+                    <div id="esneutra4">
+                        X
+                    </div>
+                    break;
+                case "variable":
+                    <div id="variable4">
+                        X
+                    </div>
+                    break;
+                case "mucha presion":
+                    <div id="muchapresion4">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (actitudcompañeros)
+            {
+                case "apoyo":
+                    <div id="apoyo5">
+                        X
+                    </div>
+                    break;
+                case "se opone":
+                    <div id="seopone5">
+                        X
+                    </div>
+                    break;
+                case "indiferente":
+                    <div id="esneutra5">
+                        X
+                    </div>
+                    break;
+                case "variable":
+                    <div id="variable5">
+                        X
+                    </div>
+                    break;
+                case "mucha presion":
+                    <div id="muchapresion5">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        @{
+            switch (relacionhijos)
+            {
+                case "muy bien":
+                    <div id="hijos0">
+                        X
+                    </div>
+                    break;
+                case "bien":
+                    <div id="hijos1">
+                        X
+                    </div>
+                    break;
+                case "mas o menos":
+                    <div id="hijos2">
+                        X
+                    </div>
+                    break;
+                case "mal":
+                    <div id="hijos3">
+                        X
+                    </div>
+                    break;
+
+
+            }
+        }
+        @{
+            switch (relacionamigos)
+            {
+                case "muy bien":
+                    <div id="amigos0">
+                        X
+                    </div>
+                    break;
+                case "bien":
+                    <div id="amigos1">
+                        X
+                    </div>
+                    break;
+                case "mas o menos":
+                    <div id="amigos2">
+                        X
+                    </div>
+                    break;
+                case "mal":
+                    <div id="amigos3">
+                        X
+                    </div>
+                    break;
+
+
+            }
+        }
+        @{
+            switch (relacionpareja)
+            {
+                case "muy bien":
+                    <div id="pareja0">
+                        X
+                    </div>
+                    break;
+                case "bien":
+                    <div id="pareja1">
+                        X
+                    </div>
+                    break;
+                case "mas o menos":
+                    <div id="pareja2">
+                        X
+                    </div>
+                    break;
+                case "mal":
+                    <div id="pareja3">
+                        X
+                    </div>
+                    break;
+
+
+            }
+        }
+        @{
+            switch (relacionfamilia)
+            {
+                case "muy bien":
+                    <div id="familia0">
+                        X
+                    </div>
+                    break;
+                case "bien":
+                    <div id="familia1">
+                        X
+                    </div>
+                    break;
+                case "mas o menos":
+                    <div id="familia2">
+                        X
+                    </div>
+                    break;
+                case "mal":
+                    <div id="familia3">
+                        X
+                    </div>
+                    break;
+
+
+            }
+        }
+        @{
+            switch (relacioncompañerostrabajo)
+            {
+                case "muy bien":
+                    <div id="compastraba0">
+                        X
+                    </div>
+                    break;
+                case "bien":
+                    <div id="compastraba1">
+                        X
+                    </div>
+                    break;
+                case "mas o menos":
+                    <div id="compastraba2">
+                        X
+                    </div>
+                    break;
+                case "mal":
+                    <div id="compastraba3">
+                        X
+                    </div>
+                    break;
+
+
+            }
+        }
+
+        @{
+            switch (tipodieta)
+            {
+                case "Un dia por dia":
+                    <div id="unadiaxdia">
+                        X
+                    </div>
+                    break;
+                case "General con variantes":
+                    <div id="gralconvariant">
+                        X
+                    </div>
+                    break;
+                case "Estricta":
+                    <div id="estrict">
+                        X
+                    </div>
+                    break;
+                case "Flexible":
+                    <div id="flexibl">
+                        X
+                    </div>
+                    break;
+
+
+            }
+        }
+ 
+   @if (Model.preferencias.preferencias.RadioAlimentoPreferido == "Si")
+   {
+    <div id="legustariasi">
+        X
+    </div>
+
+   }
+        @if (Model.preferencias.preferencias.RadioAlimentoPreferido == "No")
+        {
+            <div id="legustariano">
+                X
+            </div>
+
+        }
+ @if (Model.preferencias.preferencias.RadioTipoAlimentoPreferido == "Dulce")
+ {
+    <div id="legustariadulce">
+        X
+    </div>
+
+ }
+        @if (Model.preferencias.preferencias.RadioTipoAlimentoPreferido == "Salado")
+        {
+            <div id="legustariasalado">
+                X
+            </div>
+
+        }
+        @if (Model.preferencias.preferencias.RadioTipoAlimentoPreferido == "Mixto")
+        {
+            <div id="legustariamixto">
+                X
+            </div>
+
+        } 
+     
+        <div id="legustariacual1">
+            @Model.preferencias.preferencias.AlimentoPreferido
+        </div>
+        <div id="legustariacual2">
+        </div>
+        <div id="pesnormal">
+            @if (Model.sus_allegados != null)
+            {
+                @Model.sus_allegados.CantPesoNormal
+            }
+            
+        </div>
+        <div id="pesonormquienes">
+            @if (Model.sus_allegados != null)
+            {
+                @Model.sus_allegados.TienenPesoNormal
+            }
+        </div>
+        <div id="sobrep">
+
+            @if (Model.sus_allegados != null)
+            {
+                @Model.sus_allegados.CantSobrepeso
+            }
+        </div>
+        <div id="sobrepquienes">
+            @if (Model.sus_allegados != null)
+            {
+                @Model.sus_allegados.TienenSobrepeso
+            }
+        </div>
+        @{
+            switch (desordenado)
+            {
+                case "NUNCA":
+                    <div id="desordenad-0">
+                        X
+                    </div>
+                    break;
+                case "A VECES":
+                    <div id="desordenad-1">
+                        X
+                    </div>
+                    break;
+                case "MUCHAS VECES":
+                    <div id="desordenad-2">
+                        X
+                    </div>
+                    break;
+                case "GENERALMENTE":
+                    <div id="desordenad-3">
+                        X
+                    </div>
+                    break;
+                case "SIEMPRE":
+                    <div id="desordenad-4">
+                        X
+                    </div>
+                    break;
+
+            }
+        }
+        @{
+            switch (salteo)
+            {
+                case "NUNCA":
+                    <div id="salteeo-0">
+                        X
+                    </div>
+                    break;
+                case "A VECES":
+                    <div id="salteeo-1">
+                        X
+                    </div>
+                    break;
+                case "MUCHAS VECES":
+                    <div id="salteeo-2">
+                        X
+                    </div>
+                    break;
+                case "GENERALMENTE":
+                    <div id="salteeo-3">
+                        X
+                    </div>
+                    break;
+                case "SIEMPRE":
+                    <div id="salteeo-4">
+                        X
+                    </div>
+                    break;
+
+            }
+        }
+
+   @{
+       switch (urgenciacomer)
+       {
+           case "NUNCA":
+            <div id="tienemuchoapet-0">
+                X
+            </div>
+               break;
+           case "A VECES":
+            <div id="tienemuchoapet-1">
+                X
+            </div>
+               break;
+           case "USUALMENTE":
+            <div id="tienemuchoapet-2">
+                X
+            </div>
+               break;
+           case "SIEMPRE":
+            <div id="tienemuchoapet-3">
+                X
+            </div>
+               break;
+
+
+       }
+}
+       
+
+        @{
+            switch (picoteo)
+            {
+                case "NUNCA":
+                    <div id="picot-0">
+                        X
+                    </div>
+                    break;
+                case "A VECES":
+                    <div id="picot-1">
+                        X
+                    </div>
+                    break;
+                case "MUCHAS VECES":
+                    <div id="picot-2">
+                        X
+                    </div>
+                    break;
+                case "GENERALMENTE":
+                    <div id="picot-3">
+                        X
+                    </div>
+                    break;
+                case "SIEMPRE":
+                    <div id="picot-4">
+                        X
+                    </div>
+                    break;
+
+            }
+        }
+
+        @{
+            switch (comedenoche)
+            {
+                case "NUNCA":
+                    <div id="comecuandolevanta-0">
+                        X
+                    </div>
+                    break;
+                case "A VECES":
+                    <div id="comecuandolevanta-1">
+                        X
+                    </div>
+                    break;
+                case "USUALMENTE":
+                    <div id="comecuandolevanta-2">
+                        X
+                    </div>
+                    break;
+                case "SIEMPRE":
+                    <div id="comecuandolevanta-3">
+                        X
+                    </div>
+                    break;
+
+
+            }
+        }
+      
+     
+
+        @{
+            switch (hagoayunos)
+            {
+                case "NUNCA":
+                    <div id="hagoayuns-0">
+                        X
+                    </div>
+                    break;
+                case "A VECES":
+                    <div id="hagoayuns-1">
+                        X
+                    </div>
+                    break;
+                case "MUCHAS VECES":
+                    <div id="hagoayuns-2">
+                        X
+                    </div>
+                    break;
+                case "GENERALMENTE":
+                    <div id="hagoayuns-3">
+                        X
+                    </div>
+                    break;
+                case "SIEMPRE":
+                    <div id="hagoayuns-4">
+                        X
+                    </div>
+                    break;
+
+            }
+        }
+
+        @{
+            switch (comeparadormir)
+            {
+                case "NUNCA":
+                    <div id="necesitacomerdormir-0">
+                        X
+                    </div>
+                    break;
+                case "A VECES":
+                    <div id="necesitacomerdormir-1">
+                        X
+                    </div>
+                    break;
+                case "USUALMENTE":
+                    <div id="necesitacomerdormir-2">
+                        X
+                    </div>
+                    break;
+                case "SIEMPRE":
+                    <div id="necesitacomerdormir-3">
+                        X
+                    </div>
+                    break;
+
+
+            }
+        }
+ 
+        @{
+            switch (depresion)
+            {
+                case "NUNCA":
+                    <div id="depress-0">
+                        X
+                    </div>
+                    break;
+                case "A VECES":
+                    <div id="depress-1">
+                        X
+                    </div>
+                    break;
+                case "MUCHAS VECES":
+                    <div id="depress-2">
+                        X
+                    </div>
+                    break;
+                case "GENERALMENTE":
+                    <div id="depress-3">
+                        X
+                    </div>
+                    break;
+                case "SIEMPRE":
+                    <div id="depress-4">
+                        X
+                    </div>
+                    break;
+
+            }
+        }
+
+        @{
+            switch (comesincontrol)
+            {
+                case "NUNCA":
+                    <div id="sicomenoche-0">
+                        X
+                    </div>
+                    break;
+                case "A VECES":
+                    <div id="sicomenoche-1">
+                        X
+                    </div>
+                    break;
+                case "USUALMENTE":
+                    <div id="sicomenoche-2">
+                        X
+                    </div>
+                    break;
+                case "SIEMPRE":
+                    <div id="sicomenoche-3">
+                        X
+                    </div>
+                    break;
+
+
+            }
+        }
+     
+ 
+        @{
+            switch (ansiedad)
+            {
+                case "NUNCA":
+                    <div id="ansieda-0">
+                        X
+                    </div>
+                    break;
+                case "A VECES":
+                    <div id="ansieda-1">
+                        X
+                    </div>
+                    break;
+                case "MUCHAS VECES":
+                    <div id="ansieda-2">
+                        X
+                    </div>
+                    break;
+                case "GENERALMENTE":
+                    <div id="ansieda-3">
+                        X
+                    </div>
+                    break;
+                case "SIEMPRE":
+                    <div id="ansieda-4">
+                        X
+                    </div>
+                    break;
+
+            }
+        }
+        @{
+            switch (comesincontrol)
+            {
+                case "NUNCA":
+                    <div id="durantediaatracones-0">
+                        X
+                    </div>
+                    break;
+                case "A VECES":
+                    <div id="durantediaatracones-1">
+                        X
+                    </div>
+                    break;
+                case "USUALMENTE":
+                    <div id="durantediaatracones-2">
+                        X
+                    </div>
+                    break;
+                case "SIEMPRE":
+                    <div id="durantediaatracones-3">
+                        X
+                    </div>
+                        break;
+
+
+                }
+            }
+
+        @{
+            switch (estres)
+            {
+                case "NUNCA":
+                    <div id="estress-0">
+                        X
+                    </div>
+                    break;
+                case "A VECES":
+                    <div id="estress-1">
+                        X
+                    </div>
+                    break;
+                case "MUCHAS VECES":
+                    <div id="estress-2">
+                        X
+                    </div>
+                    break;
+                case "GENERALMENTE":
+                    <div id="estress-3">
+                        X
+                    </div>
+                    break;
+                case "SIEMPRE":
+                    <div id="estress-4">
+                        X
+                    </div>
+                    break;
+
+            }
+        }
+        @{
+            switch (enojo)
+            {
+                case "NUNCA":
+                    <div id="enoj-0">
+                        X
+                    </div>
+                    break;
+                case "A VECES":
+                    <div id="enoj-1">
+                        X
+                    </div>
+                    break;
+                case "MUCHAS VECES":
+                    <div id="enoj-2">
+                        X
+                    </div>
+                    break;
+                case "GENERALMENTE":
+                    <div id="enoj-3">
+                        X
+                    </div>
+                    break;
+                case "SIEMPRE":
+                    <div id="enoj-4">
+                        X
+                    </div>
+                    break;
+
+            }
+        }
+        @{
+            switch (laxantes)
+            {
+                case "NUNCA":
+                    <div id="utilizalax-0">
+                        X
+                    </div>
+                    break;
+                case "A VECES":
+                    <div id="utilizalax-1">
+                        X
+                    </div>
+                    break;
+                case "USUALMENTE":
+                    <div id="utilizalax-2">
+                        X
+                    </div>
+                    break;
+                case "SIEMPRE":
+                    <div id="utilizalax-3">
+                        X
+                    </div>
+                    break;
+
+
+            }
+        }
+ 
+ 
+    @{
+        switch (aburrimiento)
+        {
+            case "NUNCA":
+                <div id="aburrimient-0">
+                    X
+                </div>
+                break;
+            case "A VECES":
+                <div id="aburrimient-1">
+                    X
+                </div>
+                break;
+            case "MUCHAS VECES":
+                <div id="aburrimient-2">
+                    X
+                </div>
+                break;
+            case "GENERALMENTE":
+                <div id="aburrimient-3">
+                    X
+                </div>
+                break;
+            case "SIEMPRE":
+                <div id="aburrimient-4">
+                    X
+                </div>
+                break;
+
+        }
+    }
+    @{
+        switch (alegria)
+        {
+            case "NUNCA":
+                <div id="alegri-0">
+                    X
+                </div>
+                break;
+            case "A VECES":
+                <div id="alegri-1">
+                    X
+                </div>
+                break;
+            case "MUCHAS VECES":
+                <div id="alegri-2">
+                    X
+                </div>
+                break;
+            case "GENERALMENTE":
+                <div id="alegri-3">
+                    X
+                </div>
+                break;
+            case "SIEMPRE":
+                <div id="alegri-4">
+                    X
+                </div>
+                break;
+
+        }
+    } 
+        @{
+            switch (diureticos)
+            {
+                case "NUNCA":
+                    <div id="utilizdiuret-0">
+                        X
+                    </div>
+                    break;
+                case "A VECES":
+                    <div id="utilizdiuret-1">
+                        X
+                    </div>
+                    break;
+                case "USUALMENTE":
+                    <div id="utilizdiuret-2">
+                        X
+                    </div>
+                    break;
+                case "SIEMPRE":
+                    <div id="utilizdiuret-3">
+                        X
+                    </div>
+                    break;
+
+
+            }
+        }
+ 
+
+    @{
+        switch (descontrol)
+        {
+            case "NUNCA":
+                <div id="descontro-0">
+                    X
+                </div>
+                break;
+            case "A VECES":
+                <div id="descontro-1">
+                    X
+                </div>
+                break;
+            case "MUCHAS VECES":
+                <div id="descontro-2">
+                    X
+                </div>
+                break;
+            case "GENERALMENTE":
+                <div id="descontro-3">
+                    X
+                </div>
+                break;
+            case "SIEMPRE":
+                <div id="descontro-4">
+                    X
+                </div>
+                break;
+
+        }
+    } 
+        @{
+            switch (vomitos)
+            {
+                case "NUNCA":
+                    <div id="seinducevomit-0">
+                        X
+                    </div>
+                    break;
+                case "A VECES":
+                    <div id="seinducevomit-1">
+                        X
+                    </div>
+                    break;
+                case "USUALMENTE":
+                    <div id="seinducevomit-2">
+                        X
+                    </div>
+                    break;
+                case "SIEMPRE":
+                    <div id="seinducevomit-3">
+                        X
+                    </div>
+                    break;
+
+
+            }
+        }
+   
+    @{
+        switch (cansancio)
+        {
+            case "NUNCA":
+                <div id="cansanci-0">
+                    X
+                </div>
+                break;
+            case "A VECES":
+                <div id="cansanci-1">
+                    X
+                </div>
+                break;
+            case "MUCHAS VECES":
+                <div id="cansanci-2">
+                    X
+                </div>
+                break;
+            case "GENERALMENTE":
+                <div id="cansanci-3">
+                    X
+                </div>
+                break;
+            case "SIEMPRE":
+                <div id="cansanci-4">
+                    X
+                </div>
+                break;
+
+        }
+    } 
+        @{
+            switch (restringealimentos)
+            {
+                case "NUNCA":
+                    <div id="restringesualiment-0">
+                        X
+                    </div>
+                    break;
+                case "A VECES":
+                    <div id="restringesualiment-1">
+                        X
+                    </div>
+                    break;
+                case "USUALMENTE":
+                    <div id="restringesualiment-2">
+                        X
+                    </div>
+                    break;
+                case "SIEMPRE":
+                    <div id="restringesualiment-3">
+                        X
+                    </div>
+                    break;
+
+
+            }
+        }
+        @{
+            switch (actfisicaexagerada)
+            {
+                case "NUNCA":
+                    <div id="realizaactivifisisexagerada-0">
+                        X
+                    </div>
+                    break;
+                case "A VECES":
+                    <div id="realizaactivifisisexagerada-1">
+                        X
+                    </div>
+                    break;
+                case "USUALMENTE":
+                    <div id="realizaactivifisisexagerada-2">
+                        X
+                    </div>
+                    break;
+                case "SIEMPRE":
+                    <div id="realizaactivifisisexagerada-3">
+                        X
+                    </div>
+                    break;
+
+
+            }
+        }
+    
+    @{
+        switch (presentimental)
+        {
+            case "NUNCA":
+                <div id="premenstrul-0">
+                    X
+                </div>
+                break;
+            case "A VECES":
+                <div id="premenstrul-1">
+                    X
+                </div>
+                break;
+            case "MUCHAS VECES":
+                <div id="premenstrul-2">
+                    X
+                </div>
+                break;
+            case "GENERALMENTE":
+                <div id="premenstrul-3">
+                    X
+                </div>
+                break;
+            case "SIEMPRE":
+                <div id="premenstrul-4">
+                    X
+                </div>
+                break;
+
+        }
+    } 
+    @{
+        switch (embarazo)
+        {
+            case "NUNCA":
+                <div id="embaraz-0">
+                    X
+                </div>
+                break;
+            case "A VECES":
+                <div id="embaraz-1">
+                    X
+                </div>
+                break;
+            case "MUCHAS VECES":
+                <div id="embaraz-2">
+                    X
+                </div>
+                break;
+            case "GENERALMENTE":
+                <div id="embaraz-3">
+                    X
+                </div>
+                break;
+            case "SIEMPRE":
+                <div id="embaraz-4">
+                    X
+                </div>
+                break;
+
+        }
+    }  
+        </div>
+    </div>
+    <!-- End Save for Web Slices -->
+</body>
+</html>

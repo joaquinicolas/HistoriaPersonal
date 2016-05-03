@@ -1,0 +1,609 @@
+﻿@model HistoriaPersonalCormillot.Preferencias2
+@{
+    ViewBag.Title = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/ResponsiveGrid.css" rel="stylesheet" />
+<link href="../../Content/CorreccionesBootstrap.css" rel="stylesheet" />
+<script src="../../Scripts/FormulariosHelpers.js" type="text/javascript"></script>
+<script>
+    $(document).ready(function () {
+        $('input[type=checkbox]').css("cursor", "pointer");
+    });
+    function subirDatos() {
+        setearCheckboxes();
+        postForm("savePreferencias2");
+    }
+
+    function guardarDatos() {
+        setearCheckboxes();
+        postFormGuardar("savePreferencias2");
+    }
+
+    $(document).ready(function () {
+        setInterval(subirDatos, 5000);
+    });
+</script>
+<style>
+    .table > thead:first-child > tr:first-child > th {
+        padding-bottom: 0;
+    }
+    .center-table
+    {
+        padding-left: 17% !important;
+    }
+    
+    .table>tbody>tr.separador-inferior>td
+    {
+        border-bottom: 2px solid black;
+    }
+    
+    .table>tbody>tr>td:first-child
+    {
+        text-align: left;
+    }
+    
+    .table>tbody>tr>td:first-child input
+    {
+        float: right;
+        min-width: 100px;
+        width: 60%;
+    }
+    .normal
+    {
+        font-weight:bold
+    }
+      .table>tbody>tr>td.normalmargen {
+        font-weight:normal;
+        padding-left:6px;
+
+    }
+            .table>tbody>tr>td.margen
+    {
+       padding-left:6px;
+    }
+</style>
+
+<article>
+    <h2 class="celeste titulo FontCormi" style="margin-top: 50px;">Sus Preferencias</h2>
+</article>
+
+<form id="form">
+
+    <input type="hidden" name="Horario22a24" />
+    <input type="hidden" name="Horario20a22" />
+    <input type="hidden" name="Horario0a6" />
+    <input type="hidden" name="Horario12a16" />
+    <input type="hidden" name="Horario6a12" />
+    <input type="hidden" name="ViernesDesayuno" />
+    <input type="hidden" name="ViernesAlmuerzo" />
+    <input type="hidden" name="ViernesMerienda" />
+    <input type="hidden" name="ViernesCena" />
+    <input type="hidden" name="SabadoDesayuno" />
+    <input type="hidden" name="SabadoAlmuerzo" />
+    <input type="hidden" name="SabadoMerienda" />
+    <input type="hidden" name="SabadoCena" />
+    <input type="hidden" name="DomingoDesayuno" />
+    <input type="hidden" name="DomingoAlmuerzo" />
+    <input type="hidden" name="DomingoMerienda" />
+    <input type="hidden" name="DomingoCena" />
+    <input type="hidden" name="ComoMasSolo" />
+    <input type="hidden" name="ComoMasEnFlia" />
+    <input type="hidden" name="ComoMasConAmigos" />
+    <input type="hidden" name="ComoMasEnFiestas" />
+    <input type="hidden" name="ComoMasEnPareja" />
+    <input type="hidden" name="MientrasCocino" />
+    <input type="hidden" name="MientrasTvOCompu" />
+    @*<input type="hidden" name="LugarCasa" />
+    <input type="hidden" name="LugarColegio" />
+    <input type="hidden" name="LugarTrabajo" />
+    <input type="hidden" name="LugarTraslados" />
+    <input type="hidden" name="LugarRestaurante" />
+    <input type="hidden" name="LugarKiosko" />
+    <input type="hidden" name="LugarCalle" />
+    <input type="hidden" name="LugarViaje" />
+    <input type="hidden" name="LugarVacaciones" />
+    <input type="hidden" name="LugarClub" />*@
+    
+    <article class="col_11 row-left" style="margin-top:30px">
+        <article class="col_12" style="margin-bottom:10px"> Marque las opciones que usted considere:</article>
+        <table class="table" style="text-align:left;border:2px solid">
+            <thead>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="width:16%" class="margen">Como</td>
+                    <td class="normal" style="width:16.8%"> <label class="normal" style="border:0px;width:60%">
+                        Muy Poco </label>
+                        <input type="radio" name="RadioComo" value="Muy poco" @(Model.RadioComo == "Muy poco" ? "checked=checked" : "") />
+                        
+                    </td>
+                    <td class="normal" style="width:16.8%">
+                        <label class="normal" style="border:0px;width:60%"> Poco</label>
+                        <input type="radio" name="RadioComo" value="Poco" @(Model.RadioComo == "Poco" ? "checked=checked" : "") />
+                    </td>
+                    <td class="normal" style="width:16.8%">
+                        <label class="normal" style="border:0px;width:60%"> Normal </label>
+                        <input type="radio" name="RadioComo" value="Normal" @(Model.RadioComo == "Normal" ? "checked=checked" : "") />
+                    </td>
+                    <td class="normal" style="width:16.8%">
+                        <label class="normal" style="border:0px;width:60%">Mucho</label>
+                        <input type="radio" name="RadioComo" value="Mucho" @(Model.RadioComo == "Mucho" ? "checked=checked" : "") />
+                    </td>
+                    <td class="normal" style="width:16.8%">
+                        <label class="normal" style="border:0px;width:60%">Atracon</label>
+                        <input type="radio" name="RadioComo" value="Atracon" @(Model.RadioComo == "Atracon" ? "checked=checked" : "") />
+                    </td>
+                </tr>
+                <tr @*class="col_12"*@>
+                    <td @*class="col_2"*@ class="margen">Mis Bocados Son</td>
+                    <td @*class="col_2"*@ class="normal"><label class="normal" style="border:0px;width:60%"">Muy chicos</label>
+                        @*<article class="titulo-radio col_7 normal">*@ @*</article>*@
+                        <input @*class="col_2"*@ type="radio" name="RadioMisBocados" value="Muy chicos" @(Model.RadioMisBocados == "Muy chicos" ? "checked=checked" : "") />
+                    </td>
+                    <td @*class="col_2"*@ class="normal"><label class="normal" style="border:0px;width:60%">Chicos</label>
+                        @*<article class="titulo-radio col_7 normal"*@@*>*@@*</article>*@
+                        <input @*class="col_2"*@ type="radio" name="RadioMisBocados" value="Chicos" @(Model.RadioMisBocados == "Chicos" ? "checked=checked" : "") />
+                    </td>
+                    <td @*class="col_2"*@ class="normal"><label class="normal" style="border:0px;width:60%">Medianos</label>
+                        @*<article class="titulo-radio col_7 normal">*@@*</article>*@
+                        <input @*class="col_2"*@ type="radio" name="RadioMisBocados" value="Medianos" @(Model.RadioMisBocados == "Medianos" ? "checked=checked" : "") />
+                    </td>
+                    <td @*class="col_2 "*@ class="normal"><label class="normal" style="border:0px;width:60%">Grandes</label>
+                        @*<article class="titulo-radio col_7 normal">*@@*</article>*@
+                        <input @*class="col_2"*@ type="radio" name="RadioMisBocados" value="Grandes" @(Model.RadioMisBocados == "Grandes" ? "checked=checked" : "") />
+                    </td>
+                    <td @*class="col_2"*@ class="normal"><label class="normal" style="border:0px;width:60%">Muy grandes</label>
+                        @*<article class="titulo-radio col_7 normal">*@@*</article>*@
+                        <input @*class="col_2"*@ type="radio" name="RadioMisBocados" value="Muy grandes" @(Model.RadioMisBocados == "Muy grandes" ? "checked=checked" : "") />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="margen">Velocidad</td>
+                    <td class="normal"><label class="normal" style="border:0px;width:60%">Muy lento</label>
+                        
+                        <input type="radio" name="RadioVelocidad" value="Muy lento" @(Model.RadioVelocidad == "Muy lento" ? "checked=checked" : "") />
+                    </td>
+                    <td class="normal"><label class="normal" style="border:0px;width:60%">Lento</label>
+                        
+                        <input type="radio" name="RadioVelocidad" value="Lento" @(Model.RadioVelocidad == "Lento" ? "checked=checked" : "") />
+                    </td>
+                    <td class="normal"><label class="normal" style="border:0px;width:60%">Medio</label>
+                        <input type="radio" name="RadioVelocidad" value="Medio" @(Model.RadioVelocidad == "Medio" ? "checked=checked" : "") />
+                    </td>
+                    <td class="normal"><label class="normal" style="border:0px;width:60%">Rapido</label>
+                        <input type="radio" name="RadioVelocidad" value="Rapido" @(Model.RadioVelocidad == "Rapido" ? "checked=checked" : "") />
+                    </td>
+                    <td class="normal"><label class="normal" style="border:0px;width:61%">Trago</label>
+                        <input type="radio" name="RadioVelocidad" value="Trago" @(Model.RadioVelocidad == "Trago" ? "checked=checked" : "") />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="margen">Mastico</td>
+                    <td class="normal"><label class="normal" style="border:0px;width:60%">Muy lento</label>
+                        <input type="radio" name="RadioMastico" value="Muy lento" @(Model.RadioMastico == "Muy lento" ? "checked=checked" : "") />
+                    </td>
+                    <td class="normal"><label class="normal" style="border:0px;width:60%">Lento</label>
+                        <input type="radio" name="RadioMastico" value="Lento" @(Model.RadioMastico == "Lento" ? "checked=checked" : "") />
+                    </td>
+                    <td class="normal"><label class="normal" style="border:0px;width:60%">Medio</label>
+                        <input type="radio" name="RadioMastico" value="Medio" @(Model.RadioMastico == "Medio" ? "checked=checked" : "") />
+                    </td>
+                    <td class="normal"><label class="normal" style="border:0px;width:60%">Rapido</label>
+                        <input type="radio" name="RadioMastico" value="Rapido" @(Model.RadioMastico == "Rapido" ? "checked=checked" : "") />
+                    </td>
+                    <td class="normal"><label class="normal" style="border:0px;width:60%">Trago</label>
+                        <input type="radio" name="RadioMastico" value="Trago" @(Model.RadioMastico == "Trago" ? "checked=checked" : "") />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="margen">Saboreo</td>
+                    <td class="normal"><label class="normal" style="border:0px;width:60%">Mucho</label>
+                        <input type="radio" name="RadioSaboreo" value="Mucho" @(Model.RadioSaboreo == "Mucho" ? "checked=checked" : "") />
+                    </td>
+                    <td class ="normal"><label class="normal" style="border:0px;width:60%">Normal</label>
+                        <input type="radio" name="RadioSaboreo" value="Normal" @(Model.RadioSaboreo == "Normal" ? "checked=checked" : "") />
+                    </td>
+                    <td class="normal"><label class="normal" style="border:0px;width:60%">Poco</label>
+                        <input type="radio" name="RadioSaboreo" value="Poco" @(Model.RadioSaboreo == "Poco" ? "checked=checked" : "") />
+                    </td>
+                    <td class="normal"><label class="normal" style="border:0px;width:60%">Muy poco</label>
+                        <input type="radio" name="RadioSaboreo" value="Muy poco" @(Model.RadioSaboreo == "Muy poco" ? "checked=checked" : "") />
+                    </td>
+                    <td class="normal"><label class="normal" style="border:0px;width:60%">Nada</label>
+                        <input type="radio" name="RadioSaboreo" value="Nada" @(Model.RadioSaboreo == "Nada" ? "checked=checked" : "") />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+        <section class="col_12">
+            @*<article class="col_10">*@ <section class="col_4">
+                                             <article class="col_11" style="border:2.5px solid;border-bottom:0px solid">
+                                                 <article class="col_11" style="font-weight:bold;margin-left:8px">
+                                                     Mis horarios de apetito son
+                                                 </article>
+                                             </article>
+                                             <article class="col_11" style="border:2.5px solid;border-bottom:0px solid;border-top:1px solid">
+                                                 <article class="col_9 titulo-radio normal"></article>
+                                                 <article class="col_3 titulo-radio normal" style="font-weight:bold">
+                                                     6 a 12 <input id="Horario6a12" type="checkbox" @(Model.Horario6a12.HasValue && Model.Horario6a12.Value ? "checked=checked" : "") />
+                                                 </article>
+                                             </article>
+                                             <article class="col_11" style="border:2.5px solid;border-bottom:0px solid;border-top:1px solid">
+                                                 <article class="col_9 titulo-radio normal"></article>
+                                                 <article class="col_3 titulo-radio normal" style="font-weight:bold">
+                                                     12 a 16<input id="Horario12a16" type="checkbox" @(Model.Horario12a16.HasValue && Model.Horario12a16.Value ? "checked=checked" : "") />
+                                                 </article>
+                                             </article>
+                                             <article class="col_11" style="border:2.5px solid;border-bottom:0px solid;border-top:1px solid">
+                                                 <article class="col_9 titulo-radio normal"></article>
+                                                 <article class="col_3 titulo-radio normal" style="font-weight:bold">
+                                                     
+                                                     20 a 22<input id="Horario20a22" type="checkbox" @(Model.Horario20a22.HasValue && Model.Horario20a22.Value ? "checked=checked" : "") />
+                                                 </article>
+                                             </article>
+                                             <article class="col_11" style="border:2.5px solid;border-bottom:0px solid;border-top:1px solid">
+                                                 <article class="col_9 titulo-radio normal"></article>
+                                                 <article class="col_3 titulo-radio normal" style="font-weight:bold">
+                                                  
+                                                     22 a 24<input id="Horario22a24" type="checkbox" @(Model.Horario22a24.HasValue && Model.Horario22a24.Value ? "checked=checked" : "") />
+                                                 </article>
+                                             </article>
+                                             <article class="col_11" style="border:2.5px solid;border-top:1px solid">
+                                                 <article class="col_9 titulo-radio normal"></article>
+                                                  <article class="col_3 titulo-radio normal" style="font-weight:bold">
+                                                    
+                                                     0 a 6<input id="Horario0a6" style="margin-left:15px" type="checkbox" @(Model.Horario0a6.HasValue && Model.Horario0a6.Value ? "checked=checked" : "") />
+                                                 </article>
+                                             </article>
+              </section>
+                    @*<article class="col_2">
+                        <article class="col_4 titulo-radio">6 a 12</article>
+                        <input id="Horario6a12" type="checkbox" @(Model.Horario6a12.HasValue && Model.Horario6a12.Value ? "checked=checked" : "") />
+                    </article>
+                    <article class="col_2">
+                        <article class="col_4 titulo-radio">12 a 16</article>
+                        <input id="Horario12a16" type="checkbox" @(Model.Horario12a16.HasValue && Model.Horario12a16.Value ? "checked=checked" : "") />
+                    </article>
+                    <article class="col_2">
+                        <article class="col_4 titulo-radio">20 a 22</article>
+                        <input id="Horario20a22" type="checkbox" @(Model.Horario20a22.HasValue && Model.Horario20a22.Value ? "checked=checked" : "") />
+                    </article>
+                    <article class="col_2">
+                        <article class="col_4 titulo-radio">22 a 24</article>
+                        <input id="Horario22a24" type="checkbox" @(Model.Horario22a24.HasValue && Model.Horario22a24.Value ? "checked=checked" : "")" />
+                    </article>
+                    <article class="col_1">
+                        <article class="col_6 titulo-radio">0 a 6</article>
+                        <input id="Horario0a6" type="checkbox" @(Model.Horario0a6.HasValue && Model.Horario0a6.Value ? "checked=checked" : "") />
+                    </article>
+                    </section>*@
+                    @*</article>*@
+
+
+            <section class="col_8 row-left">
+                <article class="col_10" style="border:2.5px solid;border-bottom:0px solid">
+                    <article class="col_12 titulo-radio" style="margin-top:0px">
+                        <article class="col_12 titulo-radio normal" style="padding-left:6px">
+                            En el fin de semana mis comidas mas fuertes son
+                        </article>
+                    </article>
+                </article>
+                <article class="col_10" style="border:2.5px solid;border-bottom:0px solid;border-top:1px solid">
+                    <article class="col_3 titulo-radio" style="border:1px solid;border-bottom:0px;border-top:1px;margin-top:0px;width:33.3%">
+                        <article class="col_12 titulo-radio normal" style="font-weight: bold; text-align:center">Viernes</article>
+                    </article>
+                    <article class="col_3 titulo-radio" style="border:1px solid;border-bottom:0px;border-top:1px;margin-top:0px;width:33.3% ">
+                        <article class="col_12 titulo-radio normal" style="font-weight: bold; text-align:center">Sabado</article>
+                    </article>
+                    <article class="col_3 titulo-radio" style="border:1px solid;border-bottom:0px;border-top:1px;;margin-top:0px;width:33.4% ">
+                        <article class="col_12 titulo-radio normal" style="font-weight: bold; text-align:center">Domingo</article>
+                    </article>
+                </article>
+
+                <article class="col_10" style="border:1px solid;border-bottom:0px">
+                    <article class="col_3" style="border:1px solid;border-bottom:0px;border-top:1px;margin-top:0px;width:33.3%">
+                        <article class="col_8 titulo-radio normal" style="padding-left:6px">Desayuno</article>
+                        <input id="ViernesDesayuno" type="checkbox" @(Model.ViernesDesayuno.HasValue && Model.ViernesDesayuno.Value ? "checked=checked" : "") />
+                    </article>
+                    <article class="col_3" style="border:1px solid;border-bottom:0px;border-top:1px;margin-top:0px;width:33.3%">
+                        <article class="col_8 titulo-radio normal" style="padding-left:6px">Desayuno</article>
+                        <input id="SabadoDesayuno" type="checkbox" @(Model.SabadoDesayuno.HasValue && Model.DomingoDesayuno.Value ? "checked=checked" : "") />
+                    </article>
+                    <article class="col_3" style="border:1px solid;border-bottom:0px;border-top:1px;margin-top:0px;width:33.3%">
+                        <article class="col_8 titulo-radio normal" style="padding-left:6px">Desayuno</article>
+                        <input id="DomingoDesayuno" type="checkbox" @(Model.DomingoDesayuno.HasValue && Model.DomingoDesayuno.Value ? "checked=checked" : "") />
+                    </article>
+                </article>
+
+                <article class="col_10" style="border:1px solid;border-bottom:0px">
+                    <article class="col_3" style="border:1px solid;border-bottom:0px;border-top:1px;margin-top:0px;width:33.3%">
+                        <article class="col_8 titulo-radio normal" style="padding-left:6px">Almuerzo</article>
+                        <input id="ViernesAlmuerzo" type="checkbox" @(Model.ViernesAlmuerzo.HasValue && Model.ViernesAlmuerzo.Value ? "checked=checked" : "") />
+                    </article>
+                    <article class="col_3" style="border:1px solid;border-bottom:0px;border-top:1px;margin-top:0px;width:33.3%">
+                        <article class="col_8 titulo-radio normal" style="padding-left:6px">Almuerzo</article>
+                        <input id="SabadoAlmuerzo" type="checkbox" @(Model.SabadoAlmuerzo.HasValue && Model.SabadoAlmuerzo.Value ? "checked=checked" : "") />
+                    </article>
+                    <article class="col_3" style="border:1px solid;border-bottom:0px;border-top:1px;margin-top:0px;width:33.3%">
+                        <article class="col_8 titulo-radio normal" style="padding-left:6px">Almuerzo</article>
+                        <input id="DomingoAlmuerzo" type="checkbox" @(Model.DomingoAlmuerzo.HasValue && Model.DomingoAlmuerzo.Value ? "checked=checked" : "") />
+                    </article>
+                </article>
+                <article class="col_10" style="border:1px solid;border-bottom:0px">
+                    <article class="col_3" style="border:1px solid;border-bottom:0px;border-top:1px;margin-top:0px;width:33.3%">
+                        <article class="col_8 titulo-radio normal" style="padding-left:6px">Merienda</article>
+                        <input id="ViernesMerienda" type="checkbox" @(Model.ViernesMerienda.HasValue && Model.ViernesMerienda.Value ? "checked=checked" : "") />
+                    </article>
+                    <article class="col_3" style="border:1px solid;border-bottom:0px;border-top:1px;margin-top:0px;width:33.3%">
+                        <article class="col_8 titulo-radio normal" style="padding-left:6px">Merienda</article>
+                        <input id="SabadoMerienda" type="checkbox" @(Model.SabadoMerienda.HasValue && Model.SabadoMerienda.Value ? "checked=checked" : "") />
+                    </article>
+                    <article class="col_3" style="border:1px solid;border-bottom:0px;border-top:1px;margin-top:0px;width:33.3%">
+                        <article class="col_8 titulo-radio normal" style="padding-left:6px">Merienda</article>
+                        <input id="DomingoMerienda" type="checkbox" @(Model.DomingoMerienda.HasValue && Model.DomingoMerienda.Value ? "checked=checked" : "") />
+                    </article>
+                </article>
+                <article class="col_10" style="border:1px solid;">
+                    <article class="col_3" style="border:1px solid;border-top:1px;margin-top:0px;width:33.3%">
+                        <article class="col_8 titulo-radio normal" style="padding-left:6px">Cena</article>
+                        <input id="ViernesCena" type="checkbox" @(Model.ViernesCena.HasValue && Model.ViernesCena.Value ? "checked=checked" : "") />
+                    </article>
+                    <article class="col_3" style="border:1px solid;border-top:1px;margin-top:0px;width:33.3%">
+                        <article class="col_8 titulo-radio normal" style="padding-left:6px">Cena</article>
+                        <input id="SabadoCena" type="checkbox" @(Model.SabadoCena.HasValue && Model.SabadoCena.Value ? "checked=checked" : "") />
+                    </article>
+                    <article class="col_3" style="border:1px solid;border-top:1px;margin-top:0px;width:33.3%">
+                        <article class="col_8 titulo-radio normal" style="padding-left:6px">Cena</article>
+                        <input id="DomingoCena" type="checkbox" @(Model.DomingoCena.HasValue && Model.DomingoCena.Value ? "checked=checked" : "") />
+                    </article>
+                </article>
+
+                </section>
+            </section>
+            <article class="col_12" style="margin-top:30px">
+                <table class="table" style="text-align:left;border:2px solid">
+                    @*uso de nuevas variables. Usamos "comermas..." ya que son nvarchar(nos pueden llegar a pedidir cuantificaciones), para la escala pedida,
+                no usamos "comomas..." ya que son del tipo "bit", y no se ha podido hacer los cambios en la base de datos*@
+                    <thead>
+                    <th>Suelo comer mas</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="width:16%" class="margen">Solo</td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMasSolo" value="1" @(Model.ComerMasSolo == "1" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMasSolo" value="2" @(Model.ComerMasSolo == "2" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMasSolo" value="3" @(Model.ComerMasSolo == "3" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMasSolo" value="4" @(Model.ComerMasSolo == "4" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMasSolo" value="5" @(Model.ComerMasSolo == "5" ? "checked=checked" : "") />
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td style="width:16%" class="margen">En familia</td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMasEnFamilia" value="1" @(Model.ComerMasEnFamilia == "1" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMasEnFamilia" value="2" @(Model.ComerMasEnFamilia == "2" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMasEnFamilia" value="3" @(Model.ComerMasEnFamilia == "3" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMasEnFamilia" value="4" @(Model.ComerMasEnFamilia == "4" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMasEnFamilia" value="5" @(Model.ComerMasEnFamilia == "5" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:16%" class="margen">Con amigos</td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMasConAmigos" value="1" @(Model.ComerMasConAmigos == "1" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMasConAmigos" value="2" @(Model.ComerMasConAmigos == "2" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMasConAmigos" value="3" @(Model.ComerMasConAmigos == "3" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMasConAmigos" value="4" @(Model.ComerMasConAmigos == "4" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMasConAmigos" value="5" @(Model.ComerMasConAmigos == "5" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:16%" class="margen">En fiestas</td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMasEnFiestas" value="1" @(Model.ComerMasEnFiestas == "1" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMasEnFiestas" value="2" @(Model.ComerMasEnFiestas == "2" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMasEnFiestas" value="3" @(Model.ComerMasEnFiestas == "3" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMasEnFiestas" value="4" @(Model.ComerMasEnFiestas == "4" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMasEnFiestas" value="5" @(Model.ComerMasEnFiestas == "5" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:16%" class="margen">En pareja</td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMasEnPareja" value="1" @(Model.ComerMasEnPareja == "1" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMasEnPareja" value="2" @(Model.ComerMasEnPareja == "2" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMasEnPareja" value="3" @(Model.ComerMasEnPareja == "3" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMasEnPareja" value="4" @(Model.ComerMasEnPareja == "4" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMasEnPareja" value="5" @(Model.ComerMasEnPareja == "5" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr >
+                            <td style="width:16%" class="margen">Mientras</td>
+                            <td style="width:16%">1</td>
+                            <td style="width:16%">2</td>
+                            <td style="width:16%">3</td>
+                            <td style="width:16%">4</td>
+                            <td style="width:16%">5</td>
+                        </tr>
+                        <tr>
+                            <td style="width:16%" class="margen">En pareja</td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMientrasCocino" value="1" @(Model.ComerMientrasCocino == "1" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMientrasCocino" value="2" @(Model.ComerMientrasCocino == "2" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMientrasCocino" value="3" @(Model.ComerMientrasCocino == "3" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMientrasCocino" value="4" @(Model.ComerMientrasCocino == "4" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMientrasCocino" value="5" @(Model.ComerMientrasCocino == "5" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:16%" class="margen">Miro TV o compu</td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMientrasTvoCompu" value="1" @(Model.ComerMientrasTvoCompu == "1" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMientrasTvoCompu" value="2" @(Model.ComerMientrasTvoCompu == "2" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMientrasTvoCompu" value="3" @(Model.ComerMientrasTvoCompu == "3" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMientrasTvoCompu" value="4" @(Model.ComerMientrasTvoCompu == "4" ? "checked=checked" : "") />
+                            </td>
+                            <td class="normal" style="width:16.8%">
+                                <input type="radio" name="ComerMientrasTvoCompu" value="5" @(Model.ComerMientrasTvoCompu == "5" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+
+               
+                        @*</section>
+                    </section>
+                            </section>
+                            <section class="col_9 row-left" style="border:1px solid">
+                                <article class="col_2 titulo-control">Suele comer más</article>
+                                <article class="col_2" style="border:1px solid">
+                                    <article class="col_3 titulo-radio normal">Solo</article>
+                                    <input id="ComoMasSolo" type="checkbox" @(Model.ComoMasSolo.HasValue && Model.ComoMasSolo.Value ? "checked=checked" : "") />
+                                </article>
+                                <article class="col_2" style="border:1px solid">
+                                    <article class="col_6 titulo-radio normal">En familia</article>
+                                    <input id="ComoMasEnFlia" type="checkbox" @(Model.ComoMasEnFlia.HasValue && Model.ComoMasEnFlia.Value ? "checked=checked" : "") />
+                                </article>
+                                <article class="col_2" style="border:1px solid">
+                                    <article class="col_7 titulo-radio normal">Con amigos</article>
+                                    <input id="ComoMasConAmigos" type="checkbox" @(Model.ComoMasConAmigos.HasValue && Model.ComoMasConAmigos.Value ? "checked=checked" : "") />
+                                </article>
+                                <article class="col_2" style="border:1px solid">
+                                    <article class="col_6 titulo-radio normal">En fiestas</article>
+                                    <input id="ComoMasEnFiestas" type="checkbox" @(Model.ComoMasEnFiestas.HasValue && Model.ComoMasEnFiestas.Value ? "checked=checked" : "") />
+                                </article>
+                                <article class="col_2" style="border:1px solid">
+                                    <article class="col_6 titulo-radio normal">En pareja</article>
+                                    <input id="ComoMasEnPareja" type="checkbox" @(Model.ComoMasEnPareja.HasValue && Model.ComoMasEnPareja.Value ? "checked=checked" : "") />
+                                </article>
+                            </section>
+                            <section class="col_9 row-left" style="border:1px solid">
+                                <article class="col_2 titulo-control">Mientras</article>
+                                <article class="col_2" style="border:1px solid">
+                                    <article class="col_4 titulo-radio normal">Cocino</article>
+                                    <input id="MientrasCocino" type="checkbox" @(Model.MientrasCocino.HasValue && Model.MientrasCocino.Value ? "checked=checked" : "") />
+                                </article>
+                                <article class="col_5">
+                                    <article class="col_4 titulo-radio normal">Miro TV o compu</article>
+                                    <input id="MientrasTvOCompu" type="checkbox" @(Model.MientrasTvOCompu.HasValue && Model.MientrasTvOCompu.Value ? "checked=checked" : "") />
+                                </article>
+                            </section>*@
+
+                        @*<section class="col_12 row-left">
+                            <article class="col_3 titulo-control">En que lugares o situaciones como más</article>
+                            <article class="col_1">
+                                <article class="col_4 titulo-radio normal">Casa</article>
+                                <input id="LugarCasa" type="checkbox" @(Model.LugarCasa.HasValue && Model.LugarCasa.Value ? "checked=checked" : "") />
+                            </article>
+                            <article class="col_2">
+                                <article class="col_6 titulo-radio normal">Colegio/Estudio</article>
+                                <input id="LugarColegio" type="checkbox" @(Model.LugarColegio.HasValue && Model.LugarColegio.Value ? "checked=checked" : "") />
+                            </article>
+                            <article class="col_1">
+                                <article class="col_6 titulo-radio normal">Trabajo</article>
+                                <input id="LugarTrabajo" type="checkbox" @(Model.LugarTrabajo.HasValue && Model.LugarTrabajo.Value ? "checked=checked" : "") />
+                            </article>
+                            <article class="col_1">
+                                <article class="col_8 titulo-radio normal">Traslados</article>
+                                <input id="LugarTraslados" type="checkbox" @(Model.LugarTraslados.HasValue && Model.LugarTraslados.Value ? "checked=checked" : "") />
+                            </article>
+                            <article class="col_2">
+                                <article class="col_7 titulo-radio normal">Restaurante/bar</article>
+                                <input id="LugarRestaurante" type="checkbox" @(Model.LugarRestaurante.HasValue && Model.LugarRestaurante.Value ? "checked=checked" : "") />
+                            </article>
+                            <article class="col_1">
+                                <article class="col_5 titulo-radio normal">Kiosko</article>
+                                <input id="LugarKiosko" type="checkbox" @(Model.LugarKiosko.HasValue && Model.LugarKiosko.Value ? "checked=checked" : "") />
+                            </article>
+                        </section>
+                        <section class="col_12 row-left">
+                            <article class="col_1" style="margin-left:25%">
+                                <article class="col_4 titulo-radio normal">Calle</article>
+                                <input id="LugarCalle" type="checkbox" @(Model.LugarCalle.HasValue && Model.LugarCalle.Value ? "checked=checked" : "") />
+                            </article>
+                            <article class="col_1">
+                                <article class="col_5 titulo-radio normal">Viajes</article>
+                                <input id="LugarViaje" type="checkbox" @(Model.LugarViaje.HasValue && Model.LugarViaje.Value ? "checked=checked" : "") />
+                            </article>
+                            <article class="col_2">
+                                <article class="col_5 titulo-radio normal">Vacaciones</article>
+                                <input id="LugarVacaciones" type="checkbox" @(Model.LugarVacaciones.HasValue && Model.LugarVacaciones.Value ? "checked=checked" : "") />
+                            </article>
+                            <article class="col_1">
+                                <article class="col_4 titulo-radio normal">Club</article>
+                                <input id="LugarClub" type="checkbox" @(Model.LugarClub.HasValue && Model.LugarClub.Value ? "checked=checked" : "") />
+                            </article>
+                        </section>*@
+</form>
+<div class="container-botones-inferiores" style="width:100%;float:left">
+    @Html.ActionLink("Anterior", "AnteriorPaso", "Pasos", new { id = ViewBag.Pagina }, new { @class = "btn btn-info", onclick = "javascript:subirDatos();" })
+    <label style="font-family:monospace;font-size:smaller;font-weight:bolder;">
+        Pagina 11 de 18
+    </label>
+    @Html.ActionLink("Siguiente", "ProximoPaso", "Pasos", new { id = ViewBag.Pagina }, new { @class = "btn btn-info", onclick = "javascript:subirDatos();" })
+</div>

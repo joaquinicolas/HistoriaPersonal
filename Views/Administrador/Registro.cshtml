@@ -1,0 +1,221 @@
+﻿@model HistoriaPersonalCormillot.ViewModels.Registro1ViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../../Content/bootstrap.min.css" type="text/css" rel="Stylesheet" />
+        <link href="../../Content/bootstrap-theme.min.css" type="text/css" rel="Stylesheet" />
+        
+        <link href="~/Content/ResponsiveGrid.css" rel="stylesheet" />
+        <link href="../../Content/CorreccionesBootstrap.css" rel="stylesheet" />
+        <script src="../../Scripts/jquery-1.11.3.min.js" type="text/javascript"></script>
+        <script src="../../Scripts/bootstrap.min.js"></script>
+        <title>Historia Personal - Adultos</title>
+        <style type="text/css">
+            *
+            {
+                box-sizing:border-box;
+                padding:0;
+                margin:0;
+            }
+            nav.header
+            {
+                 background: none repeat scroll 0 0 #fff;
+                border: medium none;
+                box-shadow: none;
+                height: 150px;
+            }
+            div.page-header
+            {
+                width:40%;
+                margin: 6% auto;
+                vertical-align: top;
+                text-transform:uppercase;
+                font-size:9px;
+                float: left;
+            }
+        
+             div.page-header h1
+             {
+                max-width:100%;
+                font-size:18px;
+                margin:0 auto;
+                vertical-align:top;
+                font-weight:bold;
+                text-transform:capitalize;
+             }
+       
+            html,body
+            {
+                height:100%;
+            }
+        
+            form.form-horizontal
+            {
+                min-width: 290px;
+                width: 55%;
+            }
+    
+            form.form-horizontal label
+            {
+                font-size:13px;
+            } 
+         
+            form.form-horizontal div.centrar
+            {
+                text-align:center;
+            }
+            .form-control
+            {
+                height: 20px !important;
+                line-height: 1 !important;
+            }    
+            .errorValidacion
+            {
+                color: Red;
+            }
+        </style>
+    </head>
+    <body>
+        @*<section class="container">
+            <nav class="navbar navbar-default header">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">
+                            <img class="img-responsive" src="../../Content/Imagenes/cormimagen.jpg" />
+                        </a>
+                       <div class="page-header">
+                        <h1>Clínica</h1>
+                        <small>de nutrición y salud</small>
+                        <h1>Dr.Cormillot</h1>
+                       </div>
+                    </div>
+                </div>
+            </nav>*@
+     
+            @*<form  class="form" method="post" action="/Usuarios/Registrar/">
+                <section>
+                    <article>
+                        <h2 class="celeste titulo FontCormi" style="margin-top:33px">Administración de Usuarios</h2>
+                    </article>
+                </section>
+                @*<div class="form-group">
+                    <label for="inputPassword3" class="col-sm-4 control-label">Nombre y Apellido</label>
+                    <div class="col-sm-8">
+                        
+                        <input type="text" class="form-control" name="nombrecompleto"
+                               value="@Model.nombrecompleto"></div>
+                </div>*@
+                @*<div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">Email</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="Email" placeholder="Email"
+                               value="@Model.Email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-4 control-label">Contraseña</label>
+                    <div class="col-sm-8">
+                        <input type="password" class="form-control" name="Password" placeholder="Contraseña">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for=104"inputPassword3" class="col-sm-4 control-label">Repita la Contraseña</label>
+                    <div class="col-sm-8">
+                        <input type="password" class="form-control" name="Password2" placeholder="Contraseña">
+                    </div>
+                </div>*@
+                @*<div class="form-group" style="margin-top:10px;">
+                    @foreach (var error in @Model.ErroresValidacion)
+                    {
+                        <p class="col-sm-offset-2 errorValidacion">@error</p>
+                    }
+                </div>*@
+                @*<div class="form-group" style="margin-top:10px;">
+                    <div class="col-sm-offset-2 col-sm-10 centrar">
+                        @if( Model.Password==Model.Password2)
+                        {<button type="submit" class="btn btn-info">Registrar</button>}
+                        <a href="/Usuarios/Login/" class="btn btn-info">
+                            Cancelar
+                        </a>
+                    </div>
+                </div>*@
+                @*<div class="container">
+                    <section class="form-group" style="margin-top:50px">
+                        <section class="col-lg-12 row-left">
+                            <div class="col-sm-4">
+                                
+                                <div class="col-sm-12">
+                                    <div class="col-sm-3">
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="Email" placeholder="Email"
+                                               value="@Model.Email">
+                                    </div>
+                            </div>
+                                </div>
+                            <div class="col-sm-4" style="">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-6">
+                                        <label>Contraseña </label>
+                                        </div>
+                                    <div class="col-sm-6">
+                                        <input type="password" class="form-control" name="Password" placeholder="Contraseña">
+                                   </div>
+                                     </div>
+                            </div>
+                            <div class="col-sm-4">
+                               
+                                <div class="col-sm-12">
+                                    <div class="col-sm-6">
+                                        <label>Repita la Contraseña</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="password" class="form-control" name="Password2" placeholder="Contraseña">
+                                    </div>
+                                    </div>
+                            </div>
+                        </section>
+                    </section>
+                </div>
+                        <div class="form-group" style="margin-top:10px;">
+                            <div class="col-sm-offset-2 col-sm-10 centrar">
+                                <button type="submit" class="btn btn-info">Registrar</button>
+                                <a href="/Usuarios/Login/" class="btn btn-info">Cancelar </a>
+                                <label></label>
+                            </div>
+
+                        </div>
+
+            </form>*@
+
+        <form class="form-inline" role="form" method="post" action="/Administrador/Registrar/" style="text-align:center">
+            <h2 class="celeste titulo FontCormi" style="margin-top:33px"> Administración de Usuarios</h2>
+            <div style="margin-top:20px"> 
+                <div class="form-group">
+                    <label for="Email">Email:</label>
+                    <input type="email" class="form-control" name="Email" placeholder="Email"
+                           value="@Model.Email">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Contraseña:</label>
+                    <input type="password" class="form-control" name="Password" placeholder="Contraseña">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Repetir contraseña:</label>
+                    <input type="password" class="form-control" name="Password2" placeholder="Contraseña">
+                </div>
+                <div style="text-align:center;margin:20px auto;">
+                    <button type="submit" class="btn btn-info">Guardar</button>
+                    <a href="/Administrador/Home/" class="btn btn-info">Cancelar </a>
+                </div>
+            </div>
+        </form>
+        
+    </body>
+</html>

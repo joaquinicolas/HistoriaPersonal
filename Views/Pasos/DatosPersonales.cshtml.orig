@@ -1,0 +1,367 @@
+﻿@model HistoriaPersonalCormillot.DatosPersonales
+
+@{
+    var fecha =
+        !Model.Fecha.HasValue || Model.Fecha == DateTime.MinValue ?
+            "" : Model.Fecha.Value.ToShortDateString();
+    var fechaNacimiento =
+        !Model.FechaNacimiento.HasValue || Model.FechaNacimiento == DateTime.MinValue ?
+            "" : Model.FechaNacimiento.Value.ToShortDateString();
+}
+<script src="../../Scripts/FormulariosHelpers.js" type="text/javascript"></script>
+<link href="../../Content/ResponsiveGrid.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<script type"text/javascript">
+    function subirDatos() {
+        $("input[name='Fecha']").val(parsearFecha($("#Fecha").val()));
+        $("input[name='FechaNacimiento']").val(parsearFecha($("#FechaNacimiento").val()));
+        setearCheckboxes();
+
+        postForm("SaveDatosPersonales");
+    }
+
+    $(document).ready(function () {
+        setInterval(subirDatos, 100000);
+
+        $("#btnGuardar").click(function () { subirDatos(); });
+
+        $("#Fecha, #FechaNacimiento")
+            .datepicker({
+                dateFormat: 'dd/mm/yy'
+            });
+    });
+</script>
+
+<form id="form" action="/Pasos/SaveDatosPersonales/" method="post" class="form-horizontal">
+    <input type="hidden" name="IdUsuario" value="@Model.Usuario.Id" />
+    <section>
+        <article>
+            <h2 class="celeste titulo">Sus datos personales</h2>
+        </article>
+    </section>
+    <section class="form-group">
+        <label for="Fecha" class=" col-sm-2 control-label">Fecha</label>
+        <article class="col-sm-2">
+            <input type="hidden" name="Fecha" />
+            <input type="text" id="Fecha" class="form-control" value="@fecha" />
+        </article>
+    </section>
+
+    <section class="form-group">
+        <label for="NombreyApellido" class=" col-sm-2 control-label">Nombre y Apellido</label>
+        <article class="col-sm-8">
+            <input type="text" id="NombreyApellido" class="form-control" name="NombreyApellido" value="@Model.NombreyApellido" />
+        </article>
+    </section>
+     
+    <section class="form-group">
+      
+            <label for="FechaNacimiento" class=" col-sm-2 control-label">Fecha de nacimiento</label>
+            <input type="hidden" name="FechaNacimiento" />
+            <div class="col-sm-2">
+                <input type="text" class="form-control" id="FechaNacimiento" value="@fechaNacimiento" />        
+            </div>
+
+       
+            <label for="Edad" class="col-sm-3 control-label">Edad</label>
+            <div class="col-sm-3">
+                <input type="text" id="Edad" name="Edad" class="form-control" value="@Model.Edad" />          
+            </div>
+      
+    </section>
+
+    <section class="form-group">
+            <label for="EstadoCivil" class=" col-sm-2 control-label">Estado Civil</label>
+            <article class="col-sm-2">
+                <input type="text" name="EstadoCivil" class="form-control" value="@Model.EstadoCivil" />
+            </article>
+       
+        
+            <label for="ViveCon" class="col-sm-3 control-label">Vive Con</label>
+            <article class="col-sm-3">
+                <input type="text" class="form-control" name="ViveCon" value="@Model.ViveCon" />
+            </article>
+        
+    </section>
+
+
+    <section class="form-group">
+        <label for="DomicilioActual" class=" col-sm-2 control-label">Domicilio Actual</label>
+        <article class="col-sm-8">
+            <input type="text" class="form-control" name="DomicilioActual" value="@Model.Domicilio" />
+        </article>    
+    </section>
+
+
+    <section class="form-group">
+            
+                <label for="Hijos" class=" col-sm-2 control-label">Hijos</label>
+                <article class="col-sm-2">
+                    <input type="text" class="form-control" name="Hijos" value="@Model.Hijos" />
+                </article>
+
+                <label for="EdadesySexo" class="col-sm-3 control-label">Edades y Sexo</label>
+                <article class="col-sm-3">
+                    <input type="text" class="form-control" name="EdadesySexo" value="@Model.EdadesySexo" />
+                </article>
+           
+    </section>
+
+
+    <section class="form-group">
+
+            <label for="ObraSocialoPrepago" class=" col-sm-2 control-label">O.Social o prepago</label>    
+            <article class="col-sm-2">
+                <input type="text" class="form-control" name="ObraSocialoPrepago" value="@Model.ObraSocialoPrepago" />
+            </article>
+
+            <label class="col-sm-3 control-label" for="NroAfiliado">N° de afiliado</label>
+            <article class="col-sm-3">
+                <input type="text" class="form-control" name="NroAfiliado" value="@Model.NroAfiliado" />
+            </article>
+       
+    </section>
+
+
+    <section class="form-group">
+        <label for="TelEmergenciaObraSocial" class=" col-sm-2 control-label">Telefono Emergencia Obra Social o Prepago</label>
+        <article class="col-sm-8">
+            <input type="text" class="form-control" name="TelEmergenciaObraSocial" value="@Model.TelEmergenciaObraSocial" />
+        </article>
+    </section>
+    <section class="form-group">
+        <label for="EstudiosCursados" class=" col-sm-2 control-label">Estudios cursados</label>
+        <article class="col-sm-8">
+            <input type="text" class="form-control" name="EstudiosCursados" value="@Model.EstudiosCursados" />
+        </article>
+    </section>
+    <section class="form-group">
+        <label for="ActividadActual" class=" col-sm-2 control-label">Actividad Actual</label>
+        <article class="col-sm-8">
+            <input type="text" class="form-control" name="ActividadActual" value="@Model.ActividadActual" />
+        </article>
+    </section>
+    <section class="form-group">
+        <label class="col-sm-6 control-label">En caso de tener que comunicarnos con Ud., ¿en qué dirección desea recibir correspondencia?</label>
+        <article class="col-sm-4">
+            <input type="text" class="form-control" name="DireccionCorrespondencia" value="@Model.DireccionCorrespondencia" />
+        </article>
+    </section>
+
+    <section class="form-group">
+        <label style="text-align:center" class="col-sm-12 control-label">
+            ¿En qué número telefónico o e-mail desea ser localizado o recibir mensajes?
+        </label>
+    </section>
+
+
+    <section class="form-group">
+        
+            <label class="col-sm-2 control-label">Tel :</label>
+            <article class="col-sm-2">
+                <input type="text" class="form-control" name="TelMensajes1" value="@Model.TelMensajes1" />
+            </article>
+       
+     
+            <label class="col-sm-1 control-label">Horario:</label>
+        
+     
+            <label class="col-sm-1 control-label">de</label>
+            <article class="col-sm-1">
+                <input type="text" class="form-control" name="HorarioMensajesDesde1" value="@Model.HorarioMensajesDesde1" />
+            </article>
+     
+            <label class="col-sm-1 control-label">a</label>
+            <article class="col-sm-1">
+                <input type="text" class="form-control" name="HorarioMensajesHasta1" value="@Model.HorarioMensajesHasta1" />
+            </article>
+     	
+            <label class="col-sm-1 control-label">hs.</label>
+      
+    </section>
+
+
+    <section class="form-group">
+      
+            <label class="col-sm-2 control-label">Tel.:</label>
+            <article class="col-sm-2">
+                <input type="text" class="form-control" name="TelMensajes2" value="@Model.TelMensajes2" />
+            </article>
+
+
+            <label class="col-sm-1 control-label">Horario:</label>
+
+
+            <label class="col-sm-1 control-label">de</label>
+            <article class="col-sm-1">
+                <input type="text" class="form-control" name="HorarioMensajesDesde2" value="@Model.HorarioMensajesDesde2" />
+            </article>
+   
+            <label class="col-sm-1 control-label">a</label>
+            <article class="col-sm-1">
+                <input type="text" class="form-control" name="HorarioMensajesHasta2" value="@Model.HorarioMensajesHasta2" />
+            </article>
+     
+      
+            <label class="col-sm-1 control-label">hs.</label>
+      
+    </section>
+
+
+    <section class="form-group">
+
+                        <label class=" col-sm-2 control-label">
+                            Celular:
+                        </label>	
+                         
+                        <article class="col-sm-2">
+                            <input type="text" class="form-control" name="TelCelular" value="@Model.TelCelular" />
+                        </article>
+
+                        <label class="col-sm-1 control-label">
+                            Beeper:
+                        </label>
+
+                        <article class="col-sm-2">
+                            <input type="text" class="form-control" name="TelBeeper" value="@Model.TelBeeper" />
+                        </article>
+
+                        <label class=" col-sm-1 control-label">E-mail:</label>
+       
+                        <article class="col-sm-2">
+                            <input type="text" class="form-control" id="inputGroupSuccess2"  name="Email" value="@Model.Email" aria-describedby="inputGroupSuccess2Status">            
+                        </article>
+    
+        
+    </section>
+
+    <section class=form-group">
+        
+    </section>
+
+    <section class="form-group">
+          <label class=" col-sm-2 control-label">En caso de necesidad, ¿con quién comunicarse?</label>
+          <article class="col-sm-8">
+            <input type="text" class="form-control" name="NecesidadNombre" value="@Model.NecesidadNombre" />
+          </article>
+    </section>
+                       
+    <section class="form-group">
+      <label class=" col-sm-2 control-label">Tel.</label>
+      <article class="col-sm-8">
+          <input type="text" class="form-control " name="NecesidadTel" value="@Model.NecesidadTel" />
+      </article>
+   </section>
+
+
+
+    <section class="form-group">
+
+            <label class=" col-sm-2 control-label">¿Fue paciente de Clínica Cormillot?</label>
+            <article class="col-sm-2">
+                <label class="radio-inline" style="font-size:14px;">
+                    <input type="radio"  name="PacienteSiNo" value="No" checked="@(Model.PacienteSiNo == "No")"/> No
+                </label>
+                <label class="radio-inline" style="font-size:14px;">
+                    <input type="radio" name="PacienteSiNo" value="Si" checked="@(Model.PacienteSiNo == "Si")"/> Sí
+                </label>
+            </article>
+
+       
+            <label class="col-sm-2 control-label">¿En qué año?</label>
+            <article class="col-sm-4">
+                <input type="text" class="form-control" name="PacienteAño" value="@Model.PacienteAño"/>
+            </article>
+       
+    </section>
+    <section class="form-group">
+        <label class=" col-sm-2 control-label">
+            ¿Cómo conoció la clínica?
+        </label>
+        
+        <div class="col-sm-10">
+               <div class="checkbox-inline corregir">
+                  <label>
+                    <input type="hidden" name="ConocioClinicaOtroPaciente" />
+                    <input  type="checkbox" id="ConocioClinicaOtroPaciente" 
+                            checked="@(Model.ConocioClinicaOtroPaciente.HasValue && Model.ConocioClinicaOtroPaciente.Value)" /> 
+                        Otro paciente
+                  </label>
+               </div>
+               <div class="checkbox-inline">
+                  <label>
+                    <input type="hidden" name="ConocioClinicaDiarios" />
+                    <input  type="checkbox" id="ConocioClinicaDiarios" 
+                            checked="@(Model.ConocioClinicaDiarios.HasValue && Model.ConocioClinicaDiarios.Value)" /> 
+                        Diarios
+                  </label>
+               </div>
+               <div class="checkbox-inline">
+                  <label>
+                    <input  type="hidden" name="ConocioClinicaRevistas" />
+                    <input  type="checkbox" id="ConocioClinicaRevistas" 
+                            @(Model.ConocioClinicaRevistas.HasValue && Model.ConocioClinicaRevistas.Value? "checked=checked" : "") /> 
+                        Revistas
+                  </label>
+               </div>
+               <div class="checkbox-inline">
+                  <label>
+                    <input  type="hidden" name="ConocioClinicaTV" />
+                    <input  type="checkbox" id="ConocioClinicaTV" 
+                            @(Model.ConocioClinicaTV.HasValue && Model.ConocioClinicaTV.Value ? "checked=checked" : "") />
+                        TV
+                  </label>
+               </div>
+               <div class="checkbox-inline">
+                  <label>
+                    <input  type="hidden" name="ConocioClinicaInternet" />
+                    <input  type="checkbox" id="ConocioClinicaInternet" 
+                            checked="@(Model.ConocioClinicaInternet.HasValue && Model.ConocioClinicaInternet.Value)" /> 
+                        Internet
+                  </label>
+               </div>
+<<<<<<< local
+               <div class="input-group">
+                  <span class="input-group-addon">
+=======
+
+               <div class="checkbox-inline">
+                  <label>
+                    <input type="checkbox" value="">
+                    Revistas
+                  </label>
+               </div>
+
+               <div class="input-group" style=" height: 31px;;display:block">
+                  <span class="col-sm-1" style="text-align:right">
+>>>>>>> other
+                    Otro
+                  </span>
+<<<<<<< local
+                  <input type="text" class="form-control" name="ConocioClinicaOtro" value="@Model.ConocioClinicaOtro" aria-label="...">
+=======
+                  <div class="col-sm-8">
+                    <input type="text" style="margin:1px;" class="form-control"  aria-label="...">
+                  </div>
+>>>>>>> other
+                </div>
+        </div>
+    </section>
+    <section class="form-group" style="text-align:center">
+        @*<input type="button" id="btnGuardar" value="Guardar" class="btn btn-info" />*@
+        @Html.ActionLink("Siguiente", "ProximoPaso", "Pasos", new { id = ViewBag.Pagina }, new { @class = "btn btn-info" })
+    </section>
+</form>
+
+
+@*<nav>
+  <ul class="pager">
+    <li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> Anterior</a></li>
+    <li class="next"><a href="/Pasos/ProximoPaso/"><span>Siguiente&rarr;</span></a></li>
+  </ul>
+</nav>*@
+@*<section class="col_12">
+    @Html.ActionLink("Siguiente >>", "ProximoPaso", "Pasos", new { id = ViewBag.Pagina }, null)
+</section>*@

@@ -1,0 +1,347 @@
+*
+{
+    font-family: inherit;
+    font-size:14px;
+}
+
+body
+{
+    border-left:10px solid #51BCDC;
+    height:100%;
+    width:100%;
+}
+.fondo_celeste
+{
+    background:#CEE1F0 !important;
+    color:black;
+    border:none;
+}
+.fondo_celeste:hover
+{
+    color:black;
+}
+
+.fondo_celeste:focus
+{
+    color:Black;
+}
+
+.dropdown
+{
+    font-size: 10px;
+    height: 30px;
+    line-height: 0;
+    padding: 8px;
+}
+
+.label-drop
+{
+    margin-top:20px;
+    margin-bottom:1px;
+}
+
+nav.header
+{
+    background: none repeat scroll 0 0 #fff;
+    border: medium none;
+    box-shadow: none;
+    height: 150px;
+}
+    
+nav#header
+{
+    height: auto;
+    margin-bottom: -32px;
+    padding-bottom: 0;
+}
+        
+        html,body
+        {
+            height:100%;
+        }
+        
+        div.page-header
+        {
+            width:40%;
+            text-transform:uppercase;
+            font-size:9px;
+            float: left;
+            /* margin: 28px 0 0; */
+            vertical-align: bottom;
+        }
+        
+         div.page-header h1
+         {
+            max-width:100%;
+            font-size:18px;
+            margin:0 auto;
+            vertical-align:top;
+            font-weight:bold;
+            text-transform:capitalize;
+         }
+         
+         #img-responsive-header
+         {
+                 display: inline-block;
+                 max-width: 100%;
+                 width: auto !important;
+                 /* min-width: 88px; */
+                 max-height: 100%;
+         }
+         
+#navbar-brand
+{
+    display: inline-block;
+    float: left;
+    height: 100%;
+    width: 20% !important;
+    /* min-width: 105px; */
+    padding-bottom: 0;
+    max-height: 63px;
+}
+         
+ .titulo
+ {
+     text-align:center;
+     font-weight:bolder;
+ }
+ 
+ .texto_derecha
+ {
+    position:absolute;
+    height: 20px;
+    text-align: right;
+    vertical-align: top;
+    width: 40%;
+    right:15px;
+    top:5px;
+ }
+         
+
+.form-control
+{
+    height: 25px !important;
+    line-height:0 !important;
+    padding:0 0 0 2px !important;
+    margin-top:0px;
+    font-size: 14px;
+    border: 0px !important;
+    border-bottom: 2.99px solid !important;
+    border-style: dotted !important;
+    color:black;
+    font-weight:bold;
+    
+}
+.form-control-inline{
+    display: inline-block;
+    width: auto;
+}
+
+.input-group-addon
+{
+    padding:0 !important;
+}
+
+.info
+{
+    color:#51BCDC
+}
+
+.celeste
+  {
+             color:#51BCDC;
+             font-weight:initial;
+
+  }
+
+h2.celeste
+{
+    color:#51BCDC;
+    text-align:center;
+    font-size: 25px;
+    margin-bottom: 0;
+}
+
+.form-horizontal {
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 15px;
+}
+
+.bienvenido
+{
+    float: left;
+    width: 83%;
+}
+
+
+   @media screen and (max-width: 800px) 
+   {
+       .mostrar-responsive
+       {
+           display:block !important;
+       }
+       
+       .table-title-responsive
+       {
+           display:block !important;
+           float:right;
+           width:50%;
+       }
+       
+       .table-title-responsive p
+       {
+           word-wrap: break-word;
+           width:9px;
+           display:inline-block;
+           vertical-align:top;
+           margin:1px 10px;
+           font-weight:bold;
+       }
+       .ocultar-responsive
+       {
+           display:none;
+       }
+       .celeste
+     {
+         font-size:18px !important;
+     }
+       body { font-size: 1em; }
+            img.img-responsive{
+                max-width:70px;
+    }
+    
+    .navbar 
+    {
+        margin-bottom:0;
+    }
+    
+    div.page-header small
+    {
+         font-size:7px;
+    }
+    
+    h2
+    {
+        font-size:18px;
+        text-indent: 0;
+        text-align:left;
+    }
+    div.page-header
+    {
+        float:none !important;
+        display:inline-block;
+    }
+    
+     div.page-header h1
+         {
+            max-width:100%;
+            margin:0 auto;
+            vertical-align:top;
+            font-weight:bold;
+            
+         }
+         
+    img#img_botella
+    {
+        display:none;
+    }
+    
+     .texto_derecha
+     {
+         display:none;
+     }
+     
+     .checkbox-inline
+     {
+         display:block !important;
+     }
+     
+     .corregir
+     {
+         margin-left: 10px;
+     }
+     
+     
+   }
+     
+.clickeable
+{
+    cursor: pointer;
+}
+
+a
+{
+    text-decoration: none !important;
+}
+
+input[type="text"]
+{
+    /*background-color:#CEE1F0;*/
+}
+.form-group
+{
+    margin-bottom: 0;
+}
+
+.img-cara
+{
+    width: 20px;
+}
+
+.container-botones-inferiores
+{
+    text-align: center;
+}
+
+.table>tbody>tr>td{
+    padding: 0;
+}
+
+.control-group {
+    display: inline-block;
+    vertical-align: top;
+}
+.input-normal
+{
+    margin-left: 25px;
+    padding:0px;
+}
+.table>tbody>tr>td
+{
+    text-align: center;
+}
+.table *
+{
+    border: 1px solid;
+}
+th
+{
+    border-bottom:1px solid !important;
+}
+.left
+{
+    text-align:left !important;
+}
+.FontCormi
+{
+    font-family:cormillot;
+    font-size:35px !important;
+}
+.recuadro {
+     width: 836px; 
+     height: 516px; 
+     border: 1px solid #555;
+}
+.input-admin {
+    height: 25px !important;
+    line-height: 0 !important;
+    padding: 0 0 0 2px !important;
+    margin-top: 0px;
+    font-size: 14px;
+    border: 0px !important;
+    border-style: dotted !important;
+    color: black;
+    font-weight: bold;
+}
+     

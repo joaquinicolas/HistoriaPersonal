@@ -1,0 +1,66 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Historia Personal Cormillot</title>
+    <style>
+        .btn {
+            color: #fff;
+            background-color: #5bc0de;
+            border-color: #46b8da;
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            margin: 10px auto;
+            display: block;
+        }
+        iframe{
+            /*margin:10px auto !important;*/
+            margin-top:10px;
+            margin-left:75px;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn" type="button" onclick="imprimir()">Imprimir</button>
+
+    <iframe src="~/Impresion/Page1" frameborder="0" width="1163px" height="721px"></iframe>
+    <iframe src="~/Impresion/Page2" frameborder="0" width="1163px" height="721px"></iframe>
+    <iframe src="~/Impresion/Page3" frameborder="0" width="1163px" height="721px"></iframe>
+    <iframe src="~/Impresion/Page4" frameborder="0" width="1163px" height="721px"></iframe>
+    <iframe src="~/Impresion/Page5" frameborder="0" width="1163px" height="721px"></iframe>
+    <iframe src="~/Impresion/Page6" frameborder="0" width="1163px" height="731px"></iframe>
+    <iframe src="~/Impresion/Page7" frameborder="0" width="1163px" height="731px"></iframe>
+    <iframe src="~/Impresion/Page8" frameborder="0" width="1163px" height="721px"></iframe>
+    <iframe src="~/Impresion/Page9" frameborder="0" width="1163px" height="721px"></iframe>
+    <iframe src="~/Impresion/PagePrueba" frameborder="0" width="1163px" height="721px"></iframe>
+
+    <script>
+
+	function imprimir(){
+
+		window.print();
+	}
+    </script>
+</body>
+</html>

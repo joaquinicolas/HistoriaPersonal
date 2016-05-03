@@ -1,0 +1,769 @@
+﻿@model HistoriaPersonalCormillot.Sintomas2
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/ResponsiveGrid.css" rel="stylesheet" />
+<link href="~/Content/CorreccionesBootstrap.css" rel="Stylesheet" />
+<script src="../../Scripts/FormulariosHelpers.js" type="text/javascript"></script>
+
+<style>
+    .table > thead:first-child > tr:first-child > th {
+        padding-bottom: 0;
+    }
+    .center-table
+    {
+        padding-left: 17% !important;
+    }
+    
+    .table>tbody>tr.separador-inferior>td
+    {
+        border-bottom: 2px solid black;
+    }
+    
+    .table>tbody>tr>td:first-child
+    {
+        text-align: left;
+    }
+    
+    .table>tbody>tr>td:first-child input
+    {
+        float: right;
+        min-width: 100px;
+        width: 60%;
+    }
+    
+</style>
+
+<script type="text/javascript">
+    function subirDatos() {
+        postForm("SaveSintomas2");
+    }
+
+    function guardarDatos() {
+        postFormGuardar("SaveSintomas2");
+    }
+
+    $(document).ready(function () {
+        setInterval(subirDatos, 5000);
+    });
+</script>
+
+<article>
+    <h2 class="celeste titulo" style="margin-top: 50px;">Su estado clínico</h2>
+</article>
+
+<form id="form">
+    <section class="row-left col_12">
+        <article class="col_10 titulo-control">
+            32. Por favor, seleccione la frecuencia en la que siente los siguientes síntomas.
+        </article>
+    </section>
+    <section class="col_12">
+        <section class="col_6">
+            <section class="table-responsive ocultar-responsive" style="max-width: 500px;">
+                <table class="table" style="text-align:left">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Nunca</th>
+                            <th>A veces o leve</th>
+                            <th>Frecuente</th>
+                            <th>Muy frecuente</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Colesterol aumentado</td>
+                            <td>
+                                <input type="radio" name="ColesterolAumentado" value="Nunca" @(Model.ColesterolAumentado == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="ColesterolAumentado" value="Leve" @(Model.ColesterolAumentado == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="ColesterolAumentado" value="Frecuente" @(Model.ColesterolAumentado == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="ColesterolAumentado" value="MuyFrecuente" @(Model.ColesterolAumentado == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Trigliceridos aumentados</td>
+                            <td>
+                                <input type="radio" name="TrigliceridosAumentados" value="Nunca" @(Model.TrigliceridosAumentados == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="TrigliceridosAumentados" value="Leve" @(Model.TrigliceridosAumentados == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="TrigliceridosAumentados" value="Frecuente" @(Model.TrigliceridosAumentados == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="TrigliceridosAumentados" value="MuyFrecuente" @(Model.TrigliceridosAumentados == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Gota / Ácido úrico</td>
+                            <td>
+                                <input type="radio" name="Gota" value="Nunca" @(Model.Gota == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Gota" value="Leve" @(Model.Gota == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Gota" value="Frecuente" @(Model.Gota == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Gota" value="MuyFrecuente" @(Model.Gota == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Osteoporosis</td>
+                            <td>
+                                <input type="radio" name="Osteoporosis" value="Nunca" @(Model.Osteoporosis == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Osteoporosis" value="Leve" @(Model.Osteoporosis == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Osteoporosis" value="Frecuente" @(Model.Osteoporosis == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Osteoporosis" value="MuyFrecuente" @(Model.Osteoporosis == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Diabetes</td>
+                            <td>
+                                <input type="radio" name="Diabetes" value="Nunca" @(Model.Diabetes == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Diabetes" value="Leve" @(Model.Diabetes == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Diabetes" value="Frecuente" @(Model.Diabetes == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Diabetes" value="MuyFrecuente" @(Model.Diabetes == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Alergias (a qué): <input class="form-control" type="text" name="AlergiasQUe" value="@Model.AlergiasQUe" /></td>
+                            <td>
+                                <input type="radio" name="Alergias" value="Nunca" @(Model.Alergias == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Alergias" value="Leve" @(Model.Alergias == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Alergias" value="Frecuente" @(Model.Alergias == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Alergias" value="MuyFrecuente" @(Model.Alergias == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr class="separador-inferior">
+                            <td>Digestión lenta</td>
+                            <td>
+                                <input type="radio" name="DigestionLenta" value="Nunca" @(Model.DigestionLenta == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="DigestionLenta" value="Leve" @(Model.DigestionLenta == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="DigestionLenta" value="Frecuente" @(Model.DigestionLenta == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="DigestionLenta" value="MuyFrecuente" @(Model.DigestionLenta == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Dolor o acidez de estómago</td>
+                            <td>
+                                <input type="radio" name="DolorEstomago" value="Nunca" @(Model.DolorEstomago == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="DolorEstomago" value="Leve" @(Model.DolorEstomago == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="DolorEstomago" value="Frecuente" @(Model.DolorEstomago == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="DolorEstomago" value="MuyFrecuente" @(Model.DolorEstomago == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Vómitos</td>
+                            <td>
+                                <input type="radio" name="Vomitos" value="Nunca" @(Model.Vomitos == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Vomitos" value="Leve" @(Model.Vomitos == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Vomitos" value="Frecuente" @(Model.Vomitos == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Vomitos" value="MuyFrecuente" @(Model.Vomitos == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Meteorismo (gases)</td>
+                            <td>
+                                <input type="radio" name="Meteorismo" value="Nunca" @(Model.Meteorismo == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Meteorismo" value="Leve" @(Model.Meteorismo == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Meteorismo" value="Frecuente" @(Model.Meteorismo == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Meteorismo" value="MuyFrecuente" @(Model.Meteorismo == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Constipación</td>
+                            <td>
+                                <input type="radio" name="Constipacion" value="Nunca" @(Model.Constipacion == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Constipacion" value="Leve" @(Model.Constipacion == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Constipacion" value="Frecuente" @(Model.Constipacion == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Constipacion" value="MuyFrecuente" @(Model.Constipacion == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Diarrea</td>
+                            <td>
+                                <input type="radio" name="Diarrrea" value="Nunca" @(Model.Diarrrea == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Diarrrea" value="Leve" @(Model.Diarrrea == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Diarrrea" value="Frecuente" @(Model.Diarrrea == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Diarrrea" value="MuyFrecuente" @(Model.Diarrrea == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Hemorroides</td>
+                            <td>
+                                <input type="radio" name="Hemorroides" value="Nunca" @(Model.Hemorroides == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Hemorroides" value="Leve" @(Model.Hemorroides == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Hemorroides" value="Frecuente" @(Model.Hemorroides == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Hemorroides" value="MuyFrecuente" @(Model.Hemorroides == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr class="separador-inferior">
+                            <td>Intolerancia a algún alimento</td>
+                            <td>
+                                <input type="radio" name="IntoleranciaAlimento" value="Nunca" @(Model.IntoleranciaAlimento == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="IntoleranciaAlimento" value="Leve" @(Model.IntoleranciaAlimento == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="IntoleranciaAlimento" value="Frecuente" @(Model.IntoleranciaAlimento == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="IntoleranciaAlimento" value="MuyFrecuente" @(Model.IntoleranciaAlimento == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Problemas en la piel</td>
+                            <td>
+                                <input type="radio" name="ProblemasPiel" value="Nunca" @(Model.ProblemasPiel == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="ProblemasPiel" value="Leve" @(Model.ProblemasPiel == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="ProblemasPiel" value="Frecuente" @(Model.ProblemasPiel == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="ProblemasPiel" value="MuyFrecuente" @(Model.ProblemasPiel == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Manchas u oscurecimiento</td>
+                            <td>
+                                <input type="radio" name="Manchas" value="Nunca" @(Model.Manchas == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Manchas" value="Leve" @(Model.Manchas == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Manchas" value="Frecuente" @(Model.Manchas == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Manchas" value="MuyFrecuente" @(Model.Manchas == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Aparición o cambios en verrugas o lunares</td>
+                            <td>
+                                <input type="radio" name="Verrugas" value="Nunca" @(Model.Verrugas == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Verrugas" value="Leve" @(Model.Verrugas == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Verrugas" value="Frecuente" @(Model.Verrugas == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Verrugas" value="MuyFrecuente" @(Model.Verrugas == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Acné</td>
+                            <td>
+                                <input type="radio" name="Acne" value="Nunca" @(Model.Acne == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Acne" value="Leve" @(Model.Acne == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Acne" value="Frecuente" @(Model.Acne == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Acne" value="MuyFrecuente" @(Model.Acne == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr class="separador-inferior">
+                            <td>Caída de cabello</td>
+                            <td>
+                                <input type="radio" name="CaidaCabello" value="Nunca" @(Model.CaidaCabello == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="CaidaCabello" value="Leve" @(Model.CaidaCabello == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="CaidaCabello" value="Frecuente" @(Model.CaidaCabello == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="CaidaCabello" value="MuyFrecuente" @(Model.CaidaCabello == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+        <section class="col_6">
+            <section class="table-responsive ocultar-responsive" style="max-width: 500px;">
+                <table class="table" style="text-align:left">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Nunca</th>
+                            <th>A veces o leve</th>
+                            <th>Frecuente</th>
+                            <th>Muy frecuente</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Algún problema dental</td>
+                            <td>
+                                <input type="radio" name="ProblemaDental" value="Nunca" @(Model.ProblemaDental == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="ProblemaDental" value="Leve" @(Model.ProblemaDental == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="ProblemaDental" value="Frecuente" @(Model.ProblemaDental == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="ProblemaDental" value="MuyFrecuente" @(Model.ProblemaDental == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Llagas o bultos en la boca</td>
+                            <td>
+                                <input type="radio" name="Llagas" value="Nunca" @(Model.Llagas == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Llagas" value="Leve" @(Model.Llagas == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Llagas" value="Frecuente" @(Model.Llagas == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Llagas" value="MuyFrecuente" @(Model.Llagas == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr class="separador-inferior">
+                            <td>Sangrado de encías</td>
+                            <td>
+                                <input type="radio" name="SangradoEncias" value="Nunca" @(Model.SangradoEncias == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="SangradoEncias" value="Leve" @(Model.SangradoEncias == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="SangradoEncias" value="Frecuente" @(Model.SangradoEncias == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="SangradoEncias" value="MuyFrecuente" @(Model.SangradoEncias == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Algún problema neurológico</td>
+                            <td>
+                                <input type="radio" name="ProblemaNeurologico" value="Nunca" @(Model.ProblemaNeurologico == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="ProblemaNeurologico" value="Leve" @(Model.ProblemaNeurologico == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="ProblemaNeurologico" value="Frecuente" @(Model.ProblemaNeurologico == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="ProblemaNeurologico" value="MuyFrecuente" @(Model.ProblemaNeurologico == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Dolores de cabeza</td>
+                            <td>
+                                <input type="radio" name="DoloresCabeza" value="Nunca" @(Model.DoloresCabeza == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="DoloresCabeza" value="Leve" @(Model.DoloresCabeza == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="DoloresCabeza" value="Frecuente" @(Model.DoloresCabeza == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="DoloresCabeza" value="MuyFrecuente" @(Model.DoloresCabeza == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr class="separador-inferior">
+                            <td>Mareos o desmayos / Vértigos</td>
+                            <td>
+                                <input type="radio" name="Mareos" value="Nunca" @(Model.Mareos == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Mareos" value="Leve" @(Model.Mareos == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Mareos" value="Frecuente" @(Model.Mareos == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Mareos" value="MuyFrecuente" @(Model.Mareos == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Se siente triste, angustiado o deprimido</td>
+                            <td>
+                                <input type="radio" name="Triste" value="Nunca" @(Model.Triste == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Triste" value="Leve" @(Model.Triste == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Triste" value="Frecuente" @(Model.Triste == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Triste" value="MuyFrecuente" @(Model.Triste == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Llanto fácil</td>
+                            <td>
+                                <input type="radio" name="LlantoFacil" value="Nunca" @(Model.LlantoFacil == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="LlantoFacil" value="Leve" @(Model.LlantoFacil == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="LlantoFacil" value="Frecuente" @(Model.LlantoFacil == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="LlantoFacil" value="MuyFrecuente" @(Model.LlantoFacil == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Poco placer en lo cotidiano</td>
+                            <td>
+                                <input type="radio" name="PocoPlacer" value="Nunca" @(Model.PocoPlacer == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="PocoPlacer" value="Leve" @(Model.PocoPlacer == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="PocoPlacer" value="Frecuente" @(Model.PocoPlacer == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="PocoPlacer" value="MuyFrecuente" @(Model.PocoPlacer == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Pérdida de interés en las cosas</td>
+                            <td>
+                                <input type="radio" name="PerdidaInteres" value="Nunca" @(Model.PerdidaInteres == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="PerdidaInteres" value="Leve" @(Model.PerdidaInteres == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="PerdidaInteres" value="Frecuente" @(Model.PerdidaInteres == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="PerdidaInteres" value="MuyFrecuente" @(Model.PerdidaInteres == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Poca interacción con otros</td>
+                            <td>
+                                <input type="radio" name="PocaInteraccion" value="Nunca" @(Model.PocaInteraccion == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="PocaInteraccion" value="Leve" @(Model.PocaInteraccion == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="PocaInteraccion" value="Frecuente" @(Model.PocaInteraccion == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="PocaInteraccion" value="MuyFrecuente" @(Model.PocaInteraccion == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Aislamiento</td>
+                            <td>
+                                <input type="radio" name="Aislamiento" value="Nunca" @(Model.Aislamiento == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Aislamiento" value="Leve" @(Model.Aislamiento == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Aislamiento" value="Frecuente" @(Model.Aislamiento == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Aislamiento" value="MuyFrecuente" @(Model.Aislamiento == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Dificultad para concentrarse</td>
+                            <td>
+                                <input type="radio" name="DificultadConcentrarse" value="Nunca" @(Model.DificultadConcentrarse == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="DificultadConcentrarse" value="Leve" @(Model.DificultadConcentrarse == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="DificultadConcentrarse" value="Frecuente" @(Model.DificultadConcentrarse == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="DificultadConcentrarse" value="MuyFrecuente" @(Model.DificultadConcentrarse == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Indecisión</td>
+                            <td>
+                                <input type="radio" name="Indecision" value="Nunca" @(Model.Indecision == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Indecision" value="Leve" @(Model.Indecision == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Indecision" value="Frecuente" @(Model.Indecision == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Indecision" value="MuyFrecuente" @(Model.Indecision == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sentimiento de culpa</td>
+                            <td>
+                                <input type="radio" name="SentimientoCulpa" value="Nunca" @(Model.SentimientoCulpa == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="SentimientoCulpa" value="Leve" @(Model.SentimientoCulpa == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="SentimientoCulpa" value="Frecuente" @(Model.SentimientoCulpa == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="SentimientoCulpa" value="MuyFrecuente" @(Model.SentimientoCulpa == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Aburrimiento</td>
+                            <td>
+                                <input type="radio" name="Aburrimiento" value="Nunca" @(Model.Aburrimiento == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Aburrimiento" value="Leve" @(Model.Aburrimiento == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Aburrimiento" value="Frecuente" @(Model.Aburrimiento == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="Aburrimiento" value="MuyFrecuente" @(Model.Aburrimiento == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Solo en el mundo</td>
+                            <td>
+                                <input type="radio" name="SoloMundo" value="Nunca" @(Model.SoloMundo == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="SoloMundo" value="Leve" @(Model.SoloMundo == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="SoloMundo" value="Frecuente" @(Model.SoloMundo == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="SoloMundo" value="MuyFrecuente" @(Model.SoloMundo == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                        <tr class="separador-inferior">
+                            <td>Sensación de vacío</td>
+                            <td>
+                                <input type="radio" name="SensacionVacio" value="Nunca" @(Model.SensacionVacio == "Nunca" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="SensacionVacio" value="Leve" @(Model.SensacionVacio == "Leve" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="SensacionVacio" value="Frecuente" @(Model.SensacionVacio == "Frecuente" ? "checked=checked" : "") />
+                            </td>
+                            
+                            <td>
+                                <input type="radio" name="SensacionVacio" value="MuyFrecuente" @(Model.SensacionVacio == "MuyFrecuente" ? "checked=checked" : "") />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+    </section>
+</form>
+
+
+<div class="container-botones-inferiores" style="width:100%;float:left">
+    @Html.ActionLink("Anterior", "AnteriorPaso", "Pasos", new { id = ViewBag.Pagina }, new { @class = "btn btn-info", onclick="javascript:subirDatos();" })
+    @Html.ActionLink("Siguiente", "ProximoPaso", "Pasos", new { id = ViewBag.Pagina }, new { @class = "btn btn-info", onclick = "javascript:subirDatos();" })
+</div>

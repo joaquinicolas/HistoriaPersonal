@@ -1,0 +1,179 @@
+﻿@model HistoriaPersonalCormillot.SusHabitos2
+@{
+    ViewBag.Title = "Habitos2";
+}
+
+<style type="text/css">
+	input.form-control
+	{
+		width: 50px;
+	}
+
+	.xl
+	{
+		 min-width: 60px;
+    	width: 78% !important;
+	}
+	.mt
+	{
+		margin-top: 10px !important;
+	}
+
+	.ml
+	{
+		margin-left: 26px !important;
+	}
+</style>
+
+<script src="../../Scripts/FormulariosHelpers.js" type="text/javascript"></script>
+<script type="text/javascript">
+    function subirDatos() {
+        postForm("SaveSusHabitos2");
+    }
+
+    function guardarDatos() {
+        postFormGuardar("SaveSusHabitos2");
+    }
+
+    $(document).ready(function () {
+        setInterval(subirDatos, 5000);
+    });
+</script>
+
+<link href="../../Content/ResponsiveGrid.css" rel="stylesheet" type="text/css" />
+<h2 class="celeste titulo" style="margin-top:40px">Sus habitos</h2>
+
+<div id="pag2">
+    <form id="form">
+        <label>36.La actitud de quienes lo redean hacia su tratamiento es positiva(+) o negativa(-)</label>
+
+        <div class="table-responsive">
+            <table class="table" style="text-transform:capitalize !important;">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>padres</th>
+                        <th>hermanos</th>
+                        <th>cónyuge</th>
+                        <th>hijos</th>
+                        <th>amigos</th>
+                        <th>compañeros</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>apoyo</td>
+                        <td><input class="ml" @(Model.ActitudPadres == "apoyo" ? "checked = checked" : "") value="apoyo" name="ActitudPadres" type="radio" /> </td>
+                        <td><input class="ml" @(Model.ActitudHermanos == "apoyo" ? "checked = checked" : "") value="apoyo" name="ActitudHermanos" type="radio" /></td>
+                        <td><input class="ml" @(Model.ActitudConyuge == "apoyo" ? "checked = checked" : "") value="apoyo" name="ActitudConyuge" type="radio" /></td>
+                        <td><input class="ml" @(Model.ActitudHijos == "apoyo" ? "checked = checked" : "") value="apoyo" name="ActitudHijos" type="radio" /></td>
+                        <td><input class="ml" @(Model.ActitudAmigos == "apoyo" ? "checked = checked" : "") value="apoyo" name="ActitudAmigos" type="radio" /></td>
+                        <td><input class="ml" @(Model.ActitudCompañeros == "apoyo" ? "checked = checked" : "") value="apoyo" name="ActitudCompañeros" type="radio" /></td>
+                    </tr>
+
+                    <tr>
+                        <td>se opone</td>
+                        <td><input class="ml" @(Model.ActitudPadres == "se opone" ? "checked = checked" : "") value="se opone" name="ActitudPadres" type="radio" /> </td>
+                        <td><input class="ml" @(Model.ActitudHermanos == "se opone" ? "checked = checked" : "") value="se opone" name="ActitudHermanos" type="radio" /></td>
+                        <td><input class="ml" @(Model.ActitudConyuge == "se opone" ? "checked = checked" : "") value="se opone" name="ActitudConyuge" type="radio" /></td>
+                        <td><input class="ml" @(Model.ActitudHijos == "se opone" ? "checked = checked" : "") value="se opone" name="ActitudHijos" type="radio" /></td>
+                        <td><input class="ml" @(Model.ActitudAmigos == "se opone" ? "checked = checked" : "") value="se opone" name="ActitudAmigos" type="radio" /></td>
+                        <td><input class="ml" @(Model.ActitudCompañeros == "se opone" ? "checked = checked" : "") value="se opone" name="ActitudCompañeros" type="radio" /></td>
+                    </tr>
+
+                    <tr>
+                        <td>indiferente</td>
+                        <td><input class="ml" @(Model.ActitudPadres == "indiferente" ? "checked = checked" : "") value="indiferente" name="ActitudPadres" type="radio" /> </td>
+                        <td><input class="ml" @(Model.ActitudHermanos == "indiferente" ? "checked = checked" : "") value="indiferente" name="ActitudHermanos" type="radio" /></td>
+                        <td><input class="ml" @(Model.ActitudConyuge == "indiferente" ? "checked = checked" : "") value="indiferente" name="ActitudConyuge" type="radio" /></td>
+                        <td><input class="ml" @(Model.ActitudHijos == "indiferente" ? "checked = checked" : "") value="indiferente" name="ActitudHijos" type="radio" /></td>
+                        <td><input class="ml" @(Model.ActitudAmigos == "indiferente" ? "checked = checked" : "") value="indiferente" name="ActitudAmigos" type="radio" /></td>
+                        <td><input class="ml" @(Model.ActitudCompañeros == "indiferente" ? "checked = checked" : "") value="indiferente" name="ActitudCompañeros" type="radio" /></td>
+                    </tr>
+
+                    <tr>
+                        <td>variable</td>
+                        <td><input class="ml" @(Model.ActitudPadres == "variable" ? "checked = checked" : "") value="variable" name="ActitudPadres" type="radio" /> </td>
+                        <td><input class="ml" @(Model.ActitudHermanos == "variable" ? "checked = checked" : "")  value="variable" name="ActitudHermanos" type="radio" /></td>
+                        <td><input class="ml" @(Model.ActitudConyuge == "variable" ? "checked = checked" : "")  value="variable" name="ActitudConyuge" type="radio" /></td>
+                        <td><input class="ml" @(Model.ActitudHijos == "variable" ? "checked = checked" : "")  value="variable" name="ActitudHijos" type="radio" /></td>
+                        <td><input class="ml" @(Model.ActitudAmigos == "variable" ? "checked = checked" : "")  value="variable" name="ActitudAmigos" type="radio" /></td>
+                        <td><input class="ml" @(Model.ActitudCompañeros == "variable" ? "checked = checked" : "")  value="variable" name="ActitudCompañeros" type="radio" /></td>
+                    </tr>
+                    <tr>
+                        <td>mucha presion</td>
+                        <td><input class="ml" @(Model.ActitudPadres == "mucha presion" ? "checked = checked" : "")  value="mucha presion" name="ActitudPadres" type="radio" /> </td>
+                        <td><input class="ml" @(Model.ActitudHermanos == "mucha presion" ? "checked = checked" : "") value="mucha presion" name="ActitudHermanos" type="radio" /></td>
+                        <td><input class="ml" @(Model.ActitudConyuge == "mucha presion" ? "checked = checked" : "") value="mucha presion" name="ActitudConyuge" type="radio" /></td>
+                        <td><input class="ml" @(Model.ActitudHijos == "mucha presion" ? "checked = checked" : "") value="mucha presion" name="ActitudHijos" type="radio" /></td>
+                        <td><input class="ml" @(Model.ActitudAmigos == "mucha presion" ? "checked = checked" : "") value="mucha presion" name="ActitudAmigos" type="radio" /></td>
+                        <td><input class="ml" @(Model.ActitudCompañeros == "mucha presion" ? "checked = checked" : "") value="mucha presion" name="ActitudCompañeros" type="radio" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <label>37.Cómo se lleva con</label>
+        <div class="table-responsive" >
+            <table class="table" style="text-transform:capitalize !important;">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>muy bien</th>
+                        <th>bien</th>
+                        <th>más o menos</th>
+                        <th>mal</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>hijos</td>
+                        <td><input class="ml" @(Model.RelacionHijos == "muy bien" ? "checked = checked" : "") name="RelacionHijos" value="muy bien" type="radio" /> </td>
+                        <td><input class="ml" @(Model.RelacionHijos == "bien" ? "checked = checked" : "") name="RelacionHijos" value="bien" type="radio" /></td>
+                        <td><input class="ml" @(Model.RelacionHijos == "mas o menos" ? "checked = checked" : "") name="RelacionHijos" value="mas o menos" type="radio" /></td>
+                        <td><input class="ml" @(Model.RelacionHijos == "mal" ? "checked = checked" : "") name="RelacionHijos" value="mal" type="radio" /></td>
+                    </tr>
+
+                    <tr>
+                        <td>amigos</td>
+                        <td><input class="ml" @(Model.RelacionAmigos == "muy bien" ? "checked = checked" : "") name="RelacionAmigos" value="muy bien" type="radio" /> </td>
+                        <td><input class="ml" @(Model.RelacionAmigos == "bien" ? "checked = checked" : "") name="RelacionAmigos" value="bien" type="radio" /></td>
+                        <td><input class="ml" @(Model.RelacionAmigos == "mas o menos" ? "checked = checked" : "") name="RelacionAmigos" value="mas o menos" type="radio" /></td>
+                        <td><input class="ml" @(Model.RelacionAmigos == "mal" ? "checked = checked" : "") name="RelacionAmigos" value="mal" type="radio" /></td>
+                    </tr>
+
+                    <tr>
+                        <td>pareja</td>
+                        <td><input class="ml" @(Model.RelacionPareja == "muy bien" ? "checked = checked" : "") name="RelacionPareja" value="muy bien" type="radio" /> </td>
+                        <td><input class="ml" @(Model.RelacionPareja == "bien" ? "checked = checked" : "") name="RelacionPareja" value="bien" type="radio" /></td>
+                        <td><input class="ml" @(Model.RelacionPareja == "mas o menos" ? "checked = checked" : "") name="RelacionPareja" value="mas o menos" type="radio" /></td>
+                        <td><input class="ml" @(Model.RelacionPareja == "mal" ? "checked = checked" : "") name="RelacionPareja" value="mal" type="radio" /></td>
+                    </tr>
+
+                    <tr>
+                        <td>familia</td>
+                        <td><input class="ml" @(Model.RelacionFamilia == "muy bien" ? "checked = checked" : "") name="RelacionFamilia" value="muy bien" type="radio" /> </td>
+                        <td><input class="ml" @(Model.RelacionFamilia == "bien" ? "checked = checked" : "") name="RelacionFamilia" value="bien" type="radio" /></td>
+                        <td><input class="ml" @(Model.RelacionFamilia == "mas o menos" ? "checked = checked" : "") name="RelacionFamilia" value="mas o menos" type="radio" /></td>
+                        <td><input class="ml" @(Model.RelacionFamilia == "mal" ? "checked = checked" : "") name="RelacionFamilia" value="mal" type="radio" /></td>
+                    </tr>
+                    <tr>
+                        <td>compañeros de trabajo</td>
+                        <td><input class="ml" @(Model.RelacionCompañerosTrabajo == "muy bien" ? "checked = checked" : "") name="RelacionCompañerosTrabajo" value="muy bien" type="radio" /> </td>
+                        <td><input class="ml" @(Model.RelacionCompañerosTrabajo == "bien" ? "checked = checked" : "") name="RelacionCompañerosTrabajo" value="bien" type="radio" /></td>
+                        <td><input class="ml" @(Model.RelacionCompañerosTrabajo == "mas o menos" ? "checked = checked" : "") name="RelacionCompañerosTrabajo" value="mas o menos" type="radio" /></td>
+                        <td><input class="ml" @(Model.RelacionCompañerosTrabajo == "mal" ? "checked = checked" : "") name="RelacionCompañerosTrabajo" value="mal" type="radio" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+
+    <div class="container-botones-inferiores" style="width:100%;float:left">
+        @Html.ActionLink("Anterior", "AnteriorPaso", "Pasos", new { id = ViewBag.Pagina }, new { @class = "btn btn-info", onclick = "javascript:subirDatos();" })
+        <span>Página @ViewBag.Pagina de @ViewBag.PaginasTotales</span>
+        @Html.ActionLink("Siguiente", "ProximoPaso", "Pasos", new { id = ViewBag.Pagina }, new { @class = "btn btn-info", onclick = "javascript:subirDatos();" })
+    </div>
+</div>

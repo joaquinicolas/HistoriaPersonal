@@ -1,0 +1,61 @@
+﻿.form-control{
+    margin: 0;
+}
+.titulo-control{
+    /*text-align: right;*/
+}
+input[type='text']{
+    width: 90%;
+}
+.titulo-radio{
+    margin-top: 4px;
+}
+.table > tbody > tr > td{
+    text-align: center;
+}
+.center{
+    margin: auto;
+}
+.img-mujeres{
+    width: 40%;
+    float: right;
+}
+.img-hombres{
+    width: 40%;
+    float: left;
+}
+.row-left {
+    padding-left: 15% !important;
+    margin-bottom: 2px;
+}
+.row-left * {
+    font-weight: bold;
+}
+
+.row-left input
+{
+    font-weight: bold;
+}
+
+.table > thead:first-child > tr:first-child > th {
+    padding-top: 0;
+    text-align: center;
+}
+
+.container-botones-inferiores{
+    margin-top: 5px;
+}
+
+.titulo-dentro-tabla
+{
+    font-weight: bold;
+    padding-bottom: 5px !important;
+}
+
+.textarea
+{
+    height: 100px !important; 
+    line-height: 1 !important; 
+    font-weight: normal;
+    padding: 2px !important;
+}

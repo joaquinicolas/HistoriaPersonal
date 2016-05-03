@@ -1,0 +1,881 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HistoriaPersonalCormillotModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="HistoriaPersonalCormillotEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="HistoriaPersonalCormillotModel.C__MigrationHistory" />
+    <EntitySet Name="DatosPersonales" EntityType="HistoriaPersonalCormillotModel.DatosPersonales" />
+    <EntitySet Name="Usuario" EntityType="HistoriaPersonalCormillotModel.Usuario" />
+    <AssociationSet Name="FK_dbo_DatosPersonales_dbo_Usuario_Usuario_Id" Association="HistoriaPersonalCormillotModel.FK_dbo_DatosPersonales_dbo_Usuario_Usuario_Id">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="DatosPersonales" EntitySet="DatosPersonales" />
+    </AssociationSet>
+    <EntitySet Name="Rol" EntityType="HistoriaPersonalCormillotModel.Rol" />
+    <AssociationSet Name="FK_Usuario_Rol" Association="HistoriaPersonalCormillotModel.FK_Usuario_Rol">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <EntitySet Name="Paso" EntityType="HistoriaPersonalCormillotModel.Paso" />
+    <EntitySet Name="RelacionTratamientoMotivacion" EntityType="HistoriaPersonalCormillotModel.RelacionTratamientoMotivacion" />
+    <AssociationSet Name="FK_RelacionTratamientoMotivacion_Usuario" Association="HistoriaPersonalCormillotModel.FK_RelacionTratamientoMotivacion_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="RelacionTratamientoMotivacion" EntitySet="RelacionTratamientoMotivacion" />
+    </AssociationSet>
+    <EntitySet Name="Consejo" EntityType="HistoriaPersonalCormillotModel.Consejo" />
+    <AssociationSet Name="FK_Consejo_Paso" Association="HistoriaPersonalCormillotModel.FK_Consejo_Paso">
+      <End Role="Paso" EntitySet="Paso" />
+      <End Role="Consejo" EntitySet="Consejo" />
+    </AssociationSet>
+    <EntitySet Name="RelacionTratamientoMotivacion2" EntityType="HistoriaPersonalCormillotModel.RelacionTratamientoMotivacion2" />
+    <AssociationSet Name="FK_RelacionTratamientoMotivacion2_Usuario" Association="HistoriaPersonalCormillotModel.FK_RelacionTratamientoMotivacion2_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="RelacionTratamientoMotivacion2" EntitySet="RelacionTratamientoMotivacion2" />
+    </AssociationSet>
+    <EntitySet Name="RelacionTratamientoMotivacion3" EntityType="HistoriaPersonalCormillotModel.RelacionTratamientoMotivacion3" />
+    <AssociationSet Name="FK_RelacionTratamientoMotivacion3_Usuario" Association="HistoriaPersonalCormillotModel.FK_RelacionTratamientoMotivacion3_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="RelacionTratamientoMotivacion3" EntitySet="RelacionTratamientoMotivacion3" />
+    </AssociationSet>
+    <EntitySet Name="AntecedentesFamiliares" EntityType="HistoriaPersonalCormillotModel.AntecedentesFamiliares" />
+    <EntitySet Name="SuEstadoClinico" EntityType="HistoriaPersonalCormillotModel.SuEstadoClinico" />
+    <AssociationSet Name="FK_AntecedentesFamiliares_Usuario" Association="HistoriaPersonalCormillotModel.FK_AntecedentesFamiliares_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="AntecedentesFamiliares" EntitySet="AntecedentesFamiliares" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuEstadoClinico_Usuario" Association="HistoriaPersonalCormillotModel.FK_SuEstadoClinico_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="SuEstadoClinico" EntitySet="SuEstadoClinico" />
+    </AssociationSet>
+    <EntitySet Name="Sintomas" EntityType="HistoriaPersonalCormillotModel.Sintomas" />
+    <AssociationSet Name="FK_Sintomas_Usuario" Association="HistoriaPersonalCormillotModel.FK_Sintomas_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Sintomas" EntitySet="Sintomas" />
+    </AssociationSet>
+    <EntitySet Name="Sintomas2" EntityType="HistoriaPersonalCormillotModel.Sintomas2" />
+    <AssociationSet Name="FK_Sintomas2_Usuario" Association="HistoriaPersonalCormillotModel.FK_Sintomas2_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Sintomas2" EntitySet="Sintomas2" />
+    </AssociationSet>
+    <EntitySet Name="Sintomas3" EntityType="HistoriaPersonalCormillotModel.Sintomas3" />
+    <AssociationSet Name="FK_Sintomas3_Usuario" Association="HistoriaPersonalCormillotModel.FK_Sintomas3_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Sintomas3" EntitySet="Sintomas3" />
+    </AssociationSet>
+    <EntitySet Name="SusAllegadosSuRelacionConLaComida" EntityType="HistoriaPersonalCormillotModel.SusAllegadosSuRelacionConLaComida" />
+    <AssociationSet Name="FK_SusAllegadosSuRelacionConLaComida_Usuario" Association="HistoriaPersonalCormillotModel.FK_SusAllegadosSuRelacionConLaComida_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="SusAllegadosSuRelacionConLaComida" EntitySet="SusAllegadosSuRelacionConLaComida" />
+    </AssociationSet>
+    <EntitySet Name="Preferencias" EntityType="HistoriaPersonalCormillotModel.Preferencias" />
+    <AssociationSet Name="FK_Preferencias_Usuario" Association="HistoriaPersonalCormillotModel.FK_Preferencias_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Preferencias" EntitySet="Preferencias" />
+    </AssociationSet>
+    <EntitySet Name="Habitos" EntityType="HistoriaPersonalCormillotModel.Habitos" />
+    <AssociationSet Name="FK_Habitos_Usuario" Association="HistoriaPersonalCormillotModel.FK_Habitos_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Habitos" EntitySet="Habitos" />
+    </AssociationSet>
+    <EntitySet Name="Preferencias2" EntityType="HistoriaPersonalCormillotModel.Preferencias2" />
+    <AssociationSet Name="FK_Preferencias2_Usuario" Association="HistoriaPersonalCormillotModel.FK_Preferencias2_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Preferencias2" EntitySet="Preferencias2" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
+    <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="DatosPersonales">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="usuario_Id" Type="Int32" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <Property Name="NombreyApellido" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="FechaNacimiento" Type="DateTime" Precision="3" />
+    <Property Name="Edad" Type="Int32" />
+    <Property Name="EstadoCivil" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ViveCon" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Hijos" Type="Int32" />
+    <Property Name="EdadesySexo" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ObraSocialoPrepago" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="NroAfiliado" Type="Int32" />
+    <NavigationProperty Name="Usuario" Relationship="HistoriaPersonalCormillotModel.FK_dbo_DatosPersonales_dbo_Usuario_Usuario_Id" FromRole="DatosPersonales" ToRole="Usuario" />
+    <Property Type="String" Name="Domicilio" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TelEmergenciaObraSocial" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EstudiosCursados" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ActividadActual" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DireccionCorrespondencia" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TelMensajes1" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HorarioMensajesDesde1" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HorarioMensajesHasta1" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TelMensajes2" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HorarioMensajesDesde2" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HorarioMensajesHasta2" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TelCelular" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TelBeeper" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NecesidadNombre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NecesidadTel" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PacienteSiNo" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PacienteAño" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="ConocioClinicaOtroPaciente" />
+    <Property Type="Boolean" Name="ConocioClinicaDiarios" />
+    <Property Type="Boolean" Name="ConocioClinicaRevistas" />
+    <Property Type="Boolean" Name="ConocioClinicaTV" />
+    <Property Type="Boolean" Name="ConocioClinicaInternet" />
+    <Property Type="String" Name="ConocioClinicaOtro" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" Nullable="false" />
+    <NavigationProperty Name="DatosPersonales" Relationship="HistoriaPersonalCormillotModel.FK_dbo_DatosPersonales_dbo_Usuario_Usuario_Id" FromRole="Usuario" ToRole="DatosPersonales" />
+    <Property Type="Int32" Name="IdRol" Nullable="false" />
+    <NavigationProperty Name="Rol" Relationship="HistoriaPersonalCormillotModel.FK_Usuario_Rol" FromRole="Usuario" ToRole="Rol" />
+    <NavigationProperty Name="RelacionTratamientoMotivacion" Relationship="HistoriaPersonalCormillotModel.FK_RelacionTratamientoMotivacion_Usuario" FromRole="Usuario" ToRole="RelacionTratamientoMotivacion" />
+    <NavigationProperty Name="RelacionTratamientoMotivacion2" Relationship="HistoriaPersonalCormillotModel.FK_RelacionTratamientoMotivacion2_Usuario" FromRole="Usuario" ToRole="RelacionTratamientoMotivacion2" />
+    <NavigationProperty Name="RelacionTratamientoMotivacion3" Relationship="HistoriaPersonalCormillotModel.FK_RelacionTratamientoMotivacion3_Usuario" FromRole="Usuario" ToRole="RelacionTratamientoMotivacion3" />
+    <NavigationProperty Name="AntecedentesFamiliares" Relationship="HistoriaPersonalCormillotModel.FK_AntecedentesFamiliares_Usuario" FromRole="Usuario" ToRole="AntecedentesFamiliares" />
+    <NavigationProperty Name="SuEstadoClinico" Relationship="HistoriaPersonalCormillotModel.FK_SuEstadoClinico_Usuario" FromRole="Usuario" ToRole="SuEstadoClinico" />
+    <NavigationProperty Name="Sintomas" Relationship="HistoriaPersonalCormillotModel.FK_Sintomas_Usuario" FromRole="Usuario" ToRole="Sintomas" />
+    <NavigationProperty Name="Sintomas2" Relationship="HistoriaPersonalCormillotModel.FK_Sintomas2_Usuario" FromRole="Usuario" ToRole="Sintomas2" />
+    <NavigationProperty Name="Sintomas3" Relationship="HistoriaPersonalCormillotModel.FK_Sintomas3_Usuario" FromRole="Usuario" ToRole="Sintomas3" />
+    <NavigationProperty Name="SusAllegadosSuRelacionConLaComida" Relationship="HistoriaPersonalCormillotModel.FK_SusAllegadosSuRelacionConLaComida_Usuario" FromRole="Usuario" ToRole="SusAllegadosSuRelacionConLaComida" />
+    <NavigationProperty Name="Preferencias" Relationship="HistoriaPersonalCormillotModel.FK_Preferencias_Usuario" FromRole="Usuario" ToRole="Preferencias" />
+    <NavigationProperty Name="Habitos" Relationship="HistoriaPersonalCormillotModel.FK_Habitos_Usuario" FromRole="Usuario" ToRole="Habitos" />
+    <NavigationProperty Name="Preferencias2" Relationship="HistoriaPersonalCormillotModel.FK_Preferencias2_Usuario" FromRole="Usuario" ToRole="Preferencias2" />
+  </EntityType>
+  <Association Name="FK_dbo_DatosPersonales_dbo_Usuario_Usuario_Id">
+    <End Role="Usuario" Type="HistoriaPersonalCormillotModel.Usuario" Multiplicity="1" />
+    <End Role="DatosPersonales" Type="HistoriaPersonalCormillotModel.DatosPersonales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DatosPersonales">
+        <PropertyRef Name="usuario_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Usuario" Relationship="HistoriaPersonalCormillotModel.FK_Usuario_Rol" FromRole="Rol" ToRole="Usuario" />
+  </EntityType>
+  <Association Name="FK_Usuario_Rol">
+    <End Type="HistoriaPersonalCormillotModel.Rol" Role="Rol" Multiplicity="1" />
+    <End Type="HistoriaPersonalCormillotModel.Usuario" Role="Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="IdRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Paso">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Orden" Nullable="false" />
+    <NavigationProperty Name="Consejo" Relationship="HistoriaPersonalCormillotModel.FK_Consejo_Paso" FromRole="Paso" ToRole="Consejo" />
+  </EntityType>
+  <EntityType Name="RelacionTratamientoMotivacion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IdUsuario" Nullable="false" />
+    <NavigationProperty Name="Usuario" Relationship="HistoriaPersonalCormillotModel.FK_RelacionTratamientoMotivacion_Usuario" FromRole="RelacionTratamientoMotivacion" ToRole="Usuario" />
+    <Property Type="String" Name="Razon1" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Razon2" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Razon3" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="QueDeseaCambiar" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Motivacion" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="MantenerPeso" />
+    <Property Type="Decimal" Name="SubirPeso" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="BajarPeso" Precision="18" Scale="2" />
+    <Property Type="String" Name="TiempoHacerConPeso" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ExpectativaCambiarPeso" />
+    <Property Type="Int32" Name="ConfianzaCambiarPeso" />
+    <Property Type="String" Name="EsperaTratamiento" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Medicamentos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CirugiaBariatrica" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CirugiaPlastica" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Hierbas" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SubirPesoV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BajarPesoV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_RelacionTratamientoMotivacion_Usuario">
+    <End Type="HistoriaPersonalCormillotModel.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="HistoriaPersonalCormillotModel.RelacionTratamientoMotivacion" Role="RelacionTratamientoMotivacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RelacionTratamientoMotivacion">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Consejo">
+    <Key>
+      <PropertyRef Name="IdPaso" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="TextoIzquierdo" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TextoDerecho" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="IdPaso" Nullable="false" />
+    <NavigationProperty Name="Paso" Relationship="HistoriaPersonalCormillotModel.FK_Consejo_Paso" FromRole="Consejo" ToRole="Paso" />
+    <Property Name="SrcImagen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Consejo_Paso">
+    <End Type="HistoriaPersonalCormillotModel.Paso" Role="Paso" Multiplicity="1" />
+    <End Type="HistoriaPersonalCormillotModel.Consejo" Role="Consejo" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Paso">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Consejo">
+        <PropertyRef Name="IdPaso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="RelacionTratamientoMotivacion2">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="IdUsuario" Nullable="false" />
+    <NavigationProperty Name="Usuario" Relationship="HistoriaPersonalCormillotModel.FK_RelacionTratamientoMotivacion2_Usuario" FromRole="RelacionTratamientoMotivacion2" ToRole="Usuario" />
+    <Property Type="String" Name="HaRealizadoTratamiento" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CuantosTratamiento" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="TratamientoClinicaCormillot" />
+    <Property Type="Boolean" Name="TratamientoPsiquiatria" />
+    <Property Type="Boolean" Name="TratamientoDietaClub" />
+    <Property Type="Boolean" Name="TratamientoAlco" />
+    <Property Type="Boolean" Name="TratamientoPsicoterapia" />
+    <Property Type="Boolean" Name="TratamientoActividadFisica" />
+    <Property Type="Boolean" Name="TratamientoHomeopatia" />
+    <Property Type="Boolean" Name="TratamientoDietasPorSuCuenta" />
+    <Property Type="Boolean" Name="TratamientoMedicoODietista" />
+    <Property Type="Boolean" Name="TratamientoInternet" />
+    <Property Type="Boolean" Name="TratamientoCirugia" />
+    <Property Type="Boolean" Name="TratamientoMedicamentos" />
+    <Property Type="Boolean" Name="TratamientoOtros" />
+    <Property Type="String" Name="TratamientoCuales" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CuantoBajoEnTratamientosAnteriores" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EfectoNegativoTratamientosAnteriores" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CualEfectoNegativoTratamientosAnteriores" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MotivoTratamientosAnterioresFallaron" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="BarreraTratamientoHorarios" />
+    <Property Type="Boolean" Name="BarreraTratamientoDesorden" />
+    <Property Type="Boolean" Name="BarreraTratamientoEstres" />
+    <Property Type="Boolean" Name="BarreraTratamientoEstadoDeAnimo" />
+    <Property Type="Boolean" Name="BarreraTratamientoFamilia" />
+    <Property Type="Boolean" Name="BarreraTratamientoVidaSocial" />
+    <Property Type="Boolean" Name="BarreraTratamientoTrabajo" />
+    <Property Type="Boolean" Name="BarreraTratamientoMotivacion" />
+    <Property Type="Boolean" Name="BarreraTratamientoOtro" />
+    <Property Type="String" Name="BarreraTratamientoCual" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="AbandonarTratamientoNoModificarPeso" />
+    <Property Type="Boolean" Name="AbandonarTratamientoProblemasPersonales" />
+    <Property Type="Boolean" Name="AbandonarTratamientoVidaSocial" />
+    <Property Type="Boolean" Name="AbandonarTratamientoModificarloPoco" />
+    <Property Type="Boolean" Name="AbandonarTratamientoProblemasEconomicos" />
+    <Property Type="Boolean" Name="AbandonarTratamientoSentirsePresionado" />
+    <Property Type="Boolean" Name="AbandonarTratamientoSalirUnaVezYAbandonar" />
+    <Property Type="Boolean" Name="AbandonarTratamientoLlevarseMalConElEquipo" />
+    <Property Type="Boolean" Name="AbandonarTratamientoAburrirseDeLaDieta" />
+    <Property Type="Boolean" Name="AbandonarTratamientoDistanciaALaQueVive" />
+    <Property Type="Boolean" Name="AbandonarTratamientoPocoApoyoFamiliar" />
+    <Property Type="String" Name="AbandonarTratamientoOtras" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="PesoActualAlimentacion" />
+    <Property Type="Boolean" Name="PesoActualAnsiedad" />
+    <Property Type="Boolean" Name="PesoActualProblemasDeSalud" />
+    <Property Type="Boolean" Name="PesoActualEmbarazos" />
+    <Property Type="Boolean" Name="PesoActualAlcohol" />
+    <Property Type="Boolean" Name="PesoActualEstres" />
+    <Property Type="Boolean" Name="PesoActualMetabolismo" />
+    <Property Type="Boolean" Name="PesoActualHerencia" />
+    <Property Type="Boolean" Name="PesoActualSedentarismo" />
+    <Property Type="Boolean" Name="PesoActualMedicacion" />
+    <Property Type="Boolean" Name="PesoActualDejarDeFumar" />
+    <Property Type="Boolean" Name="PesoActualDepresion" />
+    <Property Type="Boolean" Name="PesoActualPerdidas" />
+    <Property Type="Boolean" Name="PesoActualMenopausia" />
+    <Property Type="Boolean" Name="PesoActualOtros" />
+    <Property Type="String" Name="PesoActualOtrosTexto" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_RelacionTratamientoMotivacion2_Usuario">
+    <End Type="HistoriaPersonalCormillotModel.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="HistoriaPersonalCormillotModel.RelacionTratamientoMotivacion2" Role="RelacionTratamientoMotivacion2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RelacionTratamientoMotivacion2">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="RelacionTratamientoMotivacion3">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUsuario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Usuario" Relationship="HistoriaPersonalCormillotModel.FK_RelacionTratamientoMotivacion3_Usuario" FromRole="RelacionTratamientoMotivacion3" ToRole="Usuario" />
+    <Property Name="PesoNacer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MaximoAdulto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Minimo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Edad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Deseado" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PesoEsta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PesoComodo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CalidadVida" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="RelacionFamiliar" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="VidaSocial" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="VidaPareja" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="VidaLaboral" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Economia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Ridiculo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Asiento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Pasillos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Sillas" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GustariaSer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Ahora" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_RelacionTratamientoMotivacion3_Usuario">
+    <End Type="HistoriaPersonalCormillotModel.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="HistoriaPersonalCormillotModel.RelacionTratamientoMotivacion3" Role="RelacionTratamientoMotivacion3" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RelacionTratamientoMotivacion3">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="AntecedentesFamiliares">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IdUsuario" Nullable="false" />
+    <Property Type="String" Name="ObesidadPadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ObesidadMadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ObesidadAbuelos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ObesidadConyuge" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ObesidadHnos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ObesidadHijos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DiabetesPadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DiabetesMadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DiabetesAbuelos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DiabetesConyuge" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DiabetesHnos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DiabetesHijos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Usuario" Relationship="HistoriaPersonalCormillotModel.FK_AntecedentesFamiliares_Usuario" FromRole="AntecedentesFamiliares" ToRole="Usuario" />
+    <Property Type="String" Name="ColesterolPadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ColesterolMadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ColesterolAbuelos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ColesterolConyuge" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ColesterolHnos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ColesterolHijos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TrigliceridosPadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TrigliceridosMadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TrigliceridosAbuelos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TrigliceridosConyuge" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TrigliceridosHnos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TrigliceridosHijos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CardiacaPadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CardiacaMadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CardiacaAbuelos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CardiacaConyuge" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CardiacaHnos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CardiacaHijos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DerramePadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DerrameMadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DerrameAbuelos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DerrameConyuge" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DerrameHnos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DerrameHijos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HipertensionPadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HipertensionMadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HipertensionAbuelos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HipertensionConyuge" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HipertensionHnos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HipertensionHijos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SubitaPadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SubitaMadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SubitaAbuelos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SubitaConyuge" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SubitaHnos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SubitaHijos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CancerPadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CancerMadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CancerAbuelos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CancerConyuge" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CancerHnos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CancerHijos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DepresionPadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DepresionMadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DepresionAbuelos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DepresionConyuge" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DepresionHnos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DepresionHijos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PreocupacionPadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PreocupacionMadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PreocupacionAbuelos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PreocupacionConyuge" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PreocupacionHnos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PreocupacionHijos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PsicologicosPadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PsicologicosMadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PsicologicosAbuelos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PsicologicosConyuge" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PsicologicosHnos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PsicologicosHijos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DrogasPadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DrogasMadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DrogasAbuelos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DrogasConyuge" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DrogasHnos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DrogasHijos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FamiliaMenos60" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="QuienMenos60" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CausaMenos60" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="VivePadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ViveMadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ViveAbuelos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ViveConyuge" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ViveHnos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ViveHijos" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SuEstadoClinico">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IdUsuario" Nullable="false" />
+    <Property Type="String" Name="SaludPeriodo" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="TuvoIntervenciones" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MedicacionTomada" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MedicacionActual" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DejariaMedicacion" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="TratamientoPsicologico" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CausaTratamientoPs" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DuracionTratamientoPs" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Usuario" Relationship="HistoriaPersonalCormillotModel.FK_SuEstadoClinico_Usuario" FromRole="SuEstadoClinico" ToRole="Usuario" />
+    <Property Type="String" Name="RadioMedicacionActual" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioDejariaMedicacion" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioTratamientoPs" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PrimerM" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Ciclo" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UltimaM" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioEmbarazada" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="TiempoEmbarazo" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioAnticonceptivo" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MetodoUsado" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FechaUltimoP" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioEstadoAnimico" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioDolores" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FechaUltimaM" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioVello" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FrecuenciaDep" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UltimoExamenPros" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Antigeno" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioColon" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ComentarEstudio" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_AntecedentesFamiliares_Usuario">
+    <End Type="HistoriaPersonalCormillotModel.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="HistoriaPersonalCormillotModel.AntecedentesFamiliares" Role="AntecedentesFamiliares" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AntecedentesFamiliares">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuEstadoClinico_Usuario">
+    <End Type="HistoriaPersonalCormillotModel.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="HistoriaPersonalCormillotModel.SuEstadoClinico" Role="SuEstadoClinico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SuEstadoClinico">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Sintomas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IdUsuario" Nullable="false" />
+    <Property Type="String" Name="SienteMal" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreeProblemaSalud" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EnfermedadRespiratoria" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Ronquera" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Ronca" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Despierta" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="RespirarDormir" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SuenioDia" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DificultadRespirarEsfuerzo" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ProblemasCardiacos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DolorPecho" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Palpitaciones" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PresionAlta" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CalculosUrinarios" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="InfeccionViasUrinarias" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PerdidaFuerzaOrinar" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IncontinenciaUrinaria" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Usuario" Relationship="HistoriaPersonalCormillotModel.FK_Sintomas_Usuario" FromRole="Sintomas" ToRole="Usuario" />
+    <Property Type="String" Name="DolorPiernasCaminar" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Varices" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="InfeccionesPiernas" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PiesHinchados" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Calambres" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Hormigueos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ArticulacionesRojas" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ProblemasGenitales" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PerdidaSangre" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Picazon" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PicazonDonde" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Ganglios" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ProblemasOido" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ProblemasVista" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EnfermedadTiroidea" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PielSeca" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UniasFragiles" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CabelloSeco" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SensibilidadFrio" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CansancioInexplicable" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Sintomas_Usuario">
+    <End Type="HistoriaPersonalCormillotModel.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="HistoriaPersonalCormillotModel.Sintomas" Role="Sintomas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sintomas">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Sintomas2">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IdUsuario" Nullable="false" />
+    <Property Type="String" Name="ColesterolAumentado" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TrigliceridosAumentados" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Gota" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Osteoporosis" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Diabetes" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Alergias" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AlergiasQUe" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DigestionLenta" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DolorEstomago" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Vomitos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Meteorismo" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Constipacion" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Diarrrea" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Hemorroides" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IntoleranciaAlimento" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ProblemasPiel" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Verrugas" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Manchas" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Acne" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CaidaCabello" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Usuario" Relationship="HistoriaPersonalCormillotModel.FK_Sintomas2_Usuario" FromRole="Sintomas2" ToRole="Usuario" />
+    <Property Type="String" Name="ProblemaDental" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Llagas" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SangradoEncias" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ProblemaNeurologico" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DoloresCabeza" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Mareos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Triste" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LlantoFacil" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PocoPlacer" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PerdidaInteres" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PocaInteraccion" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Aislamiento" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DificultadConcentrarse" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Indecision" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SentimientoCulpa" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Aburrimiento" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SoloMundo" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SensacionVacio" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Sintomas2_Usuario">
+    <End Type="HistoriaPersonalCormillotModel.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="HistoriaPersonalCormillotModel.Sintomas2" Role="Sintomas2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sintomas2">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Sintomas3">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="IdUsuario" Nullable="false" />
+    <NavigationProperty Name="Usuario" Relationship="HistoriaPersonalCormillotModel.FK_Sintomas3_Usuario" FromRole="Sintomas3" ToRole="Usuario" />
+    <Property Type="String" Name="IrritacionIncontrolable" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="OscilacionesAnimo" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Nervios" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Enojo" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Autolesiones" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Agresion" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Furia" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Habla" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DuermeMenos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EstarCima" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AumentoSexual" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="GastaDinero" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Apuestas" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ActividadUsual" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Ansioso" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PreocupacionesExcesivas" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TensionMuscular" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EstadoAnimo" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Miedos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PensamientosIncomodos" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NoPlacerSexual" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DeseoSexual" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DificultadesSexuales" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EvitarSexuales" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Autoestima" />
+    <Property Type="String" Name="PerdidasSiNo" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CualesPerdidas" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TraumaticoSiNo" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TraumaticoQue" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TraumaticoCuando" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Sintomas3_Usuario">
+    <End Type="HistoriaPersonalCormillotModel.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="HistoriaPersonalCormillotModel.Sintomas3" Role="Sintomas3" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sintomas3">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="SusAllegadosSuRelacionConLaComida">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IdUsuario" Nullable="false" />
+    <Property Type="String" Name="CantPesoNormal" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="TienenPesoNormal" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CantSobrepeso" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="TienenSobrepeso" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioUrgenciaDeComer" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioComeDeNoche" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioComeParaDormir" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioComeSinControl" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioLaxantes" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioDiureticos" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioInduceVomito" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioRestringeAlimento" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioActFisicaExagerada" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioPorcentajeIngesta" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="AlergiaAComida" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Usuario" Relationship="HistoriaPersonalCormillotModel.FK_SusAllegadosSuRelacionConLaComida_Usuario" FromRole="SusAllegadosSuRelacionConLaComida" ToRole="Usuario" />
+  </EntityType>
+  <Association Name="FK_SusAllegadosSuRelacionConLaComida_Usuario">
+    <End Type="HistoriaPersonalCormillotModel.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="HistoriaPersonalCormillotModel.SusAllegadosSuRelacionConLaComida" Role="SusAllegadosSuRelacionConLaComida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SusAllegadosSuRelacionConLaComida">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Preferencias">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Idusuario" Nullable="false" />
+    <Property Type="String" Name="SuDieta" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioAlimentoPreferido" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="AlimentoPreferido" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioTipoAlimentoPreferido" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioDesordenado" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioSalteo" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioPicoteo" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioHagoAyunos" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioDepresion" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioAnsiedad" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioEstres" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioEnojo" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioAburrimiento" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioAlegria" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioDescontrol" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioCansancio" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioPreSentimental" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioEmbarazo" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Usuario" Relationship="HistoriaPersonalCormillotModel.FK_Preferencias_Usuario" FromRole="Preferencias" ToRole="Usuario" />
+  </EntityType>
+  <Association Name="FK_Preferencias_Usuario">
+    <End Type="HistoriaPersonalCormillotModel.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="HistoriaPersonalCormillotModel.Preferencias" Role="Preferencias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Preferencias">
+        <PropertyRef Name="Idusuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Habitos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="IdUsuario" Nullable="false" />
+    <Property Type="Boolean" Name="DificultadParaQuedarseDormido" Nullable="false" />
+    <Property Type="Boolean" Name="SeDespiertaDuranteLaNoche" Nullable="false" />
+    <Property Type="Boolean" Name="TienePesadillas" Nullable="false" />
+    <Property Type="Boolean" Name="DuermeDeDia" />
+    <Property Type="Boolean" Name="TomaPastillas" />
+    <Property Type="Boolean" Name="Fuma" />
+    <Property Type="Int32" Name="CuantosCigarrillosPorDia" />
+    <Property Type="String" Name="DejeFumarHace" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="VasosVino" />
+    <Property Type="Int32" Name="CervezaLatas" />
+    <Property Type="Int32" Name="BlancasMedidas" />
+    <Property Type="Int32" Name="OtrasMedidas" />
+    <Property Type="Boolean" Name="PreocupaManeraBeber" />
+    <Property Type="Boolean" Name="SienteCulpa" />
+    <Property Type="Boolean" Name="IntentoDejarBeber" />
+    <Property Type="Boolean" Name="LlamadoAtencion" />
+    <Property Type="Boolean" Name="TomaCalmarse" />
+    <Property Type="Boolean" Name="TomaASolas" />
+    <Property Type="String" Name="ActitudPadres" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ActitudHermanos" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ActitudConyuge" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ActitudHijos" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ActitudAmigos" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ActitudCompañeros" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RelacionHijos" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RelacionAmigos" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RelacionPareja" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RelacionFamilia" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RelacionCompañerosTrabajo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="HorasSueño" />
+    <Property Type="Boolean" Name="IntentoCambiarBebida" />
+    <Property Type="Boolean" Name="ParaDormirToma" />
+    <NavigationProperty Name="Usuario" Relationship="HistoriaPersonalCormillotModel.FK_Habitos_Usuario" FromRole="Habitos" ToRole="Usuario" />
+  </EntityType>
+  <Association Name="FK_Habitos_Usuario">
+    <End Type="HistoriaPersonalCormillotModel.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="HistoriaPersonalCormillotModel.Habitos" Role="Habitos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Habitos">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Preferencias2">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IdUsuario" Nullable="false" />
+    <Property Type="String" Name="RadioComo" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioMisBocados" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioVelocidad" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioMastico" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RadioSaboreo" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="Horario6a12" />
+    <Property Type="Boolean" Name="Horario12a16" />
+    <Property Type="Boolean" Name="Horario20a22" />
+    <Property Type="Boolean" Name="Horario22a24" />
+    <Property Type="Boolean" Name="Horario0a6" />
+    <Property Type="Boolean" Name="ViernesDesayuno" />
+    <Property Type="Boolean" Name="ViernesAlmuerzo" />
+    <Property Type="Boolean" Name="ViernesMerienda" />
+    <Property Type="Boolean" Name="ViernesCena" />
+    <Property Type="Boolean" Name="SabadoDesayuno" />
+    <Property Type="Boolean" Name="SabadoAlmuerzo" />
+    <Property Type="Boolean" Name="SabadoMerienda" />
+    <Property Type="Boolean" Name="SabadoCena" />
+    <Property Type="Boolean" Name="DomingoDesayuno" />
+    <Property Type="Boolean" Name="DomingoAlmuerzo" />
+    <Property Type="Boolean" Name="DomingoMerienda" />
+    <Property Type="Boolean" Name="DomingoCena" />
+    <Property Type="Boolean" Name="ComoMasSolo" />
+    <Property Type="Boolean" Name="ComoMasEnFlia" />
+    <Property Type="Boolean" Name="ComoMasConAmigos" />
+    <Property Type="Boolean" Name="ComoMasEnFiestas" />
+    <Property Type="Boolean" Name="ComoMasEnPareja" />
+    <Property Type="Boolean" Name="MientrasCocino" />
+    <Property Type="Boolean" Name="MientrasTvOCompu" />
+    <Property Type="Boolean" Name="LugarCasa" />
+    <Property Type="Boolean" Name="LugarColegio" />
+    <Property Type="Boolean" Name="LugarTrabajo" />
+    <Property Type="Boolean" Name="LugarTraslados" />
+    <Property Type="Boolean" Name="LugarRestaurante" />
+    <Property Type="Boolean" Name="LugarKiosko" />
+    <Property Type="Boolean" Name="LugarCalle" />
+    <Property Type="Boolean" Name="LugarViaje" />
+    <Property Type="Boolean" Name="LugarVacaciones" />
+    <Property Type="Boolean" Name="LugarClub" />
+    <NavigationProperty Name="Usuario" Relationship="HistoriaPersonalCormillotModel.FK_Preferencias2_Usuario" FromRole="Preferencias2" ToRole="Usuario" />
+  </EntityType>
+  <Association Name="FK_Preferencias2_Usuario">
+    <End Type="HistoriaPersonalCormillotModel.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="HistoriaPersonalCormillotModel.Preferencias2" Role="Preferencias2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Preferencias2">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
