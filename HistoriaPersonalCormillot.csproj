@@ -184,6 +184,7 @@
     <Compile Include="Controllers\AdministradorController.cs" />
     <Compile Include="Controllers\ImpresionController.cs" />
     <Compile Include="Controllers\PasosController.cs" />
+    <Compile Include="Controllers\RegistroController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="CormillotHistoriaPersonalCustom.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -434,6 +435,7 @@
     <Content Include="Views\Impresion\Page9.cshtml" />
     <Content Include="Views\Impresion\Imprimir.cshtml" />
     <Content Include="Views\Impresion\ComoImprimir.cshtml" />
+    <Content Include="Views\Registro\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
