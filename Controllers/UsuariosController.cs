@@ -51,16 +51,15 @@ namespace HistoriaPersonalCormillot.Controllers
 
         public ActionResult RealLogin()
         {
-            int _id = 0;
-             _id = Convert.ToInt16(Request.QueryString["id"]);
+            int _id = 2;//Convert.ToInt16(Request.QueryString["id"]);
             Usuario user = new Usuario();
             if (_id == 0)
             {
-                Guid _idx = Guid.Parse(Request.QueryString["idx"]);
-                user = model.Usuario.Where(u => u.idx == _idx).FirstOrDefault();
+                Guid idx = Guid.Parse(Request.QueryString["idx"]);
+                user = model.Usuario.FirstOrDefault(u => u.idx == idx);
             }
             else
-                user = model.Usuario.Where(u => u.Id == _id).First();
+                user = model.Usuario.First(u => u.Id == _id);
 
             Session["NombreUsuario"] = user.Username;
             Session["IdUsuario"] = user.Id;

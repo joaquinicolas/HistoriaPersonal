@@ -31,8 +31,8 @@ namespace HistoriaPersonalCormillot.Controllers
         public ActionResult Page1()
         {
             Page1 pag1 = new Page1();
-            pag1.datper = model.DatosPersonales.Where(d => d.usuario_Id == idUsuario).First();
-            pag1.relac = model.RelacionTratamientoMotivacion.Where(r => r.IdUsuario == idUsuario).First();
+            pag1.datper = model?.DatosPersonales.First(d => d.usuario_Id == idUsuario);
+            pag1.relac = model?.RelacionTratamientoMotivacion.First(r => r.IdUsuario == idUsuario);
 
             return View(pag1);
         }
@@ -40,44 +40,52 @@ namespace HistoriaPersonalCormillot.Controllers
         public ActionResult Page2()
         {
             Page2 pag2 = new Page2();
-            pag2.relac2 = model.RelacionTratamientoMotivacion2.Where(d => d.IdUsuario == idUsuario).First();
-            pag2.relac3 = model.RelacionTratamientoMotivacion3.Where(d => d.IdUsuario == idUsuario).First();
+            if (model != null)
+            {
+                pag2.relac2 = model.RelacionTratamientoMotivacion2.First(d => d.IdUsuario == idUsuario);
+                if (model.RelacionTratamientoMotivacion3 != null)
+                    pag2.relac3 = model.RelacionTratamientoMotivacion3.First(d => d.IdUsuario == idUsuario);
+            }
             return View(pag2);
         }
         
         public ActionResult Page3()
         {
-            Page3 pag3 = new Page3();
-            pag3.antec = model.AntecedentesFamiliares.Where(a => a.IdUsuario == idUsuario).First();
-            pag3.suestado = model.SuEstadoClinico.Where(Su => Su.IdUsuario == idUsuario).First();
+            Page3 pag3 = new Page3
+            {
+                antec = model?.AntecedentesFamiliares.First(a => a.IdUsuario == idUsuario),
+                suestado = model?.SuEstadoClinico.First(su => su.IdUsuario == idUsuario)
+            };
             return View(pag3);
         }
 
       public ActionResult Page4()
         {
-            Page4 pag4 = new Page4();
-            pag4.sintoma1 = model.Sintomas.Where(d => d.IdUsuario == idUsuario).First();
-            pag4.sintoma2 = model.Sintomas2.Where(d => d.IdUsuario == idUsuario).First();
-            pag4.sintoma3 = model.Sintomas3.Where(d => d.IdUsuario == idUsuario).First();
-            pag4.habitos = model.Habitos.Where(d => d.IdUsuario == idUsuario).First();
-            return View(pag4);
+          Page4 pag4 = new Page4
+          {
+              sintoma1 = model.Sintomas.First(d => d.IdUsuario == idUsuario),
+              sintoma2 = model.Sintomas2.First(d => d.IdUsuario == idUsuario),
+              sintoma3 = model.Sintomas3.First(d => d.IdUsuario == idUsuario),
+              habitos = model.Habitos.First(d => d.IdUsuario == idUsuario)
+          };
+          return View(pag4);
         }
 
         public ActionResult Page5()
       {
           Preferencias preferencias = model.Preferencias.FirstOrDefault(u => u.Idusuario == idUsuario);
-          SusAllegadosSuRelacionConLaComida allegados_comida = model.SusAllegadosSuRelacionConLaComida
+          SusAllegadosSuRelacionConLaComida allegadosComida = model.SusAllegadosSuRelacionConLaComida
               .FirstOrDefault(x => x.IdUsuario == idUsuario);
-            SusHabitos2 _sushabitos2 = model.SusHabitos2
+            SusHabitos2 sushabitos2 = model.SusHabitos2
          .FirstOrDefault(x => x.IdUsuario == idUsuario);
 
-            SusAllegadosRelacComPreferenciasViewModel allegados_preferencias = new SusAllegadosRelacComPreferenciasViewModel(
-                  allegados_comida,preferencias
+            SusAllegadosRelacComPreferenciasViewModel allegadosPreferencias = new SusAllegadosRelacComPreferenciasViewModel(
+                  allegadosComida,preferencias
                );
 
        
-            Page5 view_model = new Page5(allegados_comida, allegados_preferencias, _sushabitos2);
-            return View(view_model);
+            Page5 viewModel = new Page5(allegadosComida, allegadosPreferencias, sushabitos2);
+            return View(viewModel);
             
       }
 
@@ -91,84 +99,87 @@ namespace HistoriaPersonalCormillot.Controllers
                     x => x.IdUsuario == idUsuario
                 );
 
-            Preferencias2AlimentacionViewModel preferencias_alimentacionViewModel = new Preferencias2AlimentacionViewModel(
+            Preferencias2AlimentacionViewModel preferenciasAlimentacionViewModel = new Preferencias2AlimentacionViewModel(
                     preferencias2,alimentacion
                 );
-            Page6 viewModel = new Page6( preferencias2,preferencias_alimentacionViewModel);
+            Page6 viewModel = new Page6( preferencias2,preferenciasAlimentacionViewModel);
             return View(viewModel);
         }
 
         public ActionResult Page7()
         {
-            ComeDiaTipicoYFinde cuando_come = model.ComeDiaTipicoYFinde.FirstOrDefault(
+            ComeDiaTipicoYFinde cuandoCome = model.ComeDiaTipicoYFinde.FirstOrDefault(
                     x => x.IdUsuario == idUsuario
                 );
 
-            ComeDiaTipicoYFinde2 cuando_come2 = model.ComeDiaTipicoYFinde2.FirstOrDefault(
+            ComeDiaTipicoYFinde2 cuandoCome2 = model.ComeDiaTipicoYFinde2.FirstOrDefault(
                     x => x.IdUsuario == idUsuario
                 );
             Page7 page7 = new Page7(
-                    cuando_come,cuando_come2
+                    cuandoCome,cuandoCome2
                 );
             return View(page7);
         }
 
         public ActionResult Page8()
         {
-            ClasificacionAlimentacion clasificacion_alimentacion =
+            ClasificacionAlimentacion clasificacionAlimentacion =
                 model.ClasificacionAlimentacion.FirstOrDefault(
                     x => x.IdUsuario == idUsuario
                 );
-            ClasificacionAlimentacion2 clasificacion_alimentacion2 =
+            if (clasificacionAlimentacion == null) throw new ArgumentNullException(nameof(clasificacionAlimentacion));
+            ClasificacionAlimentacion2 clasificacionAlimentacion2 =
                 model.ClasificacionAlimentacion2.FirstOrDefault(
                     x => x.IdUsuario == idUsuario
                 );
+            if (clasificacionAlimentacion2 == null)
+                throw new ArgumentNullException(nameof(clasificacionAlimentacion2));
 
-            ClasificacionAlimentacion3 clasificacion_alimentacion3 =
+            ClasificacionAlimentacion3 clasificacionAlimentacion3 =
                 model.ClasificacionAlimentacion3.FirstOrDefault(
                     x => x.IdUsuario == idUsuario
                 );
 
-            ClasificacionAlimentacion4 clasificacion_alimentacion4 =
+            ClasificacionAlimentacion4 clasificacionAlimentacion4 =
                 model.ClasificacionAlimentacion4.FirstOrDefault(
                     x => x.IdUsuario == idUsuario
                 );
 
-            ClasificacionAlimentacion5 clasificacion_alimentacion5 =
+            ClasificacionAlimentacion5 clasificacionAlimentacion5 =
                 model.ClasificacionAlimentacion5.FirstOrDefault(
                     x => x.IdUsuario == idUsuario
                 );
 
-            ClasificacionAlimentacion6 clasificacion_alimentacion6 =
+            ClasificacionAlimentacion6 clasificacionAlimentacion6 =
                 model.ClasificacionAlimentacion6.FirstOrDefault(
                     x => x.IdUsuario == idUsuario
                 );
 
-            ClasificacionAlimentacion1_2_3ViewModel clasificacion123_viewmodel =
+            ClasificacionAlimentacion1_2_3ViewModel clasificacion123Viewmodel =
                 new ClasificacionAlimentacion1_2_3ViewModel(
-                        clasificacion_alimentacion,clasificacion_alimentacion2,clasificacion_alimentacion3
+                        clasificacionAlimentacion,clasificacionAlimentacion2,clasificacionAlimentacion3
                     );
 
-            ClasificacionAlimentacion3_4_5_6ViewModel clasificacion_alimentacion_Viewmodel =
+            ClasificacionAlimentacion3_4_5_6ViewModel clasificacionAlimentacionViewmodel =
                 new ClasificacionAlimentacion3_4_5_6ViewModel(
-                        clasificacion_alimentacion3,clasificacion_alimentacion4,
-                        clasificacion_alimentacion5,clasificacion_alimentacion6
+                        clasificacionAlimentacion3,clasificacionAlimentacion4,
+                        clasificacionAlimentacion5,clasificacionAlimentacion6
                     );
 
             Page8 viewmodel = new Page8(
-                    clasificacion123_viewmodel,clasificacion_alimentacion_Viewmodel
+                    clasificacion123Viewmodel,clasificacionAlimentacionViewmodel
                 );
             return View(viewmodel);
         }
 
         public ActionResult Page9()
         {
-            ActividadFisica actividad_fisica = model.ActividadFisica
+            ActividadFisica actividadFisica = model.ActividadFisica
                 .FirstOrDefault(x => x.IdUsuario == idUsuario);
 
-            ComentarioGeneral comentario_gral = model.ComentarioGeneral
+            ComentarioGeneral comentarioGral = model.ComentarioGeneral
                 .FirstOrDefault( x => x.IdUsuario == idUsuario );
-            Page9 viewmodel = new Page9(actividad_fisica,comentario_gral);
+            Page9 viewmodel = new Page9(actividadFisica,comentarioGral);
             return View(viewmodel);
         }
        
