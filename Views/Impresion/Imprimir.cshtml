@@ -69,7 +69,7 @@
     </style>
 </head>
 <body class="loading">
-<button class="btn" type="button" onclick="imprimir()">Imprimir</button>
+<button class="btn" style="display: none" type="button" onclick="imprimir()">Imprimir</button>
 <script src="~/Scripts/jquery-1.11.3.min.js"></script>
     <div class="modal"><!-- Place at bottom of page --></div>
 <iframe src="~/Impresion/Page1" frameborder="0" width="1163px" height="721px"></iframe>
@@ -93,7 +93,7 @@
             $('body,html').removeClass("loading");
             $("iframe").css("display", "block");
             window.print();
-            
+            $('.btn').css('display', 'block');
         }, 10000);
         
         
