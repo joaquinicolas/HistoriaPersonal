@@ -64,14 +64,12 @@
     <label style="font-family:monospace;font-size:smaller;font-weight:bolder;">
         Pagina 18 de 18
     </label>
-    <a href="/Pasos/EnvioFormulario" class="btn btn-info">
+    <a href="~/Pasos/EnvioFormulario" class="btn btn-info">
         Enviar Formulario
     </a>
-   <a href="/Impresion/imprimir" class="btn btn-info">
+   <a href="~/Impresion/imprimir" class="btn btn-info">
        Imprimir
     </a>
-    <a href="/Impresion/ComoImprimir" class="btn btn-info">
-        ¿Como Imprimir? 
-    </a>
+    
     @*@Html.ActionLink("Siguiente", "ProximoPaso", "Pasos", new { id = ViewBag.Pagina }, new { @class = "btn btn-info", onclick = "javascript:subirDatos();" })*@
 </div>
