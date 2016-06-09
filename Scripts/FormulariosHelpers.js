@@ -1,4 +1,4 @@
-﻿function parsearFecha(fecha) {
+function parsearFecha(fecha) {
     var fecha2 = "";
     if (fecha.length == 10) {
         fecha2 = fecha.substring(6, 10) + "-" + fecha.substring(3, 5) + "-" + fecha.substring(0, 2);
@@ -25,7 +25,7 @@ var posteandoFormulario = false;
 function postForm(action) {
     $.ajax({
         method: "POST",
-        url: "/Pasos/" + action + "/",
+        url: "~/Pasos/" + action + "/",
         data: $("#form").serialize(),
         beforeSend: function (xhr) {
             if (posteandoFormulario) {
@@ -55,7 +55,7 @@ function postForm(action) {
 function postFormGuardar(action) {
     $.ajax({
         method: "POST",
-        url: "/Pasos/" + action + "/",
+        url: "~/Pasos/" + action + "/",
         data: $("#form").serialize(),
         beforeSend: function (xhr) {
             if (posteandoFormulario) {
