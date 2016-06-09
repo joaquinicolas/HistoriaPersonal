@@ -25,7 +25,7 @@ var posteandoFormulario = false;
 function postForm(action) {
     $.ajax({
         method: "POST",
-        url: "~/Pasos/" + action + "/",
+        url: "/HP/Pasos/" + action + "/",
         data: $("#form").serialize(),
         beforeSend: function (xhr) {
             if (posteandoFormulario) {
@@ -55,7 +55,7 @@ function postForm(action) {
 function postFormGuardar(action) {
     $.ajax({
         method: "POST",
-        url: "~/Pasos/" + action + "/",
+        url: "/HP/Pasos/" + action + "/",
         data: $("#form").serialize(),
         beforeSend: function (xhr) {
             if (posteandoFormulario) {
