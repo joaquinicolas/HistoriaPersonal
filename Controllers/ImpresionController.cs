@@ -28,8 +28,9 @@ namespace HistoriaPersonalCormillot.Controllers
             }
         }
 
-        public ActionResult Page1()
+        public ActionResult Page1(int usr)
         {
+            idUsuario = usr;
             Page1 pag1 = new Page1();
             pag1.datper = model?.DatosPersonales.First(d => d.usuario_Id == idUsuario);
             pag1.relac = model?.RelacionTratamientoMotivacion.First(r => r.IdUsuario == idUsuario);
@@ -37,8 +38,9 @@ namespace HistoriaPersonalCormillot.Controllers
             return View(pag1);
         }
 
-        public ActionResult Page2()
+        public ActionResult Page2(int usr)
         {
+            idUsuario = usr;
             Page2 pag2 = new Page2();
             if (model != null)
             {
@@ -49,8 +51,9 @@ namespace HistoriaPersonalCormillot.Controllers
             return View(pag2);
         }
         
-        public ActionResult Page3()
+        public ActionResult Page3(int usr)
         {
+            idUsuario = usr;
             Page3 pag3 = new Page3
             {
                 antec = model?.AntecedentesFamiliares.First(a => a.IdUsuario == idUsuario),
@@ -59,9 +62,10 @@ namespace HistoriaPersonalCormillot.Controllers
             return View(pag3);
         }
 
-      public ActionResult Page4()
+      public ActionResult Page4(int usr)
         {
-          Page4 pag4 = new Page4
+            idUsuario = usr;
+            Page4 pag4 = new Page4
           {
               sintoma1 = model.Sintomas.First(d => d.IdUsuario == idUsuario),
               sintoma2 = model.Sintomas2.First(d => d.IdUsuario == idUsuario),
@@ -71,9 +75,10 @@ namespace HistoriaPersonalCormillot.Controllers
           return View(pag4);
         }
 
-        public ActionResult Page5()
+        public ActionResult Page5(int usr)
       {
-          Preferencias preferencias = model.Preferencias.FirstOrDefault(u => u.Idusuario == idUsuario);
+            idUsuario = usr;
+            Preferencias preferencias = model.Preferencias.FirstOrDefault(u => u.Idusuario == idUsuario);
           SusAllegadosSuRelacionConLaComida allegadosComida = model.SusAllegadosSuRelacionConLaComida
               .FirstOrDefault(x => x.IdUsuario == idUsuario);
             SusHabitos2 sushabitos2 = model.SusHabitos2
@@ -89,8 +94,9 @@ namespace HistoriaPersonalCormillot.Controllers
             
       }
 
-        public ActionResult Page6()
+        public ActionResult Page6(int usr)
         {
+            idUsuario = usr;
             Preferencias2 preferencias2 = model.Preferencias2.FirstOrDefault(
                     x => x.IdUsuario == idUsuario
                 );
@@ -106,8 +112,9 @@ namespace HistoriaPersonalCormillot.Controllers
             return View(viewModel);
         }
 
-        public ActionResult Page7()
+        public ActionResult Page7(int usr)
         {
+            idUsuario = usr;
             ComeDiaTipicoYFinde cuandoCome = model.ComeDiaTipicoYFinde.FirstOrDefault(
                     x => x.IdUsuario == idUsuario
                 );
@@ -121,8 +128,9 @@ namespace HistoriaPersonalCormillot.Controllers
             return View(page7);
         }
 
-        public ActionResult Page8()
+        public ActionResult Page8(int usr)
         {
+            idUsuario = usr;
             ClasificacionAlimentacion clasificacionAlimentacion =
                 model.ClasificacionAlimentacion.FirstOrDefault(
                     x => x.IdUsuario == idUsuario
@@ -172,8 +180,9 @@ namespace HistoriaPersonalCormillot.Controllers
             return View(viewmodel);
         }
 
-        public ActionResult Page9()
+        public ActionResult Page9(int usr)
         {
+            idUsuario = usr;
             ActividadFisica actividadFisica = model.ActividadFisica
                 .FirstOrDefault(x => x.IdUsuario == idUsuario);
 
