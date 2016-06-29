@@ -69,6 +69,15 @@ namespace HistoriaPersonalCormillot.Controllers
                 return RedirectToAction("DatosPersonales", "Pasos");
         }
 
+        /// <summary>
+        /// IR A LA PAGINA PARA BUSCAR E IMPRIMIR EL FORMULARIO DE UN USUARIO
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult FormPrint()
+        {
+            return View("PrintForm", null);
+        }
+
         public ActionResult TraerFormulario(int idUsuar)
         {
             Usuario user = model.Usuario.Where(u => u.Id == idUsuar).First();
