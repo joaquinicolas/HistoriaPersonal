@@ -51,7 +51,7 @@ namespace HistoriaPersonalCormillot.Controllers
 
         public ActionResult RealLogin()
         {
-            int _id = Convert.ToInt16(Request.QueryString["id"]);
+            int _id = 2;//Convert.ToInt16(Request.QueryString["id"]);
             Usuario user = new Usuario();
             if (_id == 0)
             {
