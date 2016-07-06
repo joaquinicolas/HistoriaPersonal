@@ -53,6 +53,9 @@
             <div class="texto_derecha">
                 <p style="font-size:smaller">Por favor, para la 1° consulta tener completo este cuestionario.</p>
                 <p class="celeste" style="font-size:smaller"> Si tiene estudios clinicos del ultimo año, traigalos. </p>
+                <a onclick="window.open('/HP/Impresion/imprimir?usr=0', 'Imprimir');">
+                    Imprimir Formulario
+                </a>
                 <p>
                     <h4 class="bienvenido">Bienvenido @(ViewBag.NombreyApellido ?? "")</h4>
                     @if (ViewBag.EsConsejo != null && !ViewBag.EsConsejo)
@@ -85,6 +88,26 @@
 
         @RenderBody()
         @RenderSection("scripts", required: false)
+        <div style="width: 100%; float: left; margin: 10px auto; text-align: center;">
+            @Html.ActionLink("1", "DatosPersonales", "Pasos", null, null)
+            @Html.ActionLink("2", "RelacionTratamientoMotivacion", "Pasos", null, null)
+            @Html.ActionLink("3", "RelacionTratamientoMotivacion2", "Pasos", null, null)
+            @Html.ActionLink("4", "RelacionTratamientoMotivacion3", "Pasos", null, null)
+            @Html.ActionLink("5", "AntecedentesFamiliares", "Pasos", null, null)
+            @Html.ActionLink("6", "SuEstadoClinico", "Pasos", null, null)
+            @Html.ActionLink("7", "Sintomas", "Pasos", null, null)
+            @Html.ActionLink("8", "Sintomas3", "Pasos", null, null)
+            @Html.ActionLink("9", "SusAllegadosSuRelacionConLaComida", "Pasos", null, null)
+            @Html.ActionLink("10", "Preferencias", "Pasos", null, null)
+            @Html.ActionLink("11", "Preferencias2", "Pasos", null, null)
+            @Html.ActionLink("12", "Alimentacion", "Pasos", null, null)
+            @Html.ActionLink("13", "ComeDiaTipicoYFinde", "Pasos", null, null)
+            @Html.ActionLink("14", "ComeDiaTipicoYFinde2", "Pasos", null, null)
+            @Html.ActionLink("15", "ClasificacionAlimentacion", "Pasos", null, null)
+            @Html.ActionLink("16", "ClasificacionAlimentacion3", "Pasos", null, null)
+            @Html.ActionLink("17", "ActividadFisica", "Pasos", null, null)
+            @Html.ActionLink("18", "ComentarioGeneral", "Pasos", null, null)
+        </div>
     </div>
 </body>
 </html>

@@ -29,7 +29,7 @@ namespace HistoriaPersonalCormillot.Controllers
             var query = from u in model.Usuario
                         where u.Username == login.NombreUsuario && u.Password == login.Password
                         select u;
-            if (query.Count() == 0)
+            if (!query.Any())
             {
                 login.ErrorValidacion = "El usuario y/o la contraseña son inválidos";
                 return View("Login", login);
@@ -67,6 +67,15 @@ namespace HistoriaPersonalCormillot.Controllers
                 return RedirectToAction("Home", "Administrador");
             else
                 return RedirectToAction("DatosPersonales", "Pasos");
+        }
+
+        /// <summary>
+        /// IR A LA PAGINA PARA BUSCAR E IMPRIMIR EL FORMULARIO DE UN USUARIO
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult FormPrint()
+        {
+            return View("PrintForm", null);
         }
 
         public ActionResult TraerFormulario(int idUsuar)

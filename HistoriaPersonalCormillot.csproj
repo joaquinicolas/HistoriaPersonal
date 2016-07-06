@@ -184,6 +184,7 @@
     <Compile Include="Controllers\AdministradorController.cs" />
     <Compile Include="Controllers\ImpresionController.cs" />
     <Compile Include="Controllers\PasosController.cs" />
+    <Compile Include="Controllers\PrintFormController.cs" />
     <Compile Include="Controllers\RegistroController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="CormillotHistoriaPersonalCustom.Designer.cs">
@@ -316,6 +317,10 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Icon.png" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <None Include="Scripts\angular.intellisense.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\FormulariosHelpers.js" />
@@ -372,6 +377,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Usuarios\PrintForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -403,6 +409,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>CormillotHistoriaPersonalCustom.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Scripts\angular.min.js.map" />
     <None Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\Pasos\Consejos.cshtml" />
     <Content Include="Views\Pasos\RelacionTratamientoMotivacion2.cshtml" />
@@ -436,6 +443,7 @@
     <Content Include="Views\Impresion\Imprimir.cshtml" />
     <Content Include="Views\Impresion\ComoImprimir.cshtml" />
     <Content Include="Views\Registro\Index.cshtml" />
+    <Content Include="Views\PrintForm.html" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

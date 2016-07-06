@@ -1,0 +1,246 @@
+﻿@{
+    ViewBag.Title = "Imprimir formulario";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+<style>
+    input[type="search"] {
+        border: 1px solid grey;
+        border-radius: 4px;
+        color: grey;
+        display: inline-block;
+        height: 33px;
+        padding: 4px;
+        width: 670px;
+    }
+
+    input[type="button"] {
+        background-color: #51BCDC;
+        border: none;
+        border-radius: 2px;
+        color: #fffff0;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 600;
+        height: 33px;
+        padding-left: 12px;
+        padding-right: 12px;
+        text-transform: uppercase;
+    }
+
+    table.header {
+        background-color: rgb(255, 255, 255);
+        border-collapse: collapse;
+        border-spacing: 0px;
+        font-family: Roboto, sans-serif;
+        padding: 0px 24px;
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    table.header thead {
+        border-bottom-color: rgb(224, 224, 224);
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+    }
+
+    table.header thead tr {
+        border-bottom-color: rgb(224, 224, 224);
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        color: rgba(0, 0, 0, 0.870588);
+        height: 48px;
+    }
+
+    table.header thead tr th.check {
+        background-color: inherit;
+        color: rgb(158, 158, 158);
+        font-size: 12px;
+        font-weight: normal;
+        height: 56px;
+        padding-left: 24px;
+        padding-right: 24px;
+        position: relative;
+        text-align: left;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 24px;
+    }
+
+    table.header thead tr th.check input[type="checkbox"] {
+        box-sizing: border-box;
+        cursor: default;
+        height: 100%;
+        left: 0px;
+        margin: 0px;
+        opacity: 0;
+        padding: 0px;
+        pointer-events: all;
+        position: absolute;
+        width: 100%;
+        z-index: 2;
+    }
+
+    table.header thead tr th.nocheck {
+        background-color: inherit;
+        color: rgb(158, 158, 158);
+        font-size: 12px;
+        font-weight: normal;
+        height: 56px;
+        padding-left: 24px;
+        padding-right: 24px;
+        position: relative;
+        text-align: left;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .body {
+        height: inherit;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .body table {
+        background-color: rgb(255, 255, 255);
+        border-collapse: collapse;
+        border-spacing: 0px;
+        font-family: Roboto, sans-serif;
+        padding: 0px 24px;
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    .body table tbody tr {
+        border-bottom-color: rgb(224, 224, 224);
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        color: rgba(0, 0, 0, 0.870588);
+        height: 48px;
+    }
+
+    .body table tbody tr td.check {
+        background-color: inherit;
+        font-size: 13px;
+        height: 48px;
+        overflow: hidden;
+        padding-left: 24px;
+        padding-right: 24px;
+        text-align: left;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 24px;
+    }
+
+    .body table tbody tr td.nocheck {
+        background-color: inherit;
+        font-size: 13px;
+        height: 48px;
+        overflow: hidden;
+        padding-left: 24px;
+        padding-right: 24px;
+        text-align: left;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .body table tbody tr td.check input[type="checkbox"] {
+        box-sizing: border-box;
+        cursor: default;
+        height: 100%;
+        left: 0px;
+        margin: 0px;
+        opacity: 0;
+        padding: 0px;
+        pointer-events: all;
+        position: absolute;
+        width: 100%;
+        z-index: 2;
+    }
+    .body table tbody tr td.check >input[type="checkbox"]:checked {
+        padding-left: 24px;
+    padding-right: 24px;
+    height: 48px;
+    text-align: left;
+    font-size: 13px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 24px;
+    background-color: rgb(224, 224, 224);
+    }
+
+</style>
+<div ng-app="historia_personal" ng-controller="printFormController" style="text-align: center">
+
+    <div style="margin-top: 65px">
+        <input class="search" type="search" ng-model="usuario.Username" placeholder="usuario"/>
+
+        <input type="button" ng-click="loadUsers()" value="Buscar"/>
+    </div>
+
+    <div>
+        <table class="header">
+            <thead>
+            <tr>
+                <th class="check">
+                    <div style="cursor: default; display: table; height: auto; overflow: visible; position: relative; width: 100%;">
+                        <!-- react-empty: 605 -->
+                        <input type="checkbox" name="selectallcb" value="selected" disabled="" style="box-sizing: border-box; /* position: absolute; */cursor: default; height: 100%; left: 0px; margin: 0px; opacity: 0; padding: 0px; pointer-events: all; width: 100%; z-index: 2;">
+                        <div style="display: flex; height: 100%; width: 100%;">
+                            <div style="display: block; flex-shrink: 0; float: left; height: 24px; margin-left: 0px; margin-right: 16px; position: relative; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; width: 24px;">
+                                <div>
+                                    <svg viewBox="0 0 24 24" style="-webkit-user-select: none; display: inline-block; fill: rgba(0, 0, 0, 0.298039); height: 24px; opacity: 1; position: absolute; transition: all 2s cubic-bezier(0.23, 1, 0.32, 1) 200ms; width: 24px;">
+                                        <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"></path>
+                                    </svg><svg viewBox="0 0 24 24" style="-webkit-user-select: none; display: inline-block; fill: rgba(0, 0, 0, 0.298039); height: 24px; opacity: 0; position: absolute; transform: scale(0); transition: opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms, transform 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms; width: 24px;">
+                                        <path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </th>
+                <th class="nocheck">ID</th>
+                <th class="nocheck">Usuario</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="body">
+        <table>
+            <tbody>
+            <tr ng-repeat="usuario in usuarios" ng-click="selectUser(usuario)">
+                
+
+                <td class="nocheck">{{usuario.Id}}</td>
+                <td class="nocheck">{{usuario.Username}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+<script>
+    angular.module("historia_personal", [])
+        .controller("printFormController", function($scope, $http) {
+            $scope.usuarios = [];
+           $scope.usuario = {
+                Username: "",
+                Id: ""
+            };
+            var url = "/HP/api/PrintForm";
+            $scope.loadUsers = function() {
+                $http.get(url, { params: { userName: $scope.usuario.Username } }).then(
+                    function(response) {
+                        $scope.usuarios = response.data;
+                    }, function(response) {
+
+                    }
+                );
+            };
+
+            $scope.selectUser = function(usr) {
+                window.open("/HP/Impresion/Imprimir?usr=" + usr.Id,"Imprimir");
+            }
+        });
+</script>
