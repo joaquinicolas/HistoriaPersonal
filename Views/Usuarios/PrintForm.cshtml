@@ -228,7 +228,7 @@
                 Username: "",
                 Id: ""
             };
-            var url = "/api/PrintForm";
+            var url = "/HP/api/PrintForm";
             $scope.loadUsers = function() {
                 $http.get(url, { params: { userName: $scope.usuario.Username } }).then(
                     function(response) {
@@ -240,7 +240,7 @@
             };
 
             $scope.selectUser = function(usr) {
-                window.open("/Impresion/Imprimir?usr=" + usr.Id,"Imprimir");
+                window.open("/HP/Impresion/Imprimir?usr=" + usr.Id,"Imprimir");
             }
         });
 </script>
