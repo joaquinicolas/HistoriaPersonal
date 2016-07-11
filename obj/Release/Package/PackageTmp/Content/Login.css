@@ -1,0 +1,198 @@
+@font-face {
+    font-family: "cormi";
+    font-style: normal;
+    font-weight: normal;
+    src: url("fonts/cormi.eot?#iefix8r4gct") format("embedded-opentype"), url("fonts/cormi.woff?8r4gct") format("woff"), url("fonts/cormi.ttf?8r4gct") format("truetype"), url("fonts/cormi.svg?8r4gct#cormi") format("svg");
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: "cormi";
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-transform: none;
+}
+
+.icon-logout::before {
+    content: "l";
+}
+
+.icon-save::before {
+    content: "g";
+}
+
+*
+{
+    font-family: Verdana;
+    font-size:10px;
+}
+
+body
+{
+    border-left:10px solid #51BCDC;
+    height:100%;
+    width:100%;
+    overflow:visible;
+}
+
+nav.header
+{
+    background: none repeat scroll 0 0 #fff;
+    border: medium none;
+    box-shadow: none;
+    height: 150px;
+}
+    
+nav#header
+{
+    height: auto;
+    margin-bottom: -32px;
+    padding-bottom: 0;
+}
+        
+        html,body
+        {
+            height:100%;
+        }
+        
+        div.page-header
+        {
+            width:40%;
+            text-transform:uppercase;
+            font-size:9px;
+             float: left;
+            margin: 28px 0 0;
+            vertical-align: bottom;
+        }
+        
+         div.page-header h1
+         {
+            max-width:100%;
+            font-size:18px;
+            margin:0 auto;
+            vertical-align:top;
+            font-weight:bold;
+            text-transform:capitalize;
+         }
+         
+         #img-responsive-header
+         {
+                 display: inline-block;
+                 max-width: 65%;
+                 width: auto !important;
+                 /* min-width: 7px; */
+         }
+         
+#navbar-brand
+{
+    display: inline-block;
+    float: left;
+    /* height: 90%; */
+    width: 20% !important;
+    min-width:130px;
+    padding-bottom: 0;
+    max-width: -21px;
+}
+         
+ .titulo
+ {
+     text-align:center;
+     font-weight:bolder;
+ }
+ 
+ .texto_derecha
+ {
+    position:absolute;
+    height: 20px;
+    text-align: right;
+    vertical-align: top;
+    width: 40%;
+    right:2px;
+    top:5px;
+ }
+         
+
+.form-control
+{
+    height: 25px !important;
+    padding:0 !important;
+    margin-top:9px;
+    font-size: 14px;
+}
+
+.input-group-addon
+{
+    padding:0 !importan;
+}
+
+.info
+{
+    color:#51BCDC
+}
+
+.celeste
+  {
+             color:#51BCDC;
+             font-weight:bold;
+  }
+
+h2.celeste
+{
+    color:#51BCDC;
+    text-align:center;
+    text-indent: 10%;
+    font-size: 25px;
+}
+
+.form-horizontal {
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 15px;
+}
+
+
+   @media screen and (max-width: 368px) 
+   {
+       body { font-size: 1em; }
+            img.img-responsive{
+                max-width:70px;
+    }
+    
+    div.page-header small
+    {
+         font-size:7px;
+    }
+    
+    h2
+    {
+        font-size:18px;
+        text-indent: 0;
+        text-align:left;
+    }
+    div.page-header
+    {
+        float:none !important;
+        display:inline-block;
+    }
+    
+     div.page-header h1
+         {
+            max-width:100%;
+            margin:0 auto;
+            vertical-align:top;
+            font-weight:bold;
+            
+         }
+         
+    img#img_botella
+    {
+        display:none;
+    }
+    
+     .texto_derecha
+     {
+         display:none;
+     }
+   }
+     

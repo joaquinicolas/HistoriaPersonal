@@ -1,0 +1,140 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Historia Personal Cormillot</title>
+    <style>
+        .btn {
+            color: #fff;
+            background-color: #5bc0de;
+            border-color: #46b8da;
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            margin: 10px auto;
+            display: block;
+        }
+        iframe{
+            display: none;
+            /*margin:10px auto !important;*/
+            margin-top:10px;
+            margin-left:75px;
+        }
+
+         .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(255, 255, 255, .8)
+                    url('http://i.stack.imgur.com/FhHRx.gif')
+                    50% 50%
+                    no-repeat;
+    }
+
+    /* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+    body.loading {
+        overflow: hidden;
+    }
+
+    /* Anytime the body has the loading class, our
+   modal element will be visible */
+    body.loading .modal {
+        display: block;
+    }
+    </style>
+</head>
+<body class="loading">
+<button class="btn" style="display: none" type="button" onclick="imprimir()">Imprimir</button>
+<script src="~/Scripts/jquery-1.11.3.min.js"></script>
+    <div class="modal"><!-- Place at bottom of page --></div>
+<iframe id="frame1"  frameborder="0" width="1163px" height="721px"></iframe>
+<iframe id="frame2" frameborder="0" width="1163px" height="721px"></iframe>
+<iframe id="frame3" frameborder="0" width="1163px" height="721px"></iframe>
+<iframe id="frame4" frameborder="0" width="1163px" height="721px"></iframe>
+<iframe id="frame5" frameborder="0" width="1163px" height="721px"></iframe>
+<iframe id="frame6" frameborder="0" width="1163px" height="731px"></iframe>
+<iframe id="frame7" frameborder="0" width="1163px" height="731px"></iframe>
+<iframe id="frame8" frameborder="0" width="1163px" height="721px"></iframe>
+<iframe id="frame9" frameborder="0" width="1163px" height="721px"></iframe>
+@*<iframe src="~/Impresion/PagePrueba" frameborder="0" width="1163px" height="721px"></iframe>*@
+
+
+<script>
+    // self executing function here
+    (function () {
+        var userId = GetURLParameter('usr');
+        var sites = [
+              "../Impresion/Page1?usr=" + userId,
+              "../Impresion/Page2?usr=" + userId,
+              "../Impresion/Page3?usr=" + userId,
+              "../Impresion/Page4?usr=" + userId,
+              "../Impresion/Page5?usr=" + userId,
+               "../Impresion/Page6?usr=" + userId,
+                "../Impresion/Page7?usr=" + userId,
+                "../Impresion/Page8?usr=" + userId,
+                "../Impresion/Page9?usr=" + userId
+        ];
+
+        document.getElementById('frame1').src = sites[0];
+        document.getElementById('frame2').src = sites[1];
+        document.getElementById('frame3').src = sites[2];
+        document.getElementById('frame4').src = sites[3];
+        document.getElementById('frame5').src = sites[4];
+        document.getElementById('frame6').src = sites[5];
+        document.getElementById('frame7').src = sites[6];
+        document.getElementById('frame8').src = sites[7];
+        document.getElementById('frame9').src = sites[8];
+
+        setTimeout(function () {
+            $('body,html').removeClass("loading");
+            $("iframe").css("display", "block");
+            window.print();
+            $('.btn').css('display', 'none');
+        }, 25000);
+        
+        
+        
+    })();
+
+    function imprimir() {
+        window.print();
+    }
+
+    function GetURLParameter(sParam) {
+        var mPageUrl = window.location.search.substring(1);
+        var mURLVariables = mPageUrl.split('&');
+        for (var i = 0; i < mURLVariables.length; i++) {
+            var mParamName = mURLVariables[i].split('=');
+            if (mParamName[0] === sParam) {
+                return mParamName[1];
+            }
+        }
+    }
+</script>
+</body>
+</html>

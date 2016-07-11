@@ -1,0 +1,523 @@
+﻿@model HistoriaPersonalCormillot.AntecedentesFamiliares
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/ResponsiveGrid.css" rel="stylesheet" />
+<link href="~/Content/CorreccionesBootstrap.css" rel="Stylesheet" />
+<script src="../../Scripts/FormulariosHelpers.js" type="text/javascript"></script>
+
+<style>
+    .table > thead:first-child > tr:first-child > th {
+        padding-bottom: 0;
+    }
+    .center-table
+    {
+        padding-left: 0% !important;
+    }
+</style>
+
+<script type="text/javascript">
+    function subirDatos() {
+        postForm("SaveAntecedentesFamiliares");
+    }
+
+    function guardarDatos() {
+        postFormGuardar("SaveAntecedentesFamiliares");
+    }
+
+    $(document).ready(function () {
+        setInterval(subirDatos, 5000);
+    });
+</script>
+
+<article>
+    <h2 class="celeste titulo FontCormi" style="margin-top: 50px;">Sus antecedentes familiares</h2>
+</article>
+
+<form id="form">
+    <section class="col_12 row-left">
+        <article class="col_10 titulo-control">
+            22. ¿Algún miembro de su familia tuvo o tiene alguna de estas enfermedades?
+        </article>
+        <article class="col_10 titulo-control" style="margin-left:25px">
+            Marque las respuestas afirmativas, deje en blanco las negativas
+        </article>
+    </section>
+    <section class="col_12 row-left">
+        <section class="table-responsive ocultar-responsive" style="max-width: 710px;margin-left:45px">
+            <table class="table" style="text-align:left">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Padre</th>
+                        <th>Madre</th>
+                        <th>Abuelos</th>
+                        <th>Cónyuge</th>
+                        <th>Hnos</th>
+                        <th>Hijos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align:left;padding-left:12px">Vive</td>
+                        <td>
+                            <input type="checkbox" name="VivePadre" value="Si" @(Model.VivePadre == "Si" ? "checked=checked" : "") />                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="ViveMadre" value="Si" @(Model.ViveMadre == "Si" ? "checked=checked" : "") />
+                        </td>
+                        <td>
+                            <input type="checkbox" name="ViveAbuelos" value="Si" @(Model.ViveAbuelos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="ViveConyuge" value="Si" @(Model.ViveConyuge == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                        <td>
+                            <input type="checkbox" name="ViveHnos" value="Si" @(Model.ViveHnos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="ViveHijos" value="Si" @(Model.ViveHijos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;padding-left:12px">Obesidad</td>
+                        <td>
+                            <input type="checkbox" name="ObesidadPadre" value="Si" @(Model.ObesidadPadre == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="ObesidadMadre" value="Si" @(Model.ObesidadMadre == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="ObesidadAbuelos" value="Si" @(Model.ObesidadAbuelos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="ObesidadConyuge" value="Si" @(Model.ObesidadConyuge == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                        <td>
+                            <input type="checkbox" name="ObesidadHnos" value="Si" @(Model.ObesidadHnos == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                        <td>
+                            <input type="checkbox" name="ObesidadHijos" value="Si" @(Model.ObesidadHijos == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;padding-left:12px">Diabetes</td>
+                        <td>
+                            <input type="checkbox" name="DiabetesPadre" value="Si" @(Model.DiabetesPadre == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="DiabetesMadre" value="Si" @(Model.DiabetesMadre == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="DiabetesAbuelos" value="Si" @(Model.DiabetesAbuelos == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                        <td>
+                            <input type="checkbox" name="DiabetesConyuge" value="Si" @(Model.DiabetesConyuge == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                        <td>
+                            <input type="checkbox" name="DiabetesHnos" value="Si" @(Model.DiabetesHnos == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                        <td>
+                            <input type="checkbox" name="DiabetesHijos" value="Si" @(Model.DiabetesHijos == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;padding-left:12px">Colesterol elevado</td>
+                        <td>
+                            <input type="checkbox" name="ColesterolPadre" value="Si" @(Model.ColesterolPadre == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                        <td>
+                            <input type="checkbox" name="ColesterolMadre" value="Si" @(Model.ColesterolMadre == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                        <td>
+                            <input type="checkbox" name="ColesterolAbuelos" value="Si" @(Model.ColesterolAbuelos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="ColesterolConyuge" value="Si" @(Model.ColesterolConyuge == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                        <td>
+                            <input type="checkbox" name="ColesterolHnos" value="Si" @(Model.ColesterolHnos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="ColesterolHijos" value="Si" @(Model.ColesterolHijos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;padding-left:12px">Triglicéridos</td>
+                        <td>
+                            <input type="checkbox" name="TrigliceridosPadre" value="Si" @(Model.TrigliceridosPadre == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="TrigliceridosMadre" value="Si" @(Model.TrigliceridosMadre == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="TrigliceridosAbuelos" value="Si" @(Model.TrigliceridosAbuelos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="TrigliceridosConyuge" value="Si" @(Model.TrigliceridosConyuge == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                        <td>
+                            <input type="checkbox" name="TrigliceridosHnos" value="Si" @(Model.TrigliceridosHnos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="TrigliceridosHijos" value="Si" @(Model.TrigliceridosHijos == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;padding-left:12px">Enfermedad cardíaca</td>
+                        <td>
+                            <input type="checkbox" name="CardiacaPadre" value="Si" @(Model.CardiacaPadre == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="CardiacaMadre" value="Si" @(Model.CardiacaMadre == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                        <td>
+                            <input type="checkbox" name="CardiacaAbuelos" value="Si" @(Model.CardiacaAbuelos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="CardiacaConyuge" value="Si" @(Model.CardiacaConyuge == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="CardiacaHnos" value="Si" @(Model.CardiacaHnos == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                        <td>
+                            <input type="checkbox" name="CardiacaHijos" value="Si" @(Model.CardiacaHijos == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;padding-left:12px">Derrame cerebral</td>
+                        <td>
+                            <input type="checkbox" name="DerramePadre" value="Si" @(Model.DerramePadre == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="DerrameMadre" value="Si" @(Model.DerrameMadre == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                        <td>
+                            <input type="checkbox" name="DerrameAbuelos" value="Si" @(Model.DerrameAbuelos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="DerrameConyuge" value="Si" @(Model.DerrameConyuge == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="DerrameHnos" value="Si" @(Model.DerrameHnos == "Si" ? "checked=checked" : "") />
+                          
+                        </td>
+                        <td>
+                            <input type="checkbox" name="DerrameHijos" value="Si" @(Model.DerrameHijos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;padding-left:12px">Hipertensión arterial</td>
+                        <td>
+                            <input type="checkbox" name="HipertensionPadre" value="Si" @(Model.HipertensionPadre == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="HipertensionMadre" value="Si" @(Model.HipertensionMadre == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                        <td>
+                            <input type="checkbox" name="HipertensionAbuelos" value="Si" @(Model.HipertensionAbuelos == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                        <td>
+                            <input type="checkbox" name="HipertensionConyuge" value="Si" @(Model.HipertensionConyuge == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="HipertensionHnos" value="Si" @(Model.HipertensionHnos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="HipertensionHijos" value="Si" @(Model.HipertensionHijos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;padding-left:12px">Muerte súbita</td>
+                        <td>
+                            <input type="checkbox" name="SubitaPadre" value="Si" @(Model.SubitaPadre == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                        <td>
+                            <input type="checkbox" name="SubitaMadre" value="Si" @(Model.SubitaMadre == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="SubitaAbuelos" value="Si" @(Model.SubitaAbuelos == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                        <td>
+                            <input type="checkbox" name="SubitaConyuge" value="Si" @(Model.SubitaConyuge == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="SubitaHnos" value="Si" @(Model.SubitaHnos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="SubitaHijos" value="Si" @(Model.SubitaHijos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;padding-left:12px">Cáncer (¿de qué?) <input style="width:48%; display:inline-block" type="text" class="form-control" name="TipoCancer" value="@Model.TipoCancer" /></td>
+                        <td>
+                            <input type="checkbox" name="CancerPadre" value="Si" @(Model.CancerPadre == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                        <td>
+                            <input type="checkbox" name="CancerMadre" value="Si" @(Model.CancerMadre == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                        <td>
+                            <input type="checkbox" name="CancerAbuelos" value="Si" @(Model.CancerAbuelos == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                        <td>
+                            <input type="checkbox" name="CancerConyuge" value="Si" @(Model.CancerConyuge == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="CancerHnos" value="Si" @(Model.CancerHnos == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                        <td>
+                            <input type="checkbox" name="CancerHijos" value="Si" @(Model.CancerHijos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style ="text-align:left;padding-left:12px">Depresión</tdstyle>
+                        <td>
+                            <input type="checkbox" name="DepresionPadre" value="Si" @(Model.DepresionPadre == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="DepresionMadre" value="Si" @(Model.DepresionMadre == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                        <td>
+                            <input type="checkbox" name="DepresionAbuelos" value="Si" @(Model.DepresionAbuelos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="DepresionConyuge" value="Si" @(Model.DepresionConyuge == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="DepresionHnos" value="Si" @(Model.DepresionHnos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="DepresionHijos" value="Si" @(Model.DepresionHijos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;padding-left:12px">Excesiva preocupación por el peso o la figura</td>
+                        <td>
+                            <input type="checkbox" name="PreocupacionPadre" value="Si" @(Model.PreocupacionPadre == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="PreocupacionMadre" value="Si" @(Model.PreocupacionMadre == "Si" ? "checked=checked" : "") />
+                           
+                        </td>
+                        <td>
+                            <input type="checkbox" name="PreocupacionAbuelos" value="Si" @(Model.PreocupacionAbuelos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="PreocupacionConyuge" value="Si" @(Model.PreocupacionConyuge == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="PreocupacionHnos" value="Si" @(Model.PreocupacionHnos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="PreocupacionHijos" value="Si" @(Model.PreocupacionHijos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;padding-left:12px">Problemas psicológicos</td>
+                        <td>
+                            <input type="checkbox" name="PsicologicosPadre" value="Si" @(Model.PsicologicosPadre == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="PsicologicosMadre" value="Si" @(Model.PsicologicosMadre == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="PsicologicosAbuelos" value="Si" @(Model.PsicologicosAbuelos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="PsicologicosConyuge" value="Si" @(Model.PsicologicosConyuge == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="PsicologicosHnos" value="Si" @(Model.PsicologicosHnos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="PsicologicosHijos" value="Si" @(Model.PsicologicosHijos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;padding-left:12px">Problemas con el juego, alcohol, drogas o pastillas</td>
+                        <td>
+                            <input type="checkbox" name="DrogasPadre" value="Si" @(Model.DrogasPadre == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="DrogasMadre" value="Si" @(Model.DrogasMadre == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="DrogasAbuelos" value="Si" @(Model.DrogasAbuelos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="DrogasConyuge" value="Si" @(Model.DrogasConyuge == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="DrogasHnos" value="Si" @(Model.DrogasHnos == "Si" ? "checked=checked" : "") />
+                            
+                        </td>
+                        <td>
+                            <input type="checkbox" name="DrogasHijos" value="Si" @(Model.DrogasHijos == "Si" ? "checked=checked" : "") />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </section>
+    <section class="col_12 row-left">
+        <article class="col_4 titulo-control" style="width:39%">
+            ¿Alguien en su familia murió antes de los 60 años?
+        </article>
+        <article class="col_6">
+            <input type="radio" name="FamiliaMenos60" value="Si" @(Model.FamiliaMenos60 == "Si" ? "checked=checked" : "") />
+            No
+            <input type="radio" name="FamiliaMenos60" value="No" @(Model.FamiliaMenos60 == "No" ? "checked=checked" : "") />
+            Sí
+        </article>
+    </section>
+    <section class="col_12 row-left">
+        <article class="col_1">¿Quién?</article>
+        <article class="col_3">
+            <input type="text" class="form-control" value="@Model.QuienMenos60" name="QuienMenos60" />
+        </article>
+        <article class="col_2">¿Por qué causa?</article>
+        <article class="col_3" style="width:40.5%">
+            <input type="text" class="form-control" value="@Model.CausaMenos60" name="CausaMenos60" />
+        </article>
+    </section>
+<article>
+    <h2 class="celeste titulo FontCormi" style="margin-top: 50px;">Su estado clínico</h2>
+</article>
+
+<section class="col_12 row-left">    
+    <section>    
+            <article class="col_6 titulo-control" style="width:55%">23. Como ha sido su salud durante los ùltimos 6 meses. Marque de 1 a 5</article>
+            <article class="col_1"><input type="text" name="SaludPeriodo" value="@Model.SaludPeriodo" /></article>    
+    </section> 
+    </section>   
+
+    <section class="col_12 row-left">
+        <article class="col_6 titulo-control" style="width:60%">24. Què enfermedades, infecciones, operaciones, traumatismos, intoxicaciones o tratamientos importantes recuerda.</article>
+        <article class="col_3" style="width:29%">
+            <input type="text" class="form-control" name="TuvoIntervenciones" value="@Model.TuvoIntervenciones" />
+
+        </article>
+    </section>
+    
+    <section class="col_12 row-left">
+        <article class="col_6 titulo-control" style="width:60%">25. Tomó alguna medicación que le ha hecho especialmente bien o mal. (¿Cual?)</article>
+        <article class="col_3" style="width:29%"><input type="text" class="form-control" name="MedicacionTomada" value="@Model.MedicacionTomada" /></article>    
+    </section>
+
+    <section class="col_12 row-left">
+        <article class="col_5" style="width:57%">
+            <article class="titulo-control titulo-radio">26. ¿Está tomando actualmente alguna mediación o producto, recetado o no?</article>
+        </article>
+        <section class="col_2" style="width:10%">
+            <section class="col_4" style="width:50%">
+                <label>
+                    <input type="radio" name="RadioMedicacionActual" value="No" 
+                             @(Model.RadioMedicacionActual == "No" ? "checked=checked" : "")/>
+                    No
+                </label>
+            </section>
+
+            <section class="col_4">
+                <label>
+                    <input type="radio" name="RadioMedicacionActual" value="Si" 
+                             @(Model.RadioMedicacionActual == "Si" ? "checked=checked" : "")/>
+                    Si
+                </label>
+            </section>
+        </section>
+        <article  class="titulo-control titulo-radio col_1">
+            ¿Cuáles?            
+        </article>
+        <article class="col_1" style="width:12%;">
+            <input type="text" class="form-control" name="MedicacionActual" value="@Model.MedicacionActual" />
+        </article>
+    </section>
+
+</form>
+
+
+<div class="container-botones-inferiores" style="width:100%;float:left">
+    @Html.ActionLink("Anterior", "AnteriorPaso", "Pasos", new { id = ViewBag.Pagina }, new { @class = "btn btn-info", onclick="javascript:subirDatos();" })
+    <label style="font-family:monospace;font-size:smaller; font-weight:bolder">
+        Pagina 5 de 18
+    </label>
+    @Html.ActionLink("Siguiente", "ProximoPaso", "Pasos", new { id = ViewBag.Pagina }, new { @class = "btn btn-info", onclick = "javascript:subirDatos();" })
+</div>

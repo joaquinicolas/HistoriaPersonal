@@ -1,0 +1,1497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CormillotHistoriaPersonalCustomModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ActividadFisica">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="RadioEstiloDeVida" Type="varchar(max)" />
+    <Property Name="RadioSuEstadoFisico" Type="varchar(max)" />
+    <Property Name="CheckBañarse" Type="bit" />
+    <Property Name="CheckVerstirse" Type="bit" />
+    <Property Name="CheckArreglarCasa" Type="bit" />
+    <Property Name="CheckSubirEscaleras" Type="bit" />
+    <Property Name="CheckCaminarPorCasa" Type="bit" />
+    <Property Name="CheckIrDeCompras" Type="bit" />
+    <Property Name="CheckCamiarFueraDeCasa" Type="bit" />
+    <Property Name="CheckIrAlTrabajo" Type="bit" />
+    <Property Name="CheckAtarseZapatos" Type="bit" />
+    <Property Name="CheckLevantarseDeSilla" Type="bit" />
+    <Property Name="CheckLevantarseDeCama" Type="bit" />
+    <Property Name="OtraDificultad" Type="varchar(max)" />
+    <Property Name="RadioMotivacionActivdad" Type="varchar(max)" />
+    <Property Name="RadioRealizaActivdad" Type="varchar(max)" />
+    <Property Name="ActivdadUno" Type="varchar(max)" />
+    <Property Name="PorSemanaActivdadUno" Type="varchar(max)" />
+    <Property Name="TiempoActividadUno" Type="varchar(max)" />
+    <Property Name="ActivdadDos" Type="varchar(max)" />
+    <Property Name="PorSemanaActivdadDos" Type="varchar(max)" />
+    <Property Name="TiempoActividadDos" Type="varchar(max)" />
+    <Property Name="ActividadTres" Type="varchar(max)" />
+    <Property Name="PorSemanaActividadTres" Type="varchar(max)" />
+    <Property Name="TiempoActividadTres" Type="varchar(max)" />
+    <Property Name="CheckCaminata" Type="bit" />
+    <Property Name="CheckYoga" Type="bit" />
+    <Property Name="CheckBicicleta" Type="bit" />
+    <Property Name="CheckGimAcuatica" Type="bit" />
+    <Property Name="CheckBaile" Type="bit" />
+    <Property Name="CheckNatacion" Type="bit" />
+    <Property Name="CheckTaiChi" Type="bit" />
+    <Property Name="CheckOtra" Type="bit" />
+    <Property Name="OtraActivdad" Type="varchar(max)" />
+    <Property Name="MedioDeTransporte" Type="varchar(max)" />
+    <Property Name="CheckActividadGrupal" Type="bit" />
+    <Property Name="CheckActividadPersonalizada" Type="bit" />
+    <Property Name="CheckActividadAcompañado" Type="bit" />
+    <Property Name="CheckActividadSolo" Type="bit" />
+    <Property Name="CheckActividadNo" Type="bit" />
+  </EntityType>
+  <EntityType Name="Alimentacion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="DecideComida" Type="nvarchar(max)" />
+    <Property Name="CompraComida" Type="nvarchar(max)" />
+    <Property Name="CocinaComida" Type="nvarchar(max)" />
+    <Property Name="GustaCocinar" Type="nvarchar(max)" />
+    <Property Name="ComidaEnCasa" Type="nvarchar(max)" />
+    <Property Name="ComidaEnTrabajo" Type="nvarchar(max)" />
+    <Property Name="ComidaEnEstudio" Type="nvarchar(max)" />
+    <Property Name="ComidaEnFinde" Type="nvarchar(max)" />
+    <Property Name="AlimentosEngordan" Type="nvarchar(max)" />
+    <Property Name="ComeDeMas" Type="nvarchar(max)" />
+    <Property Name="TrabajoPuedeComprarSiNo" Type="nvarchar(max)" />
+    <Property Name="TrabajoPuedeComprarQue" Type="nvarchar(max)" />
+    <Property Name="TrabajoPuedeLlevarSiNo" Type="nvarchar(max)" />
+    <Property Name="TrabajoPuedeLlevarQue" Type="nvarchar(max)" />
+    <Property Name="TrabajoPuedePrepararSiNo" Type="nvarchar(max)" />
+    <Property Name="TrabajoPuedePrepararQue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AntecedentesFamiliares">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="VivePadre" Type="nvarchar(max)" />
+    <Property Name="ViveMadre" Type="nvarchar(max)" />
+    <Property Name="ViveAbuelos" Type="nvarchar(max)" />
+    <Property Name="ViveConyuge" Type="nvarchar(max)" />
+    <Property Name="ViveHnos" Type="nvarchar(max)" />
+    <Property Name="ViveHijos" Type="nvarchar(max)" />
+    <Property Name="ObesidadPadre" Type="nvarchar(max)" />
+    <Property Name="ObesidadMadre" Type="nvarchar(max)" />
+    <Property Name="ObesidadAbuelos" Type="nvarchar(max)" />
+    <Property Name="ObesidadConyuge" Type="nvarchar(max)" />
+    <Property Name="ObesidadHnos" Type="nvarchar(max)" />
+    <Property Name="ObesidadHijos" Type="nvarchar(max)" />
+    <Property Name="DiabetesPadre" Type="nvarchar(max)" />
+    <Property Name="DiabetesMadre" Type="nvarchar(max)" />
+    <Property Name="DiabetesAbuelos" Type="nvarchar(max)" />
+    <Property Name="DiabetesConyuge" Type="nvarchar(max)" />
+    <Property Name="DiabetesHnos" Type="nvarchar(max)" />
+    <Property Name="DiabetesHijos" Type="nvarchar(max)" />
+    <Property Name="ColesterolPadre" Type="nvarchar(max)" />
+    <Property Name="ColesterolMadre" Type="nvarchar(max)" />
+    <Property Name="ColesterolAbuelos" Type="nvarchar(max)" />
+    <Property Name="ColesterolConyuge" Type="nvarchar(max)" />
+    <Property Name="ColesterolHnos" Type="nvarchar(max)" />
+    <Property Name="ColesterolHijos" Type="nvarchar(max)" />
+    <Property Name="TrigliceridosPadre" Type="nvarchar(max)" />
+    <Property Name="TrigliceridosMadre" Type="nvarchar(max)" />
+    <Property Name="TrigliceridosAbuelos" Type="nvarchar(max)" />
+    <Property Name="TrigliceridosConyuge" Type="nvarchar(max)" />
+    <Property Name="TrigliceridosHnos" Type="nvarchar(max)" />
+    <Property Name="TrigliceridosHijos" Type="nvarchar(max)" />
+    <Property Name="CardiacaPadre" Type="nvarchar(max)" />
+    <Property Name="CardiacaMadre" Type="nvarchar(max)" />
+    <Property Name="CardiacaAbuelos" Type="nvarchar(max)" />
+    <Property Name="CardiacaConyuge" Type="nvarchar(max)" />
+    <Property Name="CardiacaHnos" Type="nvarchar(max)" />
+    <Property Name="CardiacaHijos" Type="nvarchar(max)" />
+    <Property Name="DerramePadre" Type="nvarchar(max)" />
+    <Property Name="DerrameMadre" Type="nvarchar(max)" />
+    <Property Name="DerrameAbuelos" Type="nvarchar(max)" />
+    <Property Name="DerrameConyuge" Type="nvarchar(max)" />
+    <Property Name="DerrameHnos" Type="nvarchar(max)" />
+    <Property Name="DerrameHijos" Type="nvarchar(max)" />
+    <Property Name="HipertensionPadre" Type="nvarchar(max)" />
+    <Property Name="HipertensionMadre" Type="nvarchar(max)" />
+    <Property Name="HipertensionAbuelos" Type="nvarchar(max)" />
+    <Property Name="HipertensionConyuge" Type="nvarchar(max)" />
+    <Property Name="HipertensionHnos" Type="nvarchar(max)" />
+    <Property Name="HipertensionHijos" Type="nvarchar(max)" />
+    <Property Name="SubitaPadre" Type="nvarchar(max)" />
+    <Property Name="SubitaMadre" Type="nvarchar(max)" />
+    <Property Name="SubitaAbuelos" Type="nvarchar(max)" />
+    <Property Name="SubitaConyuge" Type="nvarchar(max)" />
+    <Property Name="SubitaHnos" Type="nvarchar(max)" />
+    <Property Name="SubitaHijos" Type="nvarchar(max)" />
+    <Property Name="CancerPadre" Type="nvarchar(max)" />
+    <Property Name="CancerMadre" Type="nvarchar(max)" />
+    <Property Name="CancerAbuelos" Type="nvarchar(max)" />
+    <Property Name="CancerConyuge" Type="nvarchar(max)" />
+    <Property Name="CancerHnos" Type="nvarchar(max)" />
+    <Property Name="CancerHijos" Type="nvarchar(max)" />
+    <Property Name="DepresionPadre" Type="nvarchar(max)" />
+    <Property Name="DepresionMadre" Type="nvarchar(max)" />
+    <Property Name="DepresionAbuelos" Type="nvarchar(max)" />
+    <Property Name="DepresionConyuge" Type="nvarchar(max)" />
+    <Property Name="DepresionHnos" Type="nvarchar(max)" />
+    <Property Name="DepresionHijos" Type="nvarchar(max)" />
+    <Property Name="PreocupacionPadre" Type="nvarchar(max)" />
+    <Property Name="PreocupacionMadre" Type="nvarchar(max)" />
+    <Property Name="PreocupacionAbuelos" Type="nvarchar(max)" />
+    <Property Name="PreocupacionConyuge" Type="nvarchar(max)" />
+    <Property Name="PreocupacionHnos" Type="nvarchar(max)" />
+    <Property Name="PreocupacionHijos" Type="nvarchar(max)" />
+    <Property Name="PsicologicosPadre" Type="nvarchar(max)" />
+    <Property Name="PsicologicosMadre" Type="nvarchar(max)" />
+    <Property Name="PsicologicosAbuelos" Type="nvarchar(max)" />
+    <Property Name="PsicologicosConyuge" Type="nvarchar(max)" />
+    <Property Name="PsicologicosHnos" Type="nvarchar(max)" />
+    <Property Name="PsicologicosHijos" Type="nvarchar(max)" />
+    <Property Name="DrogasPadre" Type="nvarchar(max)" />
+    <Property Name="DrogasMadre" Type="nvarchar(max)" />
+    <Property Name="DrogasAbuelos" Type="nvarchar(max)" />
+    <Property Name="DrogasConyuge" Type="nvarchar(max)" />
+    <Property Name="DrogasHnos" Type="nvarchar(max)" />
+    <Property Name="DrogasHijos" Type="nvarchar(max)" />
+    <Property Name="FamiliaMenos60" Type="nvarchar(max)" />
+    <Property Name="QuienMenos60" Type="nvarchar(max)" />
+    <Property Name="CausaMenos60" Type="nvarchar(max)" />
+    <Property Name="SaludPeriodo" Type="varchar(max)" />
+    <Property Name="TuvoIntervenciones" Type="varchar(max)" />
+    <Property Name="MedicacionTomada" Type="varchar(max)" />
+    <Property Name="RadioMedicacionActual" Type="varchar(max)" />
+    <Property Name="MedicacionActual" Type="varchar(max)" />
+    <Property Name="TipoCancer" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="ClasificacionAlimentacion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="LecheDescremada" Type="nvarchar(max)" />
+    <Property Name="QuesoBlanco" Type="nvarchar(max)" />
+    <Property Name="QuesoGruyere" Type="nvarchar(max)" />
+    <Property Name="QuesoPortSalut" Type="nvarchar(max)" />
+    <Property Name="QuesoRoquefort" Type="nvarchar(max)" />
+    <Property Name="QuesoDuros" Type="nvarchar(max)" />
+    <Property Name="YofurtDescremado" Type="nvarchar(max)" />
+    <Property Name="Amargos" Type="nvarchar(max)" />
+    <Property Name="Soja" Type="nvarchar(max)" />
+    <Property Name="Cafe" Type="nvarchar(max)" />
+    <Property Name="GaseosaLight" Type="nvarchar(max)" />
+    <Property Name="JugoLight" Type="nvarchar(max)" />
+    <Property Name="JugoNatural" Type="nvarchar(max)" />
+    <Property Name="Chocolatada" Type="nvarchar(max)" />
+    <Property Name="Cerveza" Type="nvarchar(max)" />
+    <Property Name="Champan" Type="nvarchar(max)" />
+    <Property Name="Sidra" Type="nvarchar(max)" />
+    <Property Name="Fernet" Type="nvarchar(max)" />
+    <Property Name="Tes" Type="nvarchar(max)" />
+    <Property Name="Vino" Type="nvarchar(max)" />
+    <Property Name="Cerdo" Type="varchar(max)" />
+    <Property Name="Chinchulin" Type="varchar(max)" />
+    <Property Name="Chorizo" Type="varchar(max)" />
+    <Property Name="Fiambres" Type="varchar(max)" />
+    <Property Name="Higado" Type="varchar(max)" />
+    <Property Name="Molleja" Type="varchar(max)" />
+    <Property Name="Morcilla" Type="varchar(max)" />
+    <Property Name="Salchichas" Type="varchar(max)" />
+    <Property Name="Rinion" Type="varchar(max)" />
+    <Property Name="Vacuna" Type="varchar(max)" />
+    <Property Name="Albondigas" Type="varchar(max)" />
+    <Property Name="Asado" Type="varchar(max)" />
+    <Property Name="CarneHorno" Type="varchar(max)" />
+    <Property Name="Hamburguesas" Type="varchar(max)" />
+    <Property Name="McDonald" Type="varchar(max)" />
+    <Property Name="Milanesas" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="ClasificacionAlimentacion2">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="MarFrescos" Type="nvarchar(max)" />
+    <Property Name="RioFrescos" Type="nvarchar(max)" />
+    <Property Name="Envasados" Type="nvarchar(max)" />
+    <Property Name="Kanikama" Type="nvarchar(max)" />
+    <Property Name="Mariscos" Type="nvarchar(max)" />
+    <Property Name="Sushi" Type="nvarchar(max)" />
+    <Property Name="Pavita" Type="nvarchar(max)" />
+    <Property Name="Pollo" Type="nvarchar(max)" />
+    <Property Name="HuevosDuros" Type="nvarchar(max)" />
+    <Property Name="HuevosFritos" Type="nvarchar(max)" />
+    <Property Name="Acelga" Type="nvarchar(max)" />
+    <Property Name="Ajo" Type="nvarchar(max)" />
+    <Property Name="Alcaucil" Type="nvarchar(max)" />
+    <Property Name="Apio" Type="nvarchar(max)" />
+    <Property Name="Batata" Type="nvarchar(max)" />
+    <Property Name="Berenjena" Type="nvarchar(max)" />
+    <Property Name="Berro" Type="nvarchar(max)" />
+    <Property Name="Brocoli" Type="nvarchar(max)" />
+    <Property Name="Calabaza" Type="nvarchar(max)" />
+    <Property Name="Cebolla" Type="nvarchar(max)" />
+    <Property Name="Champiñones" Type="nvarchar(max)" />
+    <Property Name="Choclo" Type="nvarchar(max)" />
+    <Property Name="Coliflor" Type="nvarchar(max)" />
+    <Property Name="Esparragos" Type="nvarchar(max)" />
+    <Property Name="Espinaca" Type="nvarchar(max)" />
+    <Property Name="Lechuga" Type="nvarchar(max)" />
+    <Property Name="Palmitos" Type="nvarchar(max)" />
+    <Property Name="Plata" Type="nvarchar(max)" />
+    <Property Name="Papa" Type="nvarchar(max)" />
+    <Property Name="Pepino" Type="nvarchar(max)" />
+    <Property Name="Pimiento" Type="nvarchar(max)" />
+    <Property Name="Radicheta" Type="nvarchar(max)" />
+    <Property Name="Remolacha" Type="nvarchar(max)" />
+    <Property Name="Repollitos" Type="nvarchar(max)" />
+    <Property Name="Repollo" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ClasificacionAlimentacion3">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="Rucula" Type="nvarchar(max)" />
+    <Property Name="Tomate" Type="nvarchar(max)" />
+    <Property Name="TomateCherry" Type="nvarchar(max)" />
+    <Property Name="Zanahoria" Type="nvarchar(max)" />
+    <Property Name="Zapallito" Type="nvarchar(max)" />
+    <Property Name="Zapallo" Type="nvarchar(max)" />
+    <Property Name="Cazuelas" Type="nvarchar(max)" />
+    <Property Name="PapasFritas" Type="nvarchar(max)" />
+    <Property Name="PapasHorno" Type="nvarchar(max)" />
+    <Property Name="Pure" Type="nvarchar(max)" />
+    <Property Name="Revueltos" Type="nvarchar(max)" />
+    <Property Name="Sopas" Type="nvarchar(max)" />
+    <Property Name="Tartas" Type="nvarchar(max)" />
+    <Property Name="Tortillas" Type="nvarchar(max)" />
+    <Property Name="VegetalesRellenos" Type="nvarchar(max)" />
+    <Property Name="Arvejas" Type="nvarchar(max)" />
+    <Property Name="Chauchas" Type="nvarchar(max)" />
+    <Property Name="Lentejas" Type="nvarchar(max)" />
+    <Property Name="MilanesasSoja" Type="nvarchar(max)" />
+    <Property Name="PorotosComunes" Type="nvarchar(max)" />
+    <Property Name="PorotosSoja" Type="nvarchar(max)" />
+    <Property Name="BrotesSoja" Type="nvarchar(max)" />
+    <Property Name="ArrozBlanco" Type="nvarchar(max)" />
+    <Property Name="ArrozIntegral" Type="nvarchar(max)" />
+    <Property Name="AvenaArrollada" Type="nvarchar(max)" />
+    <Property Name="BarrasCereal" Type="nvarchar(max)" />
+    <Property Name="CoposCereal" Type="nvarchar(max)" />
+    <Property Name="GalletasArroz" Type="nvarchar(max)" />
+    <Property Name="GalletitasAgua" Type="nvarchar(max)" />
+    <Property Name="GalletitasDulces" Type="nvarchar(max)" />
+    <Property Name="Mueslix" Type="nvarchar(max)" />
+    <Property Name="PanArabe" Type="nvarchar(max)" />
+    <Property Name="PanBaguette" Type="nvarchar(max)" />
+    <Property Name="PanBlanco" Type="nvarchar(max)" />
+    <Property Name="PanSalvado" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ClasificacionAlimentacion4">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="PastasRellenas" Type="nvarchar(max)" />
+    <Property Name="PastasSimples" Type="nvarchar(max)" />
+    <Property Name="Pochoclo" Type="nvarchar(max)" />
+    <Property Name="Polenta" Type="nvarchar(max)" />
+    <Property Name="TrigoInflado" Type="nvarchar(max)" />
+    <Property Name="Empanadas" Type="nvarchar(max)" />
+    <Property Name="Pizza" Type="nvarchar(max)" />
+    <Property Name="Sandwiches" Type="nvarchar(max)" />
+    <Property Name="CremaDeLeche" Type="nvarchar(max)" />
+    <Property Name="Ketchup" Type="nvarchar(max)" />
+    <Property Name="Mayonesa" Type="nvarchar(max)" />
+    <Property Name="Mostaza" Type="nvarchar(max)" />
+    <Property Name="SalsaBlanca" Type="nvarchar(max)" />
+    <Property Name="SalsaBoloniesa" Type="nvarchar(max)" />
+    <Property Name="SalsaCuatroQuesos" Type="nvarchar(max)" />
+    <Property Name="SalsaSoja" Type="nvarchar(max)" />
+    <Property Name="SalsaTomate" Type="nvarchar(max)" />
+    <Property Name="SalsaGolf" Type="nvarchar(max)" />
+    <Property Name="Aceitunas" Type="nvarchar(max)" />
+    <Property Name="Ajies" Type="nvarchar(max)" />
+    <Property Name="Cebollitas" Type="nvarchar(max)" />
+    <Property Name="Pepinitos" Type="nvarchar(max)" />
+    <Property Name="Pickles" Type="nvarchar(max)" />
+    <Property Name="Anana" Type="nvarchar(max)" />
+    <Property Name="Banana" Type="nvarchar(max)" />
+    <Property Name="Cereza" Type="nvarchar(max)" />
+    <Property Name="Ciruela" Type="nvarchar(max)" />
+    <Property Name="Damasco" Type="nvarchar(max)" />
+    <Property Name="Durazno" Type="nvarchar(max)" />
+    <Property Name="Frutilla" Type="nvarchar(max)" />
+    <Property Name="Kiwi" Type="nvarchar(max)" />
+    <Property Name="Mandarina" Type="nvarchar(max)" />
+    <Property Name="Manzana" Type="nvarchar(max)" />
+    <Property Name="Melon" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ClasificacionAlimentacion5">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="Naranja" Type="nvarchar(max)" />
+    <Property Name="Pera" Type="nvarchar(max)" />
+    <Property Name="Pomelo" Type="nvarchar(max)" />
+    <Property Name="Sandía" Type="nvarchar(max)" />
+    <Property Name="Uva" Type="nvarchar(max)" />
+    <Property Name="EnvasadosAnana" Type="nvarchar(max)" />
+    <Property Name="EnvasadosDuraznos" Type="nvarchar(max)" />
+    <Property Name="EnvasadosEnsaladaFrutas" Type="nvarchar(max)" />
+    <Property Name="EnvasadosPeras" Type="nvarchar(max)" />
+    <Property Name="DeshidratasCiruela" Type="nvarchar(max)" />
+    <Property Name="DeshidratasDamasco" Type="nvarchar(max)" />
+    <Property Name="DeshidratasManzana" Type="nvarchar(max)" />
+    <Property Name="DeshidratasOrejones" Type="nvarchar(max)" />
+    <Property Name="DeshidratasPasasDeUva" Type="nvarchar(max)" />
+    <Property Name="Almendras" Type="nvarchar(max)" />
+    <Property Name="Avellanas" Type="nvarchar(max)" />
+    <Property Name="Manies" Type="nvarchar(max)" />
+    <Property Name="Nueces" Type="nvarchar(max)" />
+    <Property Name="Aceite" Type="nvarchar(max)" />
+    <Property Name="Manteca" Type="nvarchar(max)" />
+    <Property Name="ArrrozConLeche" Type="nvarchar(max)" />
+    <Property Name="Flan" Type="nvarchar(max)" />
+    <Property Name="Gelatina" Type="nvarchar(max)" />
+    <Property Name="Helado" Type="nvarchar(max)" />
+    <Property Name="Mousse" Type="nvarchar(max)" />
+    <Property Name="PostresDeLeche" Type="nvarchar(max)" />
+    <Property Name="Alfajores" Type="nvarchar(max)" />
+    <Property Name="BudinPan" Type="nvarchar(max)" />
+    <Property Name="Budines" Type="nvarchar(max)" />
+    <Property Name="Chocolates" Type="nvarchar(max)" />
+    <Property Name="CremaChantilly" Type="nvarchar(max)" />
+    <Property Name="DulceBatata" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ClasificacionAlimentacion6">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="DulceDeLeche" Type="nvarchar(max)" />
+    <Property Name="Facturas" Type="nvarchar(max)" />
+    <Property Name="Golosinas" Type="nvarchar(max)" />
+    <Property Name="Masitas" Type="nvarchar(max)" />
+    <Property Name="Mermeladas" Type="nvarchar(max)" />
+    <Property Name="Panqueques" Type="nvarchar(max)" />
+    <Property Name="Pastelitos" Type="nvarchar(max)" />
+    <Property Name="Tortas" Type="nvarchar(max)" />
+    <Property Name="Otros" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ComeDiaTipicoYFinde">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="DesayunoLugar" Type="varchar(max)" />
+    <Property Name="DesayunoHora" Type="varchar(max)" />
+    <Property Name="DesayunoQueYCuanto" Type="varchar(max)" />
+    <Property Name="DesayunoFinde" Type="varchar(max)" />
+    <Property Name="MediaMnianaLugar" Type="varchar(max)" />
+    <Property Name="MediaManianaHora" Type="varchar(max)" />
+    <Property Name="MediaManianaQueyCuanto" Type="varchar(max)" />
+    <Property Name="MediaManianaFinde" Type="varchar(max)" />
+    <Property Name="AlmuerzoLugar" Type="varchar(max)" />
+    <Property Name="AlmuerzoHora" Type="varchar(max)" />
+    <Property Name="AlmuerzoQueYcuanto" Type="varchar(max)" />
+    <Property Name="AlmuerzoFinde" Type="varchar(max)" />
+    <Property Name="MeriendaLugar" Type="varchar(max)" />
+    <Property Name="MeriendaHora" Type="varchar(max)" />
+    <Property Name="MeriendaQueYCuanto" Type="varchar(max)" />
+    <Property Name="MeriendaFinde" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="ComeDiaTipicoYFinde2">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="MediaTardeLugar" Type="varchar(max)" />
+    <Property Name="MediaTardeHora" Type="varchar(max)" />
+    <Property Name="MediaTardeQueYCuanto" Type="varchar(max)" />
+    <Property Name="MediaTardeFinde" Type="varchar(max)" />
+    <Property Name="CenaLugar" Type="varchar(max)" />
+    <Property Name="CenaHora" Type="varchar(max)" />
+    <Property Name="CenaQueYCuanto" Type="varchar(max)" />
+    <Property Name="CenaFinde" Type="varchar(max)" />
+    <Property Name="DespuesCenaLugar" Type="varchar(max)" />
+    <Property Name="DespuesCenaHora" Type="varchar(max)" />
+    <Property Name="DespuesCenaQueYCuanto" Type="varchar(max)" />
+    <Property Name="DespuesCenaFinde" Type="varchar(max)" />
+    <Property Name="NocheLugar" Type="varchar(max)" />
+    <Property Name="NocheHora" Type="varchar(max)" />
+    <Property Name="NocheQueYCuanto" Type="varchar(max)" />
+    <Property Name="NocheFinde" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="ComentarioGeneral">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="Comentario" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Consejo">
+    <Key>
+      <PropertyRef Name="IdPaso" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TextoIzquierdo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TextoDerecho" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IdPaso" Type="int" Nullable="false" />
+    <Property Name="SrcImagen" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="DatosPersonales">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usuario_Id" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" />
+    <Property Name="NombreyApellido" Type="nvarchar(max)" />
+    <Property Name="FechaNacimiento" Type="datetime" />
+    <Property Name="Edad" Type="int" />
+    <Property Name="EstadoCivil" Type="nvarchar(max)" />
+    <Property Name="ViveCon" Type="nvarchar(max)" />
+    <Property Name="Domicilio" Type="nvarchar(max)" />
+    <Property Name="Hijos" Type="int" />
+    <Property Name="EdadesySexo" Type="nvarchar(max)" />
+    <Property Name="ObraSocialoPrepago" Type="nvarchar(max)" />
+    <Property Name="NroAfiliado" Type="int" />
+    <Property Name="TelEmergenciaObraSocial" Type="nvarchar(max)" />
+    <Property Name="EstudiosCursados" Type="nvarchar(max)" />
+    <Property Name="ActividadActual" Type="nvarchar(max)" />
+    <Property Name="DireccionCorrespondencia" Type="nvarchar(max)" />
+    <Property Name="TelMensajes1" Type="nvarchar(max)" />
+    <Property Name="HorarioMensajesDesde1" Type="nvarchar(max)" />
+    <Property Name="HorarioMensajesHasta1" Type="nvarchar(max)" />
+    <Property Name="TelMensajes2" Type="nvarchar(max)" />
+    <Property Name="HorarioMensajesDesde2" Type="nvarchar(max)" />
+    <Property Name="HorarioMensajesHasta2" Type="nvarchar(max)" />
+    <Property Name="TelCelular" Type="nvarchar(max)" />
+    <Property Name="TelBeeper" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="NecesidadNombre" Type="nvarchar(max)" />
+    <Property Name="NecesidadTel" Type="nvarchar(max)" />
+    <Property Name="PacienteSiNo" Type="nvarchar(max)" />
+    <Property Name="PacienteAño" Type="nvarchar(max)" />
+    <Property Name="ConocioClinicaOtroPaciente" Type="bit" />
+    <Property Name="ConocioClinicaDiarios" Type="bit" />
+    <Property Name="ConocioClinicaRevistas" Type="bit" />
+    <Property Name="ConocioClinicaTV" Type="bit" />
+    <Property Name="ConocioClinicaInternet" Type="bit" />
+    <Property Name="ConocioClinicaOtro" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Habitos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="DificultadParaQuedarseDormido" Type="bit" />
+    <Property Name="SeDespiertaDuranteLaNoche" Type="bit" />
+    <Property Name="TienePesadillas" Type="bit" />
+    <Property Name="DuermeDeDia" Type="bit" />
+    <Property Name="TomaPastillas" Type="bit" />
+    <Property Name="Fuma" Type="bit" />
+    <Property Name="CuantosCigarrillosPorDia" Type="nvarchar(max)" />
+    <Property Name="DejeFumarHace" Type="nvarchar(max)" />
+    <Property Name="VasosVino" Type="nvarchar(max)" />
+    <Property Name="CervezaLatas" Type="nvarchar(max)" />
+    <Property Name="BlancasMedidas" Type="nvarchar(max)" />
+    <Property Name="OtrasMedidas" Type="nvarchar(max)" />
+    <Property Name="PreocupaManeraBeber" Type="bit" />
+    <Property Name="SienteCulpa" Type="bit" />
+    <Property Name="IntentoDejarBeber" Type="bit" />
+    <Property Name="LlamadoAtencion" Type="bit" />
+    <Property Name="TomaCalmarse" Type="bit" />
+    <Property Name="TomaASolas" Type="bit" />
+    <Property Name="ActitudPadres" Type="varchar" MaxLength="50" />
+    <Property Name="ActitudHermanos" Type="varchar" MaxLength="50" />
+    <Property Name="ActitudConyuge" Type="varchar" MaxLength="50" />
+    <Property Name="ActitudHijos" Type="varchar" MaxLength="50" />
+    <Property Name="ActitudAmigos" Type="varchar" MaxLength="50" />
+    <Property Name="ActitudCompañeros" Type="varchar" MaxLength="50" />
+    <Property Name="RelacionHijos" Type="varchar" MaxLength="50" />
+    <Property Name="RelacionAmigos" Type="varchar" MaxLength="50" />
+    <Property Name="RelacionPareja" Type="varchar" MaxLength="50" />
+    <Property Name="RelacionFamilia" Type="varchar" MaxLength="50" />
+    <Property Name="RelacionCompañerosTrabajo" Type="varchar" MaxLength="50" />
+    <Property Name="HorasSueño" Type="nvarchar(max)" />
+    <Property Name="IntentoCambiarBebida" Type="bit" />
+    <Property Name="ParaDormirToma" Type="bit" />
+    <Property Name="FumaS" Type="nvarchar(max)" />
+    <Property Name="PreocupaManeraBeberS" Type="nvarchar(max)" />
+    <Property Name="SienteCulpaS" Type="nvarchar(max)" />
+    <Property Name="IntentoDejarBeberS" Type="nvarchar(max)" />
+    <Property Name="LlamadoAtencionS" Type="nvarchar(max)" />
+    <Property Name="TomaCalmarseS" Type="nvarchar(max)" />
+    <Property Name="TomaASolasS" Type="nvarchar(max)" />
+    <Property Name="IntentoCambiarBebidaS" Type="nvarchar(max)" />
+    <Property Name="ParaDormirTomaS" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Paso">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Orden" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Preferencias">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Idusuario" Type="int" Nullable="false" />
+    <Property Name="SuDieta" Type="varchar(max)" />
+    <Property Name="RadioAlimentoPreferido" Type="varchar(max)" />
+    <Property Name="AlimentoPreferido" Type="varchar(max)" />
+    <Property Name="RadioTipoAlimentoPreferido" Type="varchar(max)" />
+    <Property Name="RadioDesordenado" Type="varchar(max)" />
+    <Property Name="RadioSalteo" Type="varchar(max)" />
+    <Property Name="RadioPicoteo" Type="varchar(max)" />
+    <Property Name="RadioHagoAyunos" Type="varchar(max)" />
+    <Property Name="RadioDepresion" Type="varchar(max)" />
+    <Property Name="RadioAnsiedad" Type="varchar(max)" />
+    <Property Name="RadioEstres" Type="varchar(max)" />
+    <Property Name="RadioEnojo" Type="varchar(max)" />
+    <Property Name="RadioAburrimiento" Type="varchar(max)" />
+    <Property Name="RadioAlegria" Type="varchar(max)" />
+    <Property Name="RadioDescontrol" Type="varchar(max)" />
+    <Property Name="RadioCansancio" Type="varchar(max)" />
+    <Property Name="RadioPreSentimental" Type="varchar(max)" />
+    <Property Name="RadioEmbarazo" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Preferencias2">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="RadioComo" Type="varchar(max)" />
+    <Property Name="RadioMisBocados" Type="varchar(max)" />
+    <Property Name="RadioVelocidad" Type="varchar(max)" />
+    <Property Name="RadioMastico" Type="varchar(max)" />
+    <Property Name="RadioSaboreo" Type="varchar(max)" />
+    <Property Name="Horario6a12" Type="bit" />
+    <Property Name="Horario12a16" Type="bit" />
+    <Property Name="Horario20a22" Type="bit" />
+    <Property Name="Horario22a24" Type="bit" />
+    <Property Name="Horario0a6" Type="bit" />
+    <Property Name="ViernesDesayuno" Type="bit" />
+    <Property Name="ViernesAlmuerzo" Type="bit" />
+    <Property Name="ViernesMerienda" Type="bit" />
+    <Property Name="ViernesCena" Type="bit" />
+    <Property Name="SabadoDesayuno" Type="bit" />
+    <Property Name="SabadoAlmuerzo" Type="bit" />
+    <Property Name="SabadoMerienda" Type="bit" />
+    <Property Name="SabadoCena" Type="bit" />
+    <Property Name="DomingoDesayuno" Type="bit" />
+    <Property Name="DomingoAlmuerzo" Type="bit" />
+    <Property Name="DomingoMerienda" Type="bit" />
+    <Property Name="DomingoCena" Type="bit" />
+    <Property Name="ComoMasSolo" Type="bit" />
+    <Property Name="ComoMasEnFlia" Type="bit" />
+    <Property Name="ComoMasConAmigos" Type="bit" />
+    <Property Name="ComoMasEnFiestas" Type="bit" />
+    <Property Name="ComoMasEnPareja" Type="bit" />
+    <Property Name="MientrasCocino" Type="bit" />
+    <Property Name="MientrasTvOCompu" Type="bit" />
+    <Property Name="LugarCasa" Type="bit" />
+    <Property Name="LugarColegio" Type="bit" />
+    <Property Name="LugarTrabajo" Type="bit" />
+    <Property Name="LugarTraslados" Type="bit" />
+    <Property Name="LugarRestaurante" Type="bit" />
+    <Property Name="LugarKiosko" Type="bit" />
+    <Property Name="LugarCalle" Type="bit" />
+    <Property Name="LugarViaje" Type="bit" />
+    <Property Name="LugarVacaciones" Type="bit" />
+    <Property Name="LugarClub" Type="bit" />
+    <Property Name="ComerMasSolo" Type="nvarchar(max)" />
+    <Property Name="ComerMasEnFamilia" Type="nvarchar(max)" />
+    <Property Name="ComerMasConAmigos" Type="nvarchar(max)" />
+    <Property Name="ComerMasEnFiestas" Type="nvarchar(max)" />
+    <Property Name="ComerMasEnPareja" Type="nvarchar(max)" />
+    <Property Name="ComerMientrasCocino" Type="nvarchar(max)" />
+    <Property Name="ComerMientrasTvoCompu" Type="nvarchar(max)" />
+    <Property Name="LugarEstudioB" Type="bit" />
+    <Property Name="LugarBarB" Type="bit" />
+  </EntityType>
+  <EntityType Name="RelacionTratamientoMotivacion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="Razon1" Type="nvarchar(max)" />
+    <Property Name="Razon2" Type="nvarchar(max)" />
+    <Property Name="Razon3" Type="nvarchar(max)" />
+    <Property Name="QueDeseaCambiar" Type="nvarchar(max)" />
+    <Property Name="Motivacion" Type="nvarchar(max)" />
+    <Property Name="MantenerPeso" Type="bit" />
+    <Property Name="SubirPeso" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="BajarPeso" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TiempoHacerConPeso" Type="nvarchar(max)" />
+    <Property Name="ExpectativaCambiarPeso" Type="int" />
+    <Property Name="ConfianzaCambiarPeso" Type="int" />
+    <Property Name="EsperaTratamiento" Type="nvarchar(max)" />
+    <Property Name="Medicamentos" Type="nvarchar(max)" />
+    <Property Name="CirugiaBariatrica" Type="nvarchar(max)" />
+    <Property Name="CirugiaPlastica" Type="nvarchar(max)" />
+    <Property Name="Hierbas" Type="nvarchar(max)" />
+    <Property Name="Otros" Type="nvarchar(max)" />
+    <Property Name="OtrosText" Type="nvarchar(max)" />
+    <Property Name="SubirPesoV" Type="nvarchar(max)" />
+    <Property Name="BajarPesoV" Type="nvarchar(max)" />
+    <Property Name="HaRealizadoTratamiento" Type="nvarchar(max)" />
+    <Property Name="CuantosTratamiento" Type="nvarchar(max)" />
+    <Property Name="TratamientoClinicaCormillot" Type="bit" />
+    <Property Name="TratamientoPsiquiatria" Type="bit" />
+    <Property Name="TratamientoDietaClub" Type="bit" />
+    <Property Name="TratamientoAlco" Type="bit" />
+    <Property Name="TratamientoPsicoterapia" Type="bit" />
+    <Property Name="TratamientoActividadFisica" Type="bit" />
+    <Property Name="TratamientoHomeopatia" Type="bit" />
+    <Property Name="TratamientoDietasPorSuCuenta" Type="bit" />
+    <Property Name="TratamientoMedicoODietista" Type="bit" />
+    <Property Name="TratamientoInternet" Type="bit" />
+    <Property Name="TratamientoCirugia" Type="bit" />
+    <Property Name="TratamientoMedicamentos" Type="bit" />
+    <Property Name="TratamientoOtros" Type="bit" />
+    <Property Name="TratamientoCuales" Type="bit" />
+    <Property Name="TratamiengoInternacion" Type="bit" />
+    <Property Name="TratamientoCual" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="RelacionTratamientoMotivacion2">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="HaRealizadoTratamiento" Type="nvarchar(max)" />
+    <Property Name="CuantosTratamiento" Type="nvarchar(max)" />
+    <Property Name="TratamientoClinicaCormillot" Type="bit" />
+    <Property Name="TratamientoPsiquiatria" Type="bit" />
+    <Property Name="TratamientoDietaClub" Type="bit" />
+    <Property Name="TratamientoAlco" Type="bit" />
+    <Property Name="TratamientoPsicoterapia" Type="bit" />
+    <Property Name="TratamientoActividadFisica" Type="bit" />
+    <Property Name="TratamientoHomeopatia" Type="bit" />
+    <Property Name="TratamientoDietasPorSuCuenta" Type="bit" />
+    <Property Name="TratamientoMedicoODietista" Type="bit" />
+    <Property Name="TratamientoInternet" Type="bit" />
+    <Property Name="TratamientoCirugia" Type="bit" />
+    <Property Name="TratamientoMedicamentos" Type="bit" />
+    <Property Name="TratamientoOtros" Type="bit" />
+    <Property Name="TratamientoCuales" Type="nvarchar(max)" />
+    <Property Name="CuantoBajoEnTratamientosAnteriores" Type="nvarchar(max)" />
+    <Property Name="EfectoNegativoTratamientosAnteriores" Type="nvarchar(max)" />
+    <Property Name="CualEfectoNegativoTratamientosAnteriores" Type="nvarchar(max)" />
+    <Property Name="MotivoTratamientosAnterioresFallaron" Type="nvarchar(max)" />
+    <Property Name="BarreraTratamientoHorarios" Type="bit" />
+    <Property Name="BarreraTratamientoDesorden" Type="bit" />
+    <Property Name="BarreraTratamientoEstres" Type="bit" />
+    <Property Name="BarreraTratamientoEstadoDeAnimo" Type="bit" />
+    <Property Name="BarreraTratamientoFamilia" Type="bit" />
+    <Property Name="BarreraTratamientoVidaSocial" Type="bit" />
+    <Property Name="BarreraTratamientoTrabajo" Type="bit" />
+    <Property Name="BarreraTratamientoMotivacion" Type="bit" />
+    <Property Name="BarreraTratamientoOtro" Type="bit" />
+    <Property Name="BarreraTratamientoCual" Type="nvarchar(max)" />
+    <Property Name="AbandonarTratamientoNoModificarPeso" Type="bit" />
+    <Property Name="AbandonarTratamientoProblemasPersonales" Type="bit" />
+    <Property Name="AbandonarTratamientoVidaSocial" Type="bit" />
+    <Property Name="AbandonarTratamientoModificarloPoco" Type="bit" />
+    <Property Name="AbandonarTratamientoProblemasEconomicos" Type="bit" />
+    <Property Name="AbandonarTratamientoSentirsePresionado" Type="bit" />
+    <Property Name="AbandonarTratamientoSalirUnaVezYAbandonar" Type="bit" />
+    <Property Name="AbandonarTratamientoLlevarseMalConElEquipo" Type="bit" />
+    <Property Name="AbandonarTratamientoAburrirseDeLaDieta" Type="bit" />
+    <Property Name="AbandonarTratamientoDistanciaALaQueVive" Type="bit" />
+    <Property Name="AbandonarTratamientoPocoApoyoFamiliar" Type="bit" />
+    <Property Name="AbandonarTratamientoOtras" Type="nvarchar(max)" />
+    <Property Name="PesoActualAlimentacion" Type="bit" />
+    <Property Name="PesoActualAnsiedad" Type="bit" />
+    <Property Name="PesoActualProblemasDeSalud" Type="bit" />
+    <Property Name="PesoActualEmbarazos" Type="bit" />
+    <Property Name="PesoActualAlcohol" Type="bit" />
+    <Property Name="PesoActualEstres" Type="bit" />
+    <Property Name="PesoActualMetabolismo" Type="bit" />
+    <Property Name="PesoActualHerencia" Type="bit" />
+    <Property Name="PesoActualSedentarismo" Type="bit" />
+    <Property Name="PesoActualMedicacion" Type="bit" />
+    <Property Name="PesoActualDejarDeFumar" Type="bit" />
+    <Property Name="PesoActualDepresion" Type="bit" />
+    <Property Name="PesoActualPerdidas" Type="bit" />
+    <Property Name="PesoActualMenopausia" Type="bit" />
+    <Property Name="PesoActualOtros" Type="bit" />
+    <Property Name="PesoActualOtrosTexto" Type="nvarchar(max)" />
+    <Property Name="PesoNacer" Type="varchar(max)" />
+    <Property Name="MaximoAdulto" Type="varchar(max)" />
+    <Property Name="Minimo" Type="varchar(max)" />
+    <Property Name="Edad" Type="varchar(max)" />
+    <Property Name="Deseado" Type="varchar(max)" />
+    <Property Name="PesoEsta" Type="varchar(max)" />
+    <Property Name="PesoComodo" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="RelacionTratamientoMotivacion3">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="PesoNacer" Type="varchar(max)" />
+    <Property Name="MaximoAdulto" Type="varchar(max)" />
+    <Property Name="Minimo" Type="varchar(max)" />
+    <Property Name="Edad" Type="varchar(max)" />
+    <Property Name="Deseado" Type="varchar(max)" />
+    <Property Name="PesoEsta" Type="varchar(max)" />
+    <Property Name="PesoComodo" Type="varchar(max)" />
+    <Property Name="CalidadVida" Type="varchar(max)" />
+    <Property Name="RelacionFamiliar" Type="varchar(max)" />
+    <Property Name="VidaSocial" Type="varchar(max)" />
+    <Property Name="VidaPareja" Type="varchar(max)" />
+    <Property Name="VidaLaboral" Type="varchar(max)" />
+    <Property Name="Economia" Type="varchar(max)" />
+    <Property Name="Ridiculo" Type="varchar(max)" />
+    <Property Name="Asiento" Type="varchar(max)" />
+    <Property Name="Pasillos" Type="varchar(max)" />
+    <Property Name="Sillas" Type="varchar(max)" />
+    <Property Name="GustariaSer" Type="varchar(max)" />
+    <Property Name="Ahora" Type="varchar(max)" />
+    <Property Name="Bnarse" Type="varchar(max)" />
+    <Property Name="Vestirse" Type="varchar(max)" />
+    <Property Name="ArreglarCasa" Type="varchar(max)" />
+    <Property Name="SubirEscaleras" Type="varchar(max)" />
+    <Property Name="CaminarCasa" Type="varchar(max)" />
+    <Property Name="IrCompras" Type="varchar(max)" />
+    <Property Name="CaminarFueraCasa" Type="varchar(max)" />
+    <Property Name="IrTrabajo" Type="varchar(max)" />
+    <Property Name="AtarZapatos" Type="varchar(max)" />
+    <Property Name="LevantarDeSilla" Type="varchar(max)" />
+    <Property Name="LevarDeCama" Type="varchar(max)" />
+    <Property Name="OtraDif" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sintomas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="SienteMal" Type="nvarchar(max)" />
+    <Property Name="CreeProblemaSalud" Type="nvarchar(max)" />
+    <Property Name="EnfermedadRespiratoria" Type="nvarchar(max)" />
+    <Property Name="Ronquera" Type="nvarchar(max)" />
+    <Property Name="Ronca" Type="nvarchar(max)" />
+    <Property Name="Despierta" Type="nvarchar(max)" />
+    <Property Name="RespirarDormir" Type="nvarchar(max)" />
+    <Property Name="SuenioDia" Type="nvarchar(max)" />
+    <Property Name="DificultadRespirarEsfuerzo" Type="nvarchar(max)" />
+    <Property Name="ProblemasCardiacos" Type="nvarchar(max)" />
+    <Property Name="DolorPecho" Type="nvarchar(max)" />
+    <Property Name="Palpitaciones" Type="nvarchar(max)" />
+    <Property Name="PresionAlta" Type="nvarchar(max)" />
+    <Property Name="CalculosUrinarios" Type="nvarchar(max)" />
+    <Property Name="InfeccionViasUrinarias" Type="nvarchar(max)" />
+    <Property Name="PerdidaFuerzaOrinar" Type="nvarchar(max)" />
+    <Property Name="IncontinenciaUrinaria" Type="nvarchar(max)" />
+    <Property Name="DolorPiernasCaminar" Type="nvarchar(max)" />
+    <Property Name="Varices" Type="nvarchar(max)" />
+    <Property Name="InfeccionesPiernas" Type="nvarchar(max)" />
+    <Property Name="PiesHinchados" Type="nvarchar(max)" />
+    <Property Name="Calambres" Type="nvarchar(max)" />
+    <Property Name="Hormigueos" Type="nvarchar(max)" />
+    <Property Name="ArticulacionesRojas" Type="nvarchar(max)" />
+    <Property Name="ProblemasGenitales" Type="nvarchar(max)" />
+    <Property Name="PerdidaSangre" Type="nvarchar(max)" />
+    <Property Name="Picazon" Type="nvarchar(max)" />
+    <Property Name="PicazonDonde" Type="nvarchar(max)" />
+    <Property Name="Ganglios" Type="nvarchar(max)" />
+    <Property Name="ProblemasOido" Type="nvarchar(max)" />
+    <Property Name="ProblemasVista" Type="nvarchar(max)" />
+    <Property Name="EnfermedadTiroidea" Type="nvarchar(max)" />
+    <Property Name="PielSeca" Type="nvarchar(max)" />
+    <Property Name="UniasFragiles" Type="nvarchar(max)" />
+    <Property Name="CabelloSeco" Type="nvarchar(max)" />
+    <Property Name="SensibilidadFrio" Type="nvarchar(max)" />
+    <Property Name="CansancioInexplicable" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Sintomas2">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="ColesterolAumentado" Type="nvarchar(max)" />
+    <Property Name="TrigliceridosAumentados" Type="nvarchar(max)" />
+    <Property Name="Gota" Type="nvarchar(max)" />
+    <Property Name="Osteoporosis" Type="nvarchar(max)" />
+    <Property Name="Diabetes" Type="nvarchar(max)" />
+    <Property Name="Alergias" Type="nvarchar(max)" />
+    <Property Name="AlergiasQUe" Type="nvarchar(max)" />
+    <Property Name="DigestionLenta" Type="nvarchar(max)" />
+    <Property Name="DolorEstomago" Type="nvarchar(max)" />
+    <Property Name="Vomitos" Type="nvarchar(max)" />
+    <Property Name="Meteorismo" Type="nvarchar(max)" />
+    <Property Name="Constipacion" Type="nvarchar(max)" />
+    <Property Name="Diarrrea" Type="nvarchar(max)" />
+    <Property Name="Hemorroides" Type="nvarchar(max)" />
+    <Property Name="IntoleranciaAlimento" Type="nvarchar(max)" />
+    <Property Name="ProblemasPiel" Type="nvarchar(max)" />
+    <Property Name="Verrugas" Type="nvarchar(max)" />
+    <Property Name="Manchas" Type="nvarchar(max)" />
+    <Property Name="Acne" Type="nvarchar(max)" />
+    <Property Name="CaidaCabello" Type="nvarchar(max)" />
+    <Property Name="ProblemaDental" Type="nvarchar(max)" />
+    <Property Name="Llagas" Type="nvarchar(max)" />
+    <Property Name="SangradoEncias" Type="nvarchar(max)" />
+    <Property Name="ProblemaNeurologico" Type="nvarchar(max)" />
+    <Property Name="DoloresCabeza" Type="nvarchar(max)" />
+    <Property Name="Mareos" Type="nvarchar(max)" />
+    <Property Name="Triste" Type="nvarchar(max)" />
+    <Property Name="LlantoFacil" Type="nvarchar(max)" />
+    <Property Name="PocoPlacer" Type="nvarchar(max)" />
+    <Property Name="PerdidaInteres" Type="nvarchar(max)" />
+    <Property Name="PocaInteraccion" Type="nvarchar(max)" />
+    <Property Name="Aislamiento" Type="nvarchar(max)" />
+    <Property Name="DificultadConcentrarse" Type="nvarchar(max)" />
+    <Property Name="Indecision" Type="nvarchar(max)" />
+    <Property Name="SentimientoCulpa" Type="nvarchar(max)" />
+    <Property Name="Aburrimiento" Type="nvarchar(max)" />
+    <Property Name="SoloMundo" Type="nvarchar(max)" />
+    <Property Name="SensacionVacio" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Sintomas3">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="IrritacionIncontrolable" Type="nvarchar(max)" />
+    <Property Name="OscilacionesAnimo" Type="nvarchar(max)" />
+    <Property Name="Nervios" Type="nvarchar(max)" />
+    <Property Name="Enojo" Type="nvarchar(max)" />
+    <Property Name="Autolesiones" Type="nvarchar(max)" />
+    <Property Name="Agresion" Type="nvarchar(max)" />
+    <Property Name="Furia" Type="nvarchar(max)" />
+    <Property Name="Habla" Type="nvarchar(max)" />
+    <Property Name="DuermeMenos" Type="nvarchar(max)" />
+    <Property Name="EstarCima" Type="nvarchar(max)" />
+    <Property Name="AumentoSexual" Type="nvarchar(max)" />
+    <Property Name="GastaDinero" Type="nvarchar(max)" />
+    <Property Name="Apuestas" Type="nvarchar(max)" />
+    <Property Name="ActividadUsual" Type="nvarchar(max)" />
+    <Property Name="Ansioso" Type="nvarchar(max)" />
+    <Property Name="PreocupacionesExcesivas" Type="nvarchar(max)" />
+    <Property Name="TensionMuscular" Type="nvarchar(max)" />
+    <Property Name="EstadoAnimo" Type="nvarchar(max)" />
+    <Property Name="Miedos" Type="nvarchar(max)" />
+    <Property Name="PensamientosIncomodos" Type="nvarchar(max)" />
+    <Property Name="NoPlacerSexual" Type="nvarchar(max)" />
+    <Property Name="DeseoSexual" Type="nvarchar(max)" />
+    <Property Name="DificultadesSexuales" Type="nvarchar(max)" />
+    <Property Name="EvitarSexuales" Type="nvarchar(max)" />
+    <Property Name="Autoestima" Type="int" />
+    <Property Name="PerdidasSiNo" Type="nvarchar(max)" />
+    <Property Name="CualesPerdidas" Type="nvarchar(max)" />
+    <Property Name="TraumaticoSiNo" Type="nvarchar(max)" />
+    <Property Name="TraumaticoQue" Type="nvarchar(max)" />
+    <Property Name="TraumaticoCuando" Type="nvarchar(max)" />
+    <Property Name="DificultadConcentrarse" Type="nvarchar(max)" />
+    <Property Name="Indecisión" Type="nvarchar(max)" />
+    <Property Name="SentimientoCulpa" Type="nvarchar(max)" />
+    <Property Name="Aburrimiento" Type="nvarchar(max)" />
+    <Property Name="SoloEnElMundo" Type="nvarchar(max)" />
+    <Property Name="SensacionVacio" Type="nvarchar(max)" />
+    <Property Name="DificultadQuedarseDormido" Type="nvarchar(max)" />
+    <Property Name="SeDespiertaNoche" Type="nvarchar(max)" />
+    <Property Name="Pesadillas" Type="nvarchar(max)" />
+    <Property Name="DuermeDiaNoNoche" Type="nvarchar(max)" />
+    <Property Name="TomaPastillasDormir" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="SuEstadoClinico">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="SaludPeriodo" Type="varchar(max)" />
+    <Property Name="TuvoIntervenciones" Type="varchar(max)" />
+    <Property Name="MedicacionTomada" Type="varchar(max)" />
+    <Property Name="RadioMedicacionActual" Type="varchar(max)" />
+    <Property Name="MedicacionActual" Type="varchar(max)" />
+    <Property Name="RadioDejariaMedicacion" Type="varchar(max)" />
+    <Property Name="DejariaMedicacion" Type="varchar(max)" />
+    <Property Name="RadioTratamientoPs" Type="varchar(max)" />
+    <Property Name="TratamientoPsicologico" Type="varchar(max)" />
+    <Property Name="CausaTratamientoPs" Type="varchar(max)" />
+    <Property Name="DuracionTratamientoPs" Type="varchar(max)" />
+    <Property Name="PrimerM" Type="varchar(max)" />
+    <Property Name="Ciclo" Type="varchar(max)" />
+    <Property Name="UltimaM" Type="varchar(max)" />
+    <Property Name="RadioEmbarazada" Type="varchar(max)" />
+    <Property Name="TiempoEmbarazo" Type="varchar(max)" />
+    <Property Name="RadioAnticonceptivo" Type="varchar(max)" />
+    <Property Name="MetodoUsado" Type="varchar(max)" />
+    <Property Name="FechaUltimoP" Type="varchar(max)" />
+    <Property Name="RadioEstadoAnimico" Type="varchar(max)" />
+    <Property Name="RadioDolores" Type="varchar(max)" />
+    <Property Name="FechaUltimaM" Type="varchar(max)" />
+    <Property Name="RadioVello" Type="varchar(max)" />
+    <Property Name="FrecuenciaDep" Type="varchar(max)" />
+    <Property Name="UltimoExamenPros" Type="varchar(max)" />
+    <Property Name="Antigeno" Type="varchar(max)" />
+    <Property Name="RadioColon" Type="varchar(max)" />
+    <Property Name="ComentarEstudio" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="SusAllegadosSuRelacionConLaComida">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="CantPesoNormal" Type="varchar(max)" />
+    <Property Name="TienenPesoNormal" Type="varchar(max)" />
+    <Property Name="CantSobrepeso" Type="varchar(max)" />
+    <Property Name="TienenSobrepeso" Type="varchar(max)" />
+    <Property Name="RadioUrgenciaDeComer" Type="varchar(max)" />
+    <Property Name="RadioComeDeNoche" Type="varchar(max)" />
+    <Property Name="RadioComeParaDormir" Type="varchar(max)" />
+    <Property Name="RadioComeSinControl" Type="varchar(max)" />
+    <Property Name="RadioLaxantes" Type="varchar(max)" />
+    <Property Name="RadioDiureticos" Type="varchar(max)" />
+    <Property Name="RadioInduceVomito" Type="varchar(max)" />
+    <Property Name="RadioRestringeAlimento" Type="varchar(max)" />
+    <Property Name="RadioActFisicaExagerada" Type="varchar(max)" />
+    <Property Name="RadioPorcentajeIngesta" Type="varchar(max)" />
+    <Property Name="AlergiaAComida" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="SusHabitos2">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="ActitudPadres" Type="nvarchar(max)" />
+    <Property Name="ActitudHermanos" Type="nvarchar(max)" />
+    <Property Name="ActitudConyuge" Type="nvarchar(max)" />
+    <Property Name="ActitudHijos" Type="nvarchar(max)" />
+    <Property Name="ActitudAmigos" Type="nvarchar(max)" />
+    <Property Name="ActitudCompañeros" Type="nvarchar(max)" />
+    <Property Name="RelacionHijos" Type="nvarchar(max)" />
+    <Property Name="RelacionAmigos" Type="nvarchar(max)" />
+    <Property Name="RelacionPareja" Type="nvarchar(max)" />
+    <Property Name="RelacionFamilia" Type="nvarchar(max)" />
+    <Property Name="RelacionCompañerosTrabajo" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IdRol" Type="int" Nullable="false" />
+    <Property Name="Habilitado" Type="bit" Nullable="false" />
+    <Property Name="Formulario" Type="bit" Nullable="false" />
+    <Property Name="idx" Type="uniqueidentifier" />
+  </EntityType>
+  <Association Name="FK_ActividadFisica_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="ActividadFisica" Type="Self.ActividadFisica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ActividadFisica">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Alimentacion_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Alimentacion" Type="Self.Alimentacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Alimentacion">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AntecedentesFamiliares_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="AntecedentesFamiliares" Type="Self.AntecedentesFamiliares" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AntecedentesFamiliares">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClasificacionAlimentacion_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="ClasificacionAlimentacion" Type="Self.ClasificacionAlimentacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClasificacionAlimentacion">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClasificacionAlimentacion2_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="ClasificacionAlimentacion2" Type="Self.ClasificacionAlimentacion2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClasificacionAlimentacion2">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClasificacionAlimentacion3_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="ClasificacionAlimentacion3" Type="Self.ClasificacionAlimentacion3" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClasificacionAlimentacion3">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClasificacionAlimentacion4_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="ClasificacionAlimentacion4" Type="Self.ClasificacionAlimentacion4" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClasificacionAlimentacion4">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClasificacionAlimentacion5_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="ClasificacionAlimentacion5" Type="Self.ClasificacionAlimentacion5" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClasificacionAlimentacion5">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClasificacionAlimentacion6_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="ClasificacionAlimentacion6" Type="Self.ClasificacionAlimentacion6" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClasificacionAlimentacion6">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ComeDiaTipicoYFinde_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="ComeDiaTipicoYFinde" Type="Self.ComeDiaTipicoYFinde" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComeDiaTipicoYFinde">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ComeDiaTipicoYFinde2_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="ComeDiaTipicoYFinde2" Type="Self.ComeDiaTipicoYFinde2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComeDiaTipicoYFinde2">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ComentarioGeneral_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="ComentarioGeneral" Type="Self.ComentarioGeneral" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComentarioGeneral">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Consejo_Paso">
+    <End Role="Paso" Type="Self.Paso" Multiplicity="1" />
+    <End Role="Consejo" Type="Self.Consejo" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Paso">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Consejo">
+        <PropertyRef Name="IdPaso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_DatosPersonales_dbo_Usuario_usuario_Id">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="DatosPersonales" Type="Self.DatosPersonales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DatosPersonales">
+        <PropertyRef Name="usuario_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Habitos_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Habitos" Type="Self.Habitos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Habitos">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Preferencias_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Preferencias" Type="Self.Preferencias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Preferencias">
+        <PropertyRef Name="Idusuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Preferencias2_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Preferencias2" Type="Self.Preferencias2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Preferencias2">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RelacionTratamientoMotivacion_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="RelacionTratamientoMotivacion" Type="Self.RelacionTratamientoMotivacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RelacionTratamientoMotivacion">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RelacionTratamientoMotivacion2_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="RelacionTratamientoMotivacion2" Type="Self.RelacionTratamientoMotivacion2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RelacionTratamientoMotivacion2">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RelacionTratamientoMotivacion3_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="RelacionTratamientoMotivacion3" Type="Self.RelacionTratamientoMotivacion3" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RelacionTratamientoMotivacion3">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sintomas_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Sintomas" Type="Self.Sintomas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sintomas">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sintomas2_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Sintomas2" Type="Self.Sintomas2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sintomas2">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sintomas3_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Sintomas3" Type="Self.Sintomas3" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sintomas3">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuEstadoClinico_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="SuEstadoClinico" Type="Self.SuEstadoClinico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SuEstadoClinico">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SusAllegadosSuRelacionConLaComida_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="SusAllegadosSuRelacionConLaComida" Type="Self.SusAllegadosSuRelacionConLaComida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SusAllegadosSuRelacionConLaComida">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SusHabitos2_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="SusHabitos2" Type="Self.SusHabitos2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SusHabitos2">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Rol">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="IdRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CormillotHistoriaPersonalCustomModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ActividadFisica" EntityType="Self.ActividadFisica" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Alimentacion" EntityType="Self.Alimentacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AntecedentesFamiliares" EntityType="Self.AntecedentesFamiliares" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClasificacionAlimentacion" EntityType="Self.ClasificacionAlimentacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClasificacionAlimentacion2" EntityType="Self.ClasificacionAlimentacion2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClasificacionAlimentacion3" EntityType="Self.ClasificacionAlimentacion3" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClasificacionAlimentacion4" EntityType="Self.ClasificacionAlimentacion4" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClasificacionAlimentacion5" EntityType="Self.ClasificacionAlimentacion5" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClasificacionAlimentacion6" EntityType="Self.ClasificacionAlimentacion6" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ComeDiaTipicoYFinde" EntityType="Self.ComeDiaTipicoYFinde" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ComeDiaTipicoYFinde2" EntityType="Self.ComeDiaTipicoYFinde2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ComentarioGeneral" EntityType="Self.ComentarioGeneral" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Consejo" EntityType="Self.Consejo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DatosPersonales" EntityType="Self.DatosPersonales" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Habitos" EntityType="Self.Habitos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Paso" EntityType="Self.Paso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Preferencias" EntityType="Self.Preferencias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Preferencias2" EntityType="Self.Preferencias2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RelacionTratamientoMotivacion" EntityType="Self.RelacionTratamientoMotivacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RelacionTratamientoMotivacion2" EntityType="Self.RelacionTratamientoMotivacion2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RelacionTratamientoMotivacion3" EntityType="Self.RelacionTratamientoMotivacion3" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sintomas" EntityType="Self.Sintomas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sintomas2" EntityType="Self.Sintomas2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sintomas3" EntityType="Self.Sintomas3" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SuEstadoClinico" EntityType="Self.SuEstadoClinico" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SusAllegadosSuRelacionConLaComida" EntityType="Self.SusAllegadosSuRelacionConLaComida" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SusHabitos2" EntityType="Self.SusHabitos2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ActividadFisica_Usuario" Association="Self.FK_ActividadFisica_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="ActividadFisica" EntitySet="ActividadFisica" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Alimentacion_Usuario" Association="Self.FK_Alimentacion_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Alimentacion" EntitySet="Alimentacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AntecedentesFamiliares_Usuario" Association="Self.FK_AntecedentesFamiliares_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="AntecedentesFamiliares" EntitySet="AntecedentesFamiliares" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClasificacionAlimentacion_Usuario" Association="Self.FK_ClasificacionAlimentacion_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="ClasificacionAlimentacion" EntitySet="ClasificacionAlimentacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClasificacionAlimentacion2_Usuario" Association="Self.FK_ClasificacionAlimentacion2_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="ClasificacionAlimentacion2" EntitySet="ClasificacionAlimentacion2" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClasificacionAlimentacion3_Usuario" Association="Self.FK_ClasificacionAlimentacion3_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="ClasificacionAlimentacion3" EntitySet="ClasificacionAlimentacion3" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClasificacionAlimentacion4_Usuario" Association="Self.FK_ClasificacionAlimentacion4_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="ClasificacionAlimentacion4" EntitySet="ClasificacionAlimentacion4" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClasificacionAlimentacion5_Usuario" Association="Self.FK_ClasificacionAlimentacion5_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="ClasificacionAlimentacion5" EntitySet="ClasificacionAlimentacion5" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClasificacionAlimentacion6_Usuario" Association="Self.FK_ClasificacionAlimentacion6_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="ClasificacionAlimentacion6" EntitySet="ClasificacionAlimentacion6" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ComeDiaTipicoYFinde_Usuario" Association="Self.FK_ComeDiaTipicoYFinde_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="ComeDiaTipicoYFinde" EntitySet="ComeDiaTipicoYFinde" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ComeDiaTipicoYFinde2_Usuario" Association="Self.FK_ComeDiaTipicoYFinde2_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="ComeDiaTipicoYFinde2" EntitySet="ComeDiaTipicoYFinde2" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ComentarioGeneral_Usuario" Association="Self.FK_ComentarioGeneral_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="ComentarioGeneral" EntitySet="ComentarioGeneral" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Consejo_Paso" Association="Self.FK_Consejo_Paso">
+      <End Role="Paso" EntitySet="Paso" />
+      <End Role="Consejo" EntitySet="Consejo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_DatosPersonales_dbo_Usuario_usuario_Id" Association="Self.FK_dbo_DatosPersonales_dbo_Usuario_usuario_Id">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="DatosPersonales" EntitySet="DatosPersonales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Habitos_Usuario" Association="Self.FK_Habitos_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Habitos" EntitySet="Habitos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Preferencias_Usuario" Association="Self.FK_Preferencias_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Preferencias" EntitySet="Preferencias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Preferencias2_Usuario" Association="Self.FK_Preferencias2_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Preferencias2" EntitySet="Preferencias2" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RelacionTratamientoMotivacion_Usuario" Association="Self.FK_RelacionTratamientoMotivacion_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="RelacionTratamientoMotivacion" EntitySet="RelacionTratamientoMotivacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RelacionTratamientoMotivacion2_Usuario" Association="Self.FK_RelacionTratamientoMotivacion2_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="RelacionTratamientoMotivacion2" EntitySet="RelacionTratamientoMotivacion2" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RelacionTratamientoMotivacion3_Usuario" Association="Self.FK_RelacionTratamientoMotivacion3_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="RelacionTratamientoMotivacion3" EntitySet="RelacionTratamientoMotivacion3" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sintomas_Usuario" Association="Self.FK_Sintomas_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Sintomas" EntitySet="Sintomas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sintomas2_Usuario" Association="Self.FK_Sintomas2_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Sintomas2" EntitySet="Sintomas2" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sintomas3_Usuario" Association="Self.FK_Sintomas3_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Sintomas3" EntitySet="Sintomas3" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuEstadoClinico_Usuario" Association="Self.FK_SuEstadoClinico_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="SuEstadoClinico" EntitySet="SuEstadoClinico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SusAllegadosSuRelacionConLaComida_Usuario" Association="Self.FK_SusAllegadosSuRelacionConLaComida_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="SusAllegadosSuRelacionConLaComida" EntitySet="SusAllegadosSuRelacionConLaComida" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SusHabitos2_Usuario" Association="Self.FK_SusHabitos2_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="SusHabitos2" EntitySet="SusHabitos2" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Rol" Association="Self.FK_Usuario_Rol">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

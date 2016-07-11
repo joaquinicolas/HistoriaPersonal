@@ -1,0 +1,484 @@
+﻿@model HistoriaPersonalCormillot.RelacionTratamientoMotivacion3
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/ResponsiveGrid.css" rel="stylesheet" />
+<style>
+    .form-control{
+        margin: 0;
+    }
+    .titulo-control{
+        /*text-align: right;*/
+    }
+    input[type='text']{
+        width: 90%;
+    }
+    .titulo-radio{
+        margin-top: 4px;
+    }
+    .table > tbody > tr > td{
+        text-align: center;
+    }
+    .center{
+        margin: auto;
+    }
+    .img-mujeres{
+        width: 40%;
+        float: right;
+    }
+    .img-hombres{
+        width: 100%;
+    }
+    .row-left {
+        padding-left: 15% !important;
+        margin-bottom: 2px;
+    }
+    .row-left * {
+        font-weight: bold;
+    }
+    .table > thead:first-child > tr:first-child > th {
+        padding-top: 0;
+        text-align: center;
+    }
+    .container-botones-inferiores{
+        margin-top: 5px;
+    }
+    .table article
+    {
+        border: 0px;
+    }
+</style>
+
+<script src="../../Scripts/FormulariosHelpers.js" type="text/javascript"></script>
+<script type="text/javascript">
+    function subirDatos() {
+        postForm("SaveRelacionTratamientoMotivacion3");
+    }
+
+    function guardarDatos() {
+        postFormGuardar("SaveRelacionTratamientoMotivacion3");
+    }
+
+    $(document).ready(function () {
+        setInterval(subirDatos, 5000);
+    });
+</script>
+
+<article>
+    <h2 class="celeste titulo FontCormi" style="margin-top: 50px;">Su relación con el tratamiento y motivación</h2>
+</article>
+<form id="form">
+    <section class="col_6 row-left">
+        <article class="col-12" style="margin-bottom:5px">
+            Marque: 0:No 1:Poco: 2:Sí 3:Mucho    
+        </article>
+        <section class="col-12">
+            <section class="table-responsive ocultar-responsive" style="max-width: 500px; margin-left:60px">
+                <table class="table" style="text-align:left">
+                    <thead>
+                        <tr>
+                            <th style="width:72%">19.A Su peso dificulta su</th>
+                            <th>0</th>
+                            <th>1</th>
+                            <th>2</th>
+                            <th>3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Calidad de Vida</td>
+                            <td><input type="radio" name="CalidadVida" value="Nada" @(Model.CalidadVida == "Nada" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="CalidadVida" value="Algo" @(Model.CalidadVida == "Algo" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="CalidadVida" value="Bastante" @(Model.CalidadVida == "Bastante" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="CalidadVida" value="Mucho" @(Model.CalidadVida == "Mucho" ? "checked=checked" : "") /></td>
+                        </tr>
+
+                        <tr>
+                            <td>Relación Familiar</td>
+                            <td><input type="radio" name="RelacionFamiliar" value="Nada" @(Model.RelacionFamiliar == "Nada" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="RelacionFamiliar" value="Algo" @(Model.RelacionFamiliar == "Algo" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="RelacionFamiliar" value="Bastante" @(Model.RelacionFamiliar == "Bastante" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="RelacionFamiliar" value="Mucho" @(Model.RelacionFamiliar == "Mucho" ? "checked=checked" : "") /></td>
+                        </tr>
+
+                        <tr>
+                            <td>Vida Social</td>
+                            <td><input type="radio" name="VidaSocial" value="Nada" @(Model.VidaSocial == "Nada" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="VidaSocial" value="Algo" @(Model.VidaSocial == "Algo" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="VidaSocial" value="Bastante" @(Model.VidaSocial == "Bastante" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="VidaSocial" value="Mucho" @(Model.VidaSocial == "Mucho" ? "checked=checked" : "") /></td>
+                        </tr>
+
+                        <tr>
+                            <td>Vida de Pareja</td>
+                            <td><input type="radio" name="VidaPareja" value="Nada" @(Model.VidaPareja == "Nada" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="VidaPareja" value="Algo" @(Model.VidaPareja == "Algo" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="VidaPareja" value="Bastante" @(Model.VidaPareja == "Bastante" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="VidaPareja" value="Mucho" @(Model.VidaPareja == "Mucho" ? "checked=checked" : "") /></td>
+                        </tr>
+
+                        <tr>
+                            <td>Vida Laboral/Educacional</td>
+                            <td><input type="radio" name="VidaLaboral" value="Nada" @(Model.VidaLaboral == "Nada" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="VidaLaboral" value="Algo" @(Model.VidaLaboral == "Algo" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="VidaLaboral" value="Bastante" @(Model.VidaLaboral == "Bastante" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="VidaLaboral" value="Mucho" @(Model.VidaLaboral == "Mucho" ? "checked=checked" : "") /></td>
+                        </tr>
+
+                        <tr>
+                            <td>Economía</td>
+                            <td><input type="radio" name="Economia" value="Nada" @(Model.Economia == "Nada" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="Economia" value="Algo" @(Model.Economia == "Algo" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="Economia" value="Bastante" @(Model.Economia == "Bastante" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="Economia" value="Mucho" @(Model.Economia == "Mucho" ? "checked=checked" : "") /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+    
+        <section class="col_2">
+            <article>
+            </article>
+        </section>
+        <section class="col-12" style="margin-top:5px">
+            <section class="table-responsive ocultar-responsive" style="max-width:500px;margin-left:60px">
+                <table class="table" style="text-align:left">
+                    <thead>
+                        <tr>
+                            <th style="padding-left:45px;text-align:left">20.¿Temor?</th>
+                            <th>0</th>
+                            <th>1</th>
+                            <th>2</th>
+                            <th>3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding-left:70px;text-align:left">Al rídiculo, criticas, burlas</td>
+                            <td><input type="radio" name="Ridiculo" value="Nada" @(Model.Ridiculo == "Nada" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="Ridiculo" value="Algo" @(Model.Ridiculo == "Algo" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="Ridiculo" value="Bastante" @(Model.Ridiculo == "Bastante" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="Ridiculo" value="Mucho" @(Model.Ridiculo == "Mucho" ? "checked=checked" : "") /></td>
+                        </tr>
+
+                        <tr>
+                            <td style ="padding-left:70px;text-align:left">A no encontrar asiento en áreas públicas</tdstyle>
+                            <td><input type="radio" name="Asiento" value="Nada" @(Model.Asiento == "Nada" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="Asiento" value="Algo" @(Model.Asiento == "Algo" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="Asiento" value="Bastante" @(Model.Asiento == "Bastante" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="Asiento" value="Mucho" @(Model.Asiento == "Mucho" ? "checked=checked" : "") /></td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding-left:70px;text-align:left">A no pasar por pasillos o molinetes</td>
+                            <td><input type="radio" name="Pasillos" value="Nada" @(Model.Pasillos == "Nada" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="Pasillos" value="Algo" @(Model.Pasillos == "Algo" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="Pasillos" value="Bastante" @(Model.Pasillos == "Bastante" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="Pasillos" value="Mucho" @(Model.Pasillos == "Mucho" ? "checked=checked" : "") /></td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding-left:70px;text-align:left">A no entrar en sillas que no soporten su peso</td>
+                            <td><input type="radio" name="Sillas" value="Nada" @(Model.Sillas == "Nada" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="Sillas" value="Algo" @(Model.Sillas == "Algo" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="Sillas" value="Bastante" @(Model.Sillas == "Bastante" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="Sillas" value="Mucho" @(Model.Sillas == "Mucho" ? "checked=checked" : "") /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+    </section>
+    <section class="col_6" style="margin-top: 3px;font-weight: bold;">
+        <section class="table-responsive ocultar-responsive" style="max-width: 500px; margin-left:20px; margin-top:15px; width:60%">
+                <table class="table" style="text-align:left; margin-top:07px;">
+                    <thead>
+                        <tr>
+                            <th style="text-align:right">19.B Tiene dificultades</th>
+                            <th>0</th>
+                            <th>1</th>
+                            <th>2</th>
+                            <th>3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding-left:48px;text-align:left;padding-bottom:3.2px;padding-top:3.2px;">Bañarse</td>
+                            <td><input type="radio" name="Bnarse" value="Nada" @(Model.Bnarse == "Nada" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="Bnarse" value="Algo" @(Model.Bnarse == "Algo" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="Bnarse" value="Bastante" @(Model.Bnarse == "Bastante" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="Bnarse" value="Mucho" @(Model.Bnarse == "Mucho" ? "checked=checked" : "") /></td>
+                        </tr>
+
+                        <tr>
+                            <td style ="padding-left:48px;text-align:left;padding-bottom:3.2px;padding-top:3.2px;">Vestirse</tdstyle>
+                            <td><input type="radio" name="Vestirse" value="Nada" @(Model.Vestirse == "Nada" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="Vestirse" value="Algo" @(Model.Vestirse == "Algo" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="Vestirse" value="Bastante" @(Model.Vestirse == "Bastante" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="Vestirse" value="Mucho" @(Model.Vestirse == "Mucho" ? "checked=checked" : "") /></td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding-left:48px;text-align:left;padding-bottom:3.2px;padding-top:3.2px;">Arreglar la casa</td>
+                            <td><input type="radio" name="ArreglarCasa" value="Nada" @(Model.ArreglarCasa == "Nada" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="ArreglarCasa" value="Algo" @(Model.ArreglarCasa == "Algo" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="ArreglarCasa" value="Bastante" @(Model.ArreglarCasa == "Bastante" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="ArreglarCasa" value="Mucho" @(Model.ArreglarCasa == "Mucho" ? "checked=checked" : "") /></td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding-left:48px;text-align:left;padding-bottom:3.2px;padding-top:3.2px;">Subir Escaleras</td>
+                            <td><input type="radio" name="SubirEscaleras" value="Nada" @(Model.SubirEscaleras == "Nada" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="SubirEscaleras" value="Algo" @(Model.SubirEscaleras == "Algo" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="SubirEscaleras" value="Bastante" @(Model.SubirEscaleras == "Bastante" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="SubirEscaleras" value="Mucho" @(Model.SubirEscaleras == "Mucho" ? "checked=checked" : "") /></td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding-left:48px;text-align:left;padding-bottom:3.2px;padding-top:3.2px;">Caminar por la casa</td>
+                            <td><input type="radio" name="CaminarCasa" value="Nada" @(Model.CaminarCasa == "Nada" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="CaminarCasa" value="Algo" @(Model.CaminarCasa == "Algo" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="CaminarCasa" value="Bastante" @(Model.CaminarCasa == "Bastante" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="CaminarCasa" value="Mucho" @(Model.CaminarCasa == "Mucho" ? "checked=checked" : "") /></td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding-left:48px;text-align:left;padding-bottom:5.2px;padding-top:5.2px;">Ir de Compras</td>
+                            <td><input type="radio" name="IrCompras" value="Nada" @(Model.IrCompras == "Nada" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="IrCompras" value="Algo" @(Model.IrCompras == "Algo" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="IrCompras" value="Bastante" @(Model.IrCompras == "Bastante" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="IrCompras" value="Mucho" @(Model.IrCompras == "Mucho" ? "checked=checked" : "") /></td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding-left:48px;text-align:left;padding-bottom:5.2px;padding-top:5.2px;">Caminar fuera de la casa</td>
+                            <td><input type="radio" name="CaminarFueraCasa" value="Nada" @(Model.CaminarFueraCasa == "Nada" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="CaminarFueraCasa" value="Algo" @(Model.CaminarFueraCasa == "Algo" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="CaminarFueraCasa" value="Bastante" @(Model.CaminarFueraCasa == "Bastante" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="CaminarFueraCasa" value="Mucho" @(Model.CaminarFueraCasa == "Mucho" ? "checked=checked" : "") /></td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding-left:48px;text-align:left;padding-bottom:5.2px;padding-top:5.2px;"> Ir al trabajo</td>
+                            <td><input type="radio" name="IrTrabajo" value="Nada" @(Model.IrTrabajo == "Nada" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="IrTrabajo" value="Algo" @(Model.IrTrabajo == "Algo" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="IrTrabajo" value="Bastante" @(Model.IrTrabajo == "Bastante" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="IrTrabajo" value="Mucho" @(Model.IrTrabajo == "Mucho" ? "checked=checked" : "") /></td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding-left:48px;text-align:left;padding-bottom:5.2px;padding-top:5.2px;">Atarse los zapatos</td>
+                            <td><input type="radio" name="AtarZapatos" value="Nada" @(Model.AtarZapatos == "Nada" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="AtarZapatos" value="Algo" @(Model.AtarZapatos == "Algo" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="AtarZapatos" value="Bastante" @(Model.AtarZapatos == "Bastante" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="AtarZapatos" value="Mucho" @(Model.AtarZapatos == "Mucho" ? "checked=checked" : "") /></td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding-left:48px;text-align:left;padding-bottom:5.2px;padding-top:5.2px;">Levantarse de la silla</td>
+                            <td><input type="radio" name="LevantarDeSilla" value="Nada" @(Model.LevantarDeSilla == "Nada" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="LevantarDeSilla" value="Algo" @(Model.LevantarDeSilla == "Algo" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="LevantarDeSilla" value="Bastante" @(Model.LevantarDeSilla == "Bastante" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="LevantarDeSilla" value="Mucho" @(Model.LevantarDeSilla == "Mucho" ? "checked=checked" : "") /></td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding-left:48px;text-align:left;padding-bottom:5.2px;padding-top:5.2px;">Levantarse de la cama</td>
+                            <td><input type="radio" name="LevarDeCama" value="Nada" @(Model.LevarDeCama == "Nada" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="LevarDeCama" value="Algo" @(Model.LevarDeCama == "Algo" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="LevarDeCama" value="Bastante" @(Model.LevarDeCama == "Bastante" ? "checked=checked" : "") /></td>
+                            <td><input type="radio" name="LevarDeCama" value="Mucho" @(Model.LevarDeCama == "Mucho" ? "checked=checked" : "") /></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="5">
+                                <article class="col_6" style="margin-top:5px;margin-left:39px;padding-bottom:5.2px;padding-top:5.2px;">
+                                    Otra dificultad ¿Cuál?
+                                </article>
+                                <article class="col_5" style="margin-bottom:4px;width:38%">
+                                    <input type="text"  name="OtraDif" class="form-control" style="width:100%;" value="@Model.OtraDif" />
+                                </article>
+                            
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </section>
+        </section>
+    
+    
+    
+    <section class="col_12 row-left" style="width:120%">
+        <article class="col_4">
+            21. Piense en su cuerpo, seleccione cómo le gustaría ser
+        </article>
+        <article class="col_1">
+            <input type="text" name="GustariaSer"  value="@Model.GustariaSer" />
+        </article>
+        <article class="col_1">
+            y se ve ahora
+        </article>
+        <article class="col_1">
+            <input type="text"  name="Ahora" value="@Model.Ahora" />
+        </article>
+    </section>
+    <section class="col_12" style="margin-top:5px">
+        <figure style="width:50%; margin:auto">
+            <img class="img-hombres img-responsive" src="../../Content/Imagenes/hombrermasa.jpg" />
+        </figure>
+    </section>
+</form>
+
+<div class="container-botones-inferiores" style="width:100%;float:left">
+    @Html.ActionLink("Anterior", "AnteriorPaso", "Pasos", new { id = ViewBag.Pagina }, new { @class = "btn btn-info", onclick="javascript:subirDatos();" })
+    <label style="font-family:monospace;font-size:smaller; font-weight:bolder;">
+        Pagina 4 de 18
+    </label>
+    @Html.ActionLink("Siguiente", "ProximoPaso", "Pasos", new { id = ViewBag.Pagina }, new { @class = "btn btn-info", onclick = "javascript:subirDatos();" })
+</div>
+
+@*<script src="../../Scripts/Pagina4.js" type="text/javascript"></script>
+<script>
+    $(function () {
+        $('label.pregunta').each(function (index) {
+            $(this).text(preguntas[index]);
+        });
+    });
+
+    $.fn.table = function (options) {
+
+        settings = $.extend({
+            contenedor: ' ',
+            thead: [],
+            tbody: []
+        }, options);
+        console.log(settings);
+
+        var thead = $('<thead></thead>');
+        var tbody = $('<tbody></tbody>');
+        var th = $('<tr><th>Nada</th></tr>');
+
+        $(settings.thead).each(function (index, value) {
+            th.eq(index).appendTo(thead);
+            th.eq(index).text(value);
+            thead.appendTo($(settings.contenedor));
+            eliminar_valor(settings.thead, value);
+        });
+
+        $(settings.tbody).each(function (index, value) {
+            th.eq(index).appendTo(tbody);
+            th.eq(index).text(value);
+            tbody.appendTo($(settings.contenedor));
+            eliminar_valor(settings.tbody, value);
+        });
+
+        function eliminar_valor(donde_buscar, value) {
+            var i = donde_buscar.indexOf(value);
+            if (i > -1) {
+                donde_buscar.splice(i, 1);
+            }
+        }
+
+    }
+
+    function callback(dom) {
+        dom.table({
+            contenedor: $(dom),
+            thead: table_uno_head,
+            tbody: table_uno_body
+        });
+    }
+
+    $(function () {
+        table_uno_body = new Array();
+        table_uno_head = table_th;
+        table_dos_body = new Array();
+        table_dos_head = table_th;
+        $(table_td).each(function (index, value) {
+            if (index < 6) {
+                table_uno_body.push(value);
+            }
+            else {
+                table_dos_body.push(value);
+            }
+        });
+
+        callback($('table.table'));      
+
+
+    })
+</script>
+
+<h2 class="celeste titulo" style="margin-top: 50px;">Su relación con el tratamiento y motivación</h2>
+
+
+<form class="form-inline">
+    <div class="form-group">
+        <label class="pregunta"></label>
+        <input type="text" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label class="pregunta"></label>
+        <input type="text" class="form-control" />
+        <label>Kg.</label>
+    </div>
+
+    <div>
+        <div class="form-group">
+            <label class="pregunta"></label>
+            <input type="text" class="form-control" />
+            <label>Kg.</label>
+        </div>
+        <div class="form-group">
+            <label class="pregunta"></label>
+            <input type="text" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label class="pregunta"></label>
+            <input type="text" class="form-control" />
+            <label>Kg.</label>
+        </div>
+    </div>
+
+    <div>
+        <div class="form-group">
+            <label class="pregunta"></label>
+        </div>
+        <div class="radio">
+        <label><input type="radio" class="form-control" />Estable</label>
+        </div>
+        <div class="radio">
+        <label><input type="radio" class="form-control" />Subiendo</label>
+        </div>
+        <div class="radio">
+        <label><input type="radio" class="form-control" />Bajando</label>
+        </div>
+    </div>
+
+    <div>
+        <div class="form-group">
+            <label class="pregunta"></label>
+            <input type="text" class="form-control" />
+            <label>Kg ?</label>
+        </div>
+    </div>
+
+    <div>
+        <div class="form-group">
+            <label class="pregunta"></label>
+        </div>
+    </div>
+
+    <div>
+        <div class="table-responsive ocultar-responsive"   style="max-width:350px;text-align:center;margin:10px auto;">
+            <table class="table"  style="text-align:left">
+                
+            </table>
+        </div>
+    </div>
+</form>*@

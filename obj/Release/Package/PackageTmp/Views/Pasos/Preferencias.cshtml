@@ -1,0 +1,357 @@
+﻿@model HistoriaPersonalCormillot.ViewModels.SusAllegadosRelacComPreferenciasViewModel
+@{
+    ViewBag.Title = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/ResponsiveGrid.css" rel="stylesheet" />
+<link href="../../Content/CorreccionesBootstrap.css" rel="stylesheet" />
+<script src="../../Scripts/FormulariosHelpers.js" type="text/javascript"></script>
+
+<script>
+
+    function subirDatos() {
+        postForm("SavePreferencias");
+    }
+
+    function guardarDatos() {
+        postFormGuardar("SavePreferencias");
+    }
+
+    $(document).ready(function () {
+        setInterval(subirDatos, 5000);
+    });
+   
+</script>
+<style>
+    .table > thead:first-child > tr:first-child > th {
+        padding-bottom: 0;
+    }
+    .center-table
+    {
+        padding-left: 17% !important;
+    }
+    
+    .table>tbody>tr.separador-inferior>td
+    {
+        border-bottom: 2px solid black;
+    }
+    
+    .table>tbody>tr>td:first-child
+    {
+        text-align: left;
+    }
+    
+    .table>tbody>tr>td:first-child input
+    {
+        float: right;
+        min-width: 100px;
+        width: 60%;
+    }
+    .normal
+    {
+        font-weight:normal;
+    }
+      .leyenda
+    {
+        border: 1px solid;
+        overflow: hidden;
+        display: block;
+        width: 36%;
+        margin: auto;
+        text-align: center;
+        padding: 1%;
+        border-radius: 30px;
+        /* margin: 3% auto; */
+        margin-top: 9%;
+        margin-bottom: 2%;
+        font-size: 12px;
+    }
+        .table>tbody>tr>td.normalmargen {
+        font-weight:normal;
+        padding-left:6px;
+        font-weight:bold;
+    }
+            .table>tbody>tr>td.margen
+    {
+       padding-left:6px;
+    }
+        
+</style>
+
+<article>
+    <h2 class="celeste titulo FontCormi" style="margin-top: 50px;">Su relación con la comida</h2>
+</article>
+
+<form id="form">
+    <section class="col_12 row-left">
+        <article class="col_12 titulo-control">39B.¿Qué porcentaje de su ingesta diaria de comida consume después de las cena?</article>
+        <section class="col_12" style="margin-left:35px">
+            <article class="col_2">
+                <article class="col_1"><input type="radio" name="relacioncom.RadioPorcentajeIngesta" value="0% (nada)" @(Model.relacioncom.RadioPorcentajeIngesta == "0% (nada)" ? "checked=checked" : "") /></article>
+                <article class="titulo-radio col_6">0% (nada)</article>
+
+            </article>
+            <article class="col_2">
+                <article class="col_1"><input type="radio" name="relacioncom.RadioPorcentajeIngesta" value="1 al 25%" @(Model.relacioncom.RadioPorcentajeIngesta == "1 al 25%" ? "checked=checked" : "") /></article>
+                <article class="titulo-radio col_6">1 al 25%</article>
+
+            </article>
+            <article class="col_2">
+                <article class="col_1"><input type="radio" name="relacioncom.RadioPorcentajeIngesta" value="26 al 50%" @(Model.relacioncom.RadioPorcentajeIngesta == "26 al 50%" ? "checked=checked" : "") /></article>
+                <article class="titulo-radio col_6">26 al 50%</article>
+
+            </article>
+            <article class="col_2">
+                <article class="col_1"><input type="radio" name="relacioncom.RadioPorcentajeIngesta" value="51 al 75%" @(Model.relacioncom.RadioPorcentajeIngesta == "51 al 75%" ? "checked=checked" : "") /></article>
+                <article class="titulo-radio col_6">51 al 75%</article>
+
+            </article>
+            <article class="col_2">
+                <article class="col_1"><input type="radio" name="relacioncom.RadioPorcentajeIngesta" value="76 al 100%" @(Model.relacioncom.RadioPorcentajeIngesta == "76 al 100%" ? "checked=checked" : "") /></article>
+                <article class="titulo-radio col_6">76 al 100%</article>
+            </article>
+        </section>
+    </section>
+    <section class="col_12 row-left" style="margin-bottom:15px">
+        <article class="col_4 titulo-control" style="width:42%">40. ¿Alguna comida le produce molestia o alergia? ¿Cuál?</article>
+        <article class="col_8" style="width:55%"><input type="text" name="relacioncom.AlergiaAComida" class="form-control" value="@Model.relacioncom.AlergiaAComida"/></article>
+    </section>
+
+
+
+    <article>
+        <h2 class="celeste titulo FontCormi" style="margin-top: 50px;margin-bottom:22px">Sus Preferencias</h2>
+    </article>
+
+    <section class="col_12 row-left">
+        <article class="col_12 titulo-control">41. ¿Qué dieta cree que lo ayudaría más en su tratamiento?</article>
+    </section>
+    <section class="col_10 row-left" style="width:95%">
+        <article class="col_3">
+            <article class="col_1">
+                <input type="radio" name="preferencias.SuDieta" value="Un dia por dia" @(Model.preferencias.SuDieta == "Un dia por dia" ? "checked=checked" : "")/>
+            </article>
+            <article class="col_6 titulo-radio">Un día por día</article>
+        </article>
+        <article class="col_3">
+            <article class="col_1">
+                <input type="radio" name="preferencias.SuDieta" value="General con variantes" @(Model.preferencias.SuDieta == "General con variantes" ? "checked=checked" : "") />
+            </article>
+            <article class="col_8 titulo-radio">General con variantes</article>
+        </article>
+        <article class="col_3">
+            <article class="col_1">
+                <input type="radio" name="preferencias.SuDieta" value="Estricta" @(Model.preferencias.SuDieta == "Estricta" ? "checked=checked" : "") />
+            </article>
+            <article class="col_6 titulo-radio">Estricta</article>
+        </article>
+        <article class="col_3">
+            <article class="col_1">
+                <input type="radio" name="preferencias.SuDieta" value="Flexible" @(Model.preferencias.SuDieta == "Flexible" ? "checked=checked" : "") />
+            </article>
+            <article class="col_6 titulo-radio">Flexible</article>
+        </article>
+    </section>
+
+    <section class="col_12 row-left">
+        <article class="col_5 titulo-control" style="width:60%">42.¿Le gustaría incluir a su dieta algún alimento preferido o "gusto"?</article>        
+    </section>
+    <section class="col_12 row-left">
+        <article class="col_1" style="margin-top:3px">
+            <article class="col_6">
+                <article class="col_5"><input type="radio" name="preferencias.RadioAlimentoPreferido" value="No" @(Model.preferencias.RadioAlimentoPreferido == "No" ? "checked=checked" : "") /></article>
+                <article class="col_6 titulo-radio" style="margin-top:0px">No</article>
+            </article>  
+            <article class="col_6">  
+                <article class="col_5"><input type="radio" name="preferencias.RadioAlimentoPreferido" value="Si" @(Model.preferencias.RadioAlimentoPreferido == "Si" ? "checked=checked" : "") /></article>
+                <article class="col_6 titulo-radio" style="margin-top:0px">Sí</article>
+            </article>
+        </article>
+        <article class="col_8" style="margin-top:3px; width:85%">
+            <article class="col_1 titulo-control">¿Cuál?</article>
+            <article class="col_10" style="width:89%"><input type="text" style="width:100%" name="preferencias.AlimentoPreferido" class="form-control" value="@Model.preferencias.AlimentoPreferido" /></article>
+        </article>
+    </section>
+    <section class="col_12 row-left">
+        <article class="col_2">
+            <article class="col_1">
+                <input type="radio" name="preferencias.RadioTipoAlimentoPreferido" value="Dulce" @(Model.preferencias.RadioTipoAlimentoPreferido == "Dulce" ? "checked=checked" : "") />
+            </article>
+            <article class="col_6 titulo-radio">Dulce</article>
+        </article>
+        
+        <article class="col_2">
+            <article class="col_1">
+                <input type="radio" name="preferencias.RadioTipoAlimentoPreferido" value="Salado" @(Model.preferencias.RadioTipoAlimentoPreferido == "Salado" ? "checked=checked" : "") />
+            </article>
+            <article class="col_6 titulo-radio">Salado</article>
+        </article>
+        <article class="col_2">
+            <article class="col_1">
+                <input type="radio" name="preferencias.RadioTipoAlimentoPreferido" value="Mixto" @(Model.preferencias.RadioTipoAlimentoPreferido == "Mixto" ? "checked=checked" : "") />
+            </article>
+            <article class="col_6 titulo-radio">Mixto</article>
+        </article>        
+    </section>
+    <section class="col_12 row-left" style="margin-top:15px;margin-bottom:10px">
+        <article class="col_12 titulo-control">43.Marque el grado de importancia que tienen estas situaciones en su forma de comer:</article>
+    </section>
+    <section class="col_11 row-left">
+        <table class="table" style="text-align:left;border:2px solid">
+            <thead>
+                <th>Distribucion</th>
+                <th>Núnca</th>
+                <th>A veces</th>
+                <th>Muchas veces</th>
+                <th>Generalmente</th>
+                <th>Siempre</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="normalmargen">Desordenado</td>
+                    <td><input type="radio" name="preferencias.RadioDesordenado" value="NUNCA" @(Model.preferencias.RadioDesordenado == "NUNCA" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioDesordenado" value="A VECES" @(Model.preferencias.RadioDesordenado == "A VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioDesordenado" value="MUCHAS VECES" @(Model.preferencias.RadioDesordenado == "MUCHAS VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioDesordenado" value="GENERALMENTE" @(Model.preferencias.RadioDesordenado == "GENERALMENTE" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioDesordenado" value="SIEMPRE" @(Model.preferencias.RadioDesordenado == "SIEMPRE" ? "checked=checked" : "") /></td>
+                </tr>
+                <tr>
+                    <td class="normalmargen">Salteo</td>
+                    <td><input type="radio" name="preferencias.RadioSalteo" value="NUNCA" @(Model.preferencias.RadioSalteo == "NUNCA" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioSalteo" value="A VECES" @(Model.preferencias.RadioSalteo == "A VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioSalteo" value="MUCHAS VECES" @(Model.preferencias.RadioSalteo == "MUCHAS VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioSalteo" value="GENERALMENTE" @(Model.preferencias.RadioSalteo == "GENERALMENTE" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioSalteo" value="SIEMPRE" @(Model.preferencias.RadioSalteo == "SIEMPRE" ? "checked=checked" : "") /></td>
+                </tr>
+                <tr>
+                    <td class="normalmargen">Picoteo</td>
+                    <td><input type="radio" name="preferencias.RadioPicoteo" value="NUNCA" @(Model.preferencias.RadioPicoteo == "NUNCA" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioPicoteo" value="A VECES" @(Model.preferencias.RadioPicoteo == "A VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioPicoteo" value="MUCHAS VECES" @(Model.preferencias.RadioPicoteo == "MUCHAS VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioPicoteo" value="GENERALMENTE" @(Model.preferencias.RadioPicoteo == "GENERALMENTE" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioPicoteo" value="SIEMPRE" @(Model.preferencias.RadioPicoteo == "SIEMPRE" ? "checked=checked" : "") /></td>
+                </tr>
+                <tr class="separador-inferior">
+                    <td class="normalmargen">Hago ayunos</td>
+                    <td><input type="radio" name="preferencias.RadioHagoAyunos" value="NUNCA" @(Model.preferencias.RadioHagoAyunos == "NUNCA" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioHagoAyunos" value="A VECES" @(Model.preferencias.RadioHagoAyunos == "A VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioHagoAyunos" value="MUCHAS VECES" @(Model.preferencias.RadioHagoAyunos == "MUCHAS VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioHagoAyunos" value="GENERALMENTE" @(Model.preferencias.RadioHagoAyunos == "GENERALMENTE" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioHagoAyunos" value="SIEMPRE" @(Model.preferencias.RadioHagoAyunos == "SIEMPRE" ? "checked=checked" : "") /></td>
+                </tr>
+                <tr>
+                    <td class="margen">Como en respuesta a</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="normalmargen">Depresion</td>
+                    <td><input type="radio" name="preferencias.RadioDepresion" value="NUNCA" @(Model.preferencias.RadioDepresion == "NUNCA" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioDepresion" value="A VECES" @(Model.preferencias.RadioDepresion == "A VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioDepresion" value="MUCHAS VECES" @(Model.preferencias.RadioDepresion == "MUCHAS VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioDepresion" value="GENERALMENTE" @(Model.preferencias.RadioDepresion == "GENERALMENTE" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioDepresion" value="SIEMPRE" @(Model.preferencias.RadioDepresion == "SIEMPRE" ? "checked=checked" : "") /></td>
+                </tr>
+                <tr>
+                    <td class="normalmargen">Ansiedad</td>
+                    <td><input type="radio" name="preferencias.RadioAnsiedad" value="NUNCA" @(Model.preferencias.RadioAnsiedad == "NUNCA" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioAnsiedad" value="A VECES" @(Model.preferencias.RadioAnsiedad == "A VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioAnsiedad" value="MUCHAS VECES" @(Model.preferencias.RadioAnsiedad == "MUCHAS VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioAnsiedad" value="GENERALMENTE" @(Model.preferencias.RadioAnsiedad == "GENERALMENTE" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioAnsiedad" value="SIEMPRE" @(Model.preferencias.RadioAnsiedad == "SIEMPRE" ? "checked=checked" : "") /></td>
+                </tr>
+                <tr>
+                    <td class="normalmargen">Estres</td>
+                    <td><input type="radio" name="preferencias.RadioEstres" value="NUNCA" @(Model.preferencias.RadioEstres == "NUNCA" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioEstres" value="A VECES" @(Model.preferencias.RadioEstres == "A VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioEstres" value="MUCHAS VECES" @(Model.preferencias.RadioEstres == "MUCHAS VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioEstres" value="GENERALMENTE" @(Model.preferencias.RadioEstres == "GENERALMENTE" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioEstres" value="SIEMPRE" @(Model.preferencias.RadioEstres == "SIEMPRE" ? "checked=checked" : "") /></td>
+                </tr>
+                <tr>
+                    <td class="normalmargen">Enojo</td>
+                    <td><input type="radio" name="preferencias.RadioEnojo" value="NUNCA" @(Model.preferencias.RadioEnojo == "NUNCA" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioEnojo" value="A VECES" @(Model.preferencias.RadioEnojo == "A VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioEnojo" value="MUCHAS VECES" @(Model.preferencias.RadioEnojo == "MUCHAS VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioEnojo" value="GENERALMENTE" @(Model.preferencias.RadioEnojo == "GENERALMENTE" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioEnojo" value="SIEMPRE" @(Model.preferencias.RadioEnojo == "SIEMPRE" ? "checked=checked" : "") /></td>
+                </tr>
+                <tr>
+                    <td class="normalmargen">Aburrimiento</td>
+                    <td><input type="radio" name="preferencias.RadioAburrimiento" value="NUNCA" @(Model.preferencias.RadioAburrimiento == "NUNCA" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioAburrimiento" value="A VECES" @(Model.preferencias.RadioAburrimiento == "A VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioAburrimiento" value="MUCHAS VECES" @(Model.preferencias.RadioAburrimiento == "MUCHAS VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioAburrimiento" value="GENERALMENTE" @(Model.preferencias.RadioAburrimiento == "GENERALMENTE" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioAburrimiento" value="SIEMPRE" @(Model.preferencias.RadioAburrimiento == "SIEMPRE" ? "checked=checked" : "") /></td>
+                </tr>
+                <tr>
+                    <td class="normalmargen">Alegria</td>
+                    <td><input type="radio" name="preferencias.RadioAlegria" value="NUNCA" @(Model.preferencias.RadioAlegria == "NUNCA" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioAlegria" value="A VECES" @(Model.preferencias.RadioAlegria == "A VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioAlegria" value="MUCHAS VECES" @(Model.preferencias.RadioAlegria == "MUCHAS VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioAlegria" value="GENERALMENTE" @(Model.preferencias.RadioAlegria == "GENERALMENTE" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioAlegria" value="SIEMPRE" @(Model.preferencias.RadioAlegria == "SIEMPRE" ? "checked=checked" : "") /></td>
+                </tr>
+                <tr>
+                    <td class="normalmargen">Descontrol</td>
+                    <td><input type="radio" name="preferencias.RadioDescontrol" value="NUNCA" @(Model.preferencias.RadioDescontrol == "NUNCA" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioDescontrol" value="A VECES" @(Model.preferencias.RadioDescontrol == "A VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioDescontrol" value="MUCHAS VECES" @(Model.preferencias.RadioDescontrol == "MUCHAS VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioDescontrol" value="GENERALMENTE" @(Model.preferencias.RadioDescontrol == "GENERALMENTE" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioDescontrol" value="SIEMPRE" @(Model.preferencias.RadioDescontrol == "SIEMPRE" ? "checked=checked" : "") /></td>
+                </tr>                
+                <tr class="separador-inferior">
+                    <td class="normalmargen">Cansancio</td>
+                    <td><input type="radio" name="preferencias.RadioCansancio" value="NUNCA" @(Model.preferencias.RadioCansancio == "NUNCA" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioCansancio" value="A VECES" @(Model.preferencias.RadioCansancio == "A VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioCansancio" value="MUCHAS VECES" @(Model.preferencias.RadioCansancio == "MUCHAS VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioCansancio" value="GENERALMENTE" @(Model.preferencias.RadioCansancio == "GENERALMENTE" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioCansancio" value="SIEMPRE" @(Model.preferencias.RadioCansancio == "SIEMPRE" ? "checked=checked" : "") /></td>
+                </tr>
+                <tr>
+                    <td class="margen">Situacion</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="normalmargen">Pre-Menstrual</td>
+                    <td><input type="radio" name="preferencias.RadioPreSentimental" value="NUNCA" @(Model.preferencias.RadioPreSentimental == "NUNCA" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioPreSentimental" value="A VECES" @(Model.preferencias.RadioPreSentimental == "A VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioPreSentimental" value="MUCHAS VECES" @(Model.preferencias.RadioPreSentimental == "MUCHAS VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioPreSentimental" value="GENERALMENTE" @(Model.preferencias.RadioPreSentimental == "GENERALMENTE" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioPreSentimental" value="SIEMPRE" @(Model.preferencias.RadioPreSentimental == "SIEMPRE" ? "checked=checked" : "") /></td>
+                </tr>
+                <tr>
+                    <td class="normalmargen">Embarazo</td>
+                    <td><input type="radio" name="preferencias.RadioEmbarazo" value="NUNCA" @(Model.preferencias.RadioEmbarazo == "NUNCA" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioEmbarazo" value="A VECES" @(Model.preferencias.RadioEmbarazo == "A VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioEmbarazo" value="MUCHAS VECES" @(Model.preferencias.RadioEmbarazo == "MUCHAS VECES" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioEmbarazo" value="GENERALMENTE" @(Model.preferencias.RadioEmbarazo == "GENERALMENTE" ? "checked=checked" : "") /></td>
+                    <td><input type="radio" name="preferencias.RadioEmbarazo" value="SIEMPRE" @(Model.preferencias.RadioEmbarazo == "SIEMPRE" ? "checked=checked" : "") /></td>
+                </tr>
+            
+            
+            </tbody>
+        </table>
+    
+    
+    </section>
+   
+</form>
+<div class="leyenda">
+    Una de las mayores mentiras del mundo es que, en determinado 
+    momento de nuestra existencia, perdemos el control de nuestras vidas y
+    están gobernadas por el "destino".
+</div>
+<div class="container-botones-inferiores" style="width:100%;float:left">
+    @Html.ActionLink("Anterior", "AnteriorPaso", "Pasos", new { id = ViewBag.Pagina }, new { @class = "btn btn-info", onclick="javascript:subirDatos();" })
+    <label style="font-family:monospace;font-size:smaller;font-weight:bolder;">
+        Pagina 10 de 18
+    </label>
+    @Html.ActionLink("Siguiente", "ProximoPaso", "Pasos", new { id = ViewBag.Pagina }, new { @class = "btn btn-info", onclick = "javascript:subirDatos();" })
+</div>

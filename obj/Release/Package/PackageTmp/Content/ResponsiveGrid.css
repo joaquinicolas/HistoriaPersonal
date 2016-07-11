@@ -1,0 +1,91 @@
+﻿.col_1
+{
+    width:8.33333%;
+    
+    
+}
+
+.col_2
+{
+    width:16.6666%;
+    
+    
+}
+
+.col_3
+{
+    width:25%;
+    
+    
+}
+
+.col_4
+{
+    width: 33.3333%;
+    
+    
+}
+
+.col_5
+{
+    width: 41.666%;
+    
+    
+}
+
+.col_6
+{
+    width:50%;
+    
+    
+}
+    
+.col_7
+{
+    width:58.47%;
+    
+    
+}
+
+.col_8
+{
+    width:66.6666%;
+    
+    
+}
+
+.col_9
+{
+    width:75%;
+    
+    
+}
+
+.col_10
+{
+    width:83.333%;
+    
+    
+}
+
+.col_11
+{
+    width:91.74%;
+    
+    
+}
+
+.col_12
+{
+    width:100%;
+    
+} 
+
+.col_1, .col_2, .col_3, .col_4, .col_5, .col_6, .col_7, .col_8, .col_9, .col_10, .col_11, .col_12
+{
+    padding: 0;
+    margin: 0;
+    float: left;
+} 
+
+

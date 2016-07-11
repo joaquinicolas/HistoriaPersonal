@@ -1,0 +1,30 @@
+﻿<html ng-app>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+
+</head>
+<body >
+
+<script>
+    angular.module("historia_personal", [])
+        .controller("printFormController", function($scope) {
+            $scope.usuarios = [];
+            $scope.usuario = {
+                Username: "",
+                Id:""
+            };
+            var url = "/HP/PrintForm";
+           $scope.loadUsers = function() {
+               $http.get(url).then(
+                   function (response) {
+                       debugger;
+                       $scope.usuarios = response;
+                   }, function(response) {
+                       
+                   }
+                   );
+           }     
+        });
+</script>
+</body>
+</html>

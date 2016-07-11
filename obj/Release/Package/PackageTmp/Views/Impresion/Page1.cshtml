@@ -1,0 +1,1267 @@
+﻿@{
+    Layout = null;
+}
+@{ 
+    string medicamentos = Model.relac.Medicamentos;
+    string cirugiabariatrica = Model.relac.CirugiaBariatrica;
+    string cirugiaplastica = Model.relac.CirugiaPlastica;
+    string hierbas = Model.relac.Hierbas;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>hoja1</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- Save for Web Styles (hoja1.psd - Slices: razona) -->
+
+    
+    <style type="text/css">
+
+        #Table_01 {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 1013px;
+            height: 721px;
+            /*background-image: url(../../Content/Imagenes/Mapeo/1n.jpg);*/
+            
+        }
+
+        #razona {
+            position: absolute;
+            left: 547px;
+            top: 107px;
+            width: 442px;
+            height: 14px;
+        }
+
+        #fecha1dia {
+            position: absolute;
+            left: 331px;
+            top: 111px;
+            width: 45px;
+            height: 14px;
+        }
+
+        #fecha1mes {
+            position: absolute;
+            left: 386px;
+            top: 111px;
+            width: 44px;
+            height: 14px;
+        }
+
+        #fecha1ano {
+            position: absolute;
+            left: 439px;
+            top: 111px;
+            width: 42px;
+            height: 14px;
+        }
+
+        #razonb {
+            position: absolute;
+            left: 547px;
+            top: 131px;
+            width: 442px;
+            height: 14px;
+        }
+
+        #nomeape {
+            position: absolute;
+            left: 150px;
+            top: 132px;
+            width: 331px;
+            height: 14px;
+        }
+
+        #fecha2dia {
+            position: absolute;
+            left: 159px;
+            top: 154px;
+            width: 45px;
+            height: 14px;
+        }
+
+        #facha2mes {
+            position: absolute;
+            left: 214px;
+            top: 154px;
+            width: 42px;
+            height: 14px;
+        }
+
+        #eda {
+            position: absolute;
+            left: 343px;
+            top: 154px;
+            width: 136px;
+            height: 14px;
+        }
+
+        #fecha2ano {
+            position: absolute;
+            left: 267px;
+            top: 155px;
+            width: 41px;
+            height: 14px;
+        }
+
+        #razonc {
+            position: absolute;
+            left: 547px;
+            top: 155px;
+            width: 442px;
+            height: 14px;
+        }
+
+        #qdeseacambiar1 {
+            position: absolute;
+            left: 669px;
+            top: 175px;
+            width: 320px;
+            height: 14px;
+        }
+
+        #estcivl {
+            position: absolute;
+            left: 107px;
+            top: 176px;
+            width: 96px;
+            height: 14px;
+        }
+
+        #vivcon {
+            position: absolute;
+            left: 263px;
+            top: 177px;
+            width: 218px;
+            height: 14px;
+        }
+
+        #qdeseacambiar2 {
+            position: absolute;
+            left: 532px;
+            top: 193px;
+            width: 457px;
+            height: 14px;
+        }
+
+        #domactual {
+            position: absolute;
+            left: 135px;
+            top: 198px;
+            width: 348px;
+            height: 14px;
+        }
+
+        #edsex {
+            position: absolute;
+            left: 202px;
+            top: 221px;
+            width: 279px;
+            height: 14px;
+        }
+
+        #id1a5 {
+            position: absolute;
+            left: 918px;
+            top: 221px;
+            width: 48px;
+            height: 14px;
+        }
+
+        #hijs {
+            position: absolute;
+            left: 72px;
+            top: 222px;
+            width: 43px;
+            height: 14px;
+        }
+
+        #osocprepa {
+            position: absolute;
+            left: 156px;
+            top: 245px;
+            width: 105px;
+            height: 14px;
+        }
+
+        #noafiliado {
+            position: absolute;
+            left: 346px;
+            top: 245px;
+            width: 135px;
+            height: 14px;
+        }
+
+        #telemergen {
+            position: absolute;
+            left: 291px;
+            top: 267px;
+            width: 191px;
+            height: 14px;
+        }
+
+        #cuantoloki {
+            position: absolute;
+            left: 787px;
+            top: 288px;
+            width: 203px;
+            height: 14px;
+        }
+
+        #estucursado {
+            position: absolute;
+            left: 141px;
+            top: 289px;
+            width: 341px;
+            height: 14px;
+        }
+
+        #manten {
+            position: absolute;
+            left: 534px;
+            top: 289px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #subirr {
+            position: absolute;
+            left: 603px;
+            top: 289px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #bajarr {
+            position: absolute;
+            left: 650px;
+            top: 289px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #actiactual {
+            position: absolute;
+            left: 132px;
+            top: 311px;
+            width: 350px;
+            height: 14px;
+        }
+
+        #encuantot {
+            position: absolute;
+            left: 642px;
+            top: 313px;
+            width: 347px;
+            height: 14px;
+        }
+
+        #expect1a5 {
+            position: absolute;
+            left: 893px;
+            top: 337px;
+            width: 49px;
+            height: 14px;
+        }
+
+        #direcorrespondencia {
+            position: absolute;
+            left: 109px;
+            top: 356px;
+            width: 340px;
+            height: 14px;
+        }
+
+        #confianza1a5 {
+            position: absolute;
+            left: 800px;
+            top: 364px;
+            width: 49px;
+            height: 15px;
+        }
+
+        #apoyo {
+            position: absolute;
+            left: 767px;
+            top: 390px;
+            width: 19px;
+            height: 15px;
+        }
+
+        #informacion {
+            position: absolute;
+            left: 836px;
+            top: 391px;
+            width: 19px;
+            height: 15px;
+        }
+
+        #tel1 {
+            position: absolute;
+            left: 67px;
+            top: 399px;
+            width: 167px;
+            height: 14px;
+        }
+
+        #horariode1 {
+            position: absolute;
+            left: 309px;
+            top: 400px;
+            width: 71px;
+            height: 14px;
+        }
+
+        #ahs1 {
+            position: absolute;
+            left: 392px;
+            top: 400px;
+            width: 70px;
+            height: 14px;
+        }
+
+        #grupos {
+            position: absolute;
+            left: 533px;
+            top: 417px;
+            width: 18px;
+            height: 14px;
+        }
+
+        #manodura {
+            position: absolute;
+            left: 602px;
+            top: 417px;
+            width: 18px;
+            height: 14px;
+        }
+
+        #tratapsico {
+            position: absolute;
+            left: 697px;
+            top: 418px;
+            width: 18px;
+            height: 14px;
+        }
+
+        #controlmed {
+            position: absolute;
+            left: 860px;
+            top: 420px;
+            width: 18px;
+            height: 13px;
+        }
+
+        #tel2 {
+            position: absolute;
+            left: 68px;
+            top: 422px;
+            width: 166px;
+            height: 14px;
+        }
+
+        #horariode2 {
+            position: absolute;
+            left: 308px;
+            top: 422px;
+            width: 71px;
+            height: 14px;
+        }
+
+        #ahs2 {
+            position: absolute;
+            left: 393px;
+            top: 422px;
+            width: 70px;
+            height: 14px;
+        }
+
+        #celu {
+            position: absolute;
+            left: 87px;
+            top: 445px;
+            width: 138px;
+            height: 14px;
+        }
+
+        #beepbeep {
+            position: absolute;
+            left: 276px;
+            top: 447px;
+            width: 208px;
+            height: 14px;
+        }
+
+        #eimeil {
+            position: absolute;
+            left: 85px;
+            top: 467px;
+            width: 185px;
+            height: 14px;
+        }
+
+        #arroba {
+            position: absolute;
+            left: 283px;
+            top: 467px;
+            width: 200px;
+            height: 14px;
+        }
+
+        #nada1 {
+            position: absolute;
+            left: 728px;
+            top: 473px;
+            width: 18px;
+            height: 14px;
+        }
+
+        #algo1 {
+            position: absolute;
+            left: 778px;
+            top: 473px;
+            width: 18px;
+            height: 14px;
+        }
+
+        #bastante1 {
+            position: absolute;
+            left: 831px;
+            top: 473px;
+            width: 18px;
+            height: 14px;
+        }
+
+        #mucho1 {
+            position: absolute;
+            left: 882px;
+            top: 473px;
+            width: 19px;
+            height: 15px;
+        }
+
+        #nada2 {
+            position: absolute;
+            left: 728px;
+            top: 488px;
+            width: 18px;
+            height: 14px;
+        }
+
+        #algo2 {
+            position: absolute;
+            left: 778px;
+            top: 488px;
+            width: 18px;
+            height: 14px;
+        }
+
+        #bastante2 {
+            position: absolute;
+            left: 831px;
+            top: 488px;
+            width: 18px;
+            height: 14px;
+        }
+
+        #comunicarse1 {
+            position: absolute;
+            left: 296px;
+            top: 489px;
+            width: 186px;
+            height: 14px;
+        }
+
+        #mucho2 {
+            position: absolute;
+            left: 882px;
+            top: 489px;
+            width: 19px;
+            height: 14px;
+        }
+
+        #nada3 {
+            position: absolute;
+            left: 728px;
+            top: 503px;
+            width: 18px;
+            height: 15px;
+        }
+
+        #algo3 {
+            position: absolute;
+            left: 778px;
+            top: 503px;
+            width: 18px;
+            height: 15px;
+        }
+
+        #bastante3 {
+            position: absolute;
+            left: 831px;
+            top: 503px;
+            width: 18px;
+            height: 15px;
+        }
+
+        #mucho3 {
+            position: absolute;
+            left: 882px;
+            top: 503px;
+            width: 19px;
+            height: 15px;
+        }
+
+        #comunicarse2 {
+            position: absolute;
+            left: 44px;
+            top: 513px;
+            width: 213px;
+            height: 14px;
+        }
+
+        #tel3 {
+            position: absolute;
+            left: 285px;
+            top: 514px;
+            width: 197px;
+            height: 14px;
+        }
+
+        #nada4 {
+            position: absolute;
+            left: 728px;
+            top: 518px;
+            width: 18px;
+            height: 15px;
+        }
+
+        #algo4 {
+            position: absolute;
+            left: 778px;
+            top: 518px;
+            width: 18px;
+            height: 15px;
+        }
+
+        #bastante4 {
+            position: absolute;
+            left: 831px;
+            top: 518px;
+            width: 18px;
+            height: 15px;
+        }
+
+        #mucho4 {
+            position: absolute;
+            left: 882px;
+            top: 518px;
+            width: 19px;
+            height: 15px;
+        }
+
+        #enqano {
+            position: absolute;
+            left: 415px;
+            top: 538px;
+            width: 61px;
+            height: 14px;
+        }
+
+        #pacienteno {
+            position: absolute;
+            left: 248px;
+            top: 540px;
+            width: 12px;
+            height: 15px;
+        }
+
+        #pacientesi {
+            position: absolute;
+            left: 295px;
+            top: 540px;
+            width: 12px;
+            height: 14px;
+        }
+
+        #otrocual {
+            position: absolute;
+            left: 728px;
+            top: 530px;
+            width: 18px;
+            height: 15px;
+        }
+       
+
+        #televisao {
+            position: absolute;
+            left: 445px;
+            top: 589px;
+            width: 12px;
+            height: 15px;
+        }
+
+        #otropac {
+            position: absolute;
+            left: 45px;
+            top: 590px;
+            width: 13px;
+            height: 15px;
+        }
+
+        #revisstas {
+            position: absolute;
+            left: 353px;
+            top: 590px;
+            width: 12px;
+            height: 15px;
+        }
+
+        #unpro {
+            position: absolute;
+            left: 157px;
+            top: 591px;
+            width: 12px;
+            height: 15px;
+        }
+
+        #diarioo {
+            position: absolute;
+            left: 275px;
+            top: 591px;
+            width: 12px;
+            height: 15px;
+        }
+
+        #harealizadono {
+            position: absolute;
+            left: 532px;
+            top: 593px;
+            width: 19px;
+            height: 15px;
+        }
+
+        #harealizadosi {
+            position: absolute;
+            left: 583px;
+            top: 593px;
+            width: 20px;
+            height: 15px;
+        }
+
+        #harealizadocuantos {
+            position: absolute;
+            left: 705px;
+            top: 595px;
+            width: 50px;
+            height: 14px;
+        }
+
+        #harealizadodonde {
+            position: absolute;
+            left: 825px;
+            top: 596px;
+            width: 19px;
+            height: 14px;
+        }
+
+        #internechi {
+            position: absolute;
+            left: 45px;
+            top: 616px;
+            width: 13px;
+            height: 15px;
+        }
+
+        #dietaclub {
+            position: absolute;
+            left: 532px;
+            top: 618px;
+            width: 19px;
+            height: 14px;
+        }
+
+        #alco {
+            position: absolute;
+            left: 652px;
+            top: 620px;
+            width: 20px;
+            height: 14px;
+        }
+
+        #psicoterapia {
+            position: absolute;
+            left: 739px;
+            top: 621px;
+            width: 19px;
+            height: 14px;
+        }
+
+        #psiquiatria {
+            position: absolute;
+            left: 860px;
+            top: 622px;
+            width: 18px;
+            height: 14px;
+        }
+
+        #actividadfisica {
+            position: absolute;
+            left: 532px;
+            top: 635px;
+            width: 19px;
+            height: 15px;
+        }
+
+        #homeopatia {
+            position: absolute;
+            left: 652px;
+            top: 637px;
+            width: 20px;
+            height: 15px;
+        }
+
+        #others {
+            position: absolute;
+            left: 85px;
+            top: 638px;
+            width: 391px;
+            height: 15px;
+        }
+
+        #dietasporsu {
+            position: absolute;
+            left: 739px;
+            top: 638px;
+            width: 19px;
+            height: 15px;
+        }
+
+        #medicoodieti {
+            position: absolute;
+            left: 860px;
+            top: 639px;
+            width: 19px;
+            height: 15px;
+        }
+
+        #interneedietas {
+            position: absolute;
+            left: 532px;
+            top: 653px;
+            width: 19px;
+            height: 14px;
+        }
+
+        #internation {
+            position: absolute;
+            left: 652px;
+            top: 653px;
+            width: 20px;
+            height: 15px;
+        }
+
+        #ciruja {
+            position: absolute;
+            left: 739px;
+            top: 654px;
+            width: 19px;
+            height: 14px;
+        }
+
+        #medicaments {
+            position: absolute;
+            left: 860px;
+            top: 656px;
+            width: 19px;
+            height: 12px;
+        }
+
+        #cualesotros {
+            position: absolute;
+            left: 627px;
+            top: 668px;
+            width: 341px;
+            height: 14px;
+        }
+
+        #otross {
+            position: absolute;
+            left: 532px;
+            top: 670px;
+            width: 19px;
+            height: 14px;
+        }
+
+        p {
+            display: inline;
+            font-family: arial;
+            font-size: 14px;
+        }
+        -->
+    </style>
+    <!-- End Save for Web Styles -->
+</head>
+<body style="background-color:#FFFFFF; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;">
+<!-- Save for Web Slices (hoja1.psd - Slices: razona) -->
+<img width="auto" height="auto"
+     src="../../Content/Imagenes/Mapeo/1n.jpg"/>
+    <div id="Table_01">
+        <div id="razona">
+          @Model.relac.Razon1
+        </div>
+        @if (Model.datper.Fecha != null)
+        {
+            <div id="fecha1dia">
+                @Model.datper.Fecha.Day
+            </div>
+            <div id="fecha1mes">
+                @Model.datper.Fecha.Month
+            </div>
+            <div id="fecha1ano">
+                @Model.datper.Fecha.Year
+            </div>
+        }
+       
+        <div id="razonb">
+     @Model.relac.Razon2
+        </div>
+        <div id="nomeape">
+            @Model.datper.NombreyApellido
+        </div>
+        @if (Model.datper.FechaNacimiento != null)
+        {
+            <div id="fecha2dia">
+                @Model.datper.FechaNacimiento.Day
+            </div>
+            <div id="facha2mes">
+                @Model.datper.FechaNacimiento.Month
+            </div>
+            <div id="fecha2ano">
+                @Model.datper.FechaNacimiento.Year
+            </div>
+        }
+      
+        <div id="eda">
+            @Model.datper.Edad
+        </div>
+        
+        <div id="razonc">
+            @Model.relac.Razon3
+        </div>
+        <div id="qdeseacambiar1">
+            @Model.relac.QueDeseaCambiar
+        </div>
+        <div id="estcivl">
+            @Model.datper.EstadoCivil
+        </div>
+        <div id="vivcon">
+            @Model.datper.ViveCon
+        </div>
+        <div id="qdeseacambiar2">
+
+        </div>
+        <div id="domactual">
+            @Model.datper.Domicilio
+        </div>
+        <div id="edsex">
+            @Model.datper.EdadesySexo
+        </div>
+        <div id="id1a5">
+            @Model.relac.Motivacion
+        </div>
+        <div id="hijs">
+            @Model.datper.Hijos
+        </div>
+        <div id="osocprepa">
+            @Model.datper.ObraSocialoPrepago
+        </div>
+        <div id="noafiliado">
+            @Model.datper.NroAfiliado
+        </div>
+        <div id="telemergen">
+            @Model.datper.TelEmergenciaObraSocial
+        </div>
+        <div id="cuantoloki">
+            
+        </div>
+        <div id="estucursado">
+            @Model.datper.EstudiosCursados
+        </div>
+        <div id="manten">
+            @if (Model.relac.MantenerPeso == true)
+            {
+               <label>X</label>
+            }
+        </div>
+        <div id="subirr">
+            @if(Model.relac.SubirPesoV != null)
+            {
+                <label>X</label>
+            }
+        </div>
+        <div id="bajarr">
+            @if (Model.relac.BajarPesoV != null)
+            {
+                <label>X</label>
+            }
+        </div>
+        <div id="actiactual">
+            @Model.datper.ActividadActual
+        </div>
+        <div id="encuantot">
+            @Model.relac.TiempoHacerConPeso
+        </div>
+        <div id="expect1a5">
+            @Model.relac.ExpectativaCambiarPeso
+        </div>
+        <div id="direcorrespondencia">
+            @Model.datper.DireccionCorrespondencia
+        </div>
+        <div id="confianza1a5">
+            @Model.relac.ConfianzaCambiarPeso
+        </div>
+        <div id="apoyo">
+            @if (Model.relac.EsperaTratamiento == "Apoyo")
+            {
+                <label>X</label>
+            }
+        </div>
+        <div id="informacion">
+            @if (Model.relac.EsperaTratamiento == "Informacion")
+            {
+                <label>X</label>
+            }
+        </div>
+        <div id="tel1">
+            @Model.datper.TelMensajes1
+        </div>
+        <div id="horariode1">
+            @Model.datper.HorarioMensajesDesde1
+        </div>
+        <div id="ahs1">
+            @Model.datper.HorarioMensajesHasta1
+        </div>
+        <div id="grupos">
+            @if (Model.relac.EsperaTratamiento == "Grupos")
+            {
+                <label>X</label>
+            }
+        </div>
+        <div id="manodura">
+            @if (Model.relac.EsperaTratamiento == "ManoDura")
+            {
+                <label>X</label>
+            }
+        </div>
+        <div id="tratapsico">
+            @if (Model.relac.EsperaTratamiento == "TratamientoPsicologico")
+            {
+                <label>X</label>
+            }
+        </div>
+        <div id="controlmed">
+            @if (Model.relac.EsperaTratamiento == "ControlMedico")
+            {
+                <label>X</label>
+            }
+        </div>
+        <div id="tel2">
+            @Model.datper.TelMensajes2
+        </div>
+        <div id="horariode2">
+            @Model.datper.HorarioMensajesDesde2
+        </div>
+        <div id="ahs2">
+            @Model.datper.HorarioMensajesHasta2
+        </div>
+        <div id="celu">
+            @Model.datper.TelCelular
+        </div>
+        <div id="beepbeep">
+            @Model.datper.TelBeeper
+        </div>
+        <div id="eimeil">
+            @Model.datper.Email
+        </div>
+        <div id="arroba">
+        </div>
+         @{
+             switch (medicamentos)
+             {
+                 case "Nada":
+                    <div id="nada1">
+                       X
+                    </div>
+                     break;
+                 case "Algo":
+                    <div id="algo1">
+                        X
+                    </div>
+                     break;
+                 case "Bastante":
+                    <div id="bastante1">
+                        X
+                    </div>
+                     break;
+                 case "Mucho":
+                    <div id="mucho1">
+                        X
+                    </div>
+                     break;
+             }
+        }
+        @{
+            switch (cirugiabariatrica)
+            {
+                case "Nada":
+                    <div id="nada2">
+                        X
+                    </div>
+                    break;
+                case "Algo":
+                    <div id="algo2">
+                        X
+                    </div>
+                    break;
+                case "Bastante":
+                    <div id="bastante2">
+                        X
+                    </div>
+                    break;
+                case "Mucho":
+                    <div id="mucho2">
+                        X
+                    </div>
+                    break;
+            }
+        }
+
+        <div id="comunicarse1">
+            @Model.datper.NecesidadNombre
+        </div>
+        @{
+            switch (cirugiaplastica)
+            {
+                case "Nada":
+                    <div id="nada3">
+                        X
+                    </div>
+                    break;
+                case "Algo":
+                    <div id="algo3">
+                        X
+                    </div>
+                    break;
+                case "Bastante":
+                    <div id="bastante3">
+                        X
+                    </div>
+                    break;
+                case "Mucho":
+                    <div id="mucho3">
+                        X
+                    </div>
+                    break;
+            }
+        }
+        
+        <div id="comunicarse2">
+        </div>
+        <div id="tel3">
+            @Model.datper.NecesidadTel
+        </div>
+        @{
+            switch (hierbas)
+            {
+                case "Nada":
+                    <div id="nada4">
+                        X
+                    </div>
+                    break;
+                case "Algo":
+                    <div id="algo4">
+                        X
+                    </div>
+                    break;
+                case "Bastante":
+                    <div id="bastante4">
+                        X
+                    </div>
+                    break;
+                case "Mucho":
+                    <div id="mucho4">
+                        X
+                    </div>
+                    break;
+            }
+        }
+       
+       
+        <div id="enqano">
+            @Model.datper.PacienteAño
+        </div>
+        <div id="pacienteno">
+        @if(Model.datper.PacienteSiNo == "No")
+        {
+            <label>X</label>
+        }
+        </div>
+        <div id="pacientesi">
+            @if (Model.datper.PacienteSiNo == "Si")
+            {
+                <label>X</label>
+            }
+        </div>
+        <div id="otrocual">
+            @Model.relac.OtrosText
+        </div>
+
+        <div id="televisao">
+            @if (Model.datper.ConocioClinicaTV == true)
+            {
+                <label>X</label>
+            }
+        </div>
+        <div id="otropac">
+            @if(Model.datper.ConocioClinicaOtroPaciente == true)
+            {
+                <label>X</label>
+            }
+        </div>
+        <div id="revisstas">
+            @if (Model.datper.ConocioClinicaRevistas == true)
+            {
+                <label>X</label>
+            }
+        </div>
+        <div id="unpro">
+        </div>
+        <div id="diarioo">
+            @if (Model.datper.ConocioClinicaDiarios == true)
+            {
+                <label>X</label>
+            }
+        </div>
+        <div id="others">
+            @Model.datper.ConocioClinicaOtro
+        </div>
+        <div id="internechi">
+            @if (Model.datper.ConocioClinicaInternet == true)
+            {
+                <label>X</label>
+            }
+        </div>
+
+        <div id="harealizadono">
+            @if(Model.relac.HaRealizadoTratamiento=="No")
+            {
+                <label>X</label>
+            }
+        </div>
+        <div id="harealizadosi">
+            @if (Model.relac.HaRealizadoTratamiento == "Si")
+            {
+                <label>X</label>
+            }
+        </div>
+        <div id="harealizadocuantos">
+            @Model.relac.CuantosTratamiento
+        </div>
+      
+        <div id="harealizadodonde">
+            @if (Model.relac.TratamientoClinicaCormillot ==true)
+            {
+                <label>X</label>
+            }
+        </div>
+      
+        <div id="dietaclub">
+            @if (Model.relac.TratamientoDietaClub == true)
+            {
+                <label>X</label>
+            }
+        </div>
+        <div id="alco">
+            @if (Model.relac.TratamientoAlco == true)
+            {
+                <label>X</label>
+            }
+        </div>
+        <div id="psicoterapia">
+            @if (Model.relac.TratamientoPsicoterapia == true)
+            {
+                <label>X</label>
+            }
+        </div>
+        <div id="psiquiatria">
+            @if (Model.relac.TratamientoPsiquiatria == true)
+            {
+                <label>X</label>
+            }
+        </div>
+       
+        <div id="homeopatia">
+            @if (Model.relac.TratamientoHomeopatia == true)
+            {
+                <label>X</label>
+            }
+        </div>
+       
+        <div id="dietasporsu">
+            @if (Model.relac.TratamientoDietasPorSuCuenta == true)
+            {
+                <label>X</label>
+            }
+        </div>
+        <div id="medicoodieti">
+            @if (Model.relac.TratamientoMedicoODietista == true)
+            {
+                <label>X</label>
+            }
+        </div>
+        <div id="interneedietas">
+            @if (Model.relac.TratamientoInternet == true)
+            {
+                <label>X</label>
+            }
+        </div>
+        <div id="internation">
+            @if (Model.relac.TratamiengoInternacion == true)
+            {
+                <label>X</label>
+            }
+        </div>
+        <div id="ciruja">
+            @if (Model.relac.TratamientoCirugia == true)
+            {
+                <label>X</label>
+            }
+        </div>
+        <div id="medicaments">
+            @if (Model.relac.TratamientoMedicamentos == true)
+            {
+                <label>X</label>
+            }
+        </div>
+        <div id="cualesotros">
+            @if (Model.relac.TratamientoOtros)
+            {
+                <label>X</label>
+            }
+        </div>
+        <div id="otross">
+            @if (Model.relac.TratamientoCuales == true)
+            {
+                <label>X</label>
+                }
+        </div>
+    </div>
+    <!-- End Save for Web Slices -->
+</body>
+</html>

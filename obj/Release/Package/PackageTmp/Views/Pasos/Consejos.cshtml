@@ -1,0 +1,16 @@
+﻿@model HistoriaPersonalCormillot.Consejo
+
+@{
+    ViewBag.ImagenConsejo = "globo1.jpg";
+}
+
+<link href="../../Content/Consejos.css" rel="stylesheet" type="text/css" />
+
+<figure class="container container-consejo">
+    <img class="img-responsive img-consejo" src="../../Content/Imagenes/Consejos/@Model.SrcImagen" />
+</figure>
+
+<section class="container-botones-inferiores">
+    @Html.ActionLink("Anterior", "AnteriorPaso", "Pasos", new { id = ViewBag.Pagina }, new { @class = "btn btn-info" })
+    @Html.ActionLink("Siguiente", "ProximoPaso", "Pasos", new { id = ViewBag.Pagina }, new { @class = "btn btn-info" })
+</section>

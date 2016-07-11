@@ -1,0 +1,794 @@
+﻿@model HistoriaPersonalCormillot.ViewModels.Impresion.Page9
+@{
+    Layout = null;
+}
+@{ 
+    string estilodevida = Model.actfis.RadioEstiloDeVida;
+    string estadofisico = Model.actfis.RadioSuEstadoFisico;
+    string motivacionactfisica = Model.actfis.RadioMotivacionActivdad;
+
+}
+<html>
+<head>
+    <title>hoja9</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- Save for Web Styles (hoja9.psd - Slices: algoquecoment_23) -->
+    <style type="text/css">
+        <!--
+
+        #Table_01 {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 958px;
+            height: 721px;
+            /*background-image: url(../../Content/Imagenes/Mapeo/9.jpg);*/
+        }
+
+        p {
+            display: inline;
+            font-family: arial;
+            font-size: 14px;
+        }
+
+        #algoquecoment-01 {
+            position: absolute;
+            left: 495px;
+            top: 89px;
+            width: 453px;
+            height: 14px;
+        }
+
+        #comoconsidera-01 {
+            position: absolute;
+            left: 44px;
+            top: 91px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #comoconsidera-02 {
+            position: absolute;
+            left: 138px;
+            top: 92px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #comoconsidera-03 {
+            position: absolute;
+            left: 201px;
+            top: 92px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #comoconsidera-04 {
+            position: absolute;
+            left: 292px;
+            top: 93px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #algoquecoment-02 {
+            position: absolute;
+            left: 495px;
+            top: 114px;
+            width: 453px;
+            height: 14px;
+        }
+
+        #engeneralcomo-01 {
+            position: absolute;
+            left: 45px;
+            top: 132px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #engeneralcomo-02 {
+            position: absolute;
+            left: 139px;
+            top: 132px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #engeneralcomo-03 {
+            position: absolute;
+            left: 202px;
+            top: 132px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #engeneralcomo-04 {
+            position: absolute;
+            left: 275px;
+            top: 133px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #engeneralcomo-05 {
+            position: absolute;
+            left: 335px;
+            top: 134px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #algoquecoment-03 {
+            position: absolute;
+            left: 495px;
+            top: 140px;
+            width: 453px;
+            height: 14px;
+        }
+
+        #realizaalgunaact-01 {
+            position: absolute;
+            left: 243px;
+            top: 161px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #realizaalgunaact-02 {
+            position: absolute;
+            left: 295px;
+            top: 161px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #algoquecoment-04 {
+            position: absolute;
+            left: 495px;
+            top: 165px;
+            width: 453px;
+            height: 14px;
+        }
+
+        #algoquecoment-05 {
+            position: absolute;
+            left: 495px;
+            top: 191px;
+            width: 453px;
+            height: 14px;
+        }
+
+        #cual-01 {
+            position: absolute;
+            left: 32px;
+            top: 212px;
+            width: 229px;
+            height: 14px;
+        }
+
+        #vecesxseman-01 {
+            position: absolute;
+            left: 266px;
+            top: 212px;
+            width: 80px;
+            height: 14px;
+        }
+
+        #tiempo-01 {
+            position: absolute;
+            left: 356px;
+            top: 213px;
+            width: 78px;
+            height: 14px;
+        }
+
+        #algoquecoment-06 {
+            position: absolute;
+            left: 495px;
+            top: 216px;
+            width: 453px;
+            height: 14px;
+        }
+
+        #cual-02 {
+            position: absolute;
+            left: 32px;
+            top: 233px;
+            width: 229px;
+            height: 14px;
+        }
+
+        #vecesxseman-02 {
+            position: absolute;
+            left: 266px;
+            top: 233px;
+            width: 80px;
+            height: 14px;
+        }
+
+        #tiempo-02 {
+            position: absolute;
+            left: 356px;
+            top: 234px;
+            width: 78px;
+            height: 14px;
+        }
+
+        #algoquecoment-07 {
+            position: absolute;
+            left: 495px;
+            top: 243px;
+            width: 453px;
+            height: 14px;
+        }
+
+        #cual-03 {
+            position: absolute;
+            left: 32px;
+            top: 255px;
+            width: 229px;
+            height: 14px;
+        }
+
+        #vecesxseman-03 {
+            position: absolute;
+            left: 266px;
+            top: 256px;
+            width: 80px;
+            height: 14px;
+        }
+
+        #tiempo-03 {
+            position: absolute;
+            left: 356px;
+            top: 257px;
+            width: 78px;
+            height: 14px;
+        }
+
+        #algoquecoment-08 {
+            position: absolute;
+            left: 495px;
+            top: 270px;
+            width: 453px;
+            height: 14px;
+        }
+
+        #algoquecoment-09 {
+            position: absolute;
+            left: 495px;
+            top: 293px;
+            width: 453px;
+            height: 14px;
+        }
+
+        #comodefiniriasumotiv-01 {
+            position: absolute;
+            left: 46px;
+            top: 305px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #comodefiniriasumotiv-02 {
+            position: absolute;
+            left: 130px;
+            top: 305px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #comodefiniriasumotiv-03 {
+            position: absolute;
+            left: 253px;
+            top: 307px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #comodefiniriasumotiv-04 {
+            position: absolute;
+            left: 343px;
+            top: 307px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #algoquecoment-10 {
+            position: absolute;
+            left: 495px;
+            top: 321px;
+            width: 453px;
+            height: 14px;
+        }
+
+        #sinohaceactivi-01 {
+            position: absolute;
+            left: 312px;
+            top: 340px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sinohaceactivi-02 {
+            position: absolute;
+            left: 389px;
+            top: 340px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #algoquecoment-11 {
+            position: absolute;
+            left: 495px;
+            top: 346px;
+            width: 453px;
+            height: 14px;
+        }
+
+        #sinohaceactivi-09 {
+            position: absolute;
+            left: 417px;
+            top: 357px;
+            width: 37px;
+            height: 14px;
+        }
+
+        #sinohaceactivi-03 {
+            position: absolute;
+            left: 25px;
+            top: 358px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sinohaceactivi-04 {
+            position: absolute;
+            left: 86px;
+            top: 358px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sinohaceactivi-05 {
+            position: absolute;
+            left: 174px;
+            top: 359px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sinohaceactivi-06 {
+            position: absolute;
+            left: 226px;
+            top: 359px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sinohaceactivi-07 {
+            position: absolute;
+            left: 291px;
+            top: 359px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #sinohaceactivi-08 {
+            position: absolute;
+            left: 346px;
+            top: 361px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #algoquecoment-12 {
+            position: absolute;
+            left: 495px;
+            top: 371px;
+            width: 453px;
+            height: 14px;
+        }
+
+        #mediosdetrans {
+            position: absolute;
+            left: 203px;
+            top: 377px;
+            width: 246px;
+            height: 14px;
+        }
+
+        #algoquecoment-13 {
+            position: absolute;
+            left: 495px;
+            top: 395px;
+            width: 453px;
+            height: 14px;
+        }
+
+        #algoquecoment-14 {
+            position: absolute;
+            left: 495px;
+            top: 422px;
+            width: 453px;
+            height: 14px;
+        }
+
+        #legustariahacer-01 {
+            position: absolute;
+            left: 31px;
+            top: 429px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #legustariahacer-02 {
+            position: absolute;
+            left: 99px;
+            top: 430px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #legustariahacer-03 {
+            position: absolute;
+            left: 202px;
+            top: 431px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #legustariahacer-04 {
+            position: absolute;
+            left: 296px;
+            top: 431px;
+            width: 14px;
+            height: 14px;
+        }
+
+        #algoquecoment-15 {
+            position: absolute;
+            left: 495px;
+            top: 448px;
+            width: 453px;
+            height: 14px;
+        }
+
+        #algoquecoment-16 {
+            position: absolute;
+            left: 495px;
+            top: 474px;
+            width: 453px;
+            height: 14px;
+        }
+
+        #algoquecoment-17 {
+            position: absolute;
+            left: 495px;
+            top: 500px;
+            width: 453px;
+            height: 14px;
+        }
+
+        #algoquecoment-18 {
+            position: absolute;
+            left: 495px;
+            top: 525px;
+            width: 453px;
+            height: 14px;
+        }
+
+        #algoquecoment-19 {
+            position: absolute;
+            left: 495px;
+            top: 549px;
+            width: 453px;
+            height: 14px;
+        }
+
+        #algoquecoment-20 {
+            position: absolute;
+            left: 495px;
+            top: 577px;
+            width: 453px;
+            height: 14px;
+        }
+
+        #algoquecoment-21 {
+            position: absolute;
+            left: 495px;
+            top: 602px;
+            width: 453px;
+            height: 14px;
+        }
+
+        #algoquecoment-22 {
+            position: absolute;
+            left: 495px;
+            top: 625px;
+            width: 453px;
+            height: 14px;
+        }
+
+        #algoquecoment-23 {
+            position: absolute;
+            left: 495px;
+            top: 651px;
+            width: 453px;
+            height: 14px;
+        }
+
+        -->
+    </style>
+    <!-- End Save for Web Styles -->
+</head>
+<body style="background-color:#FFFFFF; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;">
+    <!-- Save for Web Slices (hoja9.psd - Slices: algoquecoment_23) -->
+    <img src="../../Content/Imagenes/Mapeo/9.jpg" width="auto" alt="Alternate Text" />
+<div id="Table_01">
+        <div id="algoquecoment-01">
+           @if(Model.comentgen != null)
+           {
+               @Model.comentgen.Comentario
+           }
+           else
+           {
+            <span>Sin datos</span>
+           }
+        </div>
+        @{
+            switch (estilodevida)
+            {
+                case "Muy Activo":
+                    <div id="comoconsidera-01">
+                        X
+                    </div>
+                    break;
+                case "Activo":
+                    <div id="comoconsidera-02">
+                        X
+                    </div>
+                    break;
+                case "Poco Activo":
+                    <div id="comoconsidera-03">
+                        X
+                    </div>
+                    break;
+                case "Sedentario":
+                    <div id="comoconsidera-04">
+                        X
+                    </div>
+                    break;
+            }
+        }
+       
+     
+        <div id="algoquecoment-02">
+        </div>
+        @{
+            switch (estadofisico)
+            {
+                case "Muy Bueno":
+                    <div id="engeneralcomo-01">
+                        X
+                    </div>
+                    break;
+                case "Bueno":
+                    <div id="engeneralcomo-02">
+                        X
+                    </div>
+                    break;
+                case "Regular":
+                    <div id="engeneralcomo-03">
+                        X
+                    </div>
+                    break;
+                case "Malo":
+                    <div id="engeneralcomo-04">
+                        X
+                    </div>
+                    break;
+                case "Muy Malo":
+                    <div id="engeneralcomo-05">
+                        X
+                    </div>
+                    break;
+            }
+        }
+       
+        <div id="algoquecoment-03">
+        </div>
+
+       
+        @if (Model.actfis.RadioRealizaActivdad == "Si")
+        {
+            <div id="realizaalgunaact-01">
+            X
+            </div>
+        }
+        @if (Model.actfis.RadioRealizaActivdad == "No")
+        {
+            <div id="realizaalgunaact-02">
+                X
+            </div>
+        }
+      
+        <div id="algoquecoment-04">
+        </div>
+        <div id="algoquecoment-05">
+        </div>
+        <div id="cual-01">
+            @Model.actfis.ActivdadUno
+        </div>
+        <div id="vecesxseman-01">
+            @Model.actfis.PorSemanaActivdadUno
+        </div>
+        <div id="tiempo-01">
+            @Model.actfis.TiempoActividadUno
+        </div>
+        <div id="algoquecoment-06">
+        </div>
+        <div id="cual-02">
+            @Model.actfis.ActivdadDos
+        </div>
+        <div id="vecesxseman-02">
+            @Model.actfis.PorSemanaActivdadDos
+        </div>
+        <div id="tiempo-02">
+            @Model.actfis.TiempoActividadDos
+        </div>
+        <div id="algoquecoment-07">
+        </div>
+        <div id="cual-03">
+            @Model.actfis.ActividadTres
+        </div>
+        <div id="vecesxseman-03">
+            @Model.actfis.PorSemanaActividadTres
+        </div>
+        <div id="tiempo-03">
+            @Model.actfis.TiempoActividadTres
+        </div>
+        <div id="algoquecoment-08">
+        </div>
+        <div id="algoquecoment-09">
+        </div>
+        @{
+            switch (motivacionactfisica)
+            {
+                case "Alta":
+                    <div id="comodefiniriasumotiv-01">
+                        X
+                    </div>
+                    break;
+                case "Normal":
+                    <div id="comodefiniriasumotiv-02">
+                        X
+                    </div>
+                    break;
+                case "Baja":
+                    <div id="comodefiniriasumotiv-03">
+                        X
+                    </div>
+                    break;
+                case "Minima":
+                    <div id="comodefiniriasumotiv-04">
+                        X
+                    </div>
+                    break;
+ 
+            }
+        }
+      
+        <div id="algoquecoment-10">
+        </div>
+
+        <div id="sinohaceactivi-01">
+            @if (Model.actfis.CheckCaminata ==true)
+            {
+                <div>X</div>
+            }
+        </div>
+        <div id="sinohaceactivi-02">
+            @if (Model.actfis.CheckYoga == true)
+            {
+                <div>X</div>
+            }
+        </div>
+        <div id="algoquecoment-11">
+        </div>
+        <div id="sinohaceactivi-09">
+        </div>
+        <div id="sinohaceactivi-03">
+            @if (Model.actfis.CheckBicicleta == true)
+            {
+                <div>X</div>
+            }
+        </div>
+        <div id="sinohaceactivi-04">
+            @if (Model.actfis.CheckGimAcuatica == true)
+            {
+                <div>X</div>
+            }
+        </div>
+        <div id="sinohaceactivi-05">
+            @if (Model.actfis.CheckBaile == true)
+            {
+                <div>X</div>
+            }
+        </div>
+        <div id="sinohaceactivi-06">
+            @if (Model.actfis.CheckNatacion == true)
+            {
+                <div>X</div>
+            }
+        </div>
+        <div id="sinohaceactivi-07">
+            @if (Model.actfis.CheckTaiChi == true)
+            {
+                <div>X</div>
+            }
+        </div>
+        <div id="sinohaceactivi-08">
+            @if (Model.actfis.CheckOtra == true)
+            {
+                <div>X</div>
+            }
+        </div>
+        <div id="algoquecoment-12">
+        
+        </div>
+        <div id="mediosdetrans">
+            @Model.actfis.MedioDeTransporte
+        </div>
+        <div id="algoquecoment-13">
+        </div>
+        <div id="algoquecoment-14">
+        </div>
+        <div id="legustariahacer-01">
+            @if (Model.actfis.CheckActividadGrupal == true)
+            {
+                <div>X</div>
+            }
+        </div>
+        <div id="legustariahacer-02">
+            @if (Model.actfis.CheckActividadPersonalizada == true)
+            {
+                <div>X</div>
+            }
+        </div>
+        <div id="legustariahacer-03">
+            @if (Model.actfis.CheckActividadAcompañado == true)
+            {
+                <div>X</div>
+            }
+        </div>
+        <div id="legustariahacer-04">
+            @if (Model.actfis.CheckActividadSolo == true)
+            {
+                <div>X</div>
+            }
+        </div>
+        <div id="algoquecoment-15">
+        </div>
+        <div id="algoquecoment-16">
+        </div>
+        <div id="algoquecoment-17">
+        </div>
+        <div id="algoquecoment-18">
+        </div>
+        <div id="algoquecoment-19">
+        </div>
+        <div id="algoquecoment-20">
+        </div>
+        <div id="algoquecoment-21">
+        </div>
+        <div id="algoquecoment-22">
+        </div>
+        <div id="algoquecoment-23">
+
+        </div>
+    </div>
+    <!-- End Save for Web Slices -->
+</body>
+</html>

@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Historia Personal - Adultos</title>
+    
+        @* CSS *@
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/Content/bootstrap.min.css" type="text/css" rel="Stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" type="text/css" rel="Stylesheet" />
+    <link href="~/Content/Site.css" type="text/css" rel="Stylesheet" />
+    <link href="~/Content/fonts.css" type="text/css" rel="Stylesheet" />
+    <link href="~/Content/Popups.css" type="text/css" rel="Stylesheet" />
+        
+        @* JS *@
+    <script src="~/Scripts/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    @*<script src="../../Scripts/bootstrap.js"></script>*@
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#popup').on('hidden.bs.modal', function () {
+                console.log("Popup oculto");
+                console.log($("#hdnPopup"))
+                if ($("#hdnPopup").val() == "FinSession") {
+                    window.location = "/Usuarios/Login";
+                }
+            });
+        }); 
+    </script>
+</head>
+<body>
+    <style>
+         .header
+         {
+             height:20px;
+         }
+    </style>
+    <nav id="header" class="navbar navbar-default header">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a id="navbar-brand" class="navbar-brand" style="width:auto" href="#">
+                    <img id="img-responsive-header" style="width:20%; display:inline-block;" class="img-responsive"
+                         src="~/Content/Imagenes/cormimagen.jpg" />
+                </a>
+                <div class="page-header">
+                    <h1>Clínica</h1>
+                    <small>de nutrición y salud</small>
+                    <h1>Dr.Cormillot</h1>
+                </div>
+            </div>
+            <div class="texto_derecha">
+                <p style="font-size:smaller">Por favor, para la 1° consulta tener completo este cuestionario.</p>
+                <p class="celeste" style="font-size:smaller"> Si tiene estudios clinicos del ultimo año, traigalos. </p>
+                <a onclick="window.open('/HP/Impresion/imprimir?usr=0', 'Imprimir');">
+                    Imprimir Formulario
+                </a>
+                <p>
+                    <h4 class="bienvenido">Bienvenido @(ViewBag.NombreyApellido ?? "")</h4>
+                    @if (ViewBag.EsConsejo != null && !ViewBag.EsConsejo)
+                    {
+                        <span class="icon-save celeste clickeable" onclick="javascript:guardarDatos()"></span>   
+                    }
+                    <a href="~/Usuarios/Logout/"><span class="icon-logout celeste clickeable"></span></a>
+                </p>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="modal fade" id="popup">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Aviso</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" id="hdnPopup" />
+                        <p id="contenidoPopup"></p>
+                    </div>
+                        <div class="modal-footer">
+                        <button id="btnGuardarPopup" type="button" data-dismiss="modal" class="btn btn-primary">Aceptar</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        @RenderBody()
+        @RenderSection("scripts", required: false)
+        <div style="width: 100%; float: left; margin: 10px auto; text-align: center;">
+            @Html.ActionLink("1", "DatosPersonales", "Pasos", null, null)
+            @Html.ActionLink("2", "RelacionTratamientoMotivacion", "Pasos", null, null)
+            @Html.ActionLink("3", "RelacionTratamientoMotivacion2", "Pasos", null, null)
+            @Html.ActionLink("4", "RelacionTratamientoMotivacion3", "Pasos", null, null)
+            @Html.ActionLink("5", "AntecedentesFamiliares", "Pasos", null, null)
+            @Html.ActionLink("6", "SuEstadoClinico", "Pasos", null, null)
+            @Html.ActionLink("7", "Sintomas", "Pasos", null, null)
+            @Html.ActionLink("8", "Sintomas3", "Pasos", null, null)
+            @Html.ActionLink("9", "SusAllegadosSuRelacionConLaComida", "Pasos", null, null)
+            @Html.ActionLink("10", "Preferencias", "Pasos", null, null)
+            @Html.ActionLink("11", "Preferencias2", "Pasos", null, null)
+            @Html.ActionLink("12", "Alimentacion", "Pasos", null, null)
+            @Html.ActionLink("13", "ComeDiaTipicoYFinde", "Pasos", null, null)
+            @Html.ActionLink("14", "ComeDiaTipicoYFinde2", "Pasos", null, null)
+            @Html.ActionLink("15", "ClasificacionAlimentacion", "Pasos", null, null)
+            @Html.ActionLink("16", "ClasificacionAlimentacion3", "Pasos", null, null)
+            @Html.ActionLink("17", "ActividadFisica", "Pasos", null, null)
+            @Html.ActionLink("18", "ComentarioGeneral", "Pasos", null, null)
+        </div>
+    </div>
+</body>
+</html>

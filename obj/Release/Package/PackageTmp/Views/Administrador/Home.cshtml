@@ -1,0 +1,210 @@
+﻿@using HistoriaPersonalCormillot
+@model IEnumerable<Usuario>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+ }
+@{ Usuario us = new Usuario();}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+
+        .CSSTableGenerator {
+	margin:50px auto;
+    padding:0px;
+	width:100%;
+	border:1px solid #000000;
+	
+	-moz-border-radius-bottomleft:0px;
+	-webkit-border-bottom-left-radius:0px;
+	border-bottom-left-radius:0px;
+	
+	-moz-border-radius-bottomright:0px;
+	-webkit-border-bottom-right-radius:0px;
+	border-bottom-right-radius:0px;
+	
+	-moz-border-radius-topright:0px;
+	-webkit-border-top-right-radius:0px;
+	border-top-right-radius:0px;
+	
+	-moz-border-radius-topleft:0px;
+	-webkit-border-top-left-radius:0px;
+	border-top-left-radius:0px;
+}.CSSTableGenerator table{
+    border-collapse: collapse;
+        border-spacing: 0;
+	width:100%;
+	height:100%;
+	margin:0px;padding:0px;
+}.CSSTableGenerator tr:last-child td:last-child {
+	-moz-border-radius-bottomright:0px;
+	-webkit-border-bottom-right-radius:0px;
+	border-bottom-right-radius:0px;
+}
+.CSSTableGenerator table tr:first-child td:first-child {
+	-moz-border-radius-topleft:0px;
+	-webkit-border-top-left-radius:0px;
+	border-top-left-radius:0px;
+}
+.CSSTableGenerator table tr:first-child td:last-child {
+	-moz-border-radius-topright:0px;
+	-webkit-border-top-right-radius:0px;
+	border-top-right-radius:0px;
+}.CSSTableGenerator tr:last-child td:first-child{
+	-moz-border-radius-bottomleft:0px;
+	-webkit-border-bottom-left-radius:0px;
+	border-bottom-left-radius:0px;
+}.CSSTableGenerator tr:hover td{
+	background-color:#ffffff;
+		
+
+}
+.CSSTableGenerator td{
+	vertical-align:middle;
+		background:-o-linear-gradient(bottom, #ffffff 5%, #ffffff 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #ffffff) ); 
+	background:-moz-linear-gradient( center top, #ffffff 5%, #ffffff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#ffffff");	background: -o-linear-gradient(top,#ffffff,ffffff);
+
+	background-color:#ffffff;
+
+	border:1px solid #000000;
+	border-width:0px 1px 1px 0px;
+	text-align:center;
+	padding:0px;
+	font-size:10px;
+	font-family:Arial;
+	font-weight:normal;
+	color:#000000;
+}.CSSTableGenerator tr:last-child td{
+	border-width:0px 1px 0px 0px;
+}.CSSTableGenerator tr td:last-child{
+	border-width:0px 0px 1px 0px;
+}.CSSTableGenerator tr:last-child td:last-child{
+	border-width:0px 0px 0px 0px;
+}
+.CSSTableGenerator tr:first-child td{
+		background:-o-linear-gradient(bottom, #ffffff 5%, #ffffff 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #ffffff) );
+	background:-moz-linear-gradient( center top, #ffffff 5%, #ffffff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#ffffff");	background: -o-linear-gradient(top,#ffffff,ffffff);
+
+	background-color:#ffffff;
+	border:0px solid #000000;
+	text-align:center;
+	border-width:0px 0px 1px 1px;
+	font-size:14px;
+	font-family:Arial;
+	font-weight:bold;
+	color:#ffffff;
+}
+.CSSTableGenerator tr:first-child:hover td{
+	background:-o-linear-gradient(bottom, #ffffff 5%, #ffffff 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #ffffff) );
+	background:-moz-linear-gradient( center top, #ffffff 5%, #ffffff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#ffffff");	background: -o-linear-gradient(top,#ffffff,ffffff);
+
+	background-color:#ffffff;
+}
+.CSSTableGenerator tr:first-child td:first-child{
+	border-width:0px 0px 1px 0px;
+}
+.CSSTableGenerator tr:first-child td:last-child{
+	border-width:0px 0px 1px 1px;
+}
+.cuadrado {
+     width: 15px; 
+     height: 15px; 
+     border: 0px;
+     background: green;
+     margin-left:55px;
+}
+    </style>
+  
+    </head>
+    <h2 class="celeste titulo FontCormi" style="margin-top:33px"> Administración de Usuarios</h2>
+    <body>
+        
+            <div class="CSSTableGenerator" style="width:80%">
+
+                <table>
+                    <tr>
+                        <td>
+                            <label style="color:black;font-weight: initial;">
+                                Usuario
+                            </label>
+                        </td>
+                        <td style="width:20%">
+                            <label style="color:black;font-weight: initial;">
+                                Password
+                            </label>
+                        </td>
+                        <td>
+                            <label style="color:black;font-weight: initial;">
+                                Habilitado
+                            </label>
+                        </td>
+                        
+                        <td>
+                            <label style="color:black;font-weight: initial;">
+                                Formulario
+                            </label>
+
+                        </td>
+                        <td>
+                            <label style="color:black;font-weight: initial;">
+                                Editar
+                            </label>
+                        </td>
+                        <td>
+                            <label style="color:black;font-weight: initial;">
+                                Eliminar
+                            </label>
+                        </td>
+                    </tr>
+                    @foreach (Usuario usuario in Model)
+                {
+                    <form method="post"   action="/Administrador/Edicion/">
+                            <tr>
+                                <td><label>@usuario.Username</label>
+                                    <input type="hidden" style="text-align:center" class="input-admin" name="Username" value="@usuario.Username" />
+                                </td>
+                                <td><label>@usuario.Password</label>
+                                    <input type="hidden" style="text-align:center" class="input-admin" name="Password" value="@usuario.Password" />
+                                </td>
+                                <td> @*Los checkbox no guardan el estado*@
+                                    <input type="hidden" name="Id" value="@usuario.Id" />
+                                    <input type="hidden" name="IdRol" value="@usuario.IdRol" />
+                                    @Html.CheckBox("Habilitado", usuario.Habilitado) 
+                                </td>
+                                
+                                <td>
+                                    @if (@usuario.Formulario == true)
+                                    {
+                                        <a href="/Usuarios/TraerFormulario?idUsuar=@usuario.Id">
+                                            <article class="cuadrado"></article>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <article class="cuadrado" style="background:red;"></article>
+                                    }
+                                </td>
+                                <td>
+                                    <button type="submit" style="background:none;border:none" class="btn btn-default">
+                                        <img src="~/Content/Imagenes/editar.png" style="width:14px" />
+                                    </button>
+                                </td>
+                                <td>
+                                    <a href="/Administrador/Eliminar?userdel=@usuario.Id">
+                                        <img src="~/Content/Imagenes/eliminar.png" style="width:14px" />
+                                    </a>
+                                </td>
+                            </tr>
+                        </form>
+               }
+                  </table>
+            </div>
+        <div style="text-align:center;margin:20px auto;">
+            <a href="/Administrador/Registro/" class="btn btn-info">Nuevo </a>
+        </div>
+    </body>
+</html>

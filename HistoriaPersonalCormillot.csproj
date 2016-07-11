@@ -318,6 +318,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Icon.png" />
     <Content Include="Scripts\angular-mocks.js" />
+    <None Include="Properties\PublishProfiles\Carlos.pubxml" />
     <None Include="Scripts\angular.intellisense.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
@@ -327,7 +328,6 @@
     <Content Include="Scripts\jquery-1.11.3.min.js" />
     <Content Include="Scripts\jquery-1.9.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
     <Content Include="Scripts\jquery.datepick-es-AR.js" />
@@ -343,7 +343,6 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
-    <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\Pagina3.js" />
     <Content Include="Scripts\Pagina4.js" />
     <Content Include="Scripts\_references.js" />
@@ -410,7 +409,6 @@
       <LastGenOutput>CormillotHistoriaPersonalCustom.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="Scripts\angular.min.js.map" />
-    <None Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\Pasos\Consejos.cshtml" />
     <Content Include="Views\Pasos\RelacionTratamientoMotivacion2.cshtml" />
     <Content Include="Views\Pasos\RelacionTratamientoMotivacion3.cshtml" />
